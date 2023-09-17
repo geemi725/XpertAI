@@ -4,8 +4,9 @@ python-dotenv
 openai
 langchain
 matplotlib
-sklearn
+scikit-learn
 xgboost
 shap
 pandas
 lime
+arxiv
