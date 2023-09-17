@@ -47,8 +47,8 @@ with st.sidebar:
 
     # Input OpenAI api key
     st.markdown('Input your OpenAI API key.')
-    #st.text_input('OpenAI API key', type='password', key='api_key',  
-    #on_change=on_api_key_change, label_visibility="visible")
+    st.text_input('OpenAI API key', type='password', key='api_key',  
+                  on_change=on_api_key_change, label_visibility="visible")
     st.markdown('Upload your files here!')
     input_file = st.file_uploader("Upload dataset")
     lit_dir = st.file_uploader("Upload your literature library here", 
@@ -57,6 +57,8 @@ with st.sidebar:
 
 if prompt := st.chat_input():
     st.chat_message("user").write(prompt)
+    if input_file not None:
+        prompt += f'datapath:{input_file}'
     with st.chat_message("assistant"):
         response = agent.run(query=prompt)
         st.write(response)
