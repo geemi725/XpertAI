@@ -1,6 +1,8 @@
 import streamlit as st
 import pandas as pd
 import os
+from PIL import Image
+from IPython.core.display import HTML
 #from dotenv import load_dotenv
 
 #load_dotenv()
@@ -29,8 +31,8 @@ def on_api_key_change():
 
 # sidebar
 with st.sidebar:
-    chemcrow_logo = Image.open('assets/logo.png')
-    st.image(chemcrow_logo)
+    logo = Image.open('assets/logo.png')
+    st.image(logo)
 
     # Input OpenAI api key
     st.markdown('Input your OpenAI API key.')
