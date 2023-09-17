@@ -11,5 +11,5 @@ pandas
 lime
 arxiv
 chromadb==0.4.7
-pysqlite
+sqlite3
 
