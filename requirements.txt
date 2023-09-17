@@ -1,4 +1,4 @@
-pre-commit
+streamlit
 python-dotenv
 openai
 ipython
