@@ -59,4 +59,5 @@ if prompt := st.chat_input():
     
     with st.chat_message("assistant"):
         response = agent.run(query=prompt)
+        st.write('Request is running 🏃...')
         st.write(response)
