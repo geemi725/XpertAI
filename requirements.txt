@@ -1,10 +1,2 @@
-streamlit
-python-dotenv
-openai
-ipython
-langchain
-arxiv
-chromadb
-shap
-xgboost
-scipy
+streamlit==1.26.0 
+ipython==8.14.0
