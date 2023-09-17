@@ -32,9 +32,8 @@ def on_api_key_change():
     os.environ["OPENAI_API_KEY"] = api_key
     from expert_ai.tools import tools
     from expert_ai.agent import ExpertAI
-    global agent
+    global agent    
     agent = ExpertAI(verbose=True)
-    tools = tools.get_tools()
 
 
 # sidebar
@@ -44,11 +43,9 @@ with st.sidebar:
 
     # Input OpenAI api key
     st.markdown('Input your OpenAI API key.')
-    st.text_input('OpenAI API key', type='password', key='api_key',  
-                  on_change=on_api_key_change, label_visibility="visible")
-    
-    
-    
+    api_key = st.text_input('OpenAI API key', type='password', key='api_key',  
+                  on_change=on_api_key_change, label_visibility="visible")   
+    on_api_key_change() 
     st.markdown('Upload your input files')
     input_file = st.file_uploader("Upload dataset here:")
     lit_dir = st.file_uploader("Upload your literature library here:", 
