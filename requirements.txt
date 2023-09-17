@@ -10,6 +10,6 @@ shap
 pandas
 lime
 arxiv
-chromadb==0.4.7
+chromadb
 sqlite3
 
