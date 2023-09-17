@@ -17,7 +17,7 @@ setup(
     license="MIT",
     packages=find_packages(),
     install_requires=[
-        "ipython",
+        "ipython==8.14.0",
         "arxiv",
         "chromadb",
         "langchain",
