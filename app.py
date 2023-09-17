@@ -1,9 +1,10 @@
 import streamlit as st
 import pandas as pd
-from dotenv import load_dotenv
+import os
+#from dotenv import load_dotenv
 
 load_dotenv()
-ss = st.session_state
+#ss = st.session_state
 
 st.title("Expert AI")
 st.write('''### Extract structure-function relationships from your data!''')
@@ -21,7 +22,8 @@ st.markdown(
 )
 
 def on_api_key_change():
-    api_key = ss.get('api_key') or os.getenv('OPENAI_API_KEY')
+    #api_key = ss.get('api_key') or os.getenv('OPENAI_API_KEY')
+    api_key = os.getenv('OPENAI_API_KEY')
     os.environ["OPENAI_API_KEY"] = api_key
 
 
