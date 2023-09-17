@@ -57,7 +57,7 @@ with st.sidebar:
 
 if prompt := st.chat_input():
     st.chat_message("user").write(prompt)
-    if input_file not None:
+    if input_file is not None:
         prompt += f'datapath:{input_file}'
     with st.chat_message("assistant"):
         response = agent.run(query=prompt)
