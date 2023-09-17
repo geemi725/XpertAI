@@ -1,3 +1,11 @@
 streamlit
 ipython
 python-dotenv
+openai
+langchain
+matplotlib
+sklearn
+xgboost
+shap
+pandas
+lime
