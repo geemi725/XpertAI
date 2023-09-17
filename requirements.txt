@@ -10,3 +10,4 @@ shap
 pandas
 lime
 arxiv
+chromadb
