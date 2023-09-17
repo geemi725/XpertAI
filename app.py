@@ -2,7 +2,8 @@ import streamlit as st
 import pandas as pd
 import os
 from PIL import Image
-from Ipython.core.display import HTML
+import Ipython
+#from Ipython.core.display import HTML
 #from dotenv import load_dotenv
 
 #load_dotenv()
