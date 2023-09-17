@@ -3,13 +3,10 @@ import openai
 import pandas as pd
 import os
 from PIL import Image
-## delete when publishing
-
-#from Ipython.core.display import HTML
 from dotenv import load_dotenv
 from expert_ai.tools import tools
 from expert_ai.agent import ExpertAI
-
+agent = ExpertAI(verbose=True)
 tools = tools.get_tools()
 
 
@@ -53,7 +50,7 @@ with st.sidebar:
     input_file = st.file_uploader("Upload dataset")
     lit_dir = st.file_uploader("Upload your literature library here", 
                                accept_multiple_files=True)
-    agent = ExpertAI(verbose=True)
+    
 
 if prompt := st.chat_input():
     st.chat_message("user").write(prompt)
