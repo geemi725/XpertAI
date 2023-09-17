@@ -3,7 +3,7 @@ import pandas as pd
 import os
 #from dotenv import load_dotenv
 
-load_dotenv()
+#load_dotenv()
 #ss = st.session_state
 
 st.title("Expert AI")
