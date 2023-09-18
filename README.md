@@ -1,5 +1,5 @@
-# expert-ai
-Extract structure-functions from data using XAI and LLMs
+# Expert-ai
+## Extract structure-functions from data using XAI and LLMs
 
 [![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://expertai.streamlit.app/)
 
@@ -8,3 +8,5 @@ Extract structure-functions from data using XAI and LLMs
   <img alt="logo" src="assets/logo.png" width="70%">
 
 </picture>
+
+
