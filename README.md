@@ -5,6 +5,6 @@ Extract structure-functions from data using XAI and LLMs
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/logo.png" width='100%'>
-  <img alt="logo" src="assets/logo.png" width="100%">
+  <img alt="logo" src="assets/logo.png" width="70%">
 
 </picture>
