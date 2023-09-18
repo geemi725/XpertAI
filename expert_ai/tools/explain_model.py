@@ -81,7 +81,7 @@ def get_modelsummary(json_request):
 
 
 """request_format = '{{"data_path":"<path to dataframe>", "label":"<target label>", "model_type":<classifier or regressor>, "top_k":<Number of features to explain>,"XAI_tool": <SHAP, LIME or Both>}}'
-description = f"""Train and Explain model. Input should be JSON in the following format:{request_format}."""
+description = Train and Explain model. Input should be JSON in the following format:{request_format}.
 
 ExplainModel = Tool(
     name="explain_model",

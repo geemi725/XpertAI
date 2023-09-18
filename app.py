@@ -68,15 +68,14 @@ with st.sidebar:
 
     if api_key:
         on_api_key_change() 
-        if st.button("Generate Explanation", type="primary"):
-            arg_dict = { "data_path":input_file, 
-                        "label":label, "model_type":mode_type, 
-                        "top_k":top_k, "XAI_tool": XAI_tool} 
-            
-            json_request = json.dumps(arg_dict, indent = 4)
-            
+        
+        arg_dict = { "data_path":input_file, 
+                    "label":label, "model_type":mode_type, 
+                    "top_k":top_k, "XAI_tool": XAI_tool} 
+        
+        json_request = json.dumps(arg_dict, indent = 4)
+        if st.button("Generate Explanation"):
             explanation =  get_modelsummary(json_request)
-
             st.write(explanation)
 
 '''if prompt := st.chat_input():
