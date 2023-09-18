@@ -25,12 +25,16 @@ st.markdown(
     """
     <style>
     [data-testid="stSidebar"][aria-expanded="true"]{
-        min-width: 600px;
-        max-width: 600px;
+        min-width: 450px;
+        max-width: 800px;
     }
+    [data-testid=“stSidebar”]div[class=“css-17eq0hr e1fqkh3o1”] {
+        background-image: linear-gradient(#F9F6F6,#F9F6F6);
+        color: white}
     """,
     unsafe_allow_html=True,
 )
+
 
 def on_api_key_change():
     api_key = ss.get('api_key') or os.getenv('OPENAI_API_KEY')
@@ -90,7 +94,8 @@ with st.sidebar:
             explanation =  get_modelsummary(arg_dict)
             #json_request = json.dumps(arg_dict, indent=4)
                 
-            st.write(explanation)
+## output:
+st.write('The initial XAI explanation is as follows:\n',explanation)
             #if button:
             #    explanation =  get_modelsummary(json_request)
             #    st.write(explanation)
