@@ -12,7 +12,7 @@ OR a single "Final Answer" format.
 Complete format:
 
 Thought: (reflect on your progress and decide what to do next)
-Action: (the action name, should be one of [{tool_names}])
+Action: (the action name should be one of the tools)
 Action Input: (the input string to the action)
 
 OR
