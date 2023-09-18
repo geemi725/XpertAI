@@ -49,7 +49,7 @@ with st.sidebar:
                   on_change=on_api_key_change, label_visibility= "collapsed")   
     
 
-    st.markdown('Upload your input files')
+    st.markdown('Upload your input CSV files')
     input_file = st.file_uploader("Upload dataset here:")
     st.markdown('Set up XAI workflow')
     mode_type =  st.radio("Select the model type",
@@ -78,6 +78,7 @@ with st.sidebar:
             arg_dict = { "data_path":stringio, 
                     "label":label, "model_type":mode_type, 
                         "top_k":top_k, "XAI_tool": XAI_tool} 
+            json_request = json.dumps(arg_dict, indent=4)
                 
             st.write('stringio worked')
             #if button:
