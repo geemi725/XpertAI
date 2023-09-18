@@ -55,7 +55,8 @@ class ExpertAI:
             #agent="zero-shot-react-description",
             agent=AgentType.CONVERSATIONAL_REACT_DESCRIPTION,
             verbose=verbose,
-            memory=self.readonlymemory
+            memory=self.readonlymemory,
+            handle_parsing_errors=True
             )
         
 
