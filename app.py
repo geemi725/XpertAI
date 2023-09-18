@@ -28,9 +28,6 @@ st.markdown(
         min-width: 450px;
         max-width: 800px;
     }
-    [data-testid=“stSidebar”]div[class=“css-17eq0hr e1fqkh3o1”] {
-        background-image: linear-gradient(#F9F6F6,#F3F3F3);
-        color: white}
     """,
     unsafe_allow_html=True,
 )
