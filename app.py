@@ -65,6 +65,7 @@ with st.sidebar:
                                accept_multiple_files=True)
     arxiv_keywords = st.text_input("Keywords for arxiv scraping (Optional):",
                                    help='Keywords to scrape arxiv.org')
+    button = st.button("Generate Explanation")
 
     if api_key:
         on_api_key_change() 
@@ -75,6 +76,6 @@ with st.sidebar:
                         "top_k":top_k, "XAI_tool": XAI_tool} 
             
             json_request = json.dumps(arg_dict, indent = 4)
-            if st.button("Generate Explanation"):
+            if button:
                 explanation =  get_modelsummary(json_request)
                 st.write(explanation)
