@@ -276,11 +276,13 @@ def vector_db(lit_directory=None, persist_directory=None,
                 _create_vecdb(docs_split, persist_directory)
 
 
-def explain_lime(df_x,model,mode,top_k,label):
-   
+def explain_lime(data_path,model,mode,top_k,label):
    weights = []
    num_samples = 100
-
+   df = pd.read_csv(data_path,header=0)
+   ## use all data for the shap analysis
+   df_x = df.drop(label,axis = 1)
+   
    if mode=='classification': 
        class_names=[0,1]
    else: 
