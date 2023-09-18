@@ -11,7 +11,7 @@ def train_model(json_request):
     }.
 
     Example:
-        {"data_path":"/data/wellawatte/mofs/XAI/data/ft1034_labeldropped.csv",
+        {"data_path":".data/ft1034_labeldropped.csv",
         "label":"HAS_OMS",
         "model_type": "classifier",
         "split":0.2,
