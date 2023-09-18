@@ -52,7 +52,7 @@ def _plots(results,eval_type,savedir):
     fig.savefig(f'{savedir}/xgbmodel_{eval_type}.png')
 
 def train_xgbclassifier(data_path,label,split=0.2,
-                        n_estimators=50,early_stopping_rounds=5):
+                        early_stopping_rounds=5):
     savedir = './data'
 
     x_train, x_val, y_train, y_val = _split_data(data_path,
@@ -63,7 +63,7 @@ def train_xgbclassifier(data_path,label,split=0.2,
     eval_metric=["auc", "error"]
     xgb_model = xgb.XGBClassifier(objective="binary:logistic", random_state=42,
     eval_metric=eval_metric, early_stopping_rounds=early_stopping_rounds, 
-    n_estimators=n_estimators)
+    n_estimators=50)
 
     xgb_model.fit(x_train, y_train, eval_set=[(x_train, y_train),(x_val, y_val)],
                   verbose=False)
@@ -116,7 +116,7 @@ def get_response(prompt):
 
     return response.choices[0].message["content"]
 
-def explain_shap(data_path,model_path,label,top_k,classifier=True):
+def explain_shap(data_path,model_path,label,top_k,classifier=False):
     savedir = './data'
 
     df = pd.read_csv(data_path,header=0)
@@ -276,7 +276,7 @@ def vector_db(lit_directory=None, persist_directory=None,
                 _create_vecdb(docs_split, persist_directory)
 
 
-def _explain_lime(df_x,model,mode,class_names):
+def explain_lime(df_x,model,mode,top_k,label):
    
    weights = []
    num_samples = 100
@@ -335,11 +335,11 @@ def _explain_lime(df_x,model,mode,class_names):
         summary+= f"Feature {ft} has an average \
              z-score of {l} with towards the prediction."
         
-   prompt = f"Summarize and write an brief of the model behavior \
+   '''prompt = f"Summarize and write an brief of the model behavior \
     from the following: {summary}"
    
    lime_summary = get_response(prompt) 
    np.save(f'{savedir}/top_{top_k}_lime_fts.npy',top_fts)
-
-   return lime_summary
+'''
+   return top_fts, summary
   

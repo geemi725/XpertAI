@@ -1,72 +1,91 @@
 from langchain.agents import Tool
 from langchain.chat_models import ChatOpenAI
 import json
-import openai
 from langchain.docstore.document import Document
 from langchain.text_splitter import CharacterTextSplitter
 from langchain.chains.summarize import load_summarize_chain
+import streamlit as st
 from .utils import *
 
-def get_nle(json_request):
-    '''Takes a JSON dictionary as input in the form:
-    {"label":<target label>,
-    "features": <list of features>}
-
-    To explain for each feature in <features> affect <label> based on literature. 
+def get_modelsummary(json_request):
     '''
-    
+    Takes a dictionary as input in the form:
+    { "data_path":"<path to dataframe>", 
+    "label":"<target label>", 
+    "model_type":<classifier or regressor>, 
+    "top_k":<Number of features to explain>
+    "XAI_tool": <SHAP, LIME or Both>
+    }.
+
+    Example:
+        {"data_path":".data/ft1034_labeldropped.csv",
+        "label":"HAS_OMS",
+        "model_type": "classifier",
+        "split":0.2,
+        "top_k":5,
+        "XAI_tool": "SHAP"
+        }
+
+    '''
+    save_dir = './data'
     arg_dict = json.loads(json_request)
-    label = arg_dict["label"]
+    for k,val in arg_dict.items():
+        globals()[k] = val
+
+    ##Step 1: train model
     
-    if "features" in arg_dict:
-        features = arg_dict["features"]
-    else: features=None
+    if model_type=="classifier":
+        train_xgbclassifier(data_path,label)
     
-    merged_text = query_answers(label,features)
+    else: 
+        train_xgbregressor(data_path,label)
+        
+    model_path = f'{save_dir}/xgbmodel.json'
 
-    llm = ChatOpenAI(
-            temperature=0,
-            model_name="gpt-3.5-turbo-0613",
-            request_timeout=1000)
-    # Split text
-    text_splitter = CharacterTextSplitter()
-    texts = text_splitter.split_text(merged_text)
-    # Create multiple documents
-    docs = [Document(page_content=t) for t in texts]
-    # Text summarization
-    chain = load_summarize_chain(llm, chain_type='map_reduce')
-    summary = chain.run(docs)
-    with open('data/self_query_summary.txt','w+') as f:
-        f.write(summary)
-        f.close()
+    ## Step 2: Run SHAP Analysis
+    if XAI_tool == "SHAP" or XAI_tool == "Both":
 
-    prompt = f"""In this exercise you will assume the role of a scientific assistant. 
-    Using {merged_text} write a critical evaluate the content.
-    Explain what affect the {label}.
-    The text should have an educative and assistant-like tone, be accurate.
-    Explain how any conclusion is reached.
-    """
+        if model_type=='classifier': 
+            classifier=True
+        else: 
+            classifier=False
+        
+        top_shap_fts, shap_summary = explain_shap(data_path,model_path,
+                                            label,top_k,
+                                            classifier=classifier)
+    else: shap_summary = None
+    #np.save(f'{save_dir}/top_shap_features.npy',top_fts)
 
-    #messages = [{"role": "user", "content": prompt}]
-    #response = openai.ChatCompletion.create(model="gpt-3.5-turbo-0613",
-    #                                        messages=messages,temperature=0,)
+    ## Step 3: Run Lime
+    if XAI_tool == "LIME" or XAI_tool == "Both":
+        top_lime_fts, lime_summary = explain_lime(data_path,model,mode,top_k,label)
+    else: lime_summary = None
 
-    #summary = response.choices[0].message["content"]
+
+    ## Step 4: Generate explanation
+    prompt = f"""Summarize the following and explain the model
+    from the following: {shap_summary+lime_summary}"""
     
-    return summary
+    explanation = get_response(prompt)
+
+    return explanation, top_shap_fts, top_lime_fts
+
+    
+
+    #st.write('Training complete')
     
 
 
-request_format = '{{"label":<target label>,"features": "<list of features>"}}'
-description = f"""Input should be JSON in the following format:{request_format}."""
+request_format = '{{"data_path":"<path to dataframe>", "label":"<target label>", "model_type":<classifier or regressor>, "top_k":<Number of features to explain>,"XAI_tool": <SHAP, LIME or Both>}}'
+description = f"""Train and Explain model. Input should be JSON in the following format:{request_format}."""
 
-GetNLE = Tool(
-    name="generate_NLE",
-    func=get_nle,
+ExplainModel = Tool(
+    name="explain_model",
+    func=get_modelsummary,
     description=description
 )
 
 if __name__ == '__main__':
-    print(GetNLE)
+    print(ExplainModel)
 
 
