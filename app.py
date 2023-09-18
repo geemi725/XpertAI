@@ -3,6 +3,7 @@ import json
 import os
 from PIL import Image 
 from io import StringIO
+import pandas as pd
 
 from langchain.callbacks import StreamlitCallbackHandler
 from dotenv import load_dotenv
@@ -70,9 +71,13 @@ with st.sidebar:
     button = st.button("Generate Explanation")
 
     if api_key:
-        on_api_key_change() 
         from expert_ai.tools.explain_model import get_modelsummary
         if button:
+            st.write(mode_type)
+            try: 
+                dataframe = pd.read_csv(input_file)
+            except: st.write('Cannot read dataframe')
+
             #bytes_data = input_file.getvalue()
             #stringio = StringIO(input_file.getvalue().decode("utf-8"))
             

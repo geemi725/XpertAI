@@ -27,10 +27,10 @@ def get_modelsummary(arg_dict):
 
     ##Step 1: train model
     
-    if model_type=="classifier":
+    if model_type=="Classifier":
         train_xgbclassifier(data_path,label)
     
-    else: 
+    elif model_type=='Regressor': 
         train_xgbregressor(data_path,label)
         
     model_path = f'{save_dir}/xgbmodel.json'
