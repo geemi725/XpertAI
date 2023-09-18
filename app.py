@@ -73,9 +73,9 @@ with st.sidebar:
     if api_key:
         from expert_ai.tools.explain_model import get_modelsummary
         if button:
-            st.write(mode_type)
             try: 
                 dataframe = pd.read_csv(input_file)
+                st.write('CAN READ THE EFFING DF')
             except: st.write('Cannot read dataframe')
 
             #bytes_data = input_file.getvalue()
