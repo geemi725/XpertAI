@@ -48,6 +48,7 @@ with st.sidebar:
                   on_change=on_api_key_change, label_visibility="visible")   
     if api_key:
         on_api_key_change() 
+        
     st.markdown('Upload your input files')
     input_file = st.file_uploader("Upload dataset here:")
     st.markdown('Set up XAI workflow')
