@@ -47,7 +47,7 @@ class ExpertAI:
             verbose=verbose
         )
         self.all_tools = tools.get_tools()
-        self.agent_llm =  _make_llm('gpt-4', temp)
+        self.agent_llm =  _make_llm('gpt-4', temp, verbose)
 
         self.agent = initialize_agent(
             self.all_tools,
