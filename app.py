@@ -2,7 +2,7 @@ import streamlit as st
 import json
 import os
 from PIL import Image 
-from expert_ai.tools.explain_model import get_modelsummary
+
 from langchain.callbacks import StreamlitCallbackHandler
 from dotenv import load_dotenv
 
@@ -68,6 +68,7 @@ with st.sidebar:
 
     if api_key:
         on_api_key_change() 
+        from expert_ai.tools.explain_model import get_modelsummary
         
         arg_dict = { "data_path":input_file, 
                     "label":label, "model_type":mode_type, 
