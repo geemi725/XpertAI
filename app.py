@@ -73,14 +73,15 @@ with st.sidebar:
         from expert_ai.tools.explain_model import get_modelsummary
         if button:
             bytes_data = input_file.getvalue()
-            stringio = StringIO(input_file.getvalue().decode("utf-8"))
+            #stringio = StringIO(input_file.getvalue().decode("utf-8"))
             
-            arg_dict = { "data_path":stringio, 
+            arg_dict = { "data_path":input_file , 
                     "label":label, "model_type":mode_type, 
                         "top_k":top_k, "XAI_tool": XAI_tool} 
-            json_request = json.dumps(arg_dict, indent=4)
+            explanation =  get_modelsummary(arg_dict)
+            #json_request = json.dumps(arg_dict, indent=4)
                 
-            st.write('stringio worked')
+            st.write('god bless!!!')
             #if button:
             #    explanation =  get_modelsummary(json_request)
             #    st.write(explanation)

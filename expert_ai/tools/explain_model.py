@@ -1,7 +1,7 @@
 import json
 from .utils import *
 
-def get_modelsummary(json_request):
+def get_modelsummary(arg_dict):
     '''
     Takes a dictionary as input in the form:
     { "data_path":"<path to dataframe>", 
@@ -21,7 +21,7 @@ def get_modelsummary(json_request):
 
     '''
     save_dir = './data'
-    arg_dict = json.loads(json_request)
+    #arg_dict = json.loads(json_request)
     for k,val in arg_dict.items():
         globals()[k] = val
 
