@@ -89,11 +89,8 @@ with st.sidebar:
                     "label":label, "model_type":mode_type, 
                         "top_k":top_k, "XAI_tool": XAI_tool} 
             explanation =  get_modelsummary(arg_dict)
-    else: explanation = 'An error was encountered!'
-            #json_request = json.dumps(arg_dict, indent=4)
-                
-## output:
-st.write("The initial XAI analysis is given below:\n", explanation)
+            st.write("The initial XAI analysis is given below:\n", explanation)
+
             #if button:
             #    explanation =  get_modelsummary(json_request)
             #    st.write(explanation)
