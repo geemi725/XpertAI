@@ -61,6 +61,13 @@ if prompt := st.chat_input():
     
     with st.chat_message("assistant"):
         st_callback = StreamlitCallbackHandler(st.container())
-        response = agent.run(query=prompt)
-        st.write('Request is running 🏃...')
+        try:
+         response = agent.run(query=prompt)
+        ## TEST THIS LATER
+        except Exception as e:
+            response = str(e)
+            if response.startswith("Could not parse LLM output: `"):
+                response = response.removeprefix("Could not parse LLM output: `").removesuffix("`")
+                print(response)
+    
         st.write(response)
