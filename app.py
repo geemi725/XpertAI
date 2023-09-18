@@ -46,7 +46,7 @@ with st.sidebar:
     # Input OpenAI api key
     st.markdown('Input your OpenAI API key.')
     api_key = st.text_input('OpenAI API key', type='password', key='api_key',  
-                  on_change=on_api_key_change, label_visibility="visible")   
+                  on_change=on_api_key_change, label_visibility= "collapsed")   
     
 
     st.markdown('Upload your input files')
@@ -72,15 +72,14 @@ with st.sidebar:
         on_api_key_change() 
         from expert_ai.tools.explain_model import get_modelsummary
         if button:
-            if input_file is not None:
-                bytes_data = input_file.getvalue()
-                stringio = StringIO(input_file.getvalue().decode("utf-8"))
-              
-                arg_dict = { "data_path":stringio, 
-                        "label":label, "model_type":mode_type, 
-                            "top_k":top_k, "XAI_tool": XAI_tool} 
-                    
-                st.write('stringio worked')
+            bytes_data = input_file.getvalue()
+            stringio = StringIO(input_file.getvalue().decode("utf-8"))
+            
+            arg_dict = { "data_path":stringio, 
+                    "label":label, "model_type":mode_type, 
+                        "top_k":top_k, "XAI_tool": XAI_tool} 
+                
+            st.write('stringio worked')
             #if button:
             #    explanation =  get_modelsummary(json_request)
             #    st.write(explanation)
