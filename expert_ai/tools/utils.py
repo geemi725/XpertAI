@@ -105,7 +105,7 @@ def train_xgbregressor(data_path,label,split=0.2, early_stopping_rounds=5):
     
     ## save data
     xgb_model.save_model(f'{savedir}/xgbmodel.json')
-    
+    print('Model trained!!!!!!!!!!!!')
     np.save(f'{savedir}/xgb_results.npy',results)
 
 
@@ -119,7 +119,7 @@ def get_response(prompt):
 def explain_shap(data_path,model_path,label,top_k,classifier=False):
     savedir = './data'
 
-    df = pd.read_csv(data_path,header=0)
+    df = pd.read_csv(data_path,header=0,delim_whitespace=True)
     ## use all data for the shap analysis
     df_x = df.drop(label,axis = 1)
 

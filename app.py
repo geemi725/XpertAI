@@ -21,8 +21,8 @@ st.markdown(
     """
     <style>
     [data-testid="stSidebar"][aria-expanded="true"]{
-        min-width: 450px;
-        max-width: 450px;
+        min-width: 600px;
+        max-width: 600px;
     }
     """,
     unsafe_allow_html=True,
@@ -51,6 +51,7 @@ with st.sidebar:
 
     st.markdown('Upload your input CSV files')
     input_file = st.file_uploader("Upload dataset here:")
+    
     st.markdown('Set up XAI workflow')
     mode_type =  st.radio("Select the model type",
                            ["Regressor", "Classifier"],
@@ -72,7 +73,7 @@ with st.sidebar:
         on_api_key_change() 
         from expert_ai.tools.explain_model import get_modelsummary
         if button:
-            bytes_data = input_file.getvalue()
+            #bytes_data = input_file.getvalue()
             #stringio = StringIO(input_file.getvalue().decode("utf-8"))
             
             arg_dict = { "data_path":input_file , 

@@ -34,10 +34,9 @@ def get_modelsummary(arg_dict):
         train_xgbregressor(data_path,label)
         
     model_path = f'{save_dir}/xgbmodel.json'
-
+    
     ## Step 2: Run SHAP Analysis
     if XAI_tool == "SHAP" or XAI_tool == "Both":
-
         if model_type=='classifier': 
             classifier=True
         else: 
