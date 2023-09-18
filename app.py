@@ -2,6 +2,7 @@ import streamlit as st
 import json
 import os
 from PIL import Image 
+from io import StringIO
 
 from langchain.callbacks import StreamlitCallbackHandler
 from dotenv import load_dotenv
@@ -71,11 +72,15 @@ with st.sidebar:
         on_api_key_change() 
         from expert_ai.tools.explain_model import get_modelsummary
         if input_file is not None:
-            arg_dict = { "data_path":input_file, 
+            bytes_data = input_file.getvalue()
+            st.write('bytes data::::',bytes_data)
+            stringio = StringIO(input_file.getvalue().decode("utf-8"))
+            st.write('stringio::::',string_data)
+            arg_dict = { "data_path":stringio, 
                         "label":label, "model_type":mode_type, 
                         "top_k":top_k, "XAI_tool": XAI_tool} 
             
-            json_request = json.dumps(arg_dict, indent = 4)
-            if button:
-                explanation =  get_modelsummary(json_request)
-                st.write(explanation)
+            #json_request = json.dumps(arg_dict, indent = 4)
+            #if button:
+            #    explanation =  get_modelsummary(json_request)
+            #    st.write(explanation)
