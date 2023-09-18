@@ -88,9 +88,8 @@ with st.sidebar:
             arg_dict = { "df_init":df_init, 
                     "label":label, "model_type":mode_type, 
                         "top_k":top_k, "XAI_tool": XAI_tool} 
-            global explanation  
             explanation =  get_modelsummary(arg_dict)
-st.write("The initial XAI analysis is given below:\n", explanation)
+            st.write("The initial XAI analysis is given below:\n", explanation)
 
             #if button:
             #    explanation =  get_modelsummary(json_request)
