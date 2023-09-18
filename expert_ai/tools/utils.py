@@ -18,19 +18,9 @@ from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain.vectorstores import Chroma
 embedding = OpenAIEmbeddings()
 
-def _split_data(data_path,label='HAS_OMS',split=0.2):
-    '''Read, pre-process and split data into train-validation sets. 
-    Args:
-        data_path: path to the dataset
-        label: label used for predicting
-        split: fraction for splitting data
-        
-    #Returns:
-        x, y train-validation dataframes and initial x,y dataframes
-    '''
-
+def _split_data(df_init,label,split=0.2):
     ## for test dataset not all 
-    df = pd.read_csv(data_path,header=0)
+    df = df_init #pd.read_csv(data_path,header=0)
     df_y = df[label] 
     df_x = df.drop(label,axis = 1)
   
@@ -51,11 +41,11 @@ def _plots(results,eval_type,savedir):
     plt.show()
     fig.savefig(f'{savedir}/xgbmodel_{eval_type}.png')
 
-def train_xgbclassifier(data_path,label,split=0.2,
+def train_xgbclassifier(df_init,label,split=0.2,
                         early_stopping_rounds=5):
     savedir = './data'
 
-    x_train, x_val, y_train, y_val = _split_data(data_path,
+    x_train, x_val, y_train, y_val = _split_data(df_init,
                                                             label=label,
                                                             split=split)
     
@@ -80,11 +70,11 @@ def train_xgbclassifier(data_path,label,split=0.2,
     
     np.save(f'{savedir}/xgb_results.npy',results)
 
-def train_xgbregressor(data_path,label,split=0.2, early_stopping_rounds=5):
+def train_xgbregressor(df_init,label,split=0.2, early_stopping_rounds=5):
 
     savedir = './data'
 
-    x_train, x_val, y_train, y_val = _split_data(data_path,
+    x_train, x_val, y_train, y_val = _split_data(df_init,
                                                             label=label,
                                                             split=split)
     
@@ -116,10 +106,10 @@ def get_response(prompt):
 
     return response.choices[0].message["content"]
 
-def explain_shap(data_path,model_path,label,top_k,classifier=False):
+def explain_shap(df_init,model_path,label,top_k,classifier=False):
     savedir = './data'
 
-    df = pd.read_csv(data_path,header=0,delim_whitespace=True)
+    df = df_init #pd.read_csv(data_path,header=0,delim_whitespace=True)
     ## use all data for the shap analysis
     df_x = df.drop(label,axis = 1)
 
@@ -269,13 +259,13 @@ def vector_db(lit_directory=None, persist_directory=None,
                 _create_vecdb(docs_split, persist_directory)
 
 
-def explain_lime(data_path,model_path,model_type,top_k,label):
+def explain_lime(df_init,model_path,model_type,top_k,label):
    weights = []
    num_samples = 200
    savedir = './data'
-   df = pd.read_csv(data_path,header=0)
+   #df = pd.read_csv(data_path,header=0)
    ## use all data for the shap analysis
-   df_x = df.drop(label,axis = 1)
+   df_x = df_init.drop(label,axis = 1)
    
    if model_type=='classifier': 
        class_names=[0,1]

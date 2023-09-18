@@ -74,14 +74,14 @@ with st.sidebar:
         from expert_ai.tools.explain_model import get_modelsummary
         if button:
             try: 
-                dataframe = pd.read_csv(input_file)
-                st.write('CAN READ THE EFFING DF')
+                df = pd.read_csv(input_file)
+        
             except: st.write('Cannot read dataframe')
 
             #bytes_data = input_file.getvalue()
             #stringio = StringIO(input_file.getvalue().decode("utf-8"))
             
-            arg_dict = { "data_path":input_file , 
+            arg_dict = { "df_init":df , 
                     "label":label, "model_type":mode_type, 
                         "top_k":top_k, "XAI_tool": XAI_tool} 
             explanation =  get_modelsummary(arg_dict)
