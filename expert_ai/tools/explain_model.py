@@ -1,10 +1,4 @@
-from langchain.agents import Tool
-from langchain.chat_models import ChatOpenAI
 import json
-from langchain.docstore.document import Document
-from langchain.text_splitter import CharacterTextSplitter
-from langchain.chains.summarize import load_summarize_chain
-import streamlit as st
 from .utils import *
 
 def get_modelsummary(json_request):
@@ -13,7 +7,7 @@ def get_modelsummary(json_request):
     { "data_path":"<path to dataframe>", 
     "label":"<target label>", 
     "model_type":<classifier or regressor>, 
-    "top_k":<Number of features to explain>
+    "top_k":<Number of features to explain>,
     "XAI_tool": <SHAP, LIME or Both>
     }.
 
@@ -21,7 +15,6 @@ def get_modelsummary(json_request):
         {"data_path":".data/ft1034_labeldropped.csv",
         "label":"HAS_OMS",
         "model_type": "classifier",
-        "split":0.2,
         "top_k":5,
         "XAI_tool": "SHAP"
         }
@@ -53,22 +46,33 @@ def get_modelsummary(json_request):
         top_shap_fts, shap_summary = explain_shap(data_path,model_path,
                                             label,top_k,
                                             classifier=classifier)
-    else: shap_summary = None
+        np.save(f'{save_dir}/top_shap_features.npy',top_shap_fts)
+    else: shap_summary = ''
     #np.save(f'{save_dir}/top_shap_features.npy',top_fts)
 
     ## Step 3: Run Lime
     if XAI_tool == "LIME" or XAI_tool == "Both":
-        top_lime_fts, lime_summary = explain_lime(data_path,model,mode,top_k,label)
-    else: lime_summary = None
+        top_lime_fts, lime_summary = explain_lime(data_path,model_path,model_type,
+                                                  top_k,label)
+        np.save(f'{save_dir}/top_lime_features.npy',top_lime_fts)
+    else: lime_summary = ''
 
 
-    ## Step 4: Generate explanation
+    ## Step 4: Generate explanation and create vectorstore
+    f = open(f'{save_dir}/XAI_summary.txt',"w+")
+    f.write(shap_summary+lime_summary)
+    f.close()
+
+    vector_db(lit_file=f'{save_dir}/XAI_summary.txt', clean=True)
+
+    ## Step 5: Generate summary of model explanation
     prompt = f"""Summarize the following and explain the model
     from the following: {shap_summary+lime_summary}"""
-    
     explanation = get_response(prompt)
 
-    return explanation, top_shap_fts, top_lime_fts
+    print(explanation)
+
+    return explanation
 
     
 
@@ -76,7 +80,7 @@ def get_modelsummary(json_request):
     
 
 
-request_format = '{{"data_path":"<path to dataframe>", "label":"<target label>", "model_type":<classifier or regressor>, "top_k":<Number of features to explain>,"XAI_tool": <SHAP, LIME or Both>}}'
+"""request_format = '{{"data_path":"<path to dataframe>", "label":"<target label>", "model_type":<classifier or regressor>, "top_k":<Number of features to explain>,"XAI_tool": <SHAP, LIME or Both>}}'
 description = f"""Train and Explain model. Input should be JSON in the following format:{request_format}."""
 
 ExplainModel = Tool(
@@ -88,4 +92,4 @@ ExplainModel = Tool(
 if __name__ == '__main__':
     print(ExplainModel)
 
-
+"""

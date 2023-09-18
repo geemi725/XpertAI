@@ -12,5 +12,4 @@ def get_tools():
         ScrapeArxiv,
         RetriveInfo
     ]
-
     return all_tools

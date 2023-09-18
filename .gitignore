@@ -6,6 +6,11 @@ ipython_config.py
 .ipynb_checkpoints
 *.ipynb
 
+# Data
+*.npy
+*.png
+*.txt
+
 # pyenv
 .python-version
 

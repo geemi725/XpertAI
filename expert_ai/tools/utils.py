@@ -132,16 +132,12 @@ def explain_shap(data_path,model_path,label,top_k,classifier=False):
     ## retreive metrics from the last iteration
     #order: [train_auc,train_error,test_auc,test_err
     if classifier:
-        class_names=[0,1]
-        mode = 'classification'
         met_exp = ["Train AUC","Train Error","Test AUC","Test Error"]
         metrics = [results['validation_0']['auc'][-1],
                 results['validation_0']['error'][-1],
                 results['validation_1']['auc'][-1],
                 results['validation_1']['error'][-1]]
     else: 
-        class_names=[f'{label}']
-        mode = 'regression'
         met_exp = ["Train RMSE","Test RMSE"]
         metrics = [results['validation_0']['rmse'][-1],
                 results['validation_1']['rmse'][-1]]
@@ -152,7 +148,7 @@ def explain_shap(data_path,model_path,label,top_k,classifier=False):
     explainer = shap.Explainer(model,df_x)
     shap_values = explainer(df_x)
 
-    fig,ax = plt.subplots(figsize=(4,4))
+    fig, ax = plt.subplots(figsize=(4,4))
     shap.summary_plot(shap_values, df_x, plot_type="bar",max_display=top_k,show=False)
     plt.title('SHAP: Top features')
     plt.xlabel('Average impact')
@@ -178,28 +174,25 @@ def explain_shap(data_path,model_path,label,top_k,classifier=False):
 
     summary = f'The model can be explained with the following SHAP analysis.'
     for k, v in pearsons.items():
-        summary+= f"Feature {k} has a correlation coefficient of  {v} with its SHAP values. The average impact of {k} is {avg_im[k]}. "
+        summary+= f"Feature {k} has a correlation coefficient of  {v} with its SHAP values. \nThe average impact of {k} is {avg_im[k]}.\n "
 
     #prompt = f"Write a brief of the model behavior from the following: {summary}"
     #shap_summary = get_response(prompt)
 
     ## Now do LIME
-    '''explainer = LimeTabularExplainer(df_x.values, 
-                                    feature_names=list(df_x.columns), 
-                                    class_names=class_names,
-                                    mode=mode)'''
+  
 
     shap_summary = summary
-    print(shap_summary)
+    #print(shap_summary)
     ## save SHAP summary
-    f = open(f'{savedir}/shap_summary.txt',"w+")
-    f.write(shap_summary)
-    f.close()
+    #f = open(f'{savedir}/shap_summary.txt',"w+")
+    #f.write(shap_summary)
+    #f.close()
     
     #np.save(f'{savedir}/top_shap_fts.npy',list(pearsons.keys())) 
 
-    vector_db(lit_file=f'{savedir}/shap_summary.txt',
-              clean=True)
+    #vector_db(lit_file=f'{savedir}/shap_summary.txt',
+    #          clean=True)
     
     return list(pearsons.keys()), shap_summary
 
@@ -276,32 +269,38 @@ def vector_db(lit_directory=None, persist_directory=None,
                 _create_vecdb(docs_split, persist_directory)
 
 
-def explain_lime(data_path,model,mode,top_k,label):
+def explain_lime(data_path,model_path,model_type,top_k,label):
    weights = []
-   num_samples = 100
+   num_samples = 200
+   savedir = './data'
    df = pd.read_csv(data_path,header=0)
    ## use all data for the shap analysis
    df_x = df.drop(label,axis = 1)
    
-   if mode=='classification': 
+   if model_type=='classifier': 
        class_names=[0,1]
+       mode = "classification" 
    else: 
        class_names=[f'{label}']
+       mode = "regression"
 
    explainer = LimeTabularExplainer(df_x.values, 
                                     feature_names=list(df_x.columns), 
                                     class_names=class_names,
                                     mode=mode)
    
-
    df_sample = df_x.sample(num_samples)
    num_fts = len(list(df_x.columns))
 
    for i in range(len(df_sample)):
-        if mode=='classification':
+        if model_type=='classifier':
+            model = xgb.XGBClassifier()
+            model.load_model(model_path)
             exp = explainer.explain_instance(df_sample.iloc[i], model.predict_proba, 
                                              num_features=num_fts, top_labels=True)
         else: 
+            model = xgb.XGBRegressor()
+            model.load_model(model_path)
             exp = explainer.explain_instance(df_sample.iloc[i], model.predict, 
                                              num_features=num_fts, top_labels=True)
         exp_map = exp.as_map()
@@ -326,22 +325,23 @@ def explain_lime(data_path,model,mode,top_k,label):
    ax.invert_yaxis()  # labels read top-to-bottom
    ax.set_xlabel('Z-score lime values')
    ax.set_ylabel('Features')
+   ax.set_title('LIME: Top features')
    fig.savefig(f'{savedir}/lime_bar_top_{top_k}.png',
                bbox_inches='tight', dpi=300)
    
    ## write summary of LIME analysis
    summary = f'To explain the model behavior, LIME explanations were generated. \
-    Please note these are global observations based on {num_samples} data points.'
+    \nPlease note these are global observations based on {num_samples} data points.'
    
    for ft, l in zip(top_fts,lime):
-        summary+= f"Feature {ft} has an average \
-             z-score of {l} with towards the prediction."
+        summary+= f"Feature {ft} has an average\n \
+             z-score of {l} with towards the prediction.\n"
         
    '''prompt = f"Summarize and write an brief of the model behavior \
     from the following: {summary}"
    
    lime_summary = get_response(prompt) 
    np.save(f'{savedir}/top_{top_k}_lime_fts.npy',top_fts)
-'''
+  '''
    return top_fts, summary
   

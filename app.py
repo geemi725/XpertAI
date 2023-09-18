@@ -1,8 +1,8 @@
 import streamlit as st
-import openai
-import pandas as pd
+import json
 import os
-from PIL import Image
+from PIL import Image 
+from expert_ai.tools.explain_model import get_modelsummary
 from langchain.callbacks import StreamlitCallbackHandler
 from dotenv import load_dotenv
 
@@ -50,11 +50,36 @@ with st.sidebar:
         on_api_key_change() 
     st.markdown('Upload your input files')
     input_file = st.file_uploader("Upload dataset here:")
-    lit_dir = st.file_uploader("Upload your literature library here:", 
+    st.markdown('Set up XAI workflow')
+    mode_type =  st.radio("Select the model type",
+                           ["Regressor", "Classifier"],
+                           captions= ["For predicting continuous values", "For predicting discreet labels"])
+    label = st.text_input("Target label",
+                          help='Label you are trying to predict. Should match the label in the dataset.')
+    XAI_tool =  st.radio("What XAI method would you like to try?",
+                           ["SHAP", "LIME","Both"])
+    top_k =   st.slider('Number of top features for the XAI analysis', 0, 10, 1) 
+    
+    st.markdown("Select method of literature retrieval. You can either upload a literature dataset or scrape arxiv.org. If you don't provide literature, you will receive an explanation based on XAI tools.")
+    lit_dir = st.file_uploader("Upload your literature library here (Optional):", 
                                accept_multiple_files=True)
+    arxiv_keywords = st.text_input("Keywords for arxiv scraping (Optional):",
+                                   help='Keywords to scrape arxiv.org')
+
+    if st.button("Generate Explanation", type="primary"):
+        arg_dict = { "data_path":input_file, 
+                    "label":label, "model_type":mode_type, 
+                    "top_k":top_k, "XAI_tool": XAI_tool} 
+        
+        json_request = json.dumps(arg_dict, indent = 4)
+        
+        explanation =  get_modelsummary(json_request)
+
+        st.write(explanation)
+
     
 
-if prompt := st.chat_input():
+'''if prompt := st.chat_input():
     st.chat_message("user").write(prompt)
     if input_file is not None:
         prompt += f'datapath:{input_file}'
@@ -70,4 +95,4 @@ if prompt := st.chat_input():
                 response = response.removeprefix("Could not parse LLM output: `").removesuffix("`")
                 print(response)
     
-        st.write(response)
+        st.write(response)'''
