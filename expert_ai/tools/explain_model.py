@@ -28,21 +28,21 @@ def get_modelsummary(arg_dict):
     ##Step 1: train model
     
     if model_type=="Classifier":
-        train_xgbclassifier(data_path,label)
+        train_xgbclassifier(df_init,label)
     
     elif model_type=='Regressor': 
-        train_xgbregressor(data_path,label)
+        train_xgbregressor(df_init,label)
         
     model_path = f'{save_dir}/xgbmodel.json'
     
     ## Step 2: Run SHAP Analysis
     if XAI_tool == "SHAP" or XAI_tool == "Both":
-        if model_type=='classifier': 
+        if model_type=='Classifier': 
             classifier=True
         else: 
             classifier=False
         
-        top_shap_fts, shap_summary = explain_shap(data_path,model_path,
+        top_shap_fts, shap_summary = explain_shap(df_init,model_path,
                                             label,top_k,
                                             classifier=classifier)
         np.save(f'{save_dir}/top_shap_features.npy',top_shap_fts)
@@ -51,7 +51,7 @@ def get_modelsummary(arg_dict):
 
     ## Step 3: Run Lime
     if XAI_tool == "LIME" or XAI_tool == "Both":
-        top_lime_fts, lime_summary = explain_lime(data_path,model_path,model_type,
+        top_lime_fts, lime_summary = explain_lime(df_init,model_path,model_type,
                                                   top_k,label)
         np.save(f'{save_dir}/top_lime_features.npy',top_lime_fts)
     else: lime_summary = ''
