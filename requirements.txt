@@ -1,4 +1,4 @@
-python==3.11.4
+python>3.11
 streamlit
 ipython
 python-dotenv
