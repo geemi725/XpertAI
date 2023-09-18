@@ -69,30 +69,12 @@ with st.sidebar:
     if api_key:
         on_api_key_change() 
         from expert_ai.tools.explain_model import get_modelsummary
-        
-        arg_dict = { "data_path":input_file, 
-                    "label":label, "model_type":mode_type, 
-                    "top_k":top_k, "XAI_tool": XAI_tool} 
-        
-        json_request = json.dumps(arg_dict, indent = 4)
-        if st.button("Generate Explanation"):
-            explanation =  get_modelsummary(json_request)
-            st.write(explanation)
-
-'''if prompt := st.chat_input():
-    st.chat_message("user").write(prompt)
-    if input_file is not None:
-        prompt += f'datapath:{input_file}'
-    
-    with st.chat_message("assistant"):
-        st_callback = StreamlitCallbackHandler(st.container())
-        try:
-         response = agent.run(query=prompt)
-        ## TEST THIS LATER
-        except Exception as e:
-            response = str(e)
-            if response.startswith("Could not parse LLM output: `"):
-                response = response.removeprefix("Could not parse LLM output: `").removesuffix("`")
-                print(response)
-    
-        st.write(response)'''
+        if input_file is not None:
+            arg_dict = { "data_path":input_file, 
+                        "label":label, "model_type":mode_type, 
+                        "top_k":top_k, "XAI_tool": XAI_tool} 
+            
+            json_request = json.dumps(arg_dict, indent = 4)
+            if st.button("Generate Explanation"):
+                explanation =  get_modelsummary(json_request)
+                st.write(explanation)
