@@ -51,7 +51,7 @@ with st.sidebar:
     # Input OpenAI api key
     st.markdown('Input your OpenAI API key.')
     api_key = st.text_input('OpenAI API key', type='password', key='api_key',  
-                  on_change=on_api_key_change, label_visibility= "collapsed")   
+                  on_change=on_api_key_change, label_visibility= "hidden")   
     
 
     st.markdown('Upload your input CSV files')
@@ -88,8 +88,9 @@ with st.sidebar:
             arg_dict = { "df_init":df_init, 
                     "label":label, "model_type":mode_type, 
                         "top_k":top_k, "XAI_tool": XAI_tool} 
+            global explanation  
             explanation =  get_modelsummary(arg_dict)
-            st.write("The initial XAI analysis is given below:\n", explanation)
+st.write("The initial XAI analysis is given below:\n", explanation)
 
             #if button:
             #    explanation =  get_modelsummary(json_request)
