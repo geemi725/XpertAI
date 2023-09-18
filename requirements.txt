@@ -10,4 +10,4 @@ shap
 pandas
 lime
 arxiv
-chromadb
+chromadb==0.4.7

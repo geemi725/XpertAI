@@ -3,6 +3,7 @@ import openai
 import pandas as pd
 import os
 from PIL import Image
+from langchain.callbacks import StreamlitCallbackHandler
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -45,7 +46,8 @@ with st.sidebar:
     st.markdown('Input your OpenAI API key.')
     api_key = st.text_input('OpenAI API key', type='password', key='api_key',  
                   on_change=on_api_key_change, label_visibility="visible")   
-    on_api_key_change() 
+    if api_key:
+        on_api_key_change() 
     st.markdown('Upload your input files')
     input_file = st.file_uploader("Upload dataset here:")
     lit_dir = st.file_uploader("Upload your literature library here:", 
@@ -58,6 +60,7 @@ if prompt := st.chat_input():
         prompt += f'datapath:{input_file}'
     
     with st.chat_message("assistant"):
-        response = agent.run(query=prompt)
+        st_callback = StreamlitCallbackHandler(st.container())
+        response = agent.run(query=prompt,callbacks=[st_callback])
         st.write('Request is running 🏃...')
         st.write(response)
