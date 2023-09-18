@@ -5,7 +5,8 @@ from langchain.agents import initialize_agent
 from langchain.memory import ConversationBufferMemory, ReadOnlySharedMemory
 from langchain import LLMChain
 from expert_ai.tools import tools
-from .prompts import GENERAL_TEMPLATE
+from .prompts import GENERAL_TEMPLATE, FORMAT_INSTRUCTIONS
+from langchain.output_parsers import PydanticOutputParser
 from langchain.callbacks.streaming_stdout import StreamingStdOutCallbackHandler
 
 
@@ -36,7 +37,8 @@ class ExpertAI:
         self.prompt_agent = PromptTemplate(
            input_variables=["query"],
             template=GENERAL_TEMPLATE,
-            return_intermediate_steps=True
+            return_intermediate_steps=True,
+            partial_variables={'format_instructions':FORMAT_INSTRUCTIONS}
         )
 
         self.llm =  _make_llm(llm_model, temp, verbose)
@@ -56,8 +58,8 @@ class ExpertAI:
             agent=AgentType.CONVERSATIONAL_REACT_DESCRIPTION,
             verbose=verbose,
             memory=self.readonlymemory,
-            handle_parsing_errors=True
-            )
+            handle_parsing_errors=True,
+            callbacks=[StreamingStdOutCallbackHandler()] if verbose else [None])
         
 
     def run(self,query):
