@@ -66,7 +66,7 @@ with st.sidebar:
                            ["SHAP", "LIME","Both"])
     top_k =   st.slider('Number of top features for the XAI analysis', 0, 10, 1) 
     
-    st.markdown("Select method of literature retrieval. You can either upload a literature dataset or scrape arxiv.org. If you don't provide literature, you will receive an explanation based on XAI tools.")
+    st.markdown("# Select method of literature retrieval. You can either upload a literature dataset or scrape arxiv.org. If you don't provide literature, you will receive an explanation based on XAI tools.")
     lit_dir = st.file_uploader("Upload your literature library here (Optional):", 
                                accept_multiple_files=True)
     arxiv_keywords = st.text_input("Keywords for arxiv scraping (Optional):",
@@ -90,7 +90,7 @@ with st.sidebar:
             explanation =  get_modelsummary(arg_dict)
             #json_request = json.dumps(arg_dict, indent=4)
                 
-            st.write('god bless!!!')
+            st.write(explanation)
             #if button:
             #    explanation =  get_modelsummary(json_request)
             #    st.write(explanation)
