@@ -46,9 +46,8 @@ with st.sidebar:
     st.markdown('Input your OpenAI API key.')
     api_key = st.text_input('OpenAI API key', type='password', key='api_key',  
                   on_change=on_api_key_change, label_visibility="visible")   
-    if api_key:
-        on_api_key_change() 
-        
+    
+
     st.markdown('Upload your input files')
     input_file = st.file_uploader("Upload dataset here:")
     st.markdown('Set up XAI workflow')
@@ -67,18 +66,18 @@ with st.sidebar:
     arxiv_keywords = st.text_input("Keywords for arxiv scraping (Optional):",
                                    help='Keywords to scrape arxiv.org')
 
-    if st.button("Generate Explanation", type="primary"):
-        arg_dict = { "data_path":input_file, 
-                    "label":label, "model_type":mode_type, 
-                    "top_k":top_k, "XAI_tool": XAI_tool} 
-        
-        json_request = json.dumps(arg_dict, indent = 4)
-        
-        explanation =  get_modelsummary(json_request)
+    if api_key:
+        on_api_key_change() 
+        if st.button("Generate Explanation", type="primary"):
+            arg_dict = { "data_path":input_file, 
+                        "label":label, "model_type":mode_type, 
+                        "top_k":top_k, "XAI_tool": XAI_tool} 
+            
+            json_request = json.dumps(arg_dict, indent = 4)
+            
+            explanation =  get_modelsummary(json_request)
 
-        st.write(explanation)
-
-    
+            st.write(explanation)
 
 '''if prompt := st.chat_input():
     st.chat_message("user").write(prompt)
