@@ -28,7 +28,7 @@ def _make_llm(model, temp, verbose):
 
 class ExpertAI:
 
-    def __init__(self,temp=0.1,tools_model="gpt-3.5-turbo-0613",verbose=True):
+    def __init__(self,temp=0.1,llm_model="gpt-3.5-turbo-0613",verbose=True):
         
         memory = ConversationBufferMemory(memory_key="chat_history")
         self.readonlymemory = ReadOnlySharedMemory(memory=memory)
@@ -39,7 +39,7 @@ class ExpertAI:
             return_intermediate_steps=True
         )
 
-        self.llm =  _make_llm(tools_model, temp, verbose)
+        self.llm =  _make_llm(llm_model, temp, verbose)
         #Load the tool configs that are needed.
         self.llm_tools_chain = LLMChain(
             llm = self.llm,
@@ -47,7 +47,7 @@ class ExpertAI:
             verbose=verbose
         )
         self.all_tools = tools.get_tools()
-        self.agent_llm =  _make_llm('gpt-4', temp, verbose)
+        self.agent_llm =  _make_llm(llm_model, temp, verbose)
 
         self.agent = initialize_agent(
             self.all_tools,

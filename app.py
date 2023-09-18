@@ -61,6 +61,6 @@ if prompt := st.chat_input():
     
     with st.chat_message("assistant"):
         st_callback = StreamlitCallbackHandler(st.container())
-        response = agent.run(query=prompt,callbacks=[st_callback])
+        response = agent.run(query=prompt)
         st.write('Request is running 🏃...')
         st.write(response)
