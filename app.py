@@ -1,12 +1,15 @@
+__import__('pysqlite3')
+import sys
+sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
 import streamlit as st
 import json
 import os
 from PIL import Image 
 from io import StringIO
 import pandas as pd
-
 from langchain.callbacks import StreamlitCallbackHandler
 from dotenv import load_dotenv
+
 
 load_dotenv()
 ss = st.session_state
