@@ -69,26 +69,5 @@ def get_modelsummary(arg_dict):
     from the following: {shap_summary+lime_summary}"""
     explanation = get_response(prompt)
 
-    print(explanation)
 
     return explanation
-
-    
-
-    #st.write('Training complete')
-    
-
-
-"""request_format = '{{"data_path":"<path to dataframe>", "label":"<target label>", "model_type":<classifier or regressor>, "top_k":<Number of features to explain>,"XAI_tool": <SHAP, LIME or Both>}}'
-description = Train and Explain model. Input should be JSON in the following format:{request_format}.
-
-ExplainModel = Tool(
-    name="explain_model",
-    func=get_modelsummary,
-    description=description
-)
-
-if __name__ == '__main__':
-    print(ExplainModel)
-
-"""

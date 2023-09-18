@@ -95,7 +95,6 @@ def train_xgbregressor(df_init,label,split=0.2, early_stopping_rounds=5):
     
     ## save data
     xgb_model.save_model(f'{savedir}/xgbmodel.json')
-    print('Model trained!!!!!!!!!!!!')
     np.save(f'{savedir}/xgb_results.npy',results)
 
 
@@ -166,14 +165,7 @@ def explain_shap(df_init,model_path,label,top_k,classifier=False):
     for k, v in pearsons.items():
         summary+= f"Feature {k} has a correlation coefficient of  {v} with its SHAP values. \nThe average impact of {k} is {avg_im[k]}.\n "
 
-    #prompt = f"Write a brief of the model behavior from the following: {summary}"
-    #shap_summary = get_response(prompt)
-
-    ## Now do LIME
-  
-
     shap_summary = summary
-    #print(shap_summary)
     ## save SHAP summary
     #f = open(f'{savedir}/shap_summary.txt',"w+")
     #f.write(shap_summary)

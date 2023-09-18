@@ -25,7 +25,7 @@ st.markdown(
     """
     <style>
     [data-testid="stSidebar"][aria-expanded="true"]{
-        min-width: 450px;
+        min-width: 800px;
         max-width: 800px;
     }
     """,
@@ -91,6 +91,19 @@ with st.sidebar:
             explanation =  get_modelsummary(arg_dict)
             st.write("The initial XAI analysis is given below:\n", explanation)
 
-            #if button:
-            #    explanation =  get_modelsummary(json_request)
-            #    st.write(explanation)
+
+print(st.session_state)
+# Agent execution
+if prompt := st.chat_input():
+    st.chat_message("user").write(prompt)
+    with st.chat_message("assistant"):
+        response = agent.run(query=prompt)
+        st.write(response)
+        '''st_callback = StreamlitCallbackHandler(
+            st.container(),
+            max_thought_containers = 4,
+            collapse_completed_thoughts = False,
+            output_placeholder=st.session_state
+        )
+'''
+        
