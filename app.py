@@ -29,7 +29,7 @@ st.markdown(
         max-width: 800px;
     }
     [data-testid=“stSidebar”]div[class=“css-17eq0hr e1fqkh3o1”] {
-        background-image: linear-gradient(#F9F6F6,#F9F6F6);
+        background-image: linear-gradient(#F9F6F6,#F3F3F3);
         color: white}
     """,
     unsafe_allow_html=True,
@@ -92,10 +92,11 @@ with st.sidebar:
                     "label":label, "model_type":mode_type, 
                         "top_k":top_k, "XAI_tool": XAI_tool} 
             explanation =  get_modelsummary(arg_dict)
+        else: explanation = 'An error was encountered!'
             #json_request = json.dumps(arg_dict, indent=4)
                 
 ## output:
-st.write('The initial XAI explanation is as follows:\n',explanation)
+st.write("The initial XAI analysis is given below:\n", explanation)
             #if button:
             #    explanation =  get_modelsummary(json_request)
             #    st.write(explanation)
