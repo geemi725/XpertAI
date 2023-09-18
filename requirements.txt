@@ -11,4 +11,3 @@ pandas
 lime
 arxiv
 chromadb
-sqlite
