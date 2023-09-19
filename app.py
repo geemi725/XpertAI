@@ -80,10 +80,8 @@ with st.sidebar:
         from expert_ai.tools.explain_model import get_modelsummary
         from expert_ai.tools.scrape_arxiv import scrape_arxiv
         if button:
-            try: 
-                df_init = pd.read_csv(input_file,header=0)
-        
-            except: st.write('Cannot read dataframe')
+
+            df_init = pd.read_csv(input_file,header=0)
             
             arg_dict_xai = { "df_init":df_init, 
                     "label":label, "model_type":mode_type, 
