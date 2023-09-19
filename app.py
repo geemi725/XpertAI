@@ -134,20 +134,3 @@ if button:
 #st.image(logo)
 
 
-"""print(st.session_state)
-# Agent execution
-st.write("## You can retrieve more information from literature using the Q&A chat tool!")
-prompt = st.chat_input("Ask me")
-if prompt:
-    st.chat_message("user").write(prompt)
-    with st.chat_message("assistant"):
-        response = agent.run(query=prompt)
-        st.write(response)
-        '''st_callback = StreamlitCallbackHandler(
-            st.container(),
-            max_thought_containers = 4,
-            collapse_completed_thoughts = False,
-            output_placeholder=st.session_state
-        )
-    '''
-        """
