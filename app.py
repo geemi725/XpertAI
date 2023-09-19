@@ -69,7 +69,7 @@ XAI_tool =  st.radio("What XAI method would you like to try?",
                         ["SHAP", "LIME","Both"])
 top_k =   st.slider('Number of top features for the XAI analysis', 0, 10, 1) 
 
-st.markdown("### Select method of literature retrieval. \nYou can either upload a literature dataset or scrape arxiv.org. If you don't provide literature, you will receive an explanation based on XAI tools.")
+st.markdown("### Select method of literature retrieval \nYou can either upload a literature dataset or scrape arxiv.org. If you don't provide literature, you will receive an explanation based on XAI tools.")
 #lit_dir = st.file_uploader("Upload your literature library here (Optional):", 
 #                           accept_multiple_files=True)
 arxiv_keywords = st.text_input("Keywords for arxiv scraping:",
