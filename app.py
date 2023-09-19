@@ -130,7 +130,7 @@ if api_key:
 
 print(st.session_state)
 # Agent execution
-st.write("You can retrieve more information from literature using the Q&A chat tool!")
+st.write("## You can retrieve more information from literature using the Q&A chat tool!")
 prompt = st.chat_input("Ask me")
 if prompt:
     st.chat_message("user").write(prompt)
