@@ -14,7 +14,7 @@ from dotenv import load_dotenv
 load_dotenv()
 ss = st.session_state
 
-st.title("Expert AI")
+st.title("Xpert AI")
 st.write('''### Extract structure-function relationships from your data!
 
 This is a simple app which helps you to extract human interpretable relationships
