@@ -55,7 +55,7 @@ with st.sidebar:
 
 
     st.markdown('### Upload your input dataset')
-    input_file = st.file_uploader("Input to extract relationships from (must have .csv extention):")
+    input_file = st.file_uploader("Must have .csv extention:")
 
     st.markdown('### Set up XAI workflow')
     mode_type =  st.radio("Select the model type",
@@ -91,7 +91,7 @@ if button:
 
     df_init = pd.read_csv(input_file,header=0)
 
-    arg_dict_xai = { "df_init":df_init, 
+    arg_dict_xai = { "df_init":df_init, 5
             "label":label, "model_type":mode_type, 
                 "top_k":top_k, "XAI_tool": XAI_tool} 
     
@@ -134,7 +134,7 @@ if button:
 #st.image(logo)
 
 
-print(st.session_state)
+"""print(st.session_state)
 # Agent execution
 st.write("## You can retrieve more information from literature using the Q&A chat tool!")
 prompt = st.chat_input("Ask me")
@@ -149,5 +149,5 @@ if prompt:
             collapse_completed_thoughts = False,
             output_placeholder=st.session_state
         )
-    '''
+    '''"""
         
