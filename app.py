@@ -14,7 +14,9 @@ from dotenv import load_dotenv
 load_dotenv()
 ss = st.session_state
 
-st.title("Xpert AI")
+logo = Image.open('assets/logo.png')
+st.image(logo)
+#st.title("Xpert AI")
 st.write('''### Extract structure-function relationships from your data!
 
 This is a simple app which helps you to extract human interpretable relationships
@@ -45,8 +47,8 @@ def on_api_key_change():
 
 # sidebar
 #with st.sidebar:
-logo = Image.open('assets/logo.png')
-st.image(logo)
+#logo = Image.open('assets/logo.png')
+#st.image(logo)
 
 # Input OpenAI api key
 st.markdown('Input your OpenAI API key.')
@@ -91,7 +93,20 @@ if api_key:
         arg_dict_xai = { "df_init":df_init, 
                 "label":label, "model_type":mode_type, 
                     "top_k":top_k, "XAI_tool": XAI_tool} 
+        
         explanation =  get_modelsummary(arg_dict_xai)
+
+        if XAI_tool=="SHAP":
+            shap_bar = Image.open(f'./data/shap_bar.png')
+            st.image(shap_bar)
+        elif XAI_tool=="LIME":
+            lime_bar = Image.open(f'./data/shap_bar.png')
+            st.image(lime_bar)
+        else:
+            shap_bar = Image.open(f'./data/shap_bar.png')
+            lime_bar = Image.open(f'./data/shap_bar.png')
+            st.image([shap_bar,lime_bar],width=100)
+        
         nle = ''
 
         # scrape arxiv.org
@@ -116,7 +131,7 @@ if api_key:
 print(st.session_state)
 # Agent execution
 st.write("You can retrieve more information from literature using the Q&A chat tool!")
-prompt = st.chat_input("What would you like to know?")
+prompt = st.chat_input("Ask me")
 if prompt:
     st.chat_message("user").write(prompt)
     with st.chat_message("assistant"):

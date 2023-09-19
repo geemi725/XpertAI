@@ -141,7 +141,7 @@ def explain_shap(df_init,model_path,label,top_k,classifier=False):
     shap.summary_plot(shap_values, df_x, plot_type="bar",max_display=top_k,show=False)
     plt.title('SHAP: Top features')
     plt.xlabel('Average impact')
-    fig.savefig(f'{savedir}/shap_bar_top_{top_k}.png',bbox_inches='tight', dpi=300)
+    fig.savefig(f'{savedir}/shap_bar.png',bbox_inches='tight', dpi=300)
 
     #compute average impact
     avg_impacts = shap_values.abs.mean(0).values
@@ -308,7 +308,7 @@ def explain_lime(df_init,model_path,model_type,top_k,label):
    ax.set_xlabel('Z-score lime values')
    ax.set_ylabel('Features')
    ax.set_title('LIME: Top features')
-   fig.savefig(f'{savedir}/lime_bar_top_{top_k}.png',
+   fig.savefig(f'{savedir}/lime_bar.png',
                bbox_inches='tight', dpi=300)
    
    ## write summary of LIME analysis
