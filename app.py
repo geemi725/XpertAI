@@ -47,7 +47,7 @@ in your dataset. ''')
 with st.sidebar:
     logo = Image.open('assets/logo.png')
     st.image(logo)
-    st.markdown('## Set up analysis :computer:')
+    st.markdown('# Set up analysis :computer:')
     # Input OpenAI api key
     st.markdown('### Input your OpenAI API key.')
     api_key = st.text_input('OpenAI API key', type='password', key='api_key',  
