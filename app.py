@@ -56,10 +56,10 @@ api_key = st.text_input('OpenAI API key', type='password', key='api_key',
                 on_change=on_api_key_change, label_visibility= "hidden")   
 
 
-st.markdown('## Upload your input dataset')
+st.markdown('### Upload your input dataset')
 input_file = st.file_uploader("Input to extract relationships from (must have .csv extention):")
 
-st.markdown('Set up XAI workflow')
+st.markdown('### Set up XAI workflow')
 mode_type =  st.radio("Select the model type",
                         ["Regressor", "Classifier"],
                         captions= ["For predicting continuous values", "For predicting discreet labels"])
@@ -69,7 +69,7 @@ XAI_tool =  st.radio("What XAI method would you like to try?",
                         ["SHAP", "LIME","Both"])
 top_k =   st.slider('Number of top features for the XAI analysis', 0, 10, 1) 
 
-st.markdown("## Select method of literature retrieval. ;.l.\nYou can either upload a literature dataset or scrape arxiv.org. If you don't provide literature, you will receive an explanation based on XAI tools.")
+st.markdown("### Select method of literature retrieval. \nYou can either upload a literature dataset or scrape arxiv.org. If you don't provide literature, you will receive an explanation based on XAI tools.")
 #lit_dir = st.file_uploader("Upload your literature library here (Optional):", 
 #                           accept_multiple_files=True)
 arxiv_keywords = st.text_input("Keywords for arxiv scraping:",
