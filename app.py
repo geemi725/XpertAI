@@ -108,6 +108,7 @@ with st.sidebar:
                 nle = gen_nle(arg_dict_nle)
 
 
+            if 
             st.write("## The initial XAI analysis is given below:\n", explanation)
             st.write("## The structure function relationship can be explained as belwo:\n", 
                      nle)

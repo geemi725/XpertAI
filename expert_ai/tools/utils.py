@@ -100,7 +100,7 @@ def train_xgbregressor(df_init,label,split=0.2, early_stopping_rounds=5):
 
 def get_response(prompt):
     messages = [{"role": "user", "content": prompt}]
-    response = openai.ChatCompletion.create(model="gpt-3.5-turbo-16k",
+    response = openai.ChatCompletion.create(model="gpt-4",
                                             messages=messages,temperature=0,)
 
     return response.choices[0].message["content"]
