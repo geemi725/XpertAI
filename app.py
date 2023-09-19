@@ -118,15 +118,15 @@ print(st.session_state)
 st.write("You can retrieve more information from literature using the Q&A chat tool!")
 prompt = st.chat_input("What would you like to know?")
 if prompt:
-st.chat_message("user").write(prompt)
-with st.chat_message("assistant"):
-    response = agent.run(query=prompt)
-    st.write(response)
-    '''st_callback = StreamlitCallbackHandler(
-        st.container(),
-        max_thought_containers = 4,
-        collapse_completed_thoughts = False,
-        output_placeholder=st.session_state
-    )
-'''
+    st.chat_message("user").write(prompt)
+    with st.chat_message("assistant"):
+        response = agent.run(query=prompt)
+        st.write(response)
+        '''st_callback = StreamlitCallbackHandler(
+            st.container(),
+            max_thought_containers = 4,
+            collapse_completed_thoughts = False,
+            output_placeholder=st.session_state
+        )
+    '''
     
