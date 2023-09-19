@@ -259,7 +259,7 @@ def explain_lime(df_init,model_path,model_type,top_k,label):
    ## use all data for the shap analysis
    df_x = df_init.drop(label,axis = 1)
    
-   if model_type=='classifier': 
+   if model_type=='Classifier': 
        class_names=[0,1]
        mode = "classification" 
    else: 
@@ -275,7 +275,7 @@ def explain_lime(df_init,model_path,model_type,top_k,label):
    num_fts = len(list(df_x.columns))
 
    for i in range(len(df_sample)):
-        if model_type=='classifier':
+        if model_type=='Classifier':
             model = xgb.XGBClassifier()
             model.load_model(model_path)
             exp = explainer.explain_instance(df_sample.iloc[i], model.predict_proba, 
