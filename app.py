@@ -74,10 +74,11 @@ with st.sidebar:
                                    help='Keywords to scrape arxiv.org')
     max_papers = st.number_input("Number of papers", key=int, value=10,
                           help='Maximum number of papers to download from arxiv.org')
-    button = st.button("Generate Explanation")
-
+    
     observation = st.text_input("What is the property you'd like explained?",
                                    help='e.g: Size of pore limiting diameter')
+    
+    button = st.button("Generate Explanation")
 
     if api_key:
         from expert_ai.tools.explain_model import get_modelsummary
