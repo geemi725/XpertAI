@@ -42,7 +42,7 @@ st.write('''### Extract structure-function relationships from your data!
 This is a simple app which helps you to extract human interpretable relationships
 in your dataset. ''')
          
-tab1, tab2, tab3 = st.tabs(['Setup', 'Explanations', 'Q&A'])
+tab1, tab2= st.tabs(['Setup', 'Explanations'])
 
 with tab1:
     # Input OpenAI api key
@@ -131,24 +131,20 @@ with tab2:
 #st.image(logo)
 
 
-
-
-
-with tab3:
-    print(st.session_state)
-    # Agent execution
-    st.write("## You can retrieve more information from literature using the Q&A chat tool!")
-    prompt = st.chat_input("Ask me")
-    if prompt:
-        st.chat_message("user").write(prompt)
-        with st.chat_message("assistant"):
-            response = agent.run(query=prompt)
-            st.write(response)
-            '''st_callback = StreamlitCallbackHandler(
-                st.container(),
-                max_thought_containers = 4,
-                collapse_completed_thoughts = False,
-                output_placeholder=st.session_state
-            )
-        '''
+print(st.session_state)
+# Agent execution
+st.write("## You can retrieve more information from literature using the Q&A chat tool!")
+prompt = st.chat_input("Ask me")
+if prompt:
+    st.chat_message("user").write(prompt)
+    with st.chat_message("assistant"):
+        response = agent.run(query=prompt)
+        st.write(response)
+        '''st_callback = StreamlitCallbackHandler(
+            st.container(),
+            max_thought_containers = 4,
+            collapse_completed_thoughts = False,
+            output_placeholder=st.session_state
+        )
+    '''
         
