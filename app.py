@@ -17,8 +17,8 @@ st.markdown(
     """
     <style>
     [data-testid="stSidebar"][aria-expanded="true"]{
-        min-width: 800px;
-        max-width: 800px;
+        min-width: 450px;
+        max-width: 600px;
     }
     """,
     unsafe_allow_html=True,
