@@ -76,29 +76,40 @@ with st.sidebar:
                           help='Maximum number of papers to download from arxiv.org')
     button = st.button("Generate Explanation")
 
+    observation = st.text_input("What is the property you'd like explained?",
+                                   help='e.g: Size of pore limiting diameter')
+
     if api_key:
         from expert_ai.tools.explain_model import get_modelsummary
         from expert_ai.tools.scrape_arxiv import scrape_arxiv
+        from expert_ai.tools.generate_nle import gen_nle
         if button:
 
             df_init = pd.read_csv(input_file,header=0)
-            
+
             arg_dict_xai = { "df_init":df_init, 
                     "label":label, "model_type":mode_type, 
                         "top_k":top_k, "XAI_tool": XAI_tool} 
             explanation =  get_modelsummary(arg_dict_xai)
+            nle = ''
 
             # scrape arxiv.org
-            arg_dict_arxiv = {"key_words":arxiv_keywords,
+            if arxiv_keywords is not None:
+                arg_dict_arxiv = {"key_words":arxiv_keywords,
                               "max_papers":max_papers}
-            try: 
+                
                 scrape_arxiv(arg_dict_arxiv)
-                st.write('Papers downloaded from arxiv.org')
 
-            except:
-                st.write('arxiv scraper not working')
+            if observation is not None:
+                arg_dict_nle = {"observation":observation,
+                                "top_k":top_k, 
+                                "XAI_tool": XAI_tool}
+                nle = gen_nle(arg_dict_nle)
+
 
             st.write("## The initial XAI analysis is given below:\n", explanation)
+            st.write("## The structure function relationship can be explained as belwo:\n", 
+                     nle)
 
 
 print(st.session_state)
