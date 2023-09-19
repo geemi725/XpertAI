@@ -44,87 +44,89 @@ def on_api_key_change():
 
 
 # sidebar
-with st.sidebar:
-    logo = Image.open('assets/logo.png')
-    st.image(logo)
+#with st.sidebar:
+logo = Image.open('assets/logo.png')
+st.image(logo)
 
-    # Input OpenAI api key
-    st.markdown('Input your OpenAI API key.')
-    api_key = st.text_input('OpenAI API key', type='password', key='api_key',  
-                  on_change=on_api_key_change, label_visibility= "hidden")   
-    
+# Input OpenAI api key
+st.markdown('Input your OpenAI API key.')
+api_key = st.text_input('OpenAI API key', type='password', key='api_key',  
+                on_change=on_api_key_change, label_visibility= "hidden")   
 
-    st.markdown('## Upload your input dataset')
-    input_file = st.file_uploader("Input to extract relationships from (must have .csv extention):")
-    
-    st.markdown('Set up XAI workflow')
-    mode_type =  st.radio("Select the model type",
-                           ["Regressor", "Classifier"],
-                           captions= ["For predicting continuous values", "For predicting discreet labels"])
-    label = st.text_input("Target label",
-                          help='Label you are trying to predict. Should match the label in the dataset.')
-    XAI_tool =  st.radio("What XAI method would you like to try?",
-                           ["SHAP", "LIME","Both"])
-    top_k =   st.slider('Number of top features for the XAI analysis', 0, 10, 1) 
-    
-    st.markdown("## Select method of literature retrieval. You can either upload a literature dataset or scrape arxiv.org. If you don't provide literature, you will receive an explanation based on XAI tools.")
-    #lit_dir = st.file_uploader("Upload your literature library here (Optional):", 
-    #                           accept_multiple_files=True)
-    arxiv_keywords = st.text_input("Keywords for arxiv scraping:",
-                                   help='Keywords to scrape arxiv.org')
-    max_papers = st.number_input("Number of papers", key=int, value=10,
-                          help='Maximum number of papers to download from arxiv.org')
-    
-    observation = st.text_input("What is the property you'd like explained?",
-                                   help='e.g: Size of pore limiting diameter')
-    
-    button = st.button("Generate Explanation")
 
-    if api_key:
-        from expert_ai.tools.explain_model import get_modelsummary
-        from expert_ai.tools.scrape_arxiv import scrape_arxiv
-        from expert_ai.tools.generate_nle import gen_nle
-        if button:
+st.markdown('## Upload your input dataset')
+input_file = st.file_uploader("Input to extract relationships from (must have .csv extention):")
 
-            df_init = pd.read_csv(input_file,header=0)
+st.markdown('Set up XAI workflow')
+mode_type =  st.radio("Select the model type",
+                        ["Regressor", "Classifier"],
+                        captions= ["For predicting continuous values", "For predicting discreet labels"])
+label = st.text_input("Target label",
+                        help='Label you are trying to predict. Should match the label in the dataset.')
+XAI_tool =  st.radio("What XAI method would you like to try?",
+                        ["SHAP", "LIME","Both"])
+top_k =   st.slider('Number of top features for the XAI analysis', 0, 10, 1) 
 
-            arg_dict_xai = { "df_init":df_init, 
-                    "label":label, "model_type":mode_type, 
-                        "top_k":top_k, "XAI_tool": XAI_tool} 
-            explanation =  get_modelsummary(arg_dict_xai)
-            nle = ''
+st.markdown("## Select method of literature retrieval. ;.l.\nYou can either upload a literature dataset or scrape arxiv.org. If you don't provide literature, you will receive an explanation based on XAI tools.")
+#lit_dir = st.file_uploader("Upload your literature library here (Optional):", 
+#                           accept_multiple_files=True)
+arxiv_keywords = st.text_input("Keywords for arxiv scraping:",
+                                help='Keywords to scrape arxiv.org')
+max_papers = st.number_input("Number of papers", key=int, value=10,
+                        help='Maximum number of papers to download from arxiv.org')
 
-            # scrape arxiv.org
-            if arxiv_keywords is not None:
-                arg_dict_arxiv = {"key_words":arxiv_keywords,
-                              "max_papers":max_papers}
-                
-                scrape_arxiv(arg_dict_arxiv)
-            else: 
-                st.write("## Literaure not provided. The initial XAI analysis is:\n", explanation)
+observation = st.text_input("What is the property you'd like explained?",
+                                help='e.g: Size of pore limiting diameter')
 
-            if observation is not None:
-                arg_dict_nle = {"observation":observation,
-                                "top_k":top_k, 
-                                "XAI_tool": XAI_tool}
-                nle = gen_nle(arg_dict_nle)
-                
-                st.write("## The structure function relationship can be explained as belwo:\n", 
-                     nle)
+button = st.button("Generate Explanation")
+
+if api_key:
+    from expert_ai.tools.explain_model import get_modelsummary
+    from expert_ai.tools.scrape_arxiv import scrape_arxiv
+    from expert_ai.tools.generate_nle import gen_nle
+    if button:
+
+        df_init = pd.read_csv(input_file,header=0)
+
+        arg_dict_xai = { "df_init":df_init, 
+                "label":label, "model_type":mode_type, 
+                    "top_k":top_k, "XAI_tool": XAI_tool} 
+        explanation =  get_modelsummary(arg_dict_xai)
+        nle = ''
+
+        # scrape arxiv.org
+        if arxiv_keywords is not None:
+            arg_dict_arxiv = {"key_words":arxiv_keywords,
+                            "max_papers":max_papers}
+            
+            scrape_arxiv(arg_dict_arxiv)
+        else: 
+            st.write("## Literaure not provided. The initial XAI analysis is:\n", explanation)
+
+        if observation is not None:
+            arg_dict_nle = {"observation":observation,
+                            "top_k":top_k, 
+                            "XAI_tool": XAI_tool}
+            nle = gen_nle(arg_dict_nle)
+            
+            st.write("## The structure function relationship can be explained as below:\n", 
+                    nle)
 
 
 print(st.session_state)
 # Agent execution
-if prompt := st.chat_input():
-    st.chat_message("user").write(prompt)
-    with st.chat_message("assistant"):
-        response = agent.run(query=prompt)
-        st.write(response)
-        '''st_callback = StreamlitCallbackHandler(
-            st.container(),
-            max_thought_containers = 4,
-            collapse_completed_thoughts = False,
-            output_placeholder=st.session_state
-        )
+st.write("You can retrieve more information from literature using the Q&A chat tool!")
+prompt = st.chat_input("What would you like to know?")
+if prompt:
+st.chat_message("user").write(prompt)
+with st.chat_message("assistant"):
+    response = agent.run(query=prompt)
+    st.write(response)
+    '''st_callback = StreamlitCallbackHandler(
+        st.container(),
+        max_thought_containers = 4,
+        collapse_completed_thoughts = False,
+        output_placeholder=st.session_state
+    )
 '''
-        
+    

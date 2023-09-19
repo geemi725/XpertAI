@@ -24,8 +24,6 @@ EXPLAIN_TEMPLATE= """Please explain how each important features identified by
     SHAP analysis affects the observation {observation}. 
     You can follow the provided draft to answer:
 
-    Answer: 
-
     1. List of important features are most impactful SHAP features are: {ft_list}.
     
     2. Find the relationship of the <features> with the <obsertvation>
@@ -40,7 +38,7 @@ EXPLAIN_TEMPLATE= """Please explain how each important features identified by
       <feature 2> affect the <observation> by ...
       <feature 3> affect the <observation> by ... ``
     
-    4. Explain how the <observation> be altered by changing the <features>
+    4. Explain how the {observation} be altered by changing the <features>
     eg:
     ``The <observation> will change postively/negatively when <feature 1> changes because...
       The <observation> will change postively/negatively when <feature 2> changes because...
