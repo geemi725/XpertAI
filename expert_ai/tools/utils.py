@@ -139,7 +139,7 @@ def explain_shap(df_init,model_path,label,top_k,classifier=False):
 
     fig, ax = plt.subplots(figsize=(4,4))
     shap.summary_plot(shap_values, df_x, plot_type="bar",max_display=top_k,show=False)
-    plt.title('SHAP: Top features')
+    plt.title('SHAP analysis')
     plt.xlabel('Average impact')
     fig.savefig(f'{savedir}/shap_bar.png',bbox_inches='tight', dpi=300)
 
@@ -307,7 +307,7 @@ def explain_lime(df_init,model_path,model_type,top_k,label):
    ax.invert_yaxis()  # labels read top-to-bottom
    ax.set_xlabel('Z-score lime values')
    ax.set_ylabel('Features')
-   ax.set_title('LIME: Top features')
+   ax.set_title('LIME analysis')
    fig.savefig(f'{savedir}/lime_bar.png',
                bbox_inches='tight', dpi=300)
    

@@ -34,17 +34,20 @@ def on_api_key_change():
     agent = ExpertAI(verbose=True)
 
 ## Header section
-logo = Image.open('assets/logo.png')
-st.image(logo)
-#st.title("Xpert AI")
+#logo = Image.open('assets/logo.png')
+#st.image(logo)
+st.title("Xpert AI")
 st.write('''### Extract structure-function relationships from your data!
 
 This is a simple app which helps you to extract human interpretable relationships
 in your dataset. ''')
          
-tab1, tab2= st.tabs(['Setup', 'Explanations'])
+#tab1, tab2= st.tabs(['Setup', 'Explanations'])
 
-with tab1:
+with st.sidebar:
+    logo = Image.open('assets/logo.png')
+    st.image(logo)
+    st.markdown('## Set up analysis :computer:')
     # Input OpenAI api key
     st.markdown('### Input your OpenAI API key.')
     api_key = st.text_input('OpenAI API key', type='password', key='api_key',  
@@ -78,52 +81,52 @@ with tab1:
     button = st.button("Generate Explanation")
 
 
-with tab2:
-    if api_key:
-        from expert_ai.tools.explain_model import get_modelsummary
-        from expert_ai.tools.scrape_arxiv import scrape_arxiv
-        from expert_ai.tools.generate_nle import gen_nle
+## Main page
+if api_key:
+    from expert_ai.tools.explain_model import get_modelsummary
+    from expert_ai.tools.scrape_arxiv import scrape_arxiv
+    from expert_ai.tools.generate_nle import gen_nle
 
-    if button:
+if button:
 
-        df_init = pd.read_csv(input_file,header=0)
+    df_init = pd.read_csv(input_file,header=0)
 
-        arg_dict_xai = { "df_init":df_init, 
-                "label":label, "model_type":mode_type, 
-                    "top_k":top_k, "XAI_tool": XAI_tool} 
+    arg_dict_xai = { "df_init":df_init, 
+            "label":label, "model_type":mode_type, 
+                "top_k":top_k, "XAI_tool": XAI_tool} 
+    
+    explanation =  get_modelsummary(arg_dict_xai)
+
+    if XAI_tool=="SHAP":
+        shap_bar = Image.open(f'./data/shap_bar.png')
+        st.image(shap_bar)
+    elif XAI_tool=="LIME":
+        lime_bar = Image.open(f'./data/shap_bar.png')
+        st.image(lime_bar)
+    else:
+        shap_bar = Image.open(f'./data/shap_bar.png')
+        lime_bar = Image.open(f'./data/shap_bar.png')
+        st.image([shap_bar,lime_bar],width=100)
+    
+    nle = ''
+
+    # scrape arxiv.org
+    if arxiv_keywords is not None:
+        arg_dict_arxiv = {"key_words":arxiv_keywords,
+                        "max_papers":max_papers}
         
-        explanation =  get_modelsummary(arg_dict_xai)
+        scrape_arxiv(arg_dict_arxiv)
+    else: 
+        st.write("## Literaure not provided. The initial XAI analysis is:\n", explanation)
 
-        if XAI_tool=="SHAP":
-            shap_bar = Image.open(f'./data/shap_bar.png')
-            st.image(shap_bar)
-        elif XAI_tool=="LIME":
-            lime_bar = Image.open(f'./data/shap_bar.png')
-            st.image(lime_bar)
-        else:
-            shap_bar = Image.open(f'./data/shap_bar.png')
-            lime_bar = Image.open(f'./data/shap_bar.png')
-            st.image([shap_bar,lime_bar],width=100)
+    if observation is not None:
+        arg_dict_nle = {"observation":observation,
+                        "top_k":top_k, 
+                        "XAI_tool": XAI_tool}
+        nle = gen_nle(arg_dict_nle)
         
-        nle = ''
-
-        # scrape arxiv.org
-        if arxiv_keywords is not None:
-            arg_dict_arxiv = {"key_words":arxiv_keywords,
-                            "max_papers":max_papers}
-            
-            scrape_arxiv(arg_dict_arxiv)
-        else: 
-            st.write("## Literaure not provided. The initial XAI analysis is:\n", explanation)
-
-        if observation is not None:
-            arg_dict_nle = {"observation":observation,
-                            "top_k":top_k, 
-                            "XAI_tool": XAI_tool}
-            nle = gen_nle(arg_dict_nle)
-            
-            st.write("## The structure function relationship can be explained as below:\n", 
-                    nle)
+        st.write("## The structure function relationship can be explained as below:\n", 
+                nle)
 
 # sidebar
 #with st.sidebar:
