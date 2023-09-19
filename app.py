@@ -91,7 +91,7 @@ if button:
 
     df_init = pd.read_csv(input_file,header=0)
 
-    arg_dict_xai = { "df_init":df_init, 5
+    arg_dict_xai = { "df_init":df_init,
             "label":label, "model_type":mode_type, 
                 "top_k":top_k, "XAI_tool": XAI_tool} 
     
@@ -149,5 +149,5 @@ if prompt:
             collapse_completed_thoughts = False,
             output_placeholder=st.session_state
         )
-    '''"""
-        
+    '''
+        """
