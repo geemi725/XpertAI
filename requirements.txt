@@ -13,3 +13,4 @@ arxiv
 chromadb==0.4.7
 pysqlite3-binary 
 tiktoken
+pypdf
