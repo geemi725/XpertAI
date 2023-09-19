@@ -73,7 +73,7 @@ with st.sidebar:
     arxiv_keywords = st.text_input("Keywords for arxiv scraping:",
                                    help='Keywords to scrape arxiv.org')
     max_papers = st.number_input("Number of papers", key=int, value=10,
-                          help='Maximum number of papers to download from arxiv.org'))
+                          help='Maximum number of papers to download from arxiv.org')
     button = st.button("Generate Explanation")
 
     if api_key:
@@ -99,8 +99,6 @@ with st.sidebar:
 
             except:
                 st.write('arxiv scraper not working')
-
-
 
             st.write("## The initial XAI analysis is given below:\n", explanation)
 
