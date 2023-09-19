@@ -100,17 +100,16 @@ with st.sidebar:
                               "max_papers":max_papers}
                 
                 scrape_arxiv(arg_dict_arxiv)
+            else: 
+                st.write("## Literaure not provided. The initial XAI analysis is:\n", explanation)
 
             if observation is not None:
                 arg_dict_nle = {"observation":observation,
                                 "top_k":top_k, 
                                 "XAI_tool": XAI_tool}
                 nle = gen_nle(arg_dict_nle)
-
-
-            if 
-            st.write("## The initial XAI analysis is given below:\n", explanation)
-            st.write("## The structure function relationship can be explained as belwo:\n", 
+                
+                st.write("## The structure function relationship can be explained as belwo:\n", 
                      nle)
 
 
