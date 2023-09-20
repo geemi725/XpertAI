@@ -5,7 +5,7 @@ import streamlit as st
 import json
 import os
 from PIL import Image 
-from io import StringIO
+import shutil
 import pandas as pd
 from langchain.callbacks import StreamlitCallbackHandler
 from langchain.vectorstores import Chroma
@@ -36,8 +36,16 @@ def on_api_key_change():
     agent = ExpertAI(verbose=True)
 
 def save_uploadedfile(uploadedfile):
-     with open(os.path.join("data",uploadedfile.name),"wb") as f:
+     
+     dirpath = os.path.join('data','litdir')
+
+     if os.path.exists(dirpath):
+         shutil.rmtree(dirpath)
+     os.mkdir(dirpath) 
+     with open(os.path.join(dirpath,uploadedfile.name),"wb") as f:
          f.write(uploadedfile.getbuffer())
+
+     st.write(f"saved to dir: {os.path.join(dirpath,uploadedfile.name)}")
     
 
 ## Header section
@@ -122,8 +130,7 @@ if button:
     if lit_files is not None:
         for file in lit_files:   
             save_uploadedfile(file)
-            path = os.path.join('tempDir',file.name)
-            st.write(f"saved to dir: {path}")
+          
     # scrape arxiv.org
     if arxiv_keywords is not None:
         arg_dict_arxiv = {"key_words":arxiv_keywords,

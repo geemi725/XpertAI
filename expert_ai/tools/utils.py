@@ -223,10 +223,9 @@ def vector_db(persist_directory=None,
     
        if clean:
            if os.path.exists(persist_directory):
-            shutil.rmtree(persist_directory)
-            
-            os.mkdir(persist_directory)
-            _create_vecdb(text_split ,persist_directory)
+               shutil.rmtree(persist_directory)
+           os.mkdir(persist_directory)
+           _create_vecdb(text_split ,persist_directory)
             
 
        else:

@@ -14,7 +14,7 @@ def read_lit(file):
     persist_directory="./data/chroma/"
     doc = file.read()
 
-    print('*********COULD READ*********')
+    
    
     doc_split = r_splitter.split_documents(doc)
     vectordb = Chroma(persist_directory=persist_directory, 
