@@ -5,7 +5,7 @@ from langchain.agents import initialize_agent
 from langchain.memory import ConversationBufferMemory, ReadOnlySharedMemory
 from langchain import LLMChain
 from expert_ai.tools import tools
-from .prompts import GENERAL_TEMPLATE, FORMAT_INSTRUCTIONS
+from .prompts import GENERAL_TEMPLATE
 #from langchain.output_parsers import PydanticOutputParser
 from langchain.callbacks.streaming_stdout import StreamingStdOutCallbackHandler
 
