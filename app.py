@@ -116,7 +116,8 @@ if button:
     if lit_files is not None:
         for file in lit_files:
             try:
-                pdf = file.read()#PyPDFLoader(file).load()
+                pdf = file.read()
+                st.write(file.name)#PyPDFLoader(file).load()
                 #vector_db(lit_directory=None, persist_directory=None, 
                 #    lit_file=file ,clean=False)
             except:
