@@ -125,7 +125,7 @@ if button:
         length_function=len)
 
         for file in lit_files:   
-            bytes_data = file.getvalue()
+            bytes_data = file.read() #file.getvalue()
             st.write(f'*********COULD READ:{bytes_data}*********')
             doc_split = r_splitter.split_text(bytes_data)
             st.write('*********COULD SPLIT*********')
