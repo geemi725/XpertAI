@@ -84,7 +84,7 @@ with st.sidebar:
                                accept_multiple_files=True)
     arxiv_keywords = st.text_input("Keywords for arxiv scraping:",
                                     help='Keywords to scrape arxiv.org')
-    max_papers = st.number_input("Number of papers", key=int, value=10,
+    max_papers = st.number_input("Number of papers", key=int, 
                             help='Maximum number of papers to download from arxiv.org')
 
     observation = st.text_input("What is the property you'd like explained?",
@@ -109,7 +109,7 @@ if button:
                 "top_k":top_k, "XAI_tool": XAI_tool} 
     
     explanation =  get_modelsummary(arg_dict_xai)
-    
+
     st.markdown('### XGBoost Model evaluation:')
     xg_plot = Image.open(f'./data/figs/xgbmodel_error.png')
     st.image(xg_plot)
