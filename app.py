@@ -116,8 +116,10 @@ if button:
     if lit_files is not None:
         for file in lit_files:
             try:
-                pdf_sucess = file.read()#_read_lit(file)
-                st.write(file.name)#PyPDFLoader(file).load()
+                pdf_sucess = file.read()
+                stringio = StringIO(file.getvalue().decode("utf-8"))
+                read_lit(stringio)
+                st.write(file.name)
 
             except:
                 st.write('coundnt read pdfs!!')
