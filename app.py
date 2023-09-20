@@ -7,7 +7,7 @@ import os
 from PIL import Image 
 from io import StringIO
 import pandas as pd
-from expert_ai.tools.utils import vector_db
+from expert_ai.tools.read_lit import read_lit
 from langchain.callbacks import StreamlitCallbackHandler
 from dotenv import load_dotenv
 load_dotenv()
@@ -116,10 +116,9 @@ if button:
     if lit_files is not None:
         for file in lit_files:
             try:
-                pdf = file.read()
-                st.write(file.name)#PyPDFLoader(file).load()
-                #vector_db(lit_directory=None, persist_directory=None, 
-                #    lit_file=file ,clean=False)
+                pdf_sucess = read_lit(file)
+                st.write(file.name, pdf_sucess)#PyPDFLoader(file).load()
+
             except:
                 st.write('coundnt read pdfs!!')
 

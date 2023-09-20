@@ -212,7 +212,7 @@ def _update_vecdb(docs_split,persist_directory):
     
     vectordb.persist() 
 
-def vector_db(lit_directory=None, persist_directory=None, 
+def vector_db(persist_directory=None, 
               lit_file=None,clean=False):
     
     if persist_directory is None:
@@ -232,24 +232,6 @@ def vector_db(lit_directory=None, persist_directory=None,
 
        else:
            _update_vecdb(text_split,persist_directory)
-
-    # Split & embed from lit files
-    if  lit_directory is not None:
-        
-        if clean:
-            shutil.rmtree(persist_directory)
-
-        for doc in os.listdir(lit_directory):
-            docs_split = _load_split_docs(f'{lit_directory}/{doc}')
-
-            if os.path.exists(persist_directory):
-                _update_vecdb(docs_split,persist_directory)
-                
-        
-            else: 
-                os.mkdir(persist_directory)
-                _create_vecdb(docs_split, persist_directory)
-
 
 def explain_lime(df_init,model_path,model_type,top_k,label):
    weights = []
