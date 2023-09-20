@@ -29,6 +29,12 @@ def _split_data(df_init,label,split=0.2):
     return x_train, x_val, y_train, y_val
 
 def _plots(results,eval_type,savedir):
+    figsave = '.data/figs'
+
+    if os.path.exists(figsave):
+         shutil.rmtree(figsave)
+    os.mkdir(figsave) 
+
     x_axis = np.arange(len(results['validation_0'][eval_type]))
     fig, ax = plt.subplots()
     ax.plot(x_axis, results['validation_0'][eval_type], label='Train')
@@ -38,7 +44,7 @@ def _plots(results,eval_type,savedir):
     plt.xlabel('Num iterations')
     plt.title(f'XGBoost model evaluation: {eval_type.upper()}')
     #plt.show()
-    fig.savefig(f'{savedir}/xgbmodel_error.png')
+    fig.savefig(f'{figsave}/xgbmodel_error.png')
 
 def train_xgbclassifier(df_init,label,split=0.2,
                         early_stopping_rounds=5):
@@ -140,7 +146,7 @@ def explain_shap(df_init,model_path,label,top_k,classifier=False):
     shap.summary_plot(shap_values, df_x, plot_type="bar",max_display=top_k,show=False)
     plt.title('SHAP analysis')
     plt.xlabel('Average impact')
-    fig.savefig(f'{savedir}/shap_bar.png',bbox_inches='tight', dpi=300)
+    fig.savefig(f'{savedir}/figs/shap_bar.png',bbox_inches='tight', dpi=300)
 
     #compute average impact
     avg_impacts = shap_values.abs.mean(0).values
@@ -288,7 +294,7 @@ def explain_lime(df_init,model_path,model_type,top_k,label):
    ax.set_xlabel('Z-score lime values')
    ax.set_ylabel('Features')
    ax.set_title('LIME analysis')
-   fig.savefig(f'{savedir}/lime_bar.png',
+   fig.savefig(f'{savedir}/figs/lime_bar.png',
                bbox_inches='tight', dpi=300)
    
    ## write summary of LIME analysis
