@@ -2,9 +2,8 @@ from langchain.agents import Tool
 from langchain.chat_models import ChatOpenAI
 from langchain.memory import ConversationBufferMemory, ReadOnlySharedMemory
 from langchain.memory.vectorstore import VectorStoreRetrieverMemory
-from langchain.chains import ConversationalRetrievalChain
 from langchain import LLMChain, PromptTemplate
-from expert_ai.prompts import EXPLAIN_TEMPLATE
+from expert_ai.prompts import EXPLAIN_TEMPLATE, FORMAT_LABLES
 from .utils import *
 
 def _update_db(lit_directory):
@@ -56,20 +55,32 @@ def gen_nle(arg_dict):
         
     ft_list = set([' '.join(ft.split('_')[:-1]) for ft in top_fts])
 
+    #****************
+    # get human interpretable feature labels
+    prompt_fts = PromptTemplate(template=FORMAT_LABLES, 
+                            input_variables=["label"])
+    memory = ConversationBufferMemory(memory_key="chat_history")
+    readonlymemory = ReadOnlySharedMemory(memory=memory)
+    llm_fts = LLMChain(prompt=prompt_fts, llm=llm, memory=readonlymemory)
+    new_labels = []
+    for ft in top_fts:
+        new_labels.append(llm_fts.run({'label':ft}))
+
+
     #*******************************
 
-    prompt = PromptTemplate(template=EXPLAIN_TEMPLATE, 
+    prompt_nle = PromptTemplate(template=EXPLAIN_TEMPLATE, 
                             input_variables=["observation","ft_list"])
     
-    llm_chain = LLMChain(prompt=prompt, llm=llm, memory=vectmem)
-    response = llm_chain.run({'observation':observation,
+    llm_nle = LLMChain(prompt=prompt_nle, llm=llm, memory=vectmem)
+    response = llm_nle.run({'observation':observation,
                               'ft_list':ft_list
                               })
 
     #*******************************
 
     
-    return response
+    return response,new_labels
 
 #request_format = '{{"lit_directory":"<path to literature>", "observation":<target property>}}'
 #description = f"Tool to provide natural language explanations for the model based on scientific evidence. Provides reasoning on how each <feature> affects the <observation>. Input should be JSON in the following format: {request_format}. The output should be the answers to steps 1-5."

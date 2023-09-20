@@ -45,8 +45,6 @@ def save_uploadfile(uploadedfile):
      with open(os.path.join(dirpath,uploadedfile.name),"wb") as f:
          f.write(uploadedfile.getbuffer())
 
-    
-
 ## Header section
 #logo = Image.open('assets/logo.png')
 #st.image(logo)
@@ -148,7 +146,9 @@ if button:
         arg_dict_nle = {"observation":observation,
                         "top_k":top_k, 
                         "XAI_tool": XAI_tool}
-        nle = gen_nle(arg_dict_nle)
+        nle,new_ft_list = gen_nle(arg_dict_nle)
+
+        st.write("CAN WE USE THE NEW FTS:", new_ft_list)
         
         st.write("## The structure function relationship can be explained as below:\n", 
                 nle)

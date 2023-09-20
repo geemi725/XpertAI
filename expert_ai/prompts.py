@@ -4,20 +4,11 @@ Your task is to Process the {query} as best you can based on the solution draft.
 The answer should have an educative and assistant-like tone, be accurate.
 """
 
-FORMAT_INSTRUCTIONS = """
-You can only respond with a single complete
-"Thought, Action, Action Input" format
-OR a single "Final Answer" format.
+FORMAT_LABLES = """
+Given the label {label}, remove the integers. Using the label without integers, rewrite the new label
+in a human interpretable manner. IMPORTANT: integer has no meaning! Then return:
+<new label> 
 
-Complete format:
-
-Thought: (reflect on your progress and decide what to do next)
-Action: (the action name should be one of the tools)
-Action Input: (the input string to the action)
-
-OR
-
-Final Answer: (the final answer to the original input question)
 """
 
 EXPLAIN_TEMPLATE= """Please explain how each important features identified by 
