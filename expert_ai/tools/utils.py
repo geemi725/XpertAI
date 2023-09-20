@@ -28,8 +28,8 @@ def _split_data(df_init,label,split=0.2):
 
     return x_train, x_val, y_train, y_val
 
-def _plots(results,eval_type,savedir):
-    figsave = '.data/figs'
+def _plots(results,eval_type):
+    figsave = '.data/figs/'
 
     if os.path.exists(figsave):
          shutil.rmtree(figsave)
@@ -68,7 +68,7 @@ def train_xgbclassifier(df_init,label,split=0.2,
 
     ## plot evaluation results (just error)
     #for metric in eval_metric: 
-    _plots(results,'error',savedir)
+    _plots(results,'error')
     
     ## save data
     xgb_model.save_model(f'{savedir}/xgbmodel.json')
@@ -84,7 +84,6 @@ def train_xgbregressor(df_init,label,split=0.2, early_stopping_rounds=5):
                                                             split=split)
     
     ## initialize model
-    eval_metric=["rmse"]
     xgb_model = xgb.XGBRegressor(objective="reg:squarederror", random_state=42,
                              early_stopping_rounds=early_stopping_rounds)
 
@@ -96,7 +95,7 @@ def train_xgbregressor(df_init,label,split=0.2, early_stopping_rounds=5):
 
     ## plot evaluation results
     #for metric in eval_metric: 
-    _plots(results,'rmse',savedir)
+    _plots(results,'rmse')
     
     ## save data
     xgb_model.save_model(f'{savedir}/xgbmodel.json')
