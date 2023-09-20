@@ -1,7 +1,6 @@
 
 from langchain.vectorstores import Chroma
 from langchain.text_splitter import RecursiveCharacterTextSplitter
-##from expert_ai.prompts import EXPLAIN_TEMPLATE
 from .utils import *
 
 

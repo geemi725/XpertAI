@@ -5,8 +5,8 @@ import os
 import shutil
 from .utils import *
 
-def _update_db(lit_directory):
-    vector_db(lit_directory=lit_directory)
+#def _update_db(lit_directory):
+#    vector_db(lit_directory=lit_directory)
 
 def scrape_arxiv(arg_dict):
     '''Takes a  dictionary as input in the form:
@@ -44,8 +44,9 @@ def scrape_arxiv(arg_dict):
         title = '_'.join(result.title.split(' '))
         cleaned = re.sub(r"[^a-zA-Z0-9.]|(?<!\d)\.|\.(?!\d)", "_",title)
         result.download_pdf(dirpath=save_dir+'/', filename=f"{cleaned}.pdf")
+        vector_db(lit_file=f'{save_dir}/{cleaned}.pdf')
 
-    _update_db(save_dir)
+    #_update_db(save_dir)
 
     #return f"{max_papers} are downloaded from ArXiv and saved to {save_dir}"
 
