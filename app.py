@@ -11,7 +11,6 @@ from langchain.callbacks import StreamlitCallbackHandler
 from langchain.vectorstores import Chroma
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from dotenv import load_dotenv
-import easygui
 load_dotenv()
 ss = st.session_state
 
