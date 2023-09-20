@@ -116,8 +116,9 @@ if button:
     if lit_files is not None:
         for file in lit_files:
             try:
-                vector_db(lit_directory=None, persist_directory=None, 
-                    lit_file=file ,clean=False)
+                pdf = PyPDFLoader(file).load()
+                #vector_db(lit_directory=None, persist_directory=None, 
+                #    lit_file=file ,clean=False)
             except:
                 st.write('coundnt read pdfs!!')
 
