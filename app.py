@@ -125,7 +125,7 @@ if button:
         length_function=len)
 
         for file in lit_files:   
-            doc = file.read()
+            doc = file.read().decode("utf-8")
             st.write('*********COULD READ*********')
             doc_split = r_splitter.split_documents(doc)
             st.write('*********COULD SPLIT*********')
