@@ -7,6 +7,7 @@ import os
 from PIL import Image 
 from io import StringIO
 import pandas as pd
+from expert_ai.tools.utils import vector_db
 from langchain.callbacks import StreamlitCallbackHandler
 from dotenv import load_dotenv
 load_dotenv()
@@ -68,8 +69,8 @@ with st.sidebar:
     top_k =   st.slider('Number of top features for the XAI analysis', 0, 10, 1) 
 
     st.markdown("### Select method of literature retrieval \nYou can either upload a literature dataset or scrape arxiv.org. If you don't provide literature, you will receive an explanation based on XAI tools.")
-    #lit_dir = st.file_uploader("Upload your literature library here (Optional):", 
-    #                           accept_multiple_files=True)
+    lit_files= st.file_uploader("Upload your literature library here (Optional):", 
+                               accept_multiple_files=True)
     arxiv_keywords = st.text_input("Keywords for arxiv scraping:",
                                     help='Keywords to scrape arxiv.org')
     max_papers = st.number_input("Number of papers", key=int, value=10,
@@ -106,9 +107,20 @@ if button:
     else:
         shap_bar = Image.open(f'./data/shap_bar.png')
         lime_bar = Image.open(f'./data/shap_bar.png')
-        st.image([shap_bar,lime_bar],width=100)
-    
+        st.image(shap_bar)
+        st.image(lime_bar)
+
     nle = ''
+
+    ## read literature
+    if lit_files is not None:
+        for file in lit_files:
+            try:
+                vector_db(lit_directory=None, persist_directory=None, 
+                    lit_file=file ,clean=False)
+            except:
+                st.write('coundnt read pdfs!!')
+
 
     # scrape arxiv.org
     if arxiv_keywords is not None:
