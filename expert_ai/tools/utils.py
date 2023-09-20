@@ -29,7 +29,7 @@ def _split_data(df_init,label,split=0.2):
     return x_train, x_val, y_train, y_val
 
 def _plots(results,eval_type):
-    figsave = '.data/figs/'
+    figsave = './data/figs/'
 
     if os.path.exists(figsave):
          shutil.rmtree(figsave)
