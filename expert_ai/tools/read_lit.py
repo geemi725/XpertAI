@@ -1,4 +1,5 @@
-
+from langchain.embeddings.openai import OpenAIEmbeddings
+embedding = OpenAIEmbeddings()
 from langchain.vectorstores import Chroma
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from .utils import *
@@ -24,4 +25,4 @@ def read_lit(file):
     
     vectordb.persist() 
 
-    return "success"
+    
