@@ -8,8 +8,6 @@ from PIL import Image
 from io import StringIO
 import pandas as pd
 from langchain.callbacks import StreamlitCallbackHandler
-from langchain.embeddings.openai import OpenAIEmbeddings
-embedding = OpenAIEmbeddings()
 from langchain.vectorstores import Chroma
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from dotenv import load_dotenv
@@ -36,28 +34,7 @@ def on_api_key_change():
     from expert_ai.agent import ExpertAI
     global agent    
     agent = ExpertAI(verbose=True)
-
-def _read_lit(file):
-
-    r_splitter = RecursiveCharacterTextSplitter(
-        chunk_size=1500,
-        chunk_overlap=200,
-        length_function=len
-    )
-    persist_directory="./data/chroma/"
-    doc = file.read()
-
-    print('*********COULD READ*********')
-   
-    doc_split = r_splitter.split_documents(doc)
-    vectordb = Chroma(persist_directory=persist_directory, 
-                                    embedding_function=embedding)
-                
-    vectordb.add_documents(documents=doc_split ,
-            embedding=embedding,
-            persist_directory=persist_directory)
     
-    vectordb.persist() 
 
 ## Header section
 #logo = Image.open('assets/logo.png')
@@ -112,7 +89,8 @@ if api_key:
     from expert_ai.tools.explain_model import get_modelsummary
     from expert_ai.tools.scrape_arxiv import scrape_arxiv
     from expert_ai.tools.generate_nle import gen_nle
-    from expert_ai.tools.read_lit import read_lit
+    from langchain.embeddings.openai import OpenAIEmbeddings
+    embedding = OpenAIEmbeddings()
 
 if button:
 
@@ -140,16 +118,26 @@ if button:
 
     ## read literature
     if lit_files is not None:
-        for file in lit_files:
-            try:
-                st.write(file.name)
-                _read_lit(file)
+        persist_directory="./data/chroma/"
+        r_splitter = RecursiveCharacterTextSplitter(
+        chunk_size=1500,
+        chunk_overlap=200,
+        length_function=len)
+
+        for file in lit_files:   
+            doc = file.read()
+            st.write('*********COULD READ*********')
+            doc_split = r_splitter.split_documents(doc)
+            st.write('*********COULD SPLIT*********')
+            vectordb = Chroma(persist_directory=persist_directory, 
+                                            embedding_function=embedding)
+                        
+            vectordb.add_documents(documents=doc_split ,
+                    embedding=embedding,
+                    persist_directory=persist_directory)
+            
+            vectordb.persist() 
                 
-
-            except:
-                st.write('coundnt read pdfs!!')
-
-
     # scrape arxiv.org
     if arxiv_keywords is not None:
         arg_dict_arxiv = {"key_words":arxiv_keywords,
