@@ -11,6 +11,7 @@ from langchain.callbacks import StreamlitCallbackHandler
 from langchain.vectorstores import Chroma
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from dotenv import load_dotenv
+import easygui
 load_dotenv()
 ss = st.session_state
 
@@ -34,6 +35,10 @@ def on_api_key_change():
     from expert_ai.agent import ExpertAI
     global agent    
     agent = ExpertAI(verbose=True)
+
+def save_uploadedfile(uploadedfile):
+     with open(os.path.join("tempDir",uploadedfile.name),"wb") as f:
+         f.write(uploadedfile.getbuffer())
     
 
 ## Header section
@@ -89,8 +94,6 @@ if api_key:
     from expert_ai.tools.explain_model import get_modelsummary
     from expert_ai.tools.scrape_arxiv import scrape_arxiv
     from expert_ai.tools.generate_nle import gen_nle
-    from langchain.embeddings.openai import OpenAIEmbeddings
-    embedding = OpenAIEmbeddings()
 
 if button:
 
@@ -118,26 +121,10 @@ if button:
 
     ## read literature
     if lit_files is not None:
-        persist_directory="./data/chroma/"
-        r_splitter = RecursiveCharacterTextSplitter(
-        chunk_size=1500,
-        chunk_overlap=200,
-        length_function=len)
-
         for file in lit_files:   
-            bytes_data = file.read() #file.getvalue()
-            st.write(f'*********COULD READ:{bytes_data}*********')
-            doc_split = r_splitter.split_text(bytes_data)
-            st.write('*********COULD SPLIT*********')
-            vectordb = Chroma(persist_directory=persist_directory, 
-                                            embedding_function=embedding)
-                        
-            vectordb.add_documents(documents=doc_split ,
-                    embedding=embedding,
-                    persist_directory=persist_directory)
-            
-            vectordb.persist() 
-                
+            save_uploadedfile(file)
+            path = os.path.join('tempDir',file.name)
+            st.write(f"saved to dir: {path}")
     # scrape arxiv.org
     if arxiv_keywords is not None:
         arg_dict_arxiv = {"key_words":arxiv_keywords,
