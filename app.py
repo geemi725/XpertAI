@@ -7,7 +7,6 @@ import os
 from PIL import Image 
 from io import StringIO
 import pandas as pd
-from expert_ai.tools.read_lit import read_lit
 from langchain.callbacks import StreamlitCallbackHandler
 from dotenv import load_dotenv
 load_dotenv()
@@ -87,6 +86,7 @@ if api_key:
     from expert_ai.tools.explain_model import get_modelsummary
     from expert_ai.tools.scrape_arxiv import scrape_arxiv
     from expert_ai.tools.generate_nle import gen_nle
+    from expert_ai.tools.read_lit import read_lit
 
 if button:
 
