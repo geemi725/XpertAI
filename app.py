@@ -150,9 +150,8 @@ if button:
         arg_dict_nle = {"observation":observation,
                         "top_k":top_k, 
                         "XAI_tool": XAI_tool}
+        
         nle,new_ft_list = gen_nle(arg_dict_nle)
-
-        st.write("CAN WE USE THE NEW FTS:", new_ft_list)
         
         st.write("## The structure function relationship can be explained as below:\n", 
                 nle)
