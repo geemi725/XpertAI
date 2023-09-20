@@ -8,6 +8,10 @@ from PIL import Image
 from io import StringIO
 import pandas as pd
 from langchain.callbacks import StreamlitCallbackHandler
+from langchain.embeddings.openai import OpenAIEmbeddings
+embedding = OpenAIEmbeddings()
+from langchain.vectorstores import Chroma
+from langchain.text_splitter import RecursiveCharacterTextSplitter
 from dotenv import load_dotenv
 load_dotenv()
 ss = st.session_state
@@ -32,6 +36,28 @@ def on_api_key_change():
     from expert_ai.agent import ExpertAI
     global agent    
     agent = ExpertAI(verbose=True)
+
+def _read_lit(file):
+
+    r_splitter = RecursiveCharacterTextSplitter(
+        chunk_size=1500,
+        chunk_overlap=200,
+        length_function=len
+    )
+    persist_directory="./data/chroma/"
+    doc = file.read()
+
+    print('*********COULD READ*********')
+   
+    doc_split = r_splitter.split_documents(doc)
+    vectordb = Chroma(persist_directory=persist_directory, 
+                                    embedding_function=embedding)
+                
+    vectordb.add_documents(documents=doc_split ,
+            embedding=embedding,
+            persist_directory=persist_directory)
+    
+    vectordb.persist() 
 
 ## Header section
 #logo = Image.open('assets/logo.png')
@@ -116,9 +142,9 @@ if button:
     if lit_files is not None:
         for file in lit_files:
             try:
-                stringio = StringIO(file.getvalue().decode("utf-8"))
-                read_lit(stringio)
                 st.write(file.name)
+                _read_lit(file)
+                
 
             except:
                 st.write('coundnt read pdfs!!')
