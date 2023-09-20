@@ -108,17 +108,21 @@ if button:
             "label":label, "model_type":mode_type, 
                 "top_k":top_k, "XAI_tool": XAI_tool} 
     
+    st.write('### XGBoost Model evaluation')
+    xg_plot = Image.open(f'./data/xgbmodel_error.png')
+    st.image(xg_plot)
+    
     explanation =  get_modelsummary(arg_dict_xai)
 
     if XAI_tool=="SHAP":
         shap_bar = Image.open(f'./data/shap_bar.png')
         st.image(shap_bar)
     elif XAI_tool=="LIME":
-        lime_bar = Image.open(f'./data/shap_bar.png')
+        lime_bar = Image.open(f'./data/lime_bar.png')
         st.image(lime_bar)
     else:
         shap_bar = Image.open(f'./data/shap_bar.png')
-        lime_bar = Image.open(f'./data/shap_bar.png')
+        lime_bar = Image.open(f'./data/lime_bar.png')
         st.image(shap_bar)
         st.image(lime_bar)
 

@@ -53,7 +53,7 @@ def gen_nle(arg_dict):
         if len(top_fts)>top_k:
             top_fts[:top_k]
         
-    ft_list = set([' '.join(ft.split('_')[:-1]) for ft in top_fts])
+    #ft_list = set([' '.join(ft.split('_')[:-1]) for ft in top_fts])
 
     #****************
     # get human interpretable feature labels
@@ -74,7 +74,7 @@ def gen_nle(arg_dict):
     
     llm_nle = LLMChain(prompt=prompt_nle, llm=llm, memory=vectmem)
     response = llm_nle.run({'observation':observation,
-                              'ft_list':ft_list
+                              'ft_list':new_labels
                               })
 
     #*******************************

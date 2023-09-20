@@ -37,8 +37,8 @@ def _plots(results,eval_type,savedir):
     plt.ylabel(f'{eval_type.upper()}')
     plt.xlabel('Num iterations')
     plt.title(f'XGBoost model evaluation: {eval_type.upper()}')
-    plt.show()
-    fig.savefig(f'{savedir}/xgbmodel_{eval_type}.png')
+    #plt.show()
+    fig.savefig(f'{savedir}/xgbmodel_error.png')
 
 def train_xgbclassifier(df_init,label,split=0.2,
                         early_stopping_rounds=5):
@@ -60,9 +60,9 @@ def train_xgbclassifier(df_init,label,split=0.2,
     results = xgb_model.evals_result()
     
 
-    ## plot evaluation results
-    for metric in eval_metric: 
-        _plots(results,metric,savedir)
+    ## plot evaluation results (just error)
+    #for metric in eval_metric: 
+    _plots(results,'error',savedir)
     
     ## save data
     xgb_model.save_model(f'{savedir}/xgbmodel.json')
@@ -89,8 +89,8 @@ def train_xgbregressor(df_init,label,split=0.2, early_stopping_rounds=5):
     
 
     ## plot evaluation results
-    for metric in eval_metric: 
-        _plots(results,metric,savedir)
+    #for metric in eval_metric: 
+    _plots(results,'rmse',savedir)
     
     ## save data
     xgb_model.save_model(f'{savedir}/xgbmodel.json')
