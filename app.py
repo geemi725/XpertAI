@@ -116,9 +116,8 @@ if button:
     if lit_files is not None:
         for file in lit_files:
             try:
-
-                #stringio = StringIO(file.getvalue().decode("utf-8"))
-                read_lit(file)
+                stringio = StringIO(file.getvalue().decode("utf-8"))
+                read_lit(stringio)
                 st.write(file.name)
 
             except:

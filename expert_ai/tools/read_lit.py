@@ -2,7 +2,6 @@ from langchain.embeddings.openai import OpenAIEmbeddings
 embedding = OpenAIEmbeddings()
 from langchain.vectorstores import Chroma
 from langchain.text_splitter import RecursiveCharacterTextSplitter
-from .utils import *
 
 
 def read_lit(file):
@@ -14,6 +13,8 @@ def read_lit(file):
     )
     persist_directory="./data/chroma/"
     doc = file.read()
+
+    print('*********COULD READ*********')
    
     doc_split = r_splitter.split_documents(doc)
     vectordb = Chroma(persist_directory=persist_directory, 
