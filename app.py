@@ -36,7 +36,7 @@ def on_api_key_change():
     agent = ExpertAI(verbose=True)
 
 def save_uploadedfile(uploadedfile):
-     with open(os.path.join("tempDir",uploadedfile.name),"wb") as f:
+     with open(os.path.join("data",uploadedfile.name),"wb") as f:
          f.write(uploadedfile.getbuffer())
     
 
