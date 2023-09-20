@@ -35,9 +35,9 @@ def on_api_key_change():
     global agent    
     agent = ExpertAI(verbose=True)
 
-def save_uploadedfile(uploadedfile):
+def save_uploadfile(uploadedfile):
      
-     dirpath = os.path.join('data','litdir')
+     dirpath = os.path.join('data','lit_dir')
 
      if os.path.exists(dirpath):
          shutil.rmtree(dirpath)
@@ -45,7 +45,6 @@ def save_uploadedfile(uploadedfile):
      with open(os.path.join(dirpath,uploadedfile.name),"wb") as f:
          f.write(uploadedfile.getbuffer())
 
-     st.write(f"saved to dir: {os.path.join(dirpath,uploadedfile.name)}")
     
 
 ## Header section
@@ -101,6 +100,7 @@ if api_key:
     from expert_ai.tools.explain_model import get_modelsummary
     from expert_ai.tools.scrape_arxiv import scrape_arxiv
     from expert_ai.tools.generate_nle import gen_nle
+    from expert_ai.tools.utils import vector_db
 
 if button:
 
@@ -129,8 +129,12 @@ if button:
     ## read literature
     if lit_files is not None:
         for file in lit_files:   
-            save_uploadedfile(file)
-          
+            save_uploadfile(file)
+            filepath = os.path.join('./data/lit_dir',file.name)
+            try:
+                vector_db(lit_file=None)
+            except: st.write('vectordb failed!!')
+            
     # scrape arxiv.org
     if arxiv_keywords is not None:
         arg_dict_arxiv = {"key_words":arxiv_keywords,
