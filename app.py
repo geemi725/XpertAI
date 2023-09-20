@@ -79,7 +79,7 @@ with st.sidebar:
                             ["SHAP", "LIME","Both"])
     top_k =   st.slider('Number of top features for the XAI analysis', 0, 10, 1) 
 
-    st.markdown("### Select method of literature retrieval \nYou can either upload a literature dataset or scrape arxiv.org. If you don't provide literature, you will receive an explanation based on XAI tools.")
+    st.markdown("### Select method of literature retrieval \nIf you don't provide literature, you will receive an explanation based on XAI tools.")
     lit_files= st.file_uploader("Upload your literature library here (Optional):", 
                                accept_multiple_files=True)
     arxiv_keywords = st.text_input("Keywords for arxiv scraping:",
@@ -108,11 +108,11 @@ if button:
             "label":label, "model_type":mode_type, 
                 "top_k":top_k, "XAI_tool": XAI_tool} 
     
-    st.write('### XGBoost Model evaluation')
+    explanation =  get_modelsummary(arg_dict_xai)
+    
+    st.markdown('### XGBoost Model evaluation:')
     xg_plot = Image.open(f'./data/figs/xgbmodel_error.png')
     st.image(xg_plot)
-    
-    explanation =  get_modelsummary(arg_dict_xai)
 
     if XAI_tool=="SHAP":
         shap_bar = Image.open(f'./data/figs/shap_bar.png')
@@ -143,8 +143,6 @@ if button:
                         "max_papers":max_papers}
         
         scrape_arxiv(arg_dict_arxiv)
-    else: 
-        st.write("## Literaure not provided. The initial XAI analysis is:\n", explanation)
 
     if observation is not None:
         arg_dict_nle = {"observation":observation,
@@ -152,8 +150,15 @@ if button:
                         "XAI_tool": XAI_tool}
         
         nle,new_ft_list = gen_nle(arg_dict_nle)
-        
-        st.write("## The structure function relationship can be explained as below:\n", 
+
+        if arxiv_keywords is None and lit_files is None:
+            st.markdown(f"""### Literature is not provided to make an informed explanation.\n 
+                        Based on XAI analysis, the following explanation can be given:
+                        \n{explanation}""")
+
+            
+        else:
+            st.markdown("### The structure function relationship based on XAI analysis and literature, the following explanation can be given:\n", 
                 nle)
 
 # sidebar
