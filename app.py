@@ -126,8 +126,8 @@ if button:
 
         for file in lit_files:   
             bytes_data = file.getvalue()
-            st.write('*********COULD READ*********')
-            doc_split = r_splitter.split_documents(bytes_data )
+            st.write(f'*********COULD READ:{bytes_data}*********')
+            doc_split = r_splitter.split_text(bytes_data)
             st.write('*********COULD SPLIT*********')
             vectordb = Chroma(persist_directory=persist_directory, 
                                             embedding_function=embedding)
