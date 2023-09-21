@@ -13,7 +13,7 @@ in a human interpretable manner. IMPORTANT: integer has no meaning! Then return:
 
 EXPLAIN_TEMPLATE= """Please explain how each important features identified by 
     XAI analysis affects the observation {observation}. 
-    For each part of your answer, indicate which sources most support it via valid citation markers at the end of each sentence, like (Example2012).
+    For each part of your answer, indicate which sources most support it via valid citation markers at the end of each sentence, like (Example1 year, Example2 year).
 
     You can follow the provided draft to answer:
 
@@ -40,6 +40,12 @@ EXPLAIN_TEMPLATE= """Please explain how each important features identified by
     5. Assume the role of a scientific assistant and summarize answers in steps 1-4. 
     Explain on how the {observation}  can be altered with respect to all the features: {ft_list}. 
     Give scientific reasoning for these answers.
+
+    6. Sources used to generate the answers:
+    eg:
+    ``<Reference 1>
+      <Reference 2>
+    ``
 
 
     """
