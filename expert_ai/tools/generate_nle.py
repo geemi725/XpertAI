@@ -56,7 +56,7 @@ def gen_nle(arg_dict):
     # get human interpretable feature labels
     prompt_fts = PromptTemplate(template=FORMAT_LABLES, 
                             input_variables=["label"])
-    memory = ConversationBufferMemory(memory_key="label")
+    memory = ConversationBufferMemory(memory_key="chat_history")
     readonlymemory = ReadOnlySharedMemory(memory=memory)
     llm_fts = LLMChain(prompt=prompt_fts, llm=llm, memory=readonlymemory)
     new_labels = []
@@ -71,7 +71,6 @@ def gen_nle(arg_dict):
     
     db = Chroma(persist_directory="./data/chroma/", 
                       embedding_function=embedding)
-    
     retriever = db.as_retriever(search_kwargs=dict(k=5))
     vectmem = VectorStoreRetrieverMemory(retriever=retriever,input_key="observation")
     
