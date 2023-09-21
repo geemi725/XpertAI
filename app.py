@@ -158,7 +158,7 @@ if button:
 
             
         else:
-            st.markdown("### The structure function relationship based on XAI analysis and literature, the following explanation can be given:\n", 
+            st.write("### The structure function relationship based on XAI analysis and literature, the following explanation can be given:\n", 
                 nle)
 
 # sidebar
