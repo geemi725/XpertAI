@@ -36,10 +36,7 @@ def gen_nle(arg_dict):
             request_timeout=1000)
     
 
-    db = Chroma(persist_directory="./data/chroma/", 
-                      embedding_function=embedding)
-    retriever = db.as_retriever()
-    vectmem = VectorStoreRetrieverMemory(retriever=retriever,input_key="observation")
+    
  
     #begin extracting information
     if XAI_tool=="SHAP":
@@ -59,7 +56,7 @@ def gen_nle(arg_dict):
     # get human interpretable feature labels
     prompt_fts = PromptTemplate(template=FORMAT_LABLES, 
                             input_variables=["label"])
-    memory = ConversationBufferMemory(memory_key="chat_history")
+    memory = ConversationBufferMemory(memory_key="label")
     readonlymemory = ReadOnlySharedMemory(memory=memory)
     llm_fts = LLMChain(prompt=prompt_fts, llm=llm, memory=readonlymemory)
     new_labels = []
@@ -71,6 +68,12 @@ def gen_nle(arg_dict):
 
     prompt_nle = PromptTemplate(template=EXPLAIN_TEMPLATE, 
                             input_variables=["observation","ft_list"])
+    
+    db = Chroma(persist_directory="./data/chroma/", 
+                      embedding_function=embedding)
+    
+    retriever = db.as_retriever(search_kwargs=dict(k=5))
+    vectmem = VectorStoreRetrieverMemory(retriever=retriever,input_key="observation")
     
     llm_nle = LLMChain(prompt=prompt_nle, llm=llm, memory=vectmem)
     response = llm_nle.run({'observation':observation,
