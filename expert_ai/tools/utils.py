@@ -238,11 +238,13 @@ def vector_db(persist_directory=None,
 
 def explain_lime(df_init,model_path,model_type,top_k,label):
    weights = []
-   num_samples = 200
+   num_samples = 500
    savedir = './data'
    #df = pd.read_csv(data_path,header=0)
    ## use all data for the shap analysis
    df_x = df_init.drop(label,axis = 1)
+   if len(df_x) < num_samples:
+       num_samples = len(df_x)
    
    if model_type=='Classifier': 
        class_names=[0,1]
