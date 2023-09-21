@@ -29,10 +29,11 @@ def scrape_arxiv(arg_dict):
     for k,val in arg_dict.items():
         globals()[k] = val
 
-    save_dir = './data/downloads'
-    if os.path.exists(save_dir): shutil.rmtree(save_dir )
+    save_dir = './data/downloads/'
+    if os.path.exists(save_dir): 
+        shutil.rmtree(save_dir )
     
-    os.mkdir(save_dir )
+    os.mkdir(save_dir)
 
     search = arxiv.Search(
         query = key_words,
@@ -43,8 +44,8 @@ def scrape_arxiv(arg_dict):
     for result in search.results():
         title = '_'.join(result.title.split(' '))
         cleaned = re.sub(r"[^a-zA-Z0-9.]|(?<!\d)\.|\.(?!\d)", "_",title)
-        result.download_pdf(dirpath=save_dir+'/', filename=f"{cleaned}.pdf")
-        vector_db(lit_file=f'{save_dir}/{cleaned}.pdf')
+        result.download_pdf(dirpath=save_dir, filename=f"{cleaned}.pdf")
+        vector_db(lit_file=f'{save_dir}{cleaned}.pdf')
 
     #_update_db(save_dir)
 
