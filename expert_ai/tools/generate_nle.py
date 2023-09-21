@@ -49,7 +49,9 @@ def gen_nle(arg_dict):
         top_fts = list(set(shap) & set(lime))
         # if the number of common elements is less, use all of lime features
         if len(top_fts)<top_k:
-            top_fts = lime 
+            shap = list(np.load(f'{save_dir}/top_shap_features.npy',allow_pickle=True))
+            lime = list(np.load(f'{save_dir}/top_lime_features.npy',allow_pickle=True))
+            top_fts = list(set(shap) | set(lime))[:top_k+2]
     #ft_list = set([' '.join(ft.split('_')[:-1]) for ft in top_fts])
 
     #****************
