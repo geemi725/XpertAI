@@ -12,7 +12,7 @@ in a human interpretable manner. IMPORTANT: integer has no meaning! Then return:
 """
 
 EXPLAIN_TEMPLATE= """Please explain how each important features identified by 
-    SHAP analysis affects the observation {observation}. 
+    XAI analysis affects the observation {observation}. 
     You can follow the provided draft to answer:
 
     1. List of important features are most impactful SHAP features are: {ft_list}.

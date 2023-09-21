@@ -30,7 +30,7 @@ def scrape_arxiv(arg_dict):
         globals()[k] = val
 
     save_dir = './data/downloads'
-    if os.path.exists(save_dir ): shutil.rmtree(save_dir )
+    if os.path.exists(save_dir): shutil.rmtree(save_dir )
     
     os.mkdir(save_dir )
 
