@@ -155,11 +155,22 @@ if button:
             st.markdown(f"""### Literature is not provided to make an informed explanation.\n 
                         Based on XAI analysis, the following explanation can be given:
                         \n{explanation}""")
+            f = open("./data/structure_function_relationship.txt",'w+')
+            f.write(f'Understanding {observation}\n:')
+            f.write(explanation)
+            f.close()
 
             
         else:
             st.write("### The structure function relationship based on XAI analysis and literature, the following explanation can be given:\n", 
                 nle)
+            f = open("./data/structure_function_relationship.txt",'w+')
+            f.write(f'Understanding {observation}\n:')
+            f.write(nle)
+            f.close()
+        
+        st.download_button("Download the explanation!", 
+                           data ="./data/structure_function_relationship.txt" )
 
 # sidebar
 #with st.sidebar:
