@@ -42,7 +42,7 @@ EXPLAIN_TEMPLATE= """Please explain how each important features identified by
     Give scientific reasoning for these answers.
 
     6. Add a list the sources used for generating answers. If you cannot find a sources avoid references.
-    References:
+    For further study:
     eg:
     ``<Reference 1>
       <Reference 2>
