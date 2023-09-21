@@ -41,7 +41,7 @@ EXPLAIN_TEMPLATE= """Please explain how each important features identified by
     Explain on how the {observation}  can be altered with respect to all the features: {ft_list}. 
     Give scientific reasoning for these answers.
 
-    6. List the sources used for generating answers
+    6. List the sources used for generating answers.
     References:
     eg:
     ``<Reference 1>

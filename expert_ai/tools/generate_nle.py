@@ -28,16 +28,6 @@ def gen_nle(arg_dict):
     for k,val in arg_dict.items():
         globals()[k] = val
     
-
-    #initiate retriever, chain
-    llm = ChatOpenAI(
-            temperature=0,
-            model_name="gpt-4",
-            request_timeout=1000)
-    
-
-    
- 
     #begin extracting information
     if XAI_tool=="SHAP":
         top_fts = list(np.load(f'{save_dir}/top_shap_features.npy',allow_pickle=True))
@@ -56,6 +46,13 @@ def gen_nle(arg_dict):
 
     #****************
     # get human interpretable feature labels
+
+     #initiate retriever, chain
+    llm = ChatOpenAI(
+            temperature=0,
+            model_name="gpt-4",
+            request_timeout=1000)
+    
     prompt_fts = PromptTemplate(template=FORMAT_LABLES, 
                             input_variables=["label"])
     memory = ConversationBufferMemory(memory_key="chat_history")
