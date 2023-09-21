@@ -10,10 +10,10 @@ in a human interpretable manner. IMPORTANT: integer has no meaning! Then return:
 <new label> 
 
 """
-
+#For each part of your answer, indicate which sources most support it via valid citation markers at the end of each sentence, like (Example2012).
 EXPLAIN_TEMPLATE= """Please explain how each important features identified by 
     XAI analysis affects the observation {observation}. 
-    For each part of your answer, indicate which sources most support it via valid citation markers at the end of each sentence, like (Example2012).
+    
 
     You can follow the provided draft to answer:
 
@@ -41,7 +41,7 @@ EXPLAIN_TEMPLATE= """Please explain how each important features identified by
     Explain on how the {observation}  can be altered with respect to all the features: {ft_list}. 
     Give scientific reasoning for these answers.
 
-    6. List the sources used for generating answers.
+    6. Add a list the sources used for generating answers. If you cannot find a sources avoid references.
     References:
     eg:
     ``<Reference 1>
