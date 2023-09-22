@@ -17,7 +17,7 @@ EXPLAIN_TEMPLATE= """Please explain how each important features identified by
 
     You can follow the provided draft to answer:
 
-    1. List of important features are most impactful SHAP features are: {ft_list}.
+    1. List of most impactful features are identified by XAI analysis: {ft_list}.
     
     2. Find the relationship of the <features> with the {observation}
     eg:
