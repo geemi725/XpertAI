@@ -1,4 +1,4 @@
-import json
+import os
 from .utils import *
 
 def get_modelsummary(arg_dict):
@@ -21,6 +21,7 @@ def get_modelsummary(arg_dict):
 
     '''
     save_dir = './data'
+    if not os.path.exists(save_dir): os.mkdir(save_dir)
     #arg_dict = json.loads(json_request)
     for k,val in arg_dict.items():
         globals()[k] = val
