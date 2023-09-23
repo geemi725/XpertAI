@@ -13,8 +13,9 @@ in a human interpretable manner. IMPORTANT: integer has no meaning! Then return:
 #For each part of your answer, indicate which sources most support it via valid citation markers at the end of each sentence, like (Example2012).
 EXPLAIN_TEMPLATE= """Please explain how each important features identified by 
     XAI analysis affects the observation {observation}. 
+    Additionally, What are other impactful features that are correlated with the {observation}?
+    Your goal is to describe the relationship between these features and the {observation}.
     
-
     You can follow the provided draft to answer:
 
     1. List of most impactful features are identified by XAI analysis: {ft_list}.

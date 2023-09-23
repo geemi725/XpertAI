@@ -173,7 +173,7 @@ if button:
         with open('./data/figs.zip', 'rb') as f:
             st.download_button('Download the explanation and figures', f, file_name='Figures.zip')
 
-        st.write('Thanks for downloading!')
+       
 
             
 
