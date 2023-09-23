@@ -1,14 +1,9 @@
-from langchain.agents import Tool
 from langchain.chat_models import ChatOpenAI
 from langchain.memory import ConversationBufferMemory, ReadOnlySharedMemory
 from langchain.memory.vectorstore import VectorStoreRetrieverMemory
 from langchain import LLMChain, PromptTemplate
 from expert_ai.prompts import EXPLAIN_TEMPLATE, FORMAT_LABLES
 from .utils import *
-
-def _update_db(lit_directory):
-    vector_db(lit_directory=lit_directory)
-
 
 def gen_nle(arg_dict):
     '''Takes a dictionary as input in the form:
@@ -82,16 +77,3 @@ def gen_nle(arg_dict):
 
     
     return response,new_labels
-
-#request_format = '{{"lit_directory":"<path to literature>", "observation":<target property>}}'
-#description = f"Tool to provide natural language explanations for the model based on scientific evidence. Provides reasoning on how each <feature> affects the <observation>. Input should be JSON in the following format: {request_format}. The output should be the answers to steps 1-5."
-
-
-"""GenNLE = Tool(
-    name="generate NLE",
-    func=gen_nle,
-    description=description
-)
-
-if __name__ == '__main__':
-    print(GenNLE)"""

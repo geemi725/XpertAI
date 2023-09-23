@@ -1,12 +1,8 @@
-from langchain.agents import Tool
 import arxiv
 import re 
 import os
 import shutil
 from .utils import *
-
-#def _update_db(lit_directory):
-#    vector_db(lit_directory=lit_directory)
 
 def scrape_arxiv(arg_dict):
     '''Takes a  dictionary as input in the form:
@@ -46,20 +42,3 @@ def scrape_arxiv(arg_dict):
         cleaned = re.sub(r"[^a-zA-Z0-9.]|(?<!\d)\.|\.(?!\d)", "_",title)
         result.download_pdf(dirpath=save_dir, filename=f"{cleaned}.pdf")
         vector_db(lit_file=f'{save_dir}{cleaned}.pdf')
-
-    #_update_db(save_dir)
-
-    #return f"{max_papers} are downloaded from ArXiv and saved to {save_dir}"
-
-#request_format = '{{"key_words":<key words to search arxiv>, "max_papers":<maximum number of papers to download>,"save_dir": <path to save downloaded papers>}}'
-#description = f"Search arxiv.org for publications with given keywords and download. Input should be a JSON dictionary in the following format: {request_format}"
-
-"""ScrapeArxiv = Tool(
-    name="scrape_arxiv📃",
-    func=scrape_arxiv,
-    description=description
-)
-
-if __name__ == '__main__':
-    print(ScrapeArxiv)
-"""

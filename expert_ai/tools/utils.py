@@ -1,4 +1,3 @@
-import pandas as pd
 import numpy as np
 import os
 import matplotlib.pyplot as plt
@@ -64,7 +63,6 @@ def train_xgbclassifier(df_init,label,split=0.2,
                   verbose=False)
     
     results = xgb_model.evals_result()
-    
 
     ## plot evaluation results (just error)
     #for metric in eval_metric: 
@@ -170,15 +168,6 @@ def explain_shap(df_init,model_path,label,top_k,classifier=False):
         summary+= f"Feature {k} has a correlation coefficient of  {v} with its SHAP values. \nThe average impact of {k} is {avg_im[k]}.\n "
 
     shap_summary = summary
-    ## save SHAP summary
-    #f = open(f'{savedir}/shap_summary.txt',"w+")
-    #f.write(shap_summary)
-    #f.close()
-    
-    #np.save(f'{savedir}/top_shap_fts.npy',list(pearsons.keys())) 
-
-    #vector_db(lit_file=f'{savedir}/shap_summary.txt',
-    #          clean=True)
     
     return list(pearsons.keys()), shap_summary
 
@@ -240,7 +229,6 @@ def explain_lime(df_init,model_path,model_type,top_k,label):
    weights = []
    num_samples = 500
    savedir = './data'
-   #df = pd.read_csv(data_path,header=0)
    ## use all data for the shap analysis
    df_x = df_init.drop(label,axis = 1)
    if len(df_x) < num_samples:

@@ -2,7 +2,6 @@ __import__('pysqlite3')
 import sys
 sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
 import streamlit as st
-import json
 import os
 from PIL import Image 
 import shutil
@@ -72,7 +71,7 @@ with st.sidebar:
                             ["SHAP", "LIME","Both"])
     top_k =   st.slider('Number of top features for the XAI analysis', 0, 10, 1) 
 
-    st.markdown("### Select method of literature retrieval \nIf you don't provide literature, you will receive an explanation based on XAI tools.")
+    st.markdown("### Provide literature to generate scientific explanations! \nIf you don't provide literature, you will receive an explanation based on XAI tools.")
     lit_files= st.file_uploader("Upload your literature library here (Optional):", 
                                accept_multiple_files=True)
     arxiv_keywords = st.text_input("Keywords for arxiv scraping:",
@@ -173,13 +172,5 @@ if button:
         with open('./data/figs.zip', 'rb') as f:
             st.download_button('Download the explanation and figures', f, file_name='Figures.zip')
 
-       
-
-            
-
-# sidebar
-#with st.sidebar:
-#logo = Image.open('assets/logo.png')
-#st.image(logo)
 
 
