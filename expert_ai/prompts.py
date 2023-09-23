@@ -18,7 +18,7 @@ EXPLAIN_TEMPLATE= """Please explain how each important features identified by
     
     You can follow the provided draft to answer:
 
-    1. List of most impactful features are identified by XAI analysis: {ft_list}.
+    1. List of most impactful features are identified by XAI analysis: {ft_list} and other features found from literature.
     
     2. Find the relationship of the <features> with the {observation}
     eg:
@@ -39,7 +39,7 @@ EXPLAIN_TEMPLATE= """Please explain how each important features identified by
       The {observation} will change postively/negatively when <feature 3> changes because...
     
     5. Assume the role of a scientific assistant and summarize answers in steps 1-4. 
-    Explain on how the {observation}  can be altered with respect to all the features: {ft_list}. 
+    Explain on how the {observation}  can be altered with respect to all the features identified above. 
     Give scientific reasoning for these answers.
 
     6. Add a list the sources used for generating answers. If you cannot find a sources avoid references.
