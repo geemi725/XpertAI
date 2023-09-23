@@ -7,9 +7,6 @@ import os
 from PIL import Image 
 import shutil
 import pandas as pd
-from langchain.callbacks import StreamlitCallbackHandler
-from langchain.vectorstores import Chroma
-from langchain.text_splitter import RecursiveCharacterTextSplitter
 from dotenv import load_dotenv
 load_dotenv()
 ss = st.session_state
@@ -30,10 +27,6 @@ def on_api_key_change():
     api_key = ss.get('api_key') or os.getenv('OPENAI_API_KEY')
     #api_key = os.getenv('OPENAI_API_KEY')
     os.environ["OPENAI_API_KEY"] = api_key
-    from expert_ai.tools import tools
-    from expert_ai.agent import ExpertAI
-    global agent    
-    agent = ExpertAI(verbose=True)
 
 def save_uploadfile(uploadedfile):
      
@@ -126,6 +119,8 @@ if button:
         st.image(shap_bar)
         st.image(lime_bar)
 
+    shutil.make_archive('./data/figs', 'zip', './data/figs/')
+
     nle = ''
 
     ## read literature
@@ -173,6 +168,9 @@ if button:
         
             st.download_button("Download the explanation!", 
                             data =nle)
+            
+            with open('./data/figs.zip', 'rb') as f:
+                st.download_button('Download figures', f, file_name='Figures.zip')
 
 # sidebar
 #with st.sidebar:
