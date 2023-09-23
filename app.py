@@ -169,8 +169,12 @@ if button:
             st.download_button("Download the explanation!", 
                             data =nle)
             
-            with open('./data/figs.zip', 'rb') as f:
-                st.download_button('Download figures', f, file_name='Figures.zip')
+        with open('./data/figs.zip', 'rb') as f:
+            st.download_button('Download figures', f, file_name='Figures.zip')
+
+        st.write('Thanks for downloading!')
+
+            
 
 # sidebar
 #with st.sidebar:
