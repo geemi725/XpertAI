@@ -119,7 +119,7 @@ if button:
         st.image(shap_bar)
         st.image(lime_bar)
 
-    shutil.make_archive('./data/figs', 'zip', './data/figs/')
+    
 
     nle = ''
 
@@ -152,7 +152,7 @@ if button:
                         \n{explanation}""")
             st.download_button("Download the explanation!", 
                             data =explanation)
-            f = open("./data/structure_function_relationship.txt",'w+')
+            f = open("./data/figs/structure_function_relationship.txt",'w+')
             f.write(f'Understanding {observation}\n:')
             f.write(explanation)
             f.close()
@@ -161,16 +161,17 @@ if button:
         else:
             st.write("### The structure function relationship based on XAI analysis and literature, the following explanation can be given:\n", 
                 nle)
-            f = open("./data/structure_function_relationship.txt",'w+')
+            f = open("./data/figs/structure_function_relationship.txt",'w+')
             f.write(f'Understanding {observation}\n:')
             f.write(nle)
             f.close()
         
-            st.download_button("Download the explanation!", 
-                            data =nle)
+            #st.download_button("Download the explanation!", 
+            #                data =nle)
             
+        shutil.make_archive('./data/figs', 'zip', './data/figs/')
         with open('./data/figs.zip', 'rb') as f:
-            st.download_button('Download figures', f, file_name='Figures.zip')
+            st.download_button('Download the explanation and figures', f, file_name='Figures.zip')
 
         st.write('Thanks for downloading!')
 
