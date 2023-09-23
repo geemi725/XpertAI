@@ -3,6 +3,7 @@ import sys
 sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
 import streamlit as st
 import os
+import openai
 from PIL import Image 
 import shutil
 import pandas as pd
@@ -26,6 +27,7 @@ def on_api_key_change():
     api_key = ss.get('api_key') or os.getenv('OPENAI_API_KEY')
     #api_key = os.getenv('OPENAI_API_KEY')
     os.environ["OPENAI_API_KEY"] = api_key
+    openai.api_key = api_key
 
 def save_uploadfile(uploadedfile):
      
