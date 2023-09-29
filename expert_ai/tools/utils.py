@@ -16,7 +16,7 @@ from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain.vectorstores import Chroma
 embedding = OpenAIEmbeddings()
 
-def _split_data(df_init,label,split=0.2):
+def _split_data(df_init,split=0.2):
     ## for test dataset not all 
 
     df_y = df_init.iloc[ :, -1:]
@@ -103,7 +103,7 @@ def get_response(prompt):
 
     return response.choices[0].message["content"]
 
-def explain_shap(df_init,model_path,label,top_k,classifier=False):
+def explain_shap(df_init,model_path,top_k,classifier=False):
     savedir = './data'
 
     ## use all data for the shap analysis
@@ -220,7 +220,7 @@ def vector_db(persist_directory=None,
        else:
            _update_vecdb(text_split,persist_directory)
 
-def explain_lime(df_init,model_path,model_type,top_k,label):
+def explain_lime(df_init,model_path,model_type,top_k):
    weights = []
    num_samples = 500
    savedir = './data'
