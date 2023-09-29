@@ -1,5 +1,7 @@
 # XpertAI
  [![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://xpert-ai.streamlit.app/)
+ [![MIT license](https://img.shields.io/badge/License-MIT-blue.svg)](https://lbesson.mit-license.org/)
+
 ### A package to extract structure-property relationships as natural language explanations
 
 <img src="assets/overview.png" width="60%">
