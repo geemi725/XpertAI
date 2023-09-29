@@ -42,7 +42,7 @@ def save_uploadfile(uploadedfile):
 ## Header section
 #logo = Image.open('assets/logo.png')
 #st.image(logo)
-st.title("Xpert AI: Extract human interpretable structure-property relationships from raw data")
+st.write("## Xpert AI: Extract human interpretable structure-property relationships from raw data")
 st.write('''XpertAI trains a surrogate model to your dataset and extracts impactful features from your dataset using XAI tools.
 Currently, GPT-4 model is used to generate natural language explanations.''')
          
