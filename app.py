@@ -67,8 +67,8 @@ with st.sidebar:
     mode_type =  st.radio("Select the model type",
                             ["Regressor", "Classifier"],
                             captions= ["For predicting continuous values", "For predicting discreet labels"])
-    label = st.text_input("Target label",
-                            help='Label you are trying to predict. Should match the label in the dataset.')
+    #label = st.text_input("Target label",
+    #                        help='Label you are trying to predict. Should match the label in the dataset.')
     XAI_tool =  st.radio("What XAI method would you like to try?",
                             ["SHAP", "LIME","Both"])
     top_k =   st.slider('Number of top features for the XAI analysis', 0, 10, 1) 
@@ -97,9 +97,9 @@ if api_key:
 if button:
 
     df_init = pd.read_csv(input_file,header=0)
-
+    #"label":label,
     arg_dict_xai = { "df_init":df_init,
-            "label":label, "model_type":mode_type, 
+             "model_type":mode_type, 
                 "top_k":top_k, "XAI_tool": XAI_tool} 
     
     explanation =  get_modelsummary(arg_dict_xai)

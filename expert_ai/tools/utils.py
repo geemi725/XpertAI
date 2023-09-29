@@ -16,13 +16,12 @@ from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain.vectorstores import Chroma
 embedding = OpenAIEmbeddings()
 
-def _split_data(df_init,split=0.2):
+def _split_data(df_init):
     ## for test dataset not all 
-
     df_y = df_init.iloc[ :, -1:]
     df_x = df_init.iloc[ :, :-1]
   
-    x_train, x_val, y_train, y_val = train_test_split(df_x, df_y, test_size=split, 
+    x_train, x_val, y_train, y_val = train_test_split(df_x, df_y, test_size=0.2, 
                                                       random_state=42)
 
     return x_train, x_val, y_train, y_val
@@ -45,11 +44,11 @@ def _plots(results,eval_type):
     #plt.show()
     fig.savefig(f'{figsave}/xgbmodel_error.png')
 
-def train_xgbclassifier(df_init,split=0.2,
-                        early_stopping_rounds=5):
+def train_xgbclassifier(df_init):
     savedir = './data'
+    early_stopping_rounds = 5
 
-    x_train, x_val, y_train, y_val = _split_data(df_init, split=split)
+    x_train, x_val, y_train, y_val = _split_data(df_init=df_init)
     
     ## initialize model
     eval_metric=["auc", "error"]
@@ -71,11 +70,12 @@ def train_xgbclassifier(df_init,split=0.2,
     
     np.save(f'{savedir}/xgb_results.npy',results)
 
-def train_xgbregressor(df_init,split=0.2, early_stopping_rounds=5):
+def train_xgbregressor(df_init):
 
     savedir = './data'
+    early_stopping_rounds=5
 
-    x_train, x_val, y_train, y_val = _split_data(df_init, split=split)
+    x_train, x_val, y_train, y_val = _split_data(df_init)
     
     ## initialize model
     xgb_model = xgb.XGBRegressor(objective="reg:squarederror", random_state=42,
