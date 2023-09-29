@@ -18,9 +18,9 @@ embedding = OpenAIEmbeddings()
 
 def _split_data(df_init,label,split=0.2):
     ## for test dataset not all 
-    df = df_init #pd.read_csv(data_path,header=0)
-    df_y = df[label] 
-    df_x = df.drop(label,axis = 1)
+
+    df_y = df_init.iloc[ :, -1:]
+    df_x = df_init.iloc[ :, :-1]
   
     x_train, x_val, y_train, y_val = train_test_split(df_x, df_y, test_size=split, 
                                                       random_state=42)
@@ -45,13 +45,11 @@ def _plots(results,eval_type):
     #plt.show()
     fig.savefig(f'{figsave}/xgbmodel_error.png')
 
-def train_xgbclassifier(df_init,label,split=0.2,
+def train_xgbclassifier(df_init,split=0.2,
                         early_stopping_rounds=5):
     savedir = './data'
 
-    x_train, x_val, y_train, y_val = _split_data(df_init,
-                                                            label=label,
-                                                            split=split)
+    x_train, x_val, y_train, y_val = _split_data(df_init, split=split)
     
     ## initialize model
     eval_metric=["auc", "error"]
@@ -73,13 +71,11 @@ def train_xgbclassifier(df_init,label,split=0.2,
     
     np.save(f'{savedir}/xgb_results.npy',results)
 
-def train_xgbregressor(df_init,label,split=0.2, early_stopping_rounds=5):
+def train_xgbregressor(df_init,split=0.2, early_stopping_rounds=5):
 
     savedir = './data'
 
-    x_train, x_val, y_train, y_val = _split_data(df_init,
-                                                            label=label,
-                                                            split=split)
+    x_train, x_val, y_train, y_val = _split_data(df_init, split=split)
     
     ## initialize model
     xgb_model = xgb.XGBRegressor(objective="reg:squarederror", random_state=42,
@@ -110,9 +106,8 @@ def get_response(prompt):
 def explain_shap(df_init,model_path,label,top_k,classifier=False):
     savedir = './data'
 
-    df = df_init #pd.read_csv(data_path,header=0,delim_whitespace=True)
     ## use all data for the shap analysis
-    df_x = df.drop(label,axis = 1)
+    df_x = df_init.iloc[ :, :-1] 
 
     feat_labs = list(df_x)
     model = xgb.Booster()
@@ -230,7 +225,7 @@ def explain_lime(df_init,model_path,model_type,top_k,label):
    num_samples = 500
    savedir = './data'
    ## use all data for the shap analysis
-   df_x = df_init.drop(label,axis = 1)
+   df_x = df_x = df_init.iloc[ :, :-1] #df_init.drop(label,axis = 1)
    if len(df_x) < num_samples:
        num_samples = len(df_x)
    
@@ -238,7 +233,8 @@ def explain_lime(df_init,model_path,model_type,top_k,label):
        class_names=[0,1]
        mode = "classification" 
    else: 
-       class_names=[f'{label}']
+       class_names=list(df_init.iloc[ :, -1:].columns)[0] 
+       #[f'{label}']
        mode = "regression"
 
    explainer = LimeTabularExplainer(df_x.values, 
