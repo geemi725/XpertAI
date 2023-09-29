@@ -43,46 +43,45 @@ def save_uploadfile(uploadedfile):
 #logo = Image.open('assets/logo.png')
 #st.image(logo)
 st.title("Xpert AI")
-st.write('''### Extract structure-function relationships from your data!
-
-This is a simple app which helps you to extract human interpretable relationships
-in your dataset. ''')
+st.write('''### Extract human interpretable structure-property relationships from raw data!
+         
+XpertAI trains a surrogate model to your dataset and extracts impactful features from your dataset using XAI tools.
+Finally, to generate natural language explanations XpertAI uses GPT-4 model.''')
          
 #tab1, tab2= st.tabs(['Setup', 'Explanations'])
 
 with st.sidebar:
     logo = Image.open('assets/logo.png')
     st.image(logo)
-    st.markdown('# Set up analysis :computer:')
+    #st.markdown('# Setup your inputs!')
     # Input OpenAI api key
-    st.markdown('### Input your OpenAI API key.')
+    st.markdown('### First input your OpenAI API key :key:')
     api_key = st.text_input('OpenAI API key', type='password', key='api_key',  
                     on_change=on_api_key_change, label_visibility= "hidden")   
 
 
-    st.markdown('### Upload your input dataset')
-    input_file = st.file_uploader("Must have .csv extention:")
+    st.markdown('### Now upload your input dataset')
+    input_file = st.file_uploader("Must have .csv extention AND the label column must be the last column of your dataset!")
 
     st.markdown('### Set up XAI workflow')
-    mode_type =  st.radio("Select the model type",
+    mode_type =  st.radio("1. Select the model type",
                             ["Regressor", "Classifier"],
                             captions= ["For predicting continuous values", "For predicting discreet labels"])
     #label = st.text_input("Target label",
     #                        help='Label you are trying to predict. Should match the label in the dataset.')
-    XAI_tool =  st.radio("What XAI method would you like to try?",
+    XAI_tool =  st.radio("2. What's your favorite XAI method?",
                             ["SHAP", "LIME","Both"])
-    top_k =   st.slider('Number of top features for the XAI analysis', 0, 10, 1) 
+    top_k =   st.slider('3. Select the max number of features to be explained!', 0, 10, 1) 
 
     st.markdown("### Provide literature to generate scientific explanations! \nIf you don't provide literature, you will receive an explanation based on XAI tools.")
-    lit_files= st.file_uploader("Upload your literature library here (Optional):", 
+    lit_files= st.file_uploader("Upload your literature library here (Suggested):", 
                                accept_multiple_files=True)
-    arxiv_keywords = st.text_input("Keywords for arxiv scraping:",
-                                    help='Keywords to scrape arxiv.org')
-    max_papers = st.number_input("Number of papers", key=int, value=10,
-                            help='Maximum number of papers to download from arxiv.org')
+    arxiv_keywords = st.text_input("If you want to scrape arxiv, provide keywords for arxiv scraping:",
+                                    help='organic molecules, solubility of small molecules')
+    max_papers = st.number_input('Maximum number of papers to download from arxiv.org', key=int, value=10)
 
     observation = st.text_input("What is the property you'd like explained?",
-                                    help='e.g: Size of pore limiting diameter')
+                                    help='solubility of small molecules')
 
     button = st.button("Generate Explanation")
 
