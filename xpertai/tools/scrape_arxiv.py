@@ -14,7 +14,7 @@ def scrape_arxiv(arg_dict):
     Example:
         {"key_words":"MOF open metal sites",
         "max_papers":50,
-        "save_dir":"/data/wellawatte/mofs/expert_ai/data/arxiv_downloads"}
+        "save_dir":"./xpertai/data/arxiv_downloads"}
 
 
     returns: 

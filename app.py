@@ -86,10 +86,10 @@ with st.sidebar:
 
 ## Main page
 if api_key:
-    from expert_ai.tools.explain_model import get_modelsummary
-    from expert_ai.tools.scrape_arxiv import scrape_arxiv
-    from expert_ai.tools.generate_nle import gen_nle
-    from expert_ai.tools.utils import vector_db
+    from xpertai.tools.explain_model import get_modelsummary
+    from xpertai.tools.scrape_arxiv import scrape_arxiv
+    from xpertai.tools.generate_nle import gen_nle
+    from xpertai.tools.utils import vector_db
 
 if button:
 

@@ -2,7 +2,7 @@ from langchain.chat_models import ChatOpenAI
 from langchain.memory import ConversationBufferMemory, ReadOnlySharedMemory
 from langchain.memory.vectorstore import VectorStoreRetrieverMemory
 from langchain import LLMChain, PromptTemplate
-from expert_ai.prompts import EXPLAIN_TEMPLATE, FORMAT_LABLES
+from xpertai.prompts import EXPLAIN_TEMPLATE, FORMAT_LABLES
 from .utils import *
 
 def gen_nle(arg_dict):
