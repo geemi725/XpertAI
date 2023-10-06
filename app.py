@@ -32,12 +32,12 @@ def on_api_key_change():
 def save_uploadfile(uploadedfile):
      
      dirpath = os.path.join('data','lit_dir')
-
      if os.path.exists(dirpath):
          shutil.rmtree(dirpath)
      os.mkdir(dirpath) 
      with open(os.path.join(dirpath,uploadedfile.name),"wb") as f:
          f.write(uploadedfile.getbuffer())
+
 
 ## Header section
 #logo = Image.open('assets/logo.png')

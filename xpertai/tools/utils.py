@@ -130,8 +130,6 @@ def explain_shap(df_init,model_path,top_k,classifier=False):
         metrics = [results['validation_0']['rmse'][-1],
                 results['validation_1']['rmse'][-1]]
         
-
-    
     ## SHAP analysis
     explainer = shap.Explainer(model,df_x)
     shap_values = explainer(df_x)
@@ -177,16 +175,17 @@ def _load_split_docs(filename, meta_data=None):
     docs = None
     if filename.endswith('.pdf'):
         docs = PyPDFLoader(f'{filename}').load()
+        
     elif filename.endswith('.txt'):
         docs = TextLoader(f'{filename}').load()
+
+    docs_split = r_splitter.split_documents(docs)
 
     if meta_data is not None:
         for _docs in docs_split:
             _docs.metadata['source'] = meta_data['Title']
             _docs.metadata['authors'] = meta_data['Authors']
             _docs.metadata['year'] = meta_data['Year']
-
-    docs_split = r_splitter.split_documents(docs)
 
     return docs_split
 
@@ -237,12 +236,15 @@ def vector_db(persist_directory=None,
     
     ## Delete and create persist directory
     if lit_file is not None:
+       
        if try_meta_data:
            metadatas = _get_metadata(lit_file)
        
-       else: metadatas = None
+       else: 
+           metadatas = None
        
        text_split = _load_split_docs(f'{lit_file}',meta_data=metadatas)
+       print(text_split)
     
        if clean:
            if os.path.exists(persist_directory):

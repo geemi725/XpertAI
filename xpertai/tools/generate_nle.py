@@ -57,7 +57,6 @@ def gen_nle(arg_dict):
     for ft in top_fts:
         new_labels.append(llm_fts.run({'label':ft}))
 
-
     #*******************************
     # generate NLEs with citations
     features = ','.join(new_labels)
@@ -73,9 +72,12 @@ def gen_nle(arg_dict):
     documents = ""
     for i in range(len(docs)):
         doc = docs[i].page_content
-        authors= docs[i].metadata["authors"]
-        year = docs[i].metadata["year"]
-        documents += f"Answer{i+1}: {doc} ({authors},{year}) \n\n"
+        try:
+            authors= docs[i].metadata["authors"]
+            year = docs[i].metadata["year"]
+            documents += f"Answer{i+1}: {doc} ({authors},{year}) \n\n"
+        except:
+            documents += f"Answer{i+1}: {doc} \n\n"
 
     prompt = PromptTemplate(template= REFINE_PROMPT, 
                         input_variables=["documents","features","observation"])
