@@ -127,7 +127,8 @@ if button:
             save_uploadfile(file)
             filepath = os.path.join('./data/lit_dir',file.name)
             try:
-                vector_db(lit_file=None)
+                vector_db(lit_file=filepath,
+                          try_meta_data=True)
             except: st.write('vectordb failed!!')
             
     # scrape arxiv.org
@@ -142,7 +143,7 @@ if button:
                         "top_k":top_k, 
                         "XAI_tool": XAI_tool}
         
-        nle,new_ft_list = gen_nle(arg_dict_nle)
+        nle = gen_nle(arg_dict_nle)
 
         if arxiv_keywords is None and lit_files is None:
             st.markdown(f"""### Literature is not provided to make an informed explanation.\n 

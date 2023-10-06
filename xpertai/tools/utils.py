@@ -1,5 +1,6 @@
 import numpy as np
 import os
+import json
 import matplotlib.pyplot as plt
 from sklearn.model_selection import train_test_split
 from langchain.document_loaders import TextLoader
@@ -14,6 +15,7 @@ from langchain.embeddings.openai import OpenAIEmbeddings
 from langchain.document_loaders import PyPDFLoader
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain.vectorstores import Chroma
+from pypdf import PdfReader
 embedding = OpenAIEmbeddings()
 
 def _split_data(df_init):
@@ -166,16 +168,23 @@ def explain_shap(df_init,model_path,top_k,classifier=False):
     
     return list(pearsons.keys()), shap_summary
 
-def _load_split_docs(filename):
+def _load_split_docs(filename, meta_data=None):
     r_splitter = RecursiveCharacterTextSplitter(
         chunk_size=1500,
         chunk_overlap=200,
         length_function=len
     )
+    docs = None
     if filename.endswith('.pdf'):
         docs = PyPDFLoader(f'{filename}').load()
     elif filename.endswith('.txt'):
         docs = TextLoader(f'{filename}').load()
+
+    if meta_data is not None:
+        for _docs in docs_split:
+            _docs.metadata['source'] = meta_data['Title']
+            _docs.metadata['authors'] = meta_data['Authors']
+            _docs.metadata['year'] = meta_data['Year']
 
     docs_split = r_splitter.split_documents(docs)
 
@@ -200,15 +209,40 @@ def _update_vecdb(docs_split,persist_directory):
     
     vectordb.persist() 
 
+def _get_metadata(lit_file):
+    ''''read page 1 of a pdf
+    file and extract author, year,title 
+    for meta data'''
+    reader = PdfReader(f"{lit_file}")
+    page = reader.pages[0]
+    text = page.extract_text()
+
+    jdump = get_response(f""" Please extract list of author names, title, and 
+                           year of publication from this text {text}. 
+                           Output should have following format:
+                           "Authors": "<author1, author2 ...>", 
+                           "Year": "<year>", "Title": "<title>"
+                            """)
+    
+    jdump = "{" + jdump + "}"
+    metadatas = json.loads(jdump)
+
+    return metadatas
+
 def vector_db(persist_directory=None, 
-              lit_file=None,clean=False):
+              lit_file=None,clean=False,try_meta_data=False):
     
     if persist_directory is None:
         persist_directory="./data/chroma/"
     
     ## Delete and create persist directory
     if lit_file is not None:
-       text_split = _load_split_docs(f'{lit_file}')
+       if try_meta_data:
+           metadatas = _get_metadata(lit_file)
+       
+       else: metadatas = None
+       
+       text_split = _load_split_docs(f'{lit_file}',meta_data=metadatas)
     
        if clean:
            if os.path.exists(persist_directory):
@@ -216,7 +250,6 @@ def vector_db(persist_directory=None,
            os.mkdir(persist_directory)
            _create_vecdb(text_split ,persist_directory)
             
-
        else:
            _update_vecdb(text_split,persist_directory)
 
