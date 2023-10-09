@@ -14,7 +14,7 @@ def scrape_arxiv(arg_dict):
     Example:
         {"key_words":"MOF open metal sites",
         "max_papers":50,
-        "save_dir":"/data/wellawatte/mofs/expert_ai/data/arxiv_downloads"}
+        "save_dir":"./xpertai/data/arxiv_downloads"}
 
 
     returns: 
@@ -41,4 +41,7 @@ def scrape_arxiv(arg_dict):
         title = '_'.join(result.title.split(' '))
         cleaned = re.sub(r"[^a-zA-Z0-9.]|(?<!\d)\.|\.(?!\d)", "_",title)
         result.download_pdf(dirpath=save_dir, filename=f"{cleaned}.pdf")
-        vector_db(lit_file=f'{save_dir}{cleaned}.pdf')
+        #update vectordb
+        vector_db(lit_file=f'{save_dir}{cleaned}.pdf', 
+                  clean=False,
+                  try_meta_data=True)

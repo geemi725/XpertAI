@@ -32,12 +32,12 @@ def on_api_key_change():
 def save_uploadfile(uploadedfile):
      
      dirpath = os.path.join('data','lit_dir')
-
      if os.path.exists(dirpath):
          shutil.rmtree(dirpath)
      os.mkdir(dirpath) 
      with open(os.path.join(dirpath,uploadedfile.name),"wb") as f:
          f.write(uploadedfile.getbuffer())
+
 
 ## Header section
 #logo = Image.open('assets/logo.png')
@@ -86,10 +86,10 @@ with st.sidebar:
 
 ## Main page
 if api_key:
-    from expert_ai.tools.explain_model import get_modelsummary
-    from expert_ai.tools.scrape_arxiv import scrape_arxiv
-    from expert_ai.tools.generate_nle import gen_nle
-    from expert_ai.tools.utils import vector_db
+    from xpertai.tools.explain_model import get_modelsummary
+    from xpertai.tools.scrape_arxiv import scrape_arxiv
+    from xpertai.tools.generate_nle import gen_nle
+    from xpertai.tools.utils import vector_db
 
 if button:
 
@@ -127,7 +127,8 @@ if button:
             save_uploadfile(file)
             filepath = os.path.join('./data/lit_dir',file.name)
             try:
-                vector_db(lit_file=None)
+                vector_db(lit_file=filepath,
+                          try_meta_data=True)
             except: st.write('vectordb failed!!')
             
     # scrape arxiv.org
@@ -142,7 +143,7 @@ if button:
                         "top_k":top_k, 
                         "XAI_tool": XAI_tool}
         
-        nle,new_ft_list = gen_nle(arg_dict_nle)
+        nle = gen_nle(arg_dict_nle)
 
         if arxiv_keywords is None and lit_files is None:
             st.markdown(f"""### Literature is not provided to make an informed explanation.\n 

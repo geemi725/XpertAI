@@ -2,7 +2,7 @@ from langchain.chat_models import ChatOpenAI
 from langchain.memory import ConversationBufferMemory, ReadOnlySharedMemory
 from langchain.memory.vectorstore import VectorStoreRetrieverMemory
 from langchain import LLMChain, PromptTemplate
-from expert_ai.prompts import EXPLAIN_TEMPLATE, FORMAT_LABLES
+from xpertai.prompts import REFINE_PROMPT, FORMAT_LABLES
 from .utils import *
 
 def gen_nle(arg_dict):
@@ -57,10 +57,39 @@ def gen_nle(arg_dict):
     for ft in top_fts:
         new_labels.append(llm_fts.run({'label':ft}))
 
-
     #*******************************
+    # generate NLEs with citations
+    features = ','.join(new_labels)
+    initial_question = f"""It has been identified by XAI analysis {features} affect {observation}.
+    How does each of these features impact the {observation}?
+    """
+    ## Get relevant docs
+    db = Chroma(persist_directory="./data/chroma/", 
+                        embedding_function=embedding)
+    
+    docs = db.max_marginal_relevance_search(initial_question)
 
-    prompt_nle = PromptTemplate(template=EXPLAIN_TEMPLATE, 
+    documents = ""
+    for i in range(len(docs)):
+        doc = docs[i].page_content
+        try:
+            authors= docs[i].metadata["authors"]
+            year = docs[i].metadata["year"]
+            documents += f"Answer{i+1}: {doc} ({authors},{year}) \n\n"
+        except:
+            documents += f"Answer{i+1}: {doc} \n\n"
+
+    prompt = PromptTemplate(template= REFINE_PROMPT, 
+                        input_variables=["documents","features","observation"])
+
+    refine_chain = LLMChain(prompt=prompt, llm=llm)
+
+    response = refine_chain.run({"documents":documents,
+                                 "features":features,
+                                 "observation":observation})
+
+
+    """prompt_nle = PromptTemplate(template=EXPLAIN_TEMPLATE, 
                             input_variables=["observation","ft_list"])
     
     db = Chroma(persist_directory="./data/chroma/", 
@@ -71,9 +100,9 @@ def gen_nle(arg_dict):
     llm_nle = LLMChain(prompt=prompt_nle, llm=llm, memory=vectmem)
     response = llm_nle.run({'observation':observation,
                               'ft_list':new_labels
-                              })
+                              })"""
 
     #*******************************
 
     
-    return response,new_labels
+    return response
