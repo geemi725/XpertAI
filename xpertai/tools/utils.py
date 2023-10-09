@@ -240,7 +240,7 @@ def vector_db(persist_directory=None,
         metadatas = _get_metadata(lit_file)
 
     text_split = _load_split_docs(f'{lit_file}',meta_data=metadatas)
-    print(text_split)
+    
 
     if clean:
         ## Delete and create persist directory
