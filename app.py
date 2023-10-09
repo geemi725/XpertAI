@@ -57,9 +57,11 @@ with st.sidebar:
     api_key = st.text_input('OpenAI API key', type='password', key='api_key',  
                     on_change=on_api_key_change, label_visibility= "hidden")   
 
-
     st.markdown('### Now upload your input dataset')
-    input_file = st.file_uploader("Must have .csv extention AND the label column must be the last column of your dataset!")
+    input_file = st.file_uploader("Must have .csv extension AND the label column must be the last column of your dataset!")
+
+    st.markdown('### What is the target property you want to explain?')
+    observation = st.text_input("eg.: Toxicity of small molecules")
 
     st.markdown('### Set up XAI workflow')
     mode_type =  st.radio("1. Select the model type",
@@ -77,9 +79,7 @@ with st.sidebar:
     arxiv_keywords = st.text_input("If you want to scrape arxiv, provide keywords for arxiv scraping:",
                                     help='organic molecules, solubility of small molecules')
     max_papers = st.number_input('Maximum number of papers to download from arxiv.org', key=int, value=10)
-
-    observation = st.text_input("What is the property you'd like explained?",
-                                    help='solubility of small molecules')
+    
 
     button = st.button("Generate Explanation")
 

@@ -229,31 +229,28 @@ def _get_metadata(lit_file):
     return metadatas
 
 def vector_db(persist_directory=None, 
-              lit_file=None,clean=False,try_meta_data=False):
+              lit_file=None, clean=False,
+              try_meta_data=False,
+              metadatas=None):
     
     if persist_directory is None:
         persist_directory="./data/chroma/"
-    
-    ## Delete and create persist directory
-    if lit_file is not None:
        
-       if try_meta_data:
-           metadatas = _get_metadata(lit_file)
-       
-       else: 
-           metadatas = None
-       
-       text_split = _load_split_docs(f'{lit_file}',meta_data=metadatas)
-       print(text_split)
-    
-       if clean:
-           if os.path.exists(persist_directory):
-               shutil.rmtree(persist_directory)
-           os.mkdir(persist_directory)
-           _create_vecdb(text_split ,persist_directory)
-            
-       else:
-           _update_vecdb(text_split,persist_directory)
+    if try_meta_data:
+        metadatas = _get_metadata(lit_file)
+
+    text_split = _load_split_docs(f'{lit_file}',meta_data=metadatas)
+    print(text_split)
+
+    if clean:
+        ## Delete and create persist directory
+        if os.path.exists(persist_directory):
+            shutil.rmtree(persist_directory)
+        os.mkdir(persist_directory)
+        _create_vecdb(text_split ,persist_directory)
+        
+    else:
+        _update_vecdb(text_split,persist_directory)
 
 def explain_lime(df_init,model_path,model_type,top_k):
    weights = []
