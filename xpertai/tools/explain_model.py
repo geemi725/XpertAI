@@ -65,8 +65,10 @@ def get_modelsummary(arg_dict):
     f = open(f'{save_dir}/XAI_summary.txt',"w+")
     f.write(shap_summary+lime_summary)
     f.close()
+    metadata = {'Authors':'XpertAI','Year':'2023','Title':'XAI Summary'}
 
-    vector_db(lit_file=f'{save_dir}/XAI_summary.txt', clean=True)
+    vector_db(lit_file=f'{save_dir}/XAI_summary.txt', clean=True, 
+              metadatas=metadata)
 
     ## Step 5: Generate summary of model explanation
     prompt = f"""Summarize the following and explain the model
