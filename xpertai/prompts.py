@@ -23,21 +23,24 @@ EXPLAIN_TEMPLATE_NEW= """Please explain how each important features identified b
 
     """
 
-REFINE_PROMPT = """ Your task is to go through the multiple {documents}, their citations and explain the relationship between the given {features} and the {observation}
-For example you will get <text 1, (citation 1)>, <text 2, (citation 2)>.
+REFINE_PROMPT = """ It has been identified by XAI analysis {features} affect {observation}.
+Your task is to go through given {documents} and their citations to explain the relationship between the  {features} and the {observation}
+For example a document will have <text 1, (citation 1)>.
 Combine these documents and generate a summarized answer.
 Be precise and accurate as possible. Do not make up answers. 
-Use the citations to generate a citation for the answer. Citations should be (Author, year)
+Answer in a scientific manner.
+Provide citations for the answer. A citation should be (Author, year)
 
 You can use the following draft provide the summarized answer:
-- List of most impactful {features}. If there are other features found in the literature provide them too.
+- Provide list of most impactful {features} found from the XAI analysis. If there are other features found in the literature provide them too.
 
-- Describe the relationship of each feature in {features} with the {observation}. Crtically evaluate your reasonings.
+- Describe the relationship of each feature in {features} with the {observation}. Critically evaluate your reasoning.
 
 - Explain how each feature affect the {observation} and how the {observation} be altered by changing the features.
 You must sound like a scientist. Give scientific reasoning for these answers.
 
 - Next, provide a summary of the relationship between the {features} and the {observation}.
 
-- Finally, provide the list the references:
+- Finally, provide the list the references in APA format:
+
 """
