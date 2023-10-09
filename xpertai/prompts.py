@@ -29,7 +29,7 @@ For example a document will have <text 1, (citation 1)>.
 Combine these documents and generate a summarized answer.
 Be precise and accurate as possible. Do not make up answers. 
 Answer in a scientific manner.
-Provide citations for the answer. A citation should be (Author1 et al., year)
+Provide citations for the answer. A citation should be (Author et al., year)
 
 You can use the following draft provide the summarized answer:
 - Provide list of most impactful {features} found from the XAI analysis. If there are other features found in the literature provide them too.
