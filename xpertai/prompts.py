@@ -23,24 +23,27 @@ EXPLAIN_TEMPLATE_NEW= """Please explain how each important features identified b
 
     """
 
-REFINE_PROMPT = """ It has been identified by XAI analysis {features} affect {observation}.
-Your task is to go through given {documents} and their citations to explain the relationship between the  {features} and the {observation}
-For example a document will have <text 1, (citation 1)>.
-Combine these documents and generate a summarized answer.
-Be precise and accurate as possible. Do not make up answers. 
-Answer in a scientific manner.
-Provide citations for the answer. A citation should be (Author et al., year)
+REFINE_PROMPT = """
+feature list: {ft_list}
+observation: {observation}
 
-You can use the following draft provide the summarized answer:
-- Provide list of most impactful {features} found from the XAI analysis. If there are other features found in the literature provide them too.
+Your task is to go through {documents} and explain the relationship between the features in {ft_list} and the {observation}
+XAI analysis is used to identify features in the <feature list> that are most impactful to the {observation}.
+Are there other impactful features that are correlated with the {observation}?
+    
+You can follow the provided draft to answer:
 
-- Describe the relationship of each feature in {features} and other features found in literature, with the {observation}. Critically evaluate your reasoning.
+- First, list all features identified by the XAI analysis <feature list> affecting the {observation}. List additional features that may be correlated with the {observation}.
+\n Eg: {ft_list} found from the XAI analysis.
 
-- Explain how each feature affect the {observation} and how the {observation} be altered by changing the features.
-  Give scientific reasoning for these answers.
+- Next, describe the relationship of each feature in the feature list with the {observation}. You must crtically evaluate your answers, provide reasons and citations.
+  Eg:  solubility of a molecule is affected by the number of hydroxyl groups in the molecule. This is because hydroxyl groups are polar and can form hydrogen bonds with water molecules.
 
-- Next, provide a summary of the relationship between the {features} and the {observation}.
+- Next, explain how each feature in the feature list affect the {observation} and how the {observation} be altered by changing the features.
+  Eg: The solubility of a molecule can be increased by adding more hydroxyl groups to the molecule.
 
-- Finally, provide the list the references in APA format:
+- Then, provide a summary of everything you described previously to describe the relationship between these features and the {observation}. You must sound like a scientist. 
+  Give scientific evidence for these answers and provide citations.
 
+- Finally, provide the list of references. Use APA citation style.
 """
