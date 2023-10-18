@@ -7,6 +7,7 @@ import openai
 from PIL import Image 
 import shutil
 import pandas as pd
+import time
 from dotenv import load_dotenv
 load_dotenv()
 ss = st.session_state
@@ -96,7 +97,7 @@ if button:
     df_init = pd.read_csv(input_file,header=0)
     #"label":label,
     arg_dict_xai = { "df_init":df_init,
-             "model_type":mode_type, 
+            "model_type":mode_type, 
                 "top_k":top_k, "XAI_tool": XAI_tool} 
     
     explanation =  get_modelsummary(arg_dict_xai)
@@ -121,56 +122,59 @@ if button:
 
     nle = ''
 
-    ## read literature
-    if lit_files is not None:
-        for file in lit_files:   
-            save_uploadfile(file)
-            filepath = os.path.join('./data/lit_dir',file.name)
-            try:
-                vector_db(lit_file=filepath,
-                          try_meta_data=True)
-            except: st.write('vectordb failed!!')
-            
-    # scrape arxiv.org
-    if arxiv_keywords is not None:
-        arg_dict_arxiv = {"key_words":arxiv_keywords,
-                        "max_papers":max_papers}
-        
-        scrape_arxiv(arg_dict_arxiv)
+    with st.spinner('Please wait...:computer: :speech_balloon:'):
+        time.sleep(5)
 
-    if observation is not None:
-        arg_dict_nle = {"observation":observation,
-                        "top_k":top_k, 
-                        "XAI_tool": XAI_tool}
-        
-        nle = gen_nle(arg_dict_nle)
-
-        if arxiv_keywords is None and lit_files is None:
-            st.markdown(f"""### Literature is not provided to make an informed explanation.\n 
-                        Based on XAI analysis, the following explanation can be given:
-                        \n{explanation}""")
-            st.download_button("Download the explanation!", 
-                            data =explanation)
-            f = open("./data/figs/structure_function_relationship.txt",'w+')
-            f.write(f'Understanding {observation}\n:')
-            f.write(explanation)
-            f.close()
-
+        ## read literature
+        if lit_files is not None:
+            for file in lit_files:   
+                save_uploadfile(file)
+                filepath = os.path.join('./data/lit_dir',file.name)
+                try:
+                    vector_db(lit_file=filepath,
+                            try_meta_data=True)
+                except: st.write('vectordb failed!!')
+                
+        # scrape arxiv.org
+        if arxiv_keywords is not None:
+            arg_dict_arxiv = {"key_words":arxiv_keywords,
+                            "max_papers":max_papers}
             
-        else:
-            st.write("### The structure function relationship based on XAI analysis and literature, the following explanation can be given:\n", 
-                nle)
-            f = open("./data/figs/structure_function_relationship.txt",'w+')
-            f.write(f'Understanding {observation}\n:')
-            f.write(nle)
-            f.close()
-        
-            #st.download_button("Download the explanation!", 
-            #                data =nle)
+            scrape_arxiv(arg_dict_arxiv)
+
+        if observation is not None:
+            arg_dict_nle = {"observation":observation,
+                            "top_k":top_k, 
+                            "XAI_tool": XAI_tool}
             
-        shutil.make_archive('./data/figs', 'zip', './data/figs/')
-        with open('./data/figs.zip', 'rb') as f:
-            st.download_button('Download the explanation and figures', f, file_name='Figures.zip')
+            nle = gen_nle(arg_dict_nle)
+
+            if arxiv_keywords is None and lit_files is None:
+                st.markdown(f"""### Literature is not provided to make an informed explanation.\n 
+                            Based on XAI analysis, the following explanation can be given:
+                            \n{explanation}""")
+                st.download_button("Download the explanation!", 
+                                data =explanation)
+                f = open("./data/figs/structure_function_relationship.txt",'w+')
+                f.write(f'Understanding {observation}\n:')
+                f.write(explanation)
+                f.close()
+
+                
+            else:
+                st.write("### The structure function relationship based on XAI analysis and literature, the following explanation can be given:\n", 
+                    nle)
+                f = open("./data/figs/structure_function_relationship.txt",'w+')
+                f.write(f'Understanding {observation}\n:')
+                f.write(nle)
+                f.close()
+            
+                #st.download_button("Download the explanation!", 
+                #                data =nle)
+                
+            shutil.make_archive('./data/figs', 'zip', './data/figs/')
+            with open('./data/figs.zip', 'rb') as f:
+                st.download_button('Download the explanation and figures', f, file_name='Figures.zip')
 
 
 
