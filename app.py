@@ -102,7 +102,7 @@ if button:
     
     explanation =  get_modelsummary(arg_dict_xai)
     
-    st.markdown('### XGBoost Model evaluation:')
+    st.markdown('### XAI Analysis:')
     xg_plot = Image.open(f'./data/figs/xgbmodel_error.png')
     st.image(xg_plot)
 
