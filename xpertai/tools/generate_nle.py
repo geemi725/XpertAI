@@ -95,20 +95,5 @@ def gen_nle(arg_dict):
                                  "observation":observation})
 
 
-    """prompt_nle = PromptTemplate(template=EXPLAIN_TEMPLATE, 
-                            input_variables=["observation","ft_list"])
-    
-    db = Chroma(persist_directory="./data/chroma/", 
-                      embedding_function=embedding)
-    retriever = db.as_retriever(search_kwargs=dict(k=5))
-    vectmem = VectorStoreRetrieverMemory(retriever=retriever,input_key="observation")
-    
-    llm_nle = LLMChain(prompt=prompt_nle, llm=llm, memory=vectmem)
-    response = llm_nle.run({'observation':observation,
-                              'ft_list':new_labels
-                              })"""
-
-    #*******************************
-
     
     return response
