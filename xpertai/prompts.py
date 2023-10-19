@@ -1,7 +1,7 @@
 FORMAT_LABLES = """
 Given the label {label}, remove the integers. Using the label without integers, rewrite the new label
 in a human interpretable manner. IMPORTANT: integer has no meaning! Then return:
-<new label> 
+<new label>
 
 """
 
@@ -12,7 +12,7 @@ observation: {observation}
 Your task is to go through {documents} and explain the relationship between the features in {features} and the {observation}
 XAI analysis is used to identify features in the <feature list> that are most impactful to the {observation}.
 Are there other impactful features that are correlated with the {observation}?
-    
+
 You can follow the provided draft to answer:
 
 - First, list all features identified by the XAI analysis <feature list> affecting the {observation}. List additional features that may be correlated with the {observation}.
@@ -24,7 +24,7 @@ You can follow the provided draft to answer:
 - Next, explain how each feature in the feature list affect the {observation} and how the {observation} be altered by changing the features.
   Eg: The solubility of a molecule can be increased by adding more hydroxyl groups to the molecule.
 
-- Then, provide a summary of everything you described previously to describe the relationship between these features and the {observation}. You must sound like a scientist. 
+- Then, provide a summary of everything you described previously to describe the relationship between these features and the {observation}. You must sound like a scientist.
   Give scientific evidence for these answers and provide citations.
 
 - Finally, provide the list of references. Use APA citation style for referencing. \n
