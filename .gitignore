@@ -10,6 +10,7 @@ ipython_config.py
 *.npy
 *.png
 *.txt
+*.pyc
 
 # pyenv
 .python-version

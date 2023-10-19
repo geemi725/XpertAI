@@ -1,0 +1,38 @@
+name: Autopep8
+
+on:
+  # Trigger the workflow on push or pull request,
+  # but only for the main branch
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  run-linters:
+    name: Run linters
+    runs-on: ubuntu-latest
+    strategy:
+        matrix:
+          python-version: ["3.11"]
+
+    steps:
+      - name: Check out Git repository
+        uses: actions/checkout@main
+
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@main
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Install Python dependencies
+        run: |
+          pip install autopep8
+          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+
+      - name: Run linters
+        uses: wearerequired/lint-action@v2
+        with:
+          autopep8: true
