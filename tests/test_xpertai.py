@@ -22,19 +22,19 @@ def test_train_xgbregressor():
 
 
 def test_load_split_docs():
-    tests_dir = os.path.dirname(os.path.realpath('__file__'))
-    doc_path = os.path.join(tests_dir, 'tests/paper_test.pdf')
+    base_dir = os.path.dirname(os.path.realpath('__file__'))
+    doc_path = os.path.join(base_dir, 'tests/paper_test.pdf')
     docs_split = load_split_docs(doc_path)
     assert isinstance(docs_split[0].page_content, str)
 
 
 def test_explain_shap():
-    tests_dir = os.path.dirname(os.path.realpath('__file__'))
+    base_dir = os.path.dirname(os.path.realpath('__file__'))
     df = pd.DataFrame(np.random.randint(0, 2, size=(100, 3)),
                       columns=['feature_1', 'feature_2', 'feature_3'])
     df['Target'] = np.random.randint(0, 2, size=(100, 1))
-    keys, summary = explain_shap(df, model_path=f'{tests_dir}/tests/xgbmodel.json',
-                                 top_k=1, savedir=tests_dir,
+    keys, summary = explain_shap(df, model_path=f'{base_dir}/tests/xgbmodel.json',
+                                 top_k=1, savedir=f'{base_dir}/tests',
                                  classifier=True, save_data=False)
 
     assert summary is not None
@@ -42,13 +42,13 @@ def test_explain_shap():
 
 
 def test_explain_lime():
-    tests_dir = os.path.dirname(os.path.realpath('__file__'))
+    base_dir = os.path.dirname(os.path.realpath('__file__'))
     df = pd.DataFrame(np.random.randint(0, 2, size=(100, 3)),
                       columns=['feature_1', 'feature_2', 'feature_3'])
     df['Target'] = np.random.randint(0, 2, size=(100, 1))
-    keys, summary = explain_lime(df, model_path=f'{tests_dir}/tests/xgbmodel.json',
+    keys, summary = explain_lime(df, model_path=f'{base_dir}/tests/xgbmodel.json',
                                  model_type='Classifier',
-                                 top_k=1, savedir=tests_dir,
+                                 top_k=1, savedir=f'{base_dir}/tests',
                                  save_data=False)
     assert summary is not None
     assert keys is not None
