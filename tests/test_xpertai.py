@@ -1,9 +1,8 @@
 import numpy as np
 import pandas as pd
-from xpertai.tools.utils import *
 import sys
 sys.path.append('../')
-
+from xpertai.tools.utils import *
 
 def test_train_xgbclassifier():
     df = pd.DataFrame(np.random.randint(0, 2, size=(100, 3)),
