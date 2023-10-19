@@ -1,7 +1,7 @@
 import numpy as np
 import pandas as pd
 import sys
-sys.path.append('../')
+#sys.path.append('../')
 from xpertai.tools.utils import *
 
 def test_train_xgbclassifier():
