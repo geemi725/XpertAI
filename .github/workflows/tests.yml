@@ -27,4 +27,4 @@ jobs:
         if [ -f dev-requirements.txt ]; then pip install -r dev-requirements.txt; fi
     - name: Run Test
       run: |
-        pytest tests
+        python -m pytest
