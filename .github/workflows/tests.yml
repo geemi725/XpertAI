@@ -23,7 +23,7 @@ jobs:
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install autopep8 pytest
+        pip install autopep8 pytest numpy pandas 
         if [ -f dev-requirements.txt ]; then pip install -r dev-requirements.txt; fi
     - name: Run Test
       run: |
