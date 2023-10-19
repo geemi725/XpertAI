@@ -1,0 +1,36 @@
+1. Queen, W. L., & Brown, C. M. (2014). Comprehensive study of carbon dioxide adsorption in the metal-organic frameworks M2(dobdc) (M = Mg, Mn, Fe, Co, Ni, Cu, Zn).
+ 
+2. Lin, J.-B., Nguyen, T. T. T., Vaidhyanathan, R., Burner, J., Taylor, J. M., Durekova, H., Akhtar, F., Mah, R. K., Ghaffari-Nik, O., Marx, S., Fylstra, N., Iremonger, S. S., Dawson, K. W., Sarkar, P., Hovington, P., Rajendran, A., Woo, T. K., & Shimizu, G. K. H. (2021). A scalable metal-organic framework as a durable physisorbent for carbon dioxide capture.
+ 
+3. Choudhuri, I., & Truhlar, D. G. (2020). Improved Predictive Tools for Structural Properties of Metal–Organic Frameworks.
+ 
+4. Sumida, K., Rogow, D. L., Mason, J. A., McDonald, T. M., Bloch, E. D., Herm, Z. R., Bae, T-H., & Long, J. R. (2012). Carbon Dioxide Capture in Metal /C0Organic Frameworks.
+ 
+5. Boyd, P. G., Chidambaram, A., García-Díez, E., Ireland, C. P., Daff, T. D., Bounds, R., Gładysiak, A., Schouwink, P., Moosavi, S. M., Maroto-Valer, M. M., Reimer, J. A., Navarro, J. A. R., Woo, T. K., Garcia, S., Stylianou, K. C., & Smit, B. (2019). Data-driven design of metal–organic frameworks for wet flue gas CO2 capture.
+ 
+6. Sanz-Pérez, E. S., Murdock, C. R., Didas, S. A., & Jones, C. W. (2016). Direct Capture of CO2 from Ambient Air.
+ 
+7. Keskin, S., van Heest, T. M., & Sholl, D. S. (2010). Can Metal–Organic Framework Materials Play a Useful Role in Large-Scale Carbon Dioxide Separations?
+ 
+8. Chung, Y. G., Haldoupis, E., Bucior, B. J., Haranczyk, M., Lee, S., Zhang, H., Vogiatzis, K. D., Milisavljevic, M., Ling, S., Camp, J. S., Slater, B., Siepmann, J. I., Sholl, D. S., & Snurr, R. Q. (2019). Advances, Updates, and Analytics for the Computation-Ready, Experimental Metal −Organic Framework Database: CoRE MOF 2019.
+ 
+9. Wang, C.-Z., Chen, J., Li, Q.-H., Wang, G.-E., Ye, X.-L., Lv, J., & Xu, G. (2023). Pore Size Modulation in Flexible Metal-Organic Framework Enabling High Performance Gas Sensing.
+ 
+10. Kumar, A., Madden, D. G., Lusi, M., Chen, K-J., Daniels, E. A., Curtin, T., Perry, J. J. IV, & Zaworotko, M. J. (2015). Direct Air Capture of CO2 by Physisorbent Materials.
+ 
+11. Tarzia, A., Takahashi, M., Falcaro, P., Thornton, A. W., Doonan, C. J., & Huang, D. M. (n.d.). High-throughput screening of metal–organic frameworks for macroscale heteroepitaxial alignment.
+ 
+12. Haldoupis, E., Nair, S., & Sholl, D. S. (2010). Efficient Calculation of Diffusion Limitations in Metal Organic Framework Materials: A Tool for Identifying Materials for Kinetic Separations.
+ 
+13. Xiang, C. et al. (2014). Perspective of microporous metal–organic frameworks for CO2 capture and separation.
+ 
+14. Yang, P., Lu, G., Yang, Q., Liu, L., Lai, X., & Yu, D. (2022). Analyzing acetylene adsorption of metal –organic frameworks based on machine learning.
+ 
+15. Hung, T.-H., Lyu, Q., Lin, L.-C., & Kang, D.-Y. (2021). Transport-Relevant Pore Limiting Diameter for Molecular Separations in Metal −Organic Framework Membranes.
+ 
+16. Asgari, M., Semino, R., Schouwink, P. A., Kochetygov, I., Tarver, J., Trukhina, O., Krishna, R., Brown, C. M., Ceriotti, M., & Queen, W. L. (2020). Understanding How Ligand Functionalization Influences CO2 and N2 Adsorption in a Sodalite Metal−Organic Framework.
+ 
+17. Banerjee, R., Furukawa, H., Britt, D., Knobler, C., O’Keeffe, M., & Yaghi, O. M. (2009). Control of Pore Size and Functionality in Isoreticular Zeolitic Imidazolate Frameworks and their Carbon Dioxide Selective Capture Properties.
+ 
+18. Snurr, R. et al. (2012). Structure–property relationships of porous materials for carbon dioxide separation and capture.
+ 

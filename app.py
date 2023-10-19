@@ -123,7 +123,6 @@ if button:
     nle = ''
 
     with st.spinner('Please wait...:computer: :speech_balloon:'):
-        time.sleep(5)
 
         ## read literature
         if lit_files is not None:
@@ -175,6 +174,3 @@ if button:
             shutil.make_archive('./data/figs', 'zip', './data/figs/')
             with open('./data/figs.zip', 'rb') as f:
                 st.download_button('Download the explanation and figures', f, file_name='Figures.zip')
-
-
-

@@ -1,0 +1,22 @@
+1. Shimy, A. A. (n.d.). Calculating flammability characteristics of hydrocarbons and alcohols. SFPE.
+ 
+2. Mendiburua, A. Z., de Carvalho Jr, J. A., & Coronado, C. R. (2015). Estimation of lower flammability limits of CH compounds in air at atmospheric pressure, evaluation of temperature dependence and diluent effect.
+ 
+3. Vidal, M., Rogers, W. J., Holste, J. C., & Mannan, M. S. (2004). A Review of Estimation Methods for Flash Points and Flammability Limits.
+ 
+4. Rowley, J. R. (2010). Flammability Limits, Flash Points, and Their Consanguinity: Critical Analysis, Experimental Exploration, and Prediction.
+ 
+5. Yuan, S., Jiao, Z., Quddus, N., Kwon, J. S., & Mashuga, C. V. (2019). Developing Quantitative Structure −Property Relationship Models To Predict the Upper Flammability Limit Using Machine Learning.
+ 
+6. Pio, G., & Salzano, E. (2018). Flammability parameters of liquified natural gas.
+ 
+7. Kondo, S., Takizawa, K., Takahashi, A., Tokuhashi, K., & Sekiya, A. (2008). A study on flammability limits of fuel mixtures.
+ 
+8. Shu, G., Long, B., Tian, H., Wei, H., & Liang, X. (2015). Flame temperature theory-based model for evaluation of the flammable zones of hydrocarbon-air-CO2 mixtures.
+ 
+9. Chen, Q., Yan, J., Chen, G., Zhao, Y., Shi, Y., Zeng, Z., & Pan, Q. (2015). Experimental studies on the flammability of mixtures of dimethyl ether.
+ 
+10. Liaw, H.-J., & Chen, K.-Y. (2016). A model for predicting temperature effect on flammability limits.
+ 
+11. Wan, X., & Zhang, Q. (2016). Numerical study of influence of initial pressures and temperatures on the lower flammability limits of oxygenated fuels in air.
+ 

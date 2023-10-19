@@ -1,0 +1,34 @@
+1. Tew, G. N., Scott, R. W., Klein, M. L., & DeGrado, W. F. (2010). De Novo Design of Antimicrobial Polymers, Foldamers, and Small Molecules: From Discovery to Practical Applications.
+ 
+2. Li, P., Hua, P., Gui, D., Niu, J., Pei, P., Zhang, J., & Krebs, P. (2020). A comparative analysis of artificial neural networks and wavelet hybrid approaches to long‑term toxic heavy metal prediction.
+ 
+3. Mayr, A., Klambauer, G., Unterthiner, T., & Hochreiter, S. (2016). DeepTox: Toxicity Prediction using Deep Learning.
+ 
+4. Kalgutkar, A. S., Shaffer, C. L., Henne, K. R., & Mutlib, A. (2005). A Comprehensive Listing of Bioactivation Pathways of Organic Functional Groups.
+ 
+5. Cavasotto, C. N., & Scardino, V. (2022). Machine Learning Toxicity Prediction: Latest Advances by Toxicity End Point.
+ 
+6. de Sá, A. G. C., Long, Y., Portelli, S., Pires, D. E. V., & Ascher, D. B. (2022). toxCSM: comprehensive prediction of small molecule toxicity profiles.
+ 
+7. Ruddigkeit, L., van Deursen, R., Blum, L. C., & Reymond, J. L. (2012). Enumeration of 166 Billion Organic Small Molecules in the Chemical Universe Database GDB-17.
+ 
+8. Garciade Lomana, M., Marin Zapata, P. A., & Montanari, F. (2023). Predicting the Mitochondrial Toxicity of Small Molecules: Insights from Mechanistic Assays and Cell Painting Data.
+ 
+9. Wu, Y., & Wang, G. (2018). Machine Learning Based Toxicity Prediction: From Chemical Structural Description to Transcriptome Analysis.
+ 
+10. Pires, D. E. V., Blundell, T. L., & Ascher, D. B. (2015). pkCSM: Predicting Small-Molecule Pharmacokinetic and Toxicity Properties Using Graph-Based Signatures.
+ 
+11. Sharma, A. K., Srivastava, G. N., Roy, A., & Sharma, V. K. (2017). ToxiM: A Toxicity Prediction Tool for Small Molecules Developed Using Machine Learning and Chemoinformatics Approaches.
+ 
+12. Yang, H., Sun, L., Li, W., Liu, G., & Tang, Y. (2018). In Silico Prediction of Chemical Toxicity for Drug Design Using Machine Learning Methods and Structural Alerts.
+ 
+13. Sharma, B., Chenthamarakshan, V., Dhurandhar, A., Pereira, S., Hendler, J. A., Dordick, J. S., & Das, P. (2023). Accurate clinical toxicity prediction using multi‑task deep neural nets and contrastive molecular explanations.
+ 
+14. Zhang, L., Tan, J., Han, D., & Zhu, H. (2017). From machine learning to deep learning: progress in machine intelligence for rational drug discovery.
+ 
+15. Pu, L., Naderi, M., Liu, T., Wu, H., Mukhopadhyay, S., & Brylinski, M. (2019). eToxPred: a machine learning-based approach to estimate the toxicity of drug candidates.
+ 
+16. Adderley, H., Blackhall, F. H., & Lindsay, C. R. (2021). Toxicity with small molecule and immunotherapy combinations in non‑small cell lung cancer.
+ 
+17. Chen, J., Tang, Y. Y., Fang, B., & Guo, C. (2012). In silico prediction of toxic action mechanisms of phenols for imbalanced data with Random Forest learner.
+ 
