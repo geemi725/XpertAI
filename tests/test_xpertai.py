@@ -33,7 +33,7 @@ def test_explain_shap():
     df = pd.DataFrame(np.random.randint(0, 2, size=(100, 3)),
                       columns=['feature_1', 'feature_2', 'feature_3'])
     df['Target'] = np.random.randint(0, 2, size=(100, 1))
-    keys, summary = explain_shap(df, model_path=f'{tests_dir}/xgbmodel.json',
+    keys, summary = explain_shap(df, model_path=f'{tests_dir}/tests/xgbmodel.json',
                                  top_k=1, savedir=tests_dir,
                                  classifier=True, save_data=False)
 
@@ -46,7 +46,7 @@ def test_explain_lime():
     df = pd.DataFrame(np.random.randint(0, 2, size=(100, 3)),
                       columns=['feature_1', 'feature_2', 'feature_3'])
     df['Target'] = np.random.randint(0, 2, size=(100, 1))
-    keys, summary = explain_lime(df, model_path=f'{tests_dir}/xgbmodel.json',
+    keys, summary = explain_lime(df, model_path=f'{tests_dir}/tests/xgbmodel.json',
                                  model_type='Classifier',
                                  top_k=1, savedir=tests_dir,
                                  save_data=False)
