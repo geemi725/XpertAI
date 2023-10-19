@@ -1,6 +1,10 @@
 Change Log
 ==========
 
+v0.2.2 (2023-10-19)
+--------------------
+CI : tests and autopep8 linter
+
 v0.2.1 (2023-10-18)
 --------------------
 Refine prompt updated with "chain-of-thought"
