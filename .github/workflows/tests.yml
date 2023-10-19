@@ -1,4 +1,4 @@
-name: test
+name: Tests
 
 on:
   push:
@@ -15,7 +15,9 @@ jobs:
         python-version: ["3.11"]
         
     steps:
-    - uses: actions/checkout@main
+    - name: Check out Git repository
+      uses: actions/checkout@main
+
     - name: Set up Python ${{ matrix.python-version }}
       uses: actions/setup-python@main
       with:
