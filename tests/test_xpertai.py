@@ -23,7 +23,7 @@ def test_train_xgbregressor():
 
 def test_load_split_docs():
     tests_dir = os.path.dirname(os.path.realpath('__file__'))
-    doc_path = os.path.join(tests_dir, 'paper_test.pdf')
+    doc_path = os.path.join(tests_dir, 'tests/paper_test.pdf')
     docs_split = load_split_docs(doc_path)
     assert isinstance(docs_split[0].page_content, str)
 
