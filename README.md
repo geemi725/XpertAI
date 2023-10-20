@@ -15,6 +15,14 @@ accessible to non-technical experts. Currently, GPT-4 model is used to generate 
 
 <img src="assets/summary_xpertai.png" width="60%">
 
+## XpertAI's backend functions 
+To facilitate the extraction of natural language explanations from raw data, XpertAI makes use of the following functionalities in the backend:
+- Generating natural language XAI explanations from SHAP and LIME.
+- Automatic generation of citations by reading the first page of a publication (consistent with scientific publications).
+- Automatic refinement of feature labels in the raw dataset to increase human interpretability.
+- Chain-of-thought prompting to generate scientific explanations.
+
+
 ## How to use
 
 1. Go to the [streamlit app](https://xpert-ai.streamlit.app/)
