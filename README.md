@@ -4,14 +4,14 @@
  [![tests](https://github.com/geemi725/XpertAI/actions/workflows/tests.yml/badge.svg)](https://github.com/geemi725/XpertAI) 
 
 ### A package to extract structure-property relationships as natural language explanations
+XpertAI harnesses the power of XAI and LLMs to uncover structure-property relationships and present them in 
+natural language. Checkout the [streamlit app](https://xpert-ai.streamlit.app/)!
 
 <img src="assets/overview.png" width="60%">
 
-
-XpertAI harnesses the power of XAI and LLMs to uncover structure-property relationships and present them in 
-natural language. 
+ 
 XpertAI NLEs are specific to a given dataset/task, provide scientific explanations, and are highly 
-accessible to non-technical experts. 
+accessible to non-technical experts. Currently, GPT-4 model is used to generate natural language explanations.
 
 <img src="assets/summary_xpertai.png" width="60%">
 
