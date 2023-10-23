@@ -345,7 +345,7 @@ def vector_db(persist_directory=None,
         persist_directory = "./data/chroma/"
 
     if try_meta_data:
-        metadatas = _(lit_file)
+        metadatas = _get_metadata(lit_file)
 
     text_split = load_split_docs(f'{lit_file}', meta_data=metadatas)
 

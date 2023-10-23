@@ -3,7 +3,8 @@ from langchain.memory import ConversationBufferMemory, ReadOnlySharedMemory
 from langchain import LLMChain, PromptTemplate
 from xpertai.prompts import REFINE_PROMPT, FORMAT_LABLES
 from .utils import *
-
+from langchain.embeddings.openai import OpenAIEmbeddings
+embedding = OpenAIEmbeddings()
 
 def gen_nle(arg_dict):
     '''Takes a dictionary as input in the form:
@@ -85,6 +86,7 @@ def gen_nle(arg_dict):
         How does each of these features impact the {observation}?
         """
         # Get relevant docs
+        
         db = Chroma(persist_directory="./data/chroma/",
                     embedding_function=embedding)
 
