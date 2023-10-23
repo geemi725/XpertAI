@@ -71,8 +71,9 @@ def train_xgbclassifier(df_init, save_data=True, savedir=None):
     results = xgb_model.evals_result()
 
     if save_data:
+        
+        _plots(results, 'error')
         xgb_model.save_model(f'{savedir}/xgbmodel.json')
-
         np.save(f'{savedir}/xgb_results.npy', results)
 
     else:
