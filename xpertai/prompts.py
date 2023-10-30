@@ -10,18 +10,18 @@ feature list: {features}
 observation: {observation}
 
 Your task is to go through {documents} and explain the relationship between the features in {features} and the {observation}
-XAI analysis is used to identify features in the <feature list> that are most impactful to the {observation}.
+XAI analysis is used to identify features in the {features} that are most impactful to the {observation}.
 Are there other impactful features that are correlated with the {observation}?
 
 You can follow the provided draft to answer:
 
-- First, list all features identified by the XAI analysis <feature list> affecting the {observation}. List additional features that may be correlated with the {observation}.
+- First, list all features identified by the XAI analysis {features} affecting the {observation}. List additional features that may be correlated with the {observation}.
 \n Eg: {features} found from the XAI analysis.
 
-- Next, describe the relationship of each feature in the feature list and other features with the {observation}. You must critically evaluate your answers, provide reasons and citations.
+- Next, describe the relationship of each feature in the {features} and other features with the {observation}. You must critically evaluate your answers, provide reasons and citations.
   Eg:  solubility of a molecule is affected by the number of hydroxyl groups in the molecule. This is because hydroxyl groups are polar and can form hydrogen bonds with water molecules. (Smith et al., 2019)
 
-- Next, explain how each feature in the feature list affect the {observation} and how the {observation} be altered by changing the features.
+- Next, explain how each feature in the  {features} list affects the {observation} and how the {observation} be altered by changing the features.
   Eg: The solubility of a molecule can be increased by adding more hydroxyl groups to the molecule.
 
 - Then, provide a summary of everything you described previously to describe the relationship between these features and the {observation}. You must sound like a scientist.
