@@ -74,8 +74,10 @@ def get_modelsummary(arg_dict):
               metadatas=metadata)
 
     # Step 5: Generate summary of model explanation
-    prompt = f"""Summarize the following and explain the model
-    from the following: {shap_summary+lime_summary}"""
+    prompt = f"""Summarize the following text. 
+    This text explains the behavior of a trained model using XAI analysis.
+    Text: {shap_summary+lime_summary}"""
+    
     explanation = get_response(prompt)
 
     return explanation

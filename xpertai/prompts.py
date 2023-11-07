@@ -1,7 +1,7 @@
 FORMAT_LABLES = """
-Given the label {label}, remove the integers. Using the label without integers, rewrite the new label
-in a human interpretable manner. IMPORTANT: integer has no meaning! Then return:
-`new label`
+Given the label {label}, remove the integers. Using the label without integers, rewrite a new label
+in a human interpretable manner. IMPORTANT: integer has no meaning! 
+Return: new label
 
 """
 
