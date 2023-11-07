@@ -27,7 +27,7 @@ You can follow the provided draft to answer:
 - Then, provide a summary of everything you described previously to describe the relationship between these features and the {observation}. You must sound like a scientist.
   Give scientific evidence for these answers and provide citations.
 
-- Finally, provide the list of references. Use APA citation style for referencing. \n
+- Finally, provide the list of references used to answer. Use APA citation style for referencing. \n
 Eg: References: \n
     1. reference 1 \n
     2. reference 2 \n
