@@ -1,8 +1,8 @@
 streamlit
 ipython
 python-dotenv
-openai=0.28.1
-langchain
+openai==0.28.1
+langchain==0.0306
 matplotlib
 scikit-learn
 xgboost
