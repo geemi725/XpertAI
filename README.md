@@ -34,3 +34,17 @@ To facilitate the extraction of natural language explanations from raw data, Xpe
 7. Provide literature to help XperAI make scientific explanations. You can either upload multiple publications (as PDFs) or ask XpertAI to scrape ``arxiv.org`` for relevant papers. 
 In this case, you can add keywords to search arxiv and set the maximum number of references to be downloaded. **Note**: We have seen better performance with curated literature datasets as they are more specific.  
 8. Finally tell XpertAI what is the property you'd like explained. eg. "Solubility of small molecules". Click the ``Generate Explanation`` button to begin! Once the explanation is generated you can download it along with train-test error plot and the XAI plots.
+9. 
+
+## Cite our work
+Wellawatte, Geemi, and Philippe Schwaller. "Extracting human interpretable structure-property relationships in chemistry using XAI and large language models." In XAI in Action: Past, Present, and Future Applications. 2023.
+
+```bibtex
+@inproceedings{wellawatte2023extracting,
+  title={Extracting human interpretable structure-property relationships in chemistry using XAI and large language models},
+  author={Wellawatte, Geemi and Schwaller, Philippe},
+  booktitle={XAI in Action: Past, Present, and Future Applications},
+  year={2023}
+}
+```
+
