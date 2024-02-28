@@ -35,9 +35,12 @@ def test_load_split_docs():
     assert isinstance(docs_split[0].page_content, str)
 
 def test_vector_db():
+    from langchain.embeddings import HuggingFaceEmbeddings
+
     base_dir = os.path.dirname(os.path.realpath("__file__"))
     lit_file = os.path.join(base_dir, "tests/paper_test.pdf")
-    vector_db(lit_file=lit_file, try_meta_data=True, clean=True)
+    embedding = HuggingFaceEmbeddings(model_name="sentence-transformers/all-mpnet-base-v2")
+    vector_db(lit_file=lit_file, try_meta_data=True, clean=True, embedding=embedding)
     assert os.path.exists("./data/chroma/") is True
 
 
