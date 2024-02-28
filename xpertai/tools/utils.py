@@ -271,8 +271,8 @@ def explain_lime(df_init, model_path, model_type, top_k=2,
 
 def load_split_docs(filename, meta_data=None):
     r_splitter = RecursiveCharacterTextSplitter(
-        chunk_size=1500,
-        chunk_overlap=200,
+        chunk_size=500,
+        chunk_overlap=50,
         length_function=len
     )
     docs = None
@@ -293,8 +293,8 @@ def load_split_docs(filename, meta_data=None):
     return docs_split
 
 
-def _create_vecdb(docs_split, persist_directory):
-    embedding = OpenAIEmbeddings()
+def _create_vecdb(docs_split, persist_directory, embedding=None):
+    if embedding is None: embedding = OpenAIEmbeddings()
 
     vectordb = Chroma.from_documents(
         documents=docs_split,
@@ -304,8 +304,9 @@ def _create_vecdb(docs_split, persist_directory):
     vectordb.persist()
 
 
-def _update_vecdb(docs_split, persist_directory):
-    embedding = OpenAIEmbeddings()
+def _update_vecdb(docs_split, persist_directory,embedding=None):
+    if embedding is None: embedding = OpenAIEmbeddings()
+
     vectordb = Chroma(persist_directory=persist_directory,
                       embedding_function=embedding)
 
@@ -340,7 +341,8 @@ def _get_metadata(lit_file):
 def vector_db(persist_directory=None,
               lit_file=None, clean=False,
               try_meta_data=False,
-              metadatas=None):
+              metadatas=None,
+              embedding=None):
 
     if persist_directory is None:
         persist_directory = "./data/chroma/"
@@ -355,7 +357,7 @@ def vector_db(persist_directory=None,
         if os.path.exists(persist_directory):
             shutil.rmtree(persist_directory)
         os.mkdir(persist_directory)
-        _create_vecdb(text_split, persist_directory)
+        _create_vecdb(text_split, persist_directory,embedding=embedding)
 
     else:
-        _update_vecdb(text_split, persist_directory)
+        _update_vecdb(text_split, persist_directory,embedding=embedding)
