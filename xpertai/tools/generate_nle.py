@@ -15,9 +15,9 @@ def gen_nle(arg_dict):
     }
 
     Example:
-    {"lit_directory:"data/arxiv_downloads",
+    {"observation":"toxicity of small molecules",
     "XAI_tool": "SHAP",
-    "top_k":5}
+    "top_k":3}
     '''
 
     save_dir = './data'
