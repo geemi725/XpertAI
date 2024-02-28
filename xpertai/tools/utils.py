@@ -271,8 +271,8 @@ def explain_lime(df_init, model_path, model_type, top_k=2,
 
 def load_split_docs(filename, meta_data=None):
     r_splitter = RecursiveCharacterTextSplitter(
-        chunk_size=500,
-        chunk_overlap=50,
+        chunk_size=1000,
+        chunk_overlap=100,
         length_function=len
     )
     docs = None
@@ -293,8 +293,7 @@ def load_split_docs(filename, meta_data=None):
     return docs_split
 
 
-def _create_vecdb(docs_split, persist_directory, embedding=None):
-    if embedding is None: embedding = OpenAIEmbeddings()
+def _create_vecdb(docs_split, persist_directory, embedding):
 
     vectordb = Chroma.from_documents(
         documents=docs_split,
@@ -304,9 +303,8 @@ def _create_vecdb(docs_split, persist_directory, embedding=None):
     vectordb.persist()
 
 
-def _update_vecdb(docs_split, persist_directory,embedding=None):
-    if embedding is None: embedding = OpenAIEmbeddings()
-
+def _update_vecdb(docs_split, persist_directory,embedding):
+    
     vectordb = Chroma(persist_directory=persist_directory,
                       embedding_function=embedding)
 
@@ -349,6 +347,9 @@ def vector_db(persist_directory=None,
 
     if try_meta_data:
         metadatas = _get_metadata(lit_file)
+
+    if embedding is None: 
+        embedding = OpenAIEmbeddings()
 
     text_split = load_split_docs(f'{lit_file}', meta_data=metadatas)
 
