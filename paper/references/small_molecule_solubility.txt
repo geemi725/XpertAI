@@ -4,33 +4,46 @@
  
 3. Lee, S., Lee, M., Gyak, K-W., Kim, S. D., Kim, M-J., & Min, K. (2022). Novel Solubility Prediction Models: Molecular Fingerprints and Physicochemical Features vs Graph Convolutional Neural Networks.
  
-4. Meng, J., Chen, P., Wahi, M., Yang, M., Zheng, L., Wei, Y., Feng, S., & Liu, W. (2022). Boosting the predictive performance with aqueous solubility dataset curation.
+4. Bergström, C. A. S., & Larsson, P. (2018). Computational prediction of drug solubility in water-based systems: Qualitative and quantitative approaches used in the current drug discovery and development setting.
  
-5. Peterson, D. L., & Yalkowsky, S. H. (2001). Comparison of Two Methods for Predicting Aqueous Solubility.
+5. Meng, J., Chen, P., Wahi, M., Yang, M., Zheng, L., Wei, Y., Feng, S., & Liu, W. (2022). Boosting the predictive performance with aqueous solubility dataset curation.
  
-6. Ran, Y., He, Y., Yang, G., Johnson, J. L. H., & Yalkowsky, S. H. (2002). Estimation of aqueous solubility of organic compounds by using the general solubility equation.
+6. Peterson, D. L., & Yalkowsky, S. H. (2001). Comparison of Two Methods for Predicting Aqueous Solubility.
  
-7. Alshahrani, S. M., Almutairy, B. K., Alfadhel, M. M., Belal, A., Abourehab, M. A. S., Saqr, A. A., Alshetaili, A. S., Venkatesan, K., Alsubaiyel, A. M., & Pishnamazi, M. (2022). Computational simulation and target prediction studies of solubility optimization of decitabine through supercritical solvent.
+7. Ran, Y., He, Y., Yang, G., Johnson, J. L. H., & Yalkowsky, S. H. (2002). Estimation of aqueous solubility of organic compounds by using the general solubility equation.
  
-8. Ryu, S., & Lee, S. (2022). Accurate, reliable and interpretable solubility prediction of druglike molecules with attention pooling and Bayesian learning.
+8. Alshahrani, S. M., Almutairy, B. K., Alfadhel, M. M., Belal, A., Abourehab, M. A. S., Saqr, A. A., Alshetaili, A. S., Venkatesan, K., Alsubaiyel, A. M., & Pishnamazi, M. (2022). Computational simulation and target prediction studies of solubility optimization of decitabine through supercritical solvent.
  
-9. Lusci, A., Pollastri, G., & Baldi, P. (2013). Deep architectures and deep learning in chemoinformatics: The prediction of aqueous solubility for drug-like molecules.
+9. Hossain, S., Kabedev, A., Parrow, A., Bergström, C. A. S., & Larsson, P. (2019). Molecular simulation as a computational pharmaceutics tool to predict drug solubility, solubilization processes and partitioning.
  
-10. Wolthuis, E., Pruiksma, A. B., & Heerema, R. P. (1960). Determination of Solubility: A laboratory experiment.
+10. Jorgensen, W. L., & Duffy, E. M. (2002). Prediction of drug solubility from structure.
  
-11. Lee, S., Park, H., Choi, C., Kim, W., Kim, K. K., Han, Y-K., Kang, J., Kang, C-J., & Son, Y. (2023). Multi‑order graph attention network for water solubility prediction and interpretation.
+11. Hwang, D., Ramsey, J. D., & Kabanov, A. V. (2020). Polymeric micelles for the delivery of poorly soluble drugs: From nanoformulation to clinical approval.
  
-12. Boobier, S., Hose, D. R. J., Blacker, A. J., & Nguyen, B. N. (2020). Machine learning with physicochemical relationships: solubility prediction in organic solvents and water.
+12. Lusci, A., Pollastri, G., & Baldi, P. (2013). Deep architectures and deep learning in chemoinformatics: The prediction of aqueous solubility for drug-like molecules.
  
-13. McDonagh, J. L., Nath, N., De Ferrari, L., van Mourik, T., & Mitchell, J. B. O. (2014). Uniting Cheminformatics and Chemical Theory To Predict the Intrinsic Aqueous Solubility of Crystalline Druglike Molecules.
+13. Lee, S., Park, H., Choi, C., Kim, W., Kim, K. K., Han, Y.-K., Kang, J., Kang, C.-J., & Son, Y. (2023). Multi‑order graph attention network for water solubility prediction and interpretation.
  
-14. Sorkun, M. C., Khetan, A., & Er, S. (2019). aqSolDB, a curated reference set of aqueous solubility and 2D descriptors for a diverse set of compounds.
+14. Boobier, S., Hose, D. R. J., Blacker, A. J., & Nguyen, B. N. (2020). Machine learning with physicochemical relationships: solubility prediction in organic solvents and water.
  
-15. Lovri, M., Pavlovi, K., Žuvela, P., Spataru, A., Luc, B., Kern, R., & Wong, M. W. (2021). Machine learning in prediction of intrinsic aqueous solubility of drug-like compounds: Generalization, complexity, or predictive ability?
+15. McDonagh, J. L., Nath, N., De Ferrari, L., van Mourik, T., & Mitchell, J. B. O. (2014). Uniting Cheminformatics and Chemical Theory To Predict the Intrinsic Aqueous Solubility of Crystalline Druglike Molecules.
  
-16. Delaney, J. S. (2004). ESOL: Estimating Aqueous Solubility Directly from Molecular Structure.
+16. Sorkun, M. C., Khetan, A., & Er, S. (2019). aqSolDB, a curated reference set of aqueous solubility and 2D descriptors for a diverse set of compounds.
  
-17. Li, D., Fish, P. V., & Mano, T. (2012). Bridging solubility between drug discovery and development.
+17. Bergström, C. A. S., Wassvik, C. M., Norinder, U., Luthman, K., & Artursson, P. (2004). Global and Local Computational Models for Aqueous Solubility Prediction of Drug-Like Molecules.
  
-18. Barretta, J. A., Yangb, W., Skolnikc, S. M., Belliveaud, L. M., & Patrosd, K. M. (2022). Discovery solubility measurement and assessment of small molecules with drug development in mind.
+18. Vargason, A. M., Anselmo, A. C., & Mitragotri, S. (2021). The evolution of commercial drug delivery technologies.
  
+19. Lovri, M., Pavlovi, K., Žuvela, P., Spataru, A., Luc, B., Kern, R., & Wong, M. W. (2021). Machine learning in prediction of intrinsic aqueous solubility of drug-like compounds: Generalization, complexity, or predictive ability?
+ 
+20. Delaney, J. S. (2004). ESOL: Estimating Aqueous Solubility Directly from Molecular Structure.
+ 
+21. Walker, M. A. (2017). Improvement in aqueous solubility achieved via small molecular changes.
+ 
+22. Lipinski, C. A., Lombardo, F., Dominy, B. W., & Feeney, P. J. (2001). Experimental and computational approaches to estimate solubility and permeability in drug discovery and development settings.
+ 
+23. Wei, W., Cherukupalli, S., Jing, L., Liu, X., & Zhan, P. (2020). Fsp3: A new parameter for drug-likeness.
+ 
+24. Li, D., Fish, P. V., & Mano, T. (2012). Bridging solubility between drug discovery and development.
+ 
+25. Barretta, J. A., Yangb, W., Skolnikc, S. M., Belliveaud, L. M., & Patrosd, K. M. (2022). Discovery solubility measurement and assessment of small molecules with drug development in mind.

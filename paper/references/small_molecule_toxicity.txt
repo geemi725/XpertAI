@@ -1,34 +1,63 @@
-1. Tew, G. N., Scott, R. W., Klein, M. L., & DeGrado, W. F. (2010). De Novo Design of Antimicrobial Polymers, Foldamers, and Small Molecules: From Discovery to Practical Applications.
+1. Gupta, S., Basant, N., & Singh, K. P. (2015). Estimating sensory irritation potency of volatile organic chemicals using QSARs based on decision tree methods for regulatory purpose.
  
-2. Li, P., Hua, P., Gui, D., Niu, J., Pei, P., Zhang, J., & Krebs, P. (2020). A comparative analysis of artificial neural networks and wavelet hybrid approaches to long‑term toxic heavy metal prediction.
+2. Guengerich, F. P., & MacDonald, J. S. (2007). Applying mechanisms of chemical toxicity to predict drug safety.
  
-3. Mayr, A., Klambauer, G., Unterthiner, T., & Hochreiter, S. (2016). DeepTox: Toxicity Prediction using Deep Learning.
+3. Zhu, H., Martin, T. M., Ye, L., Sedykh, A., Young, D. M., & Tropsha, A. (2009). Quantitative Structure -Activity Relationship Modeling of Rat Acute Toxicity by Oral Exposure.
  
-4. Kalgutkar, A. S., Shaffer, C. L., Henne, K. R., & Mutlib, A. (2005). A Comprehensive Listing of Bioactivation Pathways of Organic Functional Groups.
+4. Tonholoa, D.R., Maltarollob, V.G., Kronenbergerc, T., Silvab, I.R., Azevedoa, P.O., Oliveirab, R.B., Souzaa, L.C.R., & Tagliatia, C.A. (2019). Preclinical toxicity of innovative molecules: In vitro, in vivo and metabolism prediction.
  
-5. Cavasotto, C. N., & Scardino, V. (2022). Machine Learning Toxicity Prediction: Latest Advances by Toxicity End Point.
+5. Mayr, A., Klambauer, G., Unterthiner, T., & Hochreiter, S. (2016). DeepTox: Toxicity Prediction using Deep Learning.
  
-6. de Sá, A. G. C., Long, Y., Portelli, S., Pires, D. E. V., & Ascher, D. B. (2022). toxCSM: comprehensive prediction of small molecule toxicity profiles.
+6. Kalgutkar, A. S., Gardner, I., Obach, R. S., Shaffer, C. L., Callegari, E., Henne, K. R., Mutlib, A. E., Dalvie, D. K., Lee, J. S., Nakai, Y., O'Donnell, J. P., Boer, J., & Harriman, S. P. (2005). A Comprehensive Listing of Bioactivation Pathways of Organic Functional Groups.
  
-7. Ruddigkeit, L., van Deursen, R., Blum, L. C., & Reymond, J. L. (2012). Enumeration of 166 Billion Organic Small Molecules in the Chemical Universe Database GDB-17.
+7. Rao, M. S., Gupta, R., Liguori, M. J., Hu, M., Huang, X., Mantena, S. R., Mittelstadt, S. W., Blomme, E. A. G., & VanVleet, T. R. (2019). Novel Computational Approach to Predict Off-Target Interactions for Small Molecules.
  
-8. Garciade Lomana, M., Marin Zapata, P. A., & Montanari, F. (2023). Predicting the Mitochondrial Toxicity of Small Molecules: Insights from Mechanistic Assays and Cell Painting Data.
+8. Cavasotto, C. N., & Scardino, V. (2022). Machine Learning Toxicity Prediction: Latest Advances by Toxicity End Point.
  
-9. Wu, Y., & Wang, G. (2018). Machine Learning Based Toxicity Prediction: From Chemical Structural Description to Transcriptome Analysis.
+9. de Sá, A. G. C., Long, Y., Portelli, S., Pires, D. E. V., & Ascher, D. B. (2022). toxCSM: comprehensive prediction of small molecule toxicity profiles.
  
-10. Pires, D. E. V., Blundell, T. L., & Ascher, D. B. (2015). pkCSM: Predicting Small-Molecule Pharmacokinetic and Toxicity Properties Using Graph-Based Signatures.
+10. Mistry, P., Neagu, D., Trundle, P. R., & Vessey, J. D. (2016). Using random forest and decision tree models for a new vehicle prediction approach in computational toxicology.
  
-11. Sharma, A. K., Srivastava, G. N., Roy, A., & Sharma, V. K. (2017). ToxiM: A Toxicity Prediction Tool for Small Molecules Developed Using Machine Learning and Chemoinformatics Approaches.
+11. Muster, W., Breidenbach, A., Fischer, H., Kirchner, S., Müller, L., & Pähler, A. (2008). Computational toxicology in drug development.
  
-12. Yang, H., Sun, L., Li, W., Liu, G., & Tang, Y. (2018). In Silico Prediction of Chemical Toxicity for Drug Design Using Machine Learning Methods and Structural Alerts.
+12. Pérez Santín, E., Rodríguez Solana, R., González García, M., García Suárez, M. D. M., Blanco Díaz, G. D., Cima Cabal, M. D., Moreno Rojas, J. M., & López Sánchez, J. I. (2021). Toxicity prediction based on artificial intelligence: A multidisciplinary overview.
  
-13. Sharma, B., Chenthamarakshan, V., Dhurandhar, A., Pereira, S., Hendler, J. A., Dordick, J. S., & Das, P. (2023). Accurate clinical toxicity prediction using multi‑task deep neural nets and contrastive molecular explanations.
+13. Wu, Y., & Wang, G. (2018). Machine Learning Based Toxicity Prediction: From Chemical Structural Description to Transcriptome Analysis.
  
-14. Zhang, L., Tan, J., Han, D., & Zhu, H. (2017). From machine learning to deep learning: progress in machine intelligence for rational drug discovery.
+14. Liebler, D. C., & Guengerich, F. P. (2005). Elucidating mechanisms of drug-induced toxicity.
  
-15. Pu, L., Naderi, M., Liu, T., Wu, H., Mukhopadhyay, S., & Brylinski, M. (2019). eToxPred: a machine learning-based approach to estimate the toxicity of drug candidates.
+15. Pires, D. E. V., Blundell, T. L., & Ascher, D. B. (2015). pkCSM: Predicting Small-Molecule Pharmacokinetic and Toxicity Properties Using Graph-Based Signatures.
  
-16. Adderley, H., Blackhall, F. H., & Lindsay, C. R. (2021). Toxicity with small molecule and immunotherapy combinations in non‑small cell lung cancer.
+16. Sharma, A. K., Srivastava, G. N., Roy, A., & Sharma, V. K. (2017). ToxiM: A Toxicity Prediction Tool for Small Molecules Developed Using Machine Learning and Chemoinformatics Approaches.
  
-17. Chen, J., Tang, Y. Y., Fang, B., & Guo, C. (2012). In silico prediction of toxic action mechanisms of phenols for imbalanced data with Random Forest learner.
+17. Yang, H., Sun, L., Li, W., Liu, G., & Tang, Y. (2018). In Silico Prediction of Chemical Toxicity for Drug Design Using Machine Learning Methods and Structural Alerts.
  
+18. Baillie, T. A. (2008). Metabolism and Toxicity of Drugs. Two Decades of Progress in Industrial Drug Metabolism.
+ 
+19. Srivastava, R. (2021). Theoretical Studies on the Molecular Properties, Toxicity, and Biological Efficacy of 21 New Chemical Entities.
+ 
+20. Sharma, B., Chenthamarakshan, V., Dhurandhar, A., Pereira, S., Hendler, J. A., Dordick, J. S., & Das, P. (2023). Accurate clinical toxicity prediction using multi‑task deep neural nets and contrastive molecular explanations.
+ 
+21. Chen, Y. Z., & Ung, C. Y. (2001). Prediction of potential toxicity and side effect protein targets of a small molecule by a ligand–protein inverse docking approach.
+ 
+22. Gillette, J. R., Mitchell, J. R., & Brodie, B. B. (1974). Biochemical mechanisms of drug toxicity.
+ 
+23. Zhang, L., Tan, J., Han, D., & Zhu, H. (2017). From machine learning to deep learning: progress in machine intelligence for rational drug discovery.
+ 
+24. Park, B. K., Kitteringham, N. R., Powell, H., & Pirmohamed, M. (2000). Advances in molecular toxicology–towards understanding idiosyncratic drug toxicity.
+ 
+25. Houck, K. A., & Kavlock, R. J. (2008). Understanding mechanisms of toxicity: Insights from drug discovery research.
+ 
+26. Sharma, N., Naorem, L. D., Jain, S., & Raghava, G. P. S. (2022). ToxinPred2: An improved method for predicting toxicity of proteins.
+ 
+27. Pu, L., Naderi, M., Liu, T., Wu, H., Mukhopadhyay, S., & Brylinski, M. (2019). eToxPred: a machine learning-based approach to estimate the toxicity of drug candidates.
+ 
+28. Haley, P. J. (2012). Small Molecule Immunomodulatory Drugs: Challenges and Approaches for Balancing Efficacy with Toxicity.
+ 
+29. Guengerich, F. P. (2011). Mechanisms of Drug Toxicity and Relevance to Pharmaceutical Development.
+ 
+30. Rezende-Teixeira, P., Dusi, R. G., Jimenez, P. C., Espindola, L. S., & Costa-Lotufo, L. V. (2022). What can we learn from commercial insecticides? Efficacy, toxicity, environmental impacts, and future developments.
+ 
+31. de Lomana, M. G., Svensson, F., Volkamer, A., Mathea, M., & Kirchmair, J. (2022). Consideration of predicted small-molecule metabolites in computational toxicology.
+ 
+32. Solimeo, R., Zhang, J., Kim, M., Sedykh, A., & Zhu, H. (2012). Predicting Chemical Ocular Toxicity Using a Combinatorial QSAR Approach.
