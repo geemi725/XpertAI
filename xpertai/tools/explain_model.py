@@ -10,6 +10,7 @@ def get_modelsummary(arg_dict):
     "model_type":<classifier or regressor>,
     "top_k":<Number of features to explain>,
     "XAI_tool": <SHAP, LIME or Both>
+    "persist_directory":<path to vectordb>
     }.
 
     Example:
@@ -22,6 +23,9 @@ def get_modelsummary(arg_dict):
 
     '''
     save_dir = './data'
+    global persist_directory ; persist_directory = None
+    global clean ; clean = True
+    
     if not os.path.exists(save_dir):
         os.mkdir(save_dir)
     # arg_dict = json.loads(json_request)
@@ -70,7 +74,8 @@ def get_modelsummary(arg_dict):
     f.close()
     metadata = {'Authors': 'XpertAI', 'Year': '2023', 'Title': 'XAI Summary'}
 
-    vector_db(lit_file=f'{save_dir}/XAI_summary.txt', clean=True,
+    vector_db(persist_directory=persist_directory,
+              lit_file=f'{save_dir}/XAI_summary.txt', clean=clean,
               metadatas=metadata)
 
     # Step 5: Generate summary of model explanation

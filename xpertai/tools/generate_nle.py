@@ -11,6 +11,7 @@ def gen_nle(arg_dict):
     {"observation":<target property>,
     "XAI_tool": <SHAP, LIME or Both>,
     "top_k":<maximum number of features to explain>
+    "persist_directory":<path to vectordb>
     }
 
     Example:
@@ -20,6 +21,7 @@ def gen_nle(arg_dict):
     '''
 
     save_dir = './data'
+    global persist_directory ; persist_directory = "./data/chroma/"
     # arg_dict = json.loads(json_request)
     for k, val in arg_dict.items():
         globals()[k] = val
@@ -61,7 +63,7 @@ def gen_nle(arg_dict):
     # get human interpretable feature labels
     # #initiate retriever, chain
     llm = ChatOpenAI(
-        temperature=0.1,
+        temperature=0.0,
         model_name="gpt-4",
         request_timeout=1000)
 
@@ -78,22 +80,19 @@ def gen_nle(arg_dict):
     # generate NLEs with citations
 
     features = ','.join(new_labels)
+    db = Chroma(persist_directory=persist_directory,
+                    embedding_function=embedding)
     docs = []
     # first collect docs for each feature
     for feature in new_labels:
-        initial_question = f"""It has been identified by XAI analysis {feature} have an impact on the {observation}. \n
-        Your task is to explain how the {observation} is affected by the {feature}. \
-        How does each of these features impact the {observation}?
-        """
+        initial_question = f"""How does the {feature} impact the {observation}?"""
         # Get relevant docs
-        
-        db = Chroma(persist_directory="./data/chroma/",
-                    embedding_function=embedding)
-
-        docs.append(db.max_marginal_relevance_search(initial_question))
+        fetched = db.max_marginal_relevance_search(initial_question,k=4)
+        docs.append(fetched)
 
     # flatten list of docs
     docs = [item for sublist in docs for item in sublist]
+
     # add citations from metadata
     documents = ""
     for i in range(len(docs)):
@@ -101,7 +100,9 @@ def gen_nle(arg_dict):
         try:
             authors = docs[i].metadata["authors"]
             year = docs[i].metadata["year"]
-            documents += f"{doc} ({authors},{year}) \n\n"
+            title = docs[i].metadata["source"]
+            documents += f"{doc} REFERENCE:({authors},{year},{title}) \n\n"
+
         except BaseException:
             documents += f"{doc} \n\n"
 
