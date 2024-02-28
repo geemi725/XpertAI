@@ -87,7 +87,7 @@ def gen_nle(arg_dict):
     for feature in new_labels:
         initial_question = f"""How does the {feature} impact the {observation}?"""
         # Get relevant docs
-        fetched = db.max_marginal_relevance_search(initial_question,k=4)
+        fetched = db.max_marginal_relevance_search(initial_question,k=3)
         docs.append(fetched)
 
     # flatten list of docs
