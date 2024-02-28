@@ -5,17 +5,16 @@ from .utils import *
 def get_modelsummary(arg_dict):
     '''
     Takes a dictionary as input in the form:
-    { "data_path":"<path to dataframe>",
-    "label":"<target label>",
+    { "df_init":"<pandas dataframe>",
     "model_type":<classifier or regressor>,
     "top_k":<Number of features to explain>,
-    "XAI_tool": <SHAP, LIME or Both>
+    "XAI_tool": <SHAP, LIME or Both>,
+    "clean":<True or False>,
     "persist_directory":<path to vectordb>
     }.
 
     Example:
-        {"data_path":".data/ft1034_labeldropped.csv",
-        "label":"HAS_OMS",
+        {
         "model_type": "classifier",
         "top_k":5,
         "XAI_tool": "SHAP"
