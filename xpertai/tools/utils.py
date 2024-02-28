@@ -36,7 +36,7 @@ def _plots(results, eval_type):
 
     if os.path.exists(figsave):
         shutil.rmtree(figsave)
-    os.mkdir(figsave)
+    os.makedirs(figsave)
 
     x_axis = np.arange(len(results["validation_0"][eval_type]))
     fig, ax = plt.subplots()
@@ -362,7 +362,7 @@ def vector_db(
         # Delete and create persist directory
         if os.path.exists(persist_directory):
             shutil.rmtree(persist_directory)
-        os.mkdir(persist_directory)
+        os.makedirs(persist_directory)
         _create_vecdb(text_split, persist_directory, embedding=embedding)
 
     else:

@@ -28,7 +28,7 @@ def get_modelsummary(arg_dict):
     clean = True
 
     if not os.path.exists(save_dir):
-        os.mkdir(save_dir)
+        os.makedirs(save_dir)
     # arg_dict = json.loads(json_request)
     for k, val in arg_dict.items():
         globals()[k] = val
