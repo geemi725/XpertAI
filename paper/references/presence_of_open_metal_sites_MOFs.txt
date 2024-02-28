@@ -1,38 +1,55 @@
-1. Guo, H., Ma, J., Zhong, Y., Yin, Y., & Chen, M. (n.d.). Machine learning prediction of open metal sites in metal-organic framework catalysts.
+1. Queen, W. L., Hudson, M. R., Bloch, E. D., Mason, J. A., Gonzalez, M. I., Lee, J. S., Gygi, D., Howe, J. D., Lee, K., Darwish, T. A., James, M., Peterson, V. K., Teat, S. J., Smit, B., Neaton, J. B., Longci, J. R., & Brown, C. M. (2014). Comprehensive study of carbon dioxide adsorption in the metal–organic frameworks M 2(dobdc) (M¼Mg, Mn, Fe, Co, Ni, Cu, Zn).
  
-2. Queen, W. L., & Brown, C. M. (2014). Comprehensive study of carbon dioxide adsorption in the metal-organic frameworks M2(dobdc) (M = Mg, Mn, Fe, Co, Ni, Cu, Zn).
+2. Poloni, R., Lee, K., Berger, R. F., Smit, B., & Neaton, J. B. (2014). Understanding Trends in CO 2 Adsorption in Metal −Organic Frameworks with Open-Metal Sites.
  
-3. Lin, J.-B., Nguyen, T. T. T., Vaidhyanathan, R., Burner, J., Taylor, J. M., Durekova, H., Akhtar, F., Mah, R. K., Ghaffari-Nik, O., Marx, S., Fylstra, N., Iremonger, S. S., Dawson, K. W., Sarkar, P., Hovington, P., Rajendran, A., Woo, T. K., & Shimizu, G. K. H. (2021). A scalable metal-organic framework as a durable physisorbent for carbon dioxide capture.
+3. Xiang, S., Zhou, W., Zhang, Z., Green, M. A., Liu, Y., & Chen, B. (2010). Open Metal Sites within Isostructural Metal–Organic Frameworks for Differential Recognition of Acetylene and Extraordinarily High Acetylene Storage Capacity at Room Temperature.
  
-4. Sumida, K., Rogow, D. L., Mason, J. A., McDonald, T. M., Bloch, E. D., Herm, Z. R., Bae, T-H., & Long, J. R. (2011). Carbon Dioxide Capture in Metal /C0Organic Frameworks.
+4. Lin, J.-B., Nguyen, T. T. T., Vaidhyanathan, R., Burner, J., Taylor, J. M., Durekova, H., Akhtar, F., Mah, R. K., Ghaffari-Nik, O., Marx, S., Fylstra, N., Iremonger, S. S., Dawson, K. W., Sarkar, P., Hovington, P., Rajendran, A., Woo, T. K., & Shimizu, G. K. H. (2021). A scalable metal-organic framework as a durable physisorbent for carbon dioxide capture.
  
-5. Boyd, P. G., Chidambaram, A., García-Díez, E., Ireland, C. P., Daff, T. D., Bounds, R., Gładysiak, A., Schouwink, P., Moosavi, S. M., Maroto-Valer, M. M., Reimer, J. A., Navarro, J. A. R., Woo, T. K., Garcia, S., Stylianou, K. C., & Smit, B. (2019). Data-driven design of metal–organic frameworks for wet flue gas CO2 capture.
+5. Ren, J., Ledwaba, M., Musyoka, N. M., Langmi, H. W., Mathe, M., Liao, S., & Pang, W. (2017). Structural defects in metal–organic frameworks (MOFs): Formation, detection and control towards practices of interests.
  
-6. Sanz-Pérez, E. S., Murdock, C. R., Didas, S. A., & Jones, C. W. (2016). Direct Capture of CO2 from Ambient Air.
+6. Sumida, K., Rogow, D. L., Mason, J. A., McDonald, T. M., Bloch, E. D., Herm, Z. R., Bae, T-H., & Long, J. R. (2011). Carbon Dioxide Capture in Metal-Organic Frameworks.
  
-7. Keskin, S., van Heest, T. M., & Sholl, D. S. (2010). Can Metal–Organic Framework Materials Play a Useful Role in Large-Scale Carbon Dioxide Separations?
+7. Boyd, P. G., Chidambaram, A., García-Díez, E., Ireland, C. P., Daff, T. D., Bounds, R., Gładysiak, A., Schouwink, P., Moosavi, S. M., Maroto-Valer, M. M., Reimer, J. A., Navarro, J. A. R., Woo, T. K., Garcia, S., Stylianou, K. C., & Smit, B. (2019). Data-driven design of metal–organic frameworks for wet flue gas CO2 capture.
  
-8. Hall, J. N., & Bollini, P. (2019). Structure, characterization, and catalytic properties of open-metal sites in metal organic frameworks.
+8. Sanz-Pérez, E. S., Murdock, C. R., Didas, S. A., & Jones, C. W. (2016). Direct Capture of CO2 from Ambient Air.
  
-9. Hall, J. N., & Bollini, P. (2020). Quantiﬁcation of Open-Metal Sites in Metal−Organic Frameworks Using Irreversible Water Adsorption.
+9. Keskin, S., van Heest, T. M., & Sholl, D. S. (2010). Can Metal–Organic Framework Materials Play a Useful Role in Large-Scale Carbon Dioxide Separations?
  
-10. Chung, Y. G., Haldoupis, E., Bucior, B. J., Haranczyk, M., Lee, S., Zhang, H., Vogiatzis, K. D., Milisavljevic, M., Ling, S., Camp, J. S., Slater, B., Siepmann, J. I., Sholl, D. S., & Snurr, R. Q. (2019). Advances, Updates, and Analytics for the Computation-Ready, Experimental Metal −Organic Framework Database: CoRE MOF 2019.
+10. Hall, J. N., & Bollini, P. (2019). Structure, characterization, and catalytic properties of open-metal sites in metal organic frameworks.
  
-11. Mohamed, M. H., Yang, Y., Li, L., Zhang, S., Ruffley, J. P., Jarvi, A. G., Saxena, S., Veser, G., Johnson, J. K., & Rosi, N. L. (2019). Designing Open Metal Sites in Metal −Organic Frameworks for Paraffin/Olefin Separations.
+11. Hall, J. N., & Bollini, P. (2020). Quantification of Open-Metal Sites in Metal −Organic Frameworks Using Irreversible Water Adsorption.
  
-12. Severino, M. I., Al Mohtar, A., Soares, C. V., Freitas, C., Sadovnik, N., Nandi, S., Mouchaham, G., Pimenta, V., Nouar, F., Daturi, M., Maurin, G., Pinto, M. L., & Serre, C. (2023). Metal-Organic Frameworks with Open Metal (III) Sites for the Environmental Capture of Polar Volatile Organic Compounds.
+12. Chung, Y. G., Haldoupis, E., Bucior, B. J., Haranczyk, M., Lee, S., Zhang, H., Vogiatzis, K. D., Milisavljevic, M., Ling, S., Camp, J. S., Slater, B., Siepmann, J. I., Sholl, D. S., & Snurr, R. Q. (2019). Advances, Updates, and Analytics for the Computation-Ready, Experimental Metal −Organic Framework Database: CoRE MOF 2019.
  
-13. Kumar, A., Madden, D. G., Lusi, M., Chen, K-J., Daniels, E. A., Curtin, T., Perry, J. J. IV, & Zaworotko, M. J. (2015). Direct Air Capture of CO2 by Physisorbent Materials.
+13. D'Alessandro, D. M., Smit, B., & Long, J. R. (2010). Carbon Dioxide Capture: Prospects for New Materials.
  
-14. Xiang, C. et al. (2014). Perspective of microporous metal–organic frameworks for CO2 capture and separation.
+14. Park, J., Kim, H., Han, S. S., & Jung, Y. (2012). Tuning Metal −Organic Frameworks with Open-Metal Sites and Its Origin for Enhancing CO 2Affinity by Metal Substitution.
  
-15. Kökçam-Demir, U., Goldman, A., Esrafili, L., Gharib, M., Morsali, A., Weingart, O., & Janiak, C. (2020). Coordinatively unsaturated metal sites (open metal sites) in metal–organic frameworks: design and applications.
+15. Mohamed, M. H., Yang, Y., Li, L., Zhang, S., Ruffey, J. P., Jarvi, A. G., Saxena, S., Veser, G., Johnson, J. K., & Rosi, N. L. (2019). Designing Open Metal Sites in Metal −Organic Frameworks for Paraffin/Olefin Separations.
  
-16. Asgari, M., Semino, R., Schouwink, P. A., Kochetygov, I., Tarver, J., Trukhina, O., Krishna, R., Brown, C. M., Ceriotti, M., & Queen, W. L. (2020). Understanding How Ligand Functionalization Influences CO2 and N2 Adsorption in a Sodalite Metal−Organic Framework.
+16. Severino, M. I., Al Mohtar, A., Soares, C. V., Freitas, C., Sadovnik, N., Nandi, S., Mouchaham, G., Pimenta, V., Nouar, F., Daturi, M., Maurin, G., Pinto, M. L., & Serre, C. (2023). Metal-Organic Frameworks Hot Paper MOFswithOpenMetal(III) SitesfortheEnvironmental Captureof PolarVolatileOrganicCompounds.
  
-17. Banerjee, R., Furukawa, H., Britt, D., Knobler, C., O’Keeffe, M., & Yaghi, O. M. (2009). Control of Pore Size and Functionality in Isoreticular Zeolitic Imidazolate Frameworks and their Carbon Dioxide Selective Capture Properties.
+17. Britt, D., Furukawa, H., Wang, B., Glover, T. G., & Yaghi, O. M. (2009). Highly efficient separation of carbon dioxide by a metal-organic framework replete with open metal sites.
  
-18. Snurr, R. et al. (2012). Structure–property relationships of porous materials for carbon dioxide separation and capture.
+18. Hall, J. N., & Bollini, P. (2020). Quantiﬁcation of Open-Metal Sites in Metal−Organic Frameworks Using Irreversible Water Adsorption.
  
-19. Zhang, Z., Valente, D., Shi, Y., Limbu, D. K., Momeni, M. R., & Shakib, F. A. (2022). EC-MOF/Phase-I: A computationally ready database of electrically conductive metal-organic frameworks with high-throughput structural and electronic properties.
+19. Tarzia, A., Takahashi, M., Falcaro, P., Thornton, A. W., Doonan, C. J., & Huang, D. M. (2018). High-Throughput Screening of Metal −Organic Frameworks for Macroscale Heteroepitaxial Alignment.
  
+20. Zhang, Z., Yao, Z-Z., Xiang, S., & Chen, B. (2014). Perspective of microporous metal–organic frameworks for CO2 capture and separation.
+ 
+21. Marti, R. M., Howe, J. D., Morelock, C. R., Conradi, M. S., Walton, K. S., Sholl, D. S., & Hayes, S. E. (2017). CO2 Dynamics in Pure and Mixed-Metal MOFs with Open Metal Sites.
+ 
+22. Kökçam-Demir, Ü., Goldman, A., Esrafili, L., Gharib, M., Morsali, A., Weingart, O., & Janiak, C. (2020). Coordinatively unsaturated metal sites (open metal sites) in metal–organic frameworks: design and applications.
+ 
+23. Asgari, M., Semino, R., Schouwink, P. A., Kochetygov, I., Tarver, J., Trukhina, O., Krishna, R., Brown, C. M., Ceriotti, M., & Queen, W. L. (2020). Understanding How Ligand Functionalization Influences CO2 and N2 Adsorption in a Sodalite Metal−Organic Framework.
+ 
+24. Yan, Y., Suyetin, M., Bichoutskaia, E., Blake, A. J., Allan, D. R., Barnett, S. A., & Schröder, M. (2013). Modulating the packing of [Cu 24(isophthalate) 24] cuboctahedra in a triazole-containing metal –organic polyhedral framework.
+ 
+25. Banerjee, R., Furukawa, H., Britt, D., Knobler, C., O’Keeffe, M., & Yaghi, O. M. (2009). Control of Pore Size and Functionality in Isoreticular Zeolitic Imidazolate Frameworks and their Carbon Dioxide Selective Capture Properties.
+ 
+26. Yang, Q., & Zhong, C. (2006). Understanding Hydrogen Adsorption in Metal -Organic Frameworks with Open Metal Sites: A Computational Study.
+ 
+27. Wilmer, C. E., Farha, O. K., Bae, Y-S., Hupp, J. T., & Snurr, R. Q. (2012). Structure–property relationships of porous materials for carbon dioxide separation and capture.
+ 
+28. Zhou, W., Wu, H., & Yildirim, T. (2008). Enhanced H 2Adsorption in Isostructural Metal -Organic Frameworks with Open Metal Sites: Strong Dependence of the Binding Strength on Metal Ions.
