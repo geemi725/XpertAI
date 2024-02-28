@@ -36,7 +36,7 @@ def save_uploadfile(uploadedfile):
     dirpath = os.path.join("data", "lit_dir")
     if os.path.exists(dirpath):
         shutil.rmtree(dirpath)
-    os.mkdir(dirpath)
+    os.makedirs(dirpath)
     with open(os.path.join(dirpath, uploadedfile.name), "wb") as f:
         f.write(uploadedfile.getbuffer())
 

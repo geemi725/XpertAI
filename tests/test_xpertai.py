@@ -1,6 +1,7 @@
 import numpy as np
 import pandas as pd
 import sys
+import os
 
 sys.path.append("../")
 from xpertai.tools.utils import *
@@ -32,6 +33,12 @@ def test_load_split_docs():
     doc_path = os.path.join(base_dir, "tests/paper_test.pdf")
     docs_split = load_split_docs(doc_path)
     assert isinstance(docs_split[0].page_content, str)
+
+def test_vector_db():
+    base_dir = os.path.dirname(os.path.realpath("__file__"))
+    lit_file = os.path.join(base_dir, "tests/paper_test.pdf")
+    vector_db(lit_file=lit_file, try_meta_data=True, clean=True)
+    assert os.path.exists("./data/chroma/") is True
 
 
 def test_explain_shap():
