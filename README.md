@@ -28,7 +28,7 @@ To facilitate the extraction of natural language explanations from raw data, Xpe
 
 1. Go to the [streamlit app](https://xpert-ai.streamlit.app/)
 2. Add your OpenAI key. Helpful resources: [API-reference](https://platform.openai.com/docs/api-reference)
-3. Upload your featurized raw dataset. Currently, XpertAI requires your dataset to be a ``csv file``. **Note**: Your target labels must be in the last column of the dataset!!! XpertAI automatically selects the last column as the label column. Also make sure you use human interpretable descriptor/feature headers in your dataset. XpertAI will use these headers to extract structure-property relationships.
+3. Upload your featurized raw dataset. Currently, XpertAI requires your dataset to be a ``csv file`` containing inputs and outputs. The input dataset should be featurized before upload eg; SMILES converted to MACCS keys. The **Note**: Your target labels must be in the last column of the dataset!!! XpertAI automatically selects the last column as the label column. Also make sure you use human interpretable descriptor/feature headers in your dataset. XpertAI will use these headers to extract structure-property relationships. A sample dataset for toxicity prediction task can be found at `paper/datasets` folder.
 4. Select the surrogate model type: ``Regressor`` or ``Classifier``
 5. Select your favorite XAI tool: ``SHAP`` ``LIME`` or ``Both``
 6. Select how many features would you like in your final explanation. eg. if you select 3, XperAI will use the top 3 features from the XAI analysis to draw relationships.
