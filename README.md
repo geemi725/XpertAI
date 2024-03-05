@@ -37,7 +37,7 @@ In this case, you can add keywords to search arxiv and set the maximum number of
 8. Finally tell XpertAI what is the property you'd like explained. eg. "Solubility of small molecules". Click the ``Generate Explanation`` button to begin! Once the explanation is generated you can download it along with train-test error plot and the XAI plots.
 
 ## A quick demo
-<video src="assets/demo.mp4" width="320" height="240" controls></video>
+![](assets/demo.gif)
 
 This video is made faster for demonstration purposes. General run time in the streamlit app is ~3 minutes. But this may vary depending on the size of the dataframe and the literature dataset.
 
