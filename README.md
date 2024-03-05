@@ -36,6 +36,10 @@ To facilitate the extraction of natural language explanations from raw data, Xpe
 In this case, you can add keywords to search arxiv and set the maximum number of references to be downloaded. **Note**: We have seen better performance with curated literature datasets as they are more specific.  
 8. Finally tell XpertAI what is the property you'd like explained. eg. "Solubility of small molecules". Click the ``Generate Explanation`` button to begin! Once the explanation is generated you can download it along with train-test error plot and the XAI plots.
 
+## A quick demo
+<video src="assets/demo.mp4" width="320" height="240" controls></video>
+
+This video is made faster for demonstration purposes. General run time in the streamlit app is ~3 minutes. But this may vary depending on the size of the dataframe and the literature dataset.
 
 ## Cite our work
 Wellawatte, Geemi P., and Philippe Schwaller. "Extracting human interpretable structure-property relationships in chemistry using XAI and large language models." arXiv preprint arXiv:2311.04047 (2023).
