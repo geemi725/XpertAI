@@ -224,7 +224,6 @@ if button or auto_button:
         f.close()
     
         shutil.make_archive("./data/figs", "zip", "./data/figs/")
-        S
         with open("./data/figs.zip", "rb") as f:
             st.download_button(
                 "Download the outputs!", f, file_name="XpertAI_output.zip"
