@@ -31,6 +31,7 @@ def on_api_key_change():
     os.environ["OPENAI_API_KEY"] = api_key
     openai.api_key = api_key
 
+    
 
 def save_uploadfile(uploadedfile):
     dirpath = os.path.join("data", "lit_dir")
@@ -51,6 +52,7 @@ st.write(
     """XpertAI trains a surrogate model to your dataset and extracts impactful features from your dataset using XAI tools.
 Currently, GPT-4 model is used to generate natural language explanations."""
 )
+
 
 
 def run_autofill():
@@ -82,7 +84,6 @@ with st.sidebar:
         "Dataset with featurized inputs & labels. Must have .csv extension AND the label column must be the last column of your dataset!"
     )
 
-
     st.markdown("### What is the target property you want to explain?")
     observation = st.text_input("eg.: Toxicity of small molecules", value=auto_target)
 
@@ -105,6 +106,7 @@ with st.sidebar:
     arxiv_keywords = st.text_input(
         "If you want to scrape arxiv, provide keywords for arxiv scraping:",
         help="organic molecules, solubility of small molecules",
+
         value = auto_arxiv
     )
     max_papers = st.number_input(
@@ -117,7 +119,7 @@ with st.sidebar:
     st.markdown("""**Make sure to add your OpenAPI key**. 
                 You can download the input dataset after the explanation is generated.
                 Literature parsing is not used here.""")
-
+    
     auto_button = st.button("Test Run", on_click=run_autofill)
 
 
@@ -166,7 +168,6 @@ if button or auto_button:
             shutil.copytree("./paper/datasets", "./data/figs", dirs_exist_ok=True)
 
     with st.spinner("Please wait...:computer: :speech_balloon:"):
-        
         # read literature
         if lit_files:
             for file in lit_files:
@@ -178,11 +179,11 @@ if button or auto_button:
                     st.write("vectordb failed!!")
 
         # scrape arxiv.org
+
         elif arxiv_keywords:
             arg_dict_arxiv = {"key_words": arxiv_keywords, "max_papers": max_papers}
 
             scrape_arxiv(arg_dict_arxiv)
-
 
         if not arxiv_keywords and not lit_files:
 
@@ -190,7 +191,7 @@ if button or auto_button:
                 f"""### Literature is not provided to make an informed explanation. Based on XAI analysis, the following explanation can be given:
                 \n{explanation}"""
             )
-
+            
             nle = explanation
 
             #f = open(outname, "w+")
@@ -228,3 +229,4 @@ if button or auto_button:
             st.download_button(
                 "Download the outputs!", f, file_name="XpertAI_output.zip"
             )
+
