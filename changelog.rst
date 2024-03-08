@@ -1,6 +1,11 @@
 Change Log
 ==========
 
+v0.2.3 (2024-03-08)
+--------------------
+Now supports a test case in the streamlit app.
+ReadMe updated with the demo gif.
+
 v0.2.2 (2023-10-19)
 --------------------
 CI : tests and autopep8 linter
