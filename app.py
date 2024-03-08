@@ -31,6 +31,7 @@ def on_api_key_change():
     os.environ["OPENAI_API_KEY"] = api_key
     openai.api_key = api_key
 
+    
 
 def save_uploadfile(uploadedfile):
     dirpath = os.path.join("data", "lit_dir")
@@ -52,7 +53,17 @@ st.write(
 Currently, GPT-4 model is used to generate natural language explanations."""
 )
 
-# tab1, tab2= st.tabs(['Setup', 'Explanations'])
+
+
+def run_autofill():
+    st.session_state.auto_target = "toxicity of small molecules"
+    st.session_state.auto_df = "paper/datasets/toxicity_sample_data.csv"
+    st.experimental_rerun()
+    
+
+auto_target = st.session_state.get("auto_target", None)
+auto_arxiv = st.session_state.get("auto_arxiv", None)
+
 
 with st.sidebar:
     logo = Image.open("assets/logo.png")
@@ -70,23 +81,21 @@ with st.sidebar:
 
     st.markdown("### Now upload your input dataset")
     input_file = st.file_uploader(
-        "Must have .csv extension AND the label column must be the last column of your dataset!"
+        "Dataset with featurized inputs & labels. Must have .csv extension AND the label column must be the last column of your dataset!"
     )
 
     st.markdown("### What is the target property you want to explain?")
-    observation = st.text_input("eg.: Toxicity of small molecules")
+    observation = st.text_input("eg.: Toxicity of small molecules", value=auto_target)
 
     st.markdown("### Set up XAI workflow")
     mode_type = st.radio(
         "1. Select the model type",
-        ["Regressor", "Classifier"],
-        captions=["For predicting continuous values", "For predicting discreet labels"],
+        ["Classifier", "Regressor",],
+        captions=["For predicting discreet labels","For predicting continuous values"],
     )
-    # label = st.text_input("Target label",
-    # help='Label you are trying to predict. Should match the label in the
-    # dataset.')
+
     XAI_tool = st.radio("2. What's your favorite XAI method?", ["SHAP", "LIME", "Both"])
-    top_k = st.slider("3. Select the max number of features to be explained!", 0, 10, 1)
+    top_k = st.slider("3. Select the max number of features to be explained!", 0, 10,value=2)
 
     st.markdown(
         "### Provide literature to generate scientific explanations! \nIf you don't provide literature, you will receive an explanation based on XAI tools."
@@ -97,12 +106,21 @@ with st.sidebar:
     arxiv_keywords = st.text_input(
         "If you want to scrape arxiv, provide keywords for arxiv scraping:",
         help="organic molecules, solubility of small molecules",
+
+        value = auto_arxiv
     )
     max_papers = st.number_input(
-        "Maximum number of papers to download from arxiv.org", key=int, value=10
+        "Maximum number of papers to download from arxiv.org", value=15
     )
 
-    button = st.button("Generate Explanation")
+    button = st.button("Generate Explanation", type="primary")
+
+    st.markdown("## Not sure what to do? Run a test case - explaining toxicity of small molecules!")
+    st.markdown("""**Make sure to add your OpenAPI key**. 
+                You can download the input dataset after the explanation is generated.
+                Literature parsing is not used here.""")
+    
+    auto_button = st.button("Test Run", on_click=run_autofill)
 
 
 # Main page
@@ -112,9 +130,20 @@ if api_key:
     from xpertai.tools.generate_nle import gen_nle
     from xpertai.tools.utils import vector_db
 
-if button:
+
+if auto_button:
+    input_file = "./paper/datasets/toxicity_sample_data.csv"
     df_init = pd.read_csv(input_file, header=0)
-    # "label":label,
+    
+    arg_dict_xai = {
+        "df_init": df_init,
+        "model_type": "Classifier",
+        "top_k": top_k,
+        "XAI_tool": XAI_tool,
+    }
+
+elif input_file and button:
+    df_init = pd.read_csv(input_file, header=0)
     arg_dict_xai = {
         "df_init": df_init,
         "model_type": mode_type,
@@ -122,79 +151,82 @@ if button:
         "XAI_tool": XAI_tool,
     }
 
+if button or auto_button:
     explanation = get_modelsummary(arg_dict_xai)
 
     st.markdown("### XAI Analysis:")
     xg_plot = Image.open(f"./data/figs/xgbmodel_error.png")
     st.image(xg_plot)
 
-    if XAI_tool == "SHAP":
-        shap_bar = Image.open(f"./data/figs/shap_bar.png")
-        st.image(shap_bar)
-    elif XAI_tool == "LIME":
-        lime_bar = Image.open(f"./data/figs/lime_bar.png")
-        st.image(lime_bar)
+    if XAI_tool in ["SHAP","LIME"]:
+        st.image(Image.open(f"./data/figs/{XAI_tool.lower()}_bar.png"))
     else:
-        shap_bar = Image.open(f"./data/figs/shap_bar.png")
-        lime_bar = Image.open(f"./data/figs/lime_bar.png")
-        st.image(shap_bar)
-        st.image(lime_bar)
+        st.image(Image.open(f"./data/figs/shap_bar.png"))
+        st.image(Image.open(f"./data/figs/lime_bar.png"))
 
-    nle = ""
+    if auto_button:
+            shutil.copytree("./paper/datasets", "./data/figs", dirs_exist_ok=True)
 
     with st.spinner("Please wait...:computer: :speech_balloon:"):
         # read literature
-        if lit_files is not None:
+        if lit_files:
             for file in lit_files:
                 save_uploadfile(file)
-                filepath = os.path.join("./data/lit_dir", file.name)
                 try:
-                    vector_db(lit_file=filepath, try_meta_data=True)
+                    vector_db(lit_file=os.path.join("./data/lit_dir", file.name), 
+                              try_meta_data=True)
                 except BaseException:
                     st.write("vectordb failed!!")
 
         # scrape arxiv.org
-        if arxiv_keywords is not None:
+
+        elif arxiv_keywords:
             arg_dict_arxiv = {"key_words": arxiv_keywords, "max_papers": max_papers}
 
             scrape_arxiv(arg_dict_arxiv)
 
-        if observation is not None:
-            arg_dict_nle = {
+        if not arxiv_keywords and not lit_files:
+
+            st.markdown(
+                f"""### Literature is not provided to make an informed explanation. Based on XAI analysis, the following explanation can be given:
+                \n{explanation}"""
+            )
+            
+            nle = explanation
+
+            #f = open(outname, "w+")
+            #f.write(f"Understanding {observation}\n:")
+            #f.write(explanation)
+            #f.write("Explanation generated with XpertAI. https://github.com/geemi725/XpertAI")
+            #f.close()
+            #with open(outname, "rb") as f:
+            #    st.download_button("Download the explanation!", 
+            #                          f,
+            #                   file_name="explanation.txt")
+
+        else:
+            # Generate evidence-based explanation
+            nle = gen_nle(arg_dict_nle = {
                 "observation": observation,
                 "top_k": top_k,
                 "XAI_tool": XAI_tool,
-            }
+            })
 
-            nle = gen_nle(arg_dict_nle)
+            st.write(
+                "### The structure function relationship based on XAI analysis and literature, the following explanation can be given:\n",
+                nle,
+            )
 
-            if arxiv_keywords is None and lit_files is None:
-                st.markdown(
-                    f"""### Literature is not provided to make an informed explanation.\n
-                            Based on XAI analysis, the following explanation can be given:
-                            \n{explanation}"""
-                )
-                st.download_button("Download the explanation!", data=explanation)
-                f = open("./data/figs/structure_function_relationship.txt", "w+")
-                f.write(f"Understanding {observation}\n:")
-                f.write(explanation)
-                f.close()
+        f = open("./data/figs/structure_function_relationship.txt", "w+")
+        f.write(f"Understanding {observation}\n:")
+        f.write(nle)
+        f.write("\n\nExplanation generated with XpertAI. https://github.com/geemi725/XpertAI")
+        f.close()
+    
+        shutil.make_archive("./data/figs", "zip", "./data/figs/")
+        S
+        with open("./data/figs.zip", "rb") as f:
+            st.download_button(
+                "Download the outputs!", f, file_name="XpertAI_output.zip"
+            )
 
-            else:
-                st.write(
-                    "### The structure function relationship based on XAI analysis and literature, the following explanation can be given:\n",
-                    nle,
-                )
-                f = open("./data/figs/structure_function_relationship.txt", "w+")
-                f.write(f"Understanding {observation}\n:")
-                f.write(nle)
-                f.close()
-
-                # st.download_button("Download the explanation!",
-                #                data =nle)
-
-            shutil.make_archive("./data/figs", "zip", "./data/figs/")
-            with open("./data/figs.zip", "rb") as f:
-                st.download_button(
-                    "Download the explanation and figures", f, file_name="Figures.zip"
-                )

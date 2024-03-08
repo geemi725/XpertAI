@@ -30,7 +30,7 @@ def scrape_arxiv(arg_dict):
     if os.path.exists(save_dir):
         shutil.rmtree(save_dir)
 
-    os.mkdir(save_dir)
+    os.makedirs(save_dir)
 
     search = arxiv.Search(
         query=key_words, max_results=max_papers, sort_by=arxiv.SortCriterion.Relevance
