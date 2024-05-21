@@ -334,7 +334,10 @@ def _get_metadata(lit_file):
     )
 
     jdump = "{" + jdump + "}"
-    metadatas = json.loads(jdump)
+    try: 
+        metadatas = json.loads(jdump)
+    except:
+        metadatas = None
 
     return metadatas
 

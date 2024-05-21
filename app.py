@@ -206,7 +206,7 @@ if button or auto_button:
 
         else:
             # Generate evidence-based explanation
-            nle = gen_nle(arg_dict_nle = {
+            nle = gen_nle({
                 "observation": observation,
                 "top_k": top_k,
                 "XAI_tool": XAI_tool,
