@@ -26,7 +26,7 @@ def scrape_arxiv(arg_dict):
     for k, val in arg_dict.items():
         globals()[k] = val
 
-    save_dir = "./data/downloads/"
+    save_dir = "./data/lit_dir"
     if os.path.exists(save_dir):
         shutil.rmtree(save_dir)
 
@@ -41,4 +41,4 @@ def scrape_arxiv(arg_dict):
         cleaned = re.sub(r"[^a-zA-Z0-9.]|(?<!\d)\.|\.(?!\d)", "_", title)
         result.download_pdf(dirpath=save_dir, filename=f"{cleaned}.pdf")
         # update vectordb
-        vector_db(lit_file=f"{save_dir}{cleaned}.pdf", clean=False, try_meta_data=True)
+        vector_db(lit_file=f"{save_dir}/{cleaned}.pdf", clean=False, try_meta_data=True)
