@@ -41,6 +41,8 @@ In this case, you can add keywords to search arxiv and set the maximum number of
 
 This video is made faster for demonstration purposes. General run time in the streamlit app is ~3 minutes. But this may vary depending on the size of the dataframe and the literature dataset.
 
+## Run Locally
+After installing the required packages given in [reference.txt](https://github.com/geemi725/XpertAI/blob/main/requirements.txt), a user can run the streamlit app locally with `streamlit run app.py`
 ## Cite our work
 Wellawatte, Geemi P., and Philippe Schwaller. "Extracting human interpretable structure-property relationships in chemistry using XAI and large language models." arXiv preprint arXiv:2311.04047 (2023).
 
