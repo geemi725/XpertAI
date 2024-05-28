@@ -57,7 +57,7 @@ Currently, GPT-4 model is used to generate natural language explanations."""
 
 def run_autofill():
     st.session_state.auto_target = "toxicity of small molecules"
-    st.session_state.auto_df = "paper/datasets/toxicity_sample_data.csv"
+    st.session_state.auto_df = "tests/toxicity_sample_data.csv"
     st.experimental_rerun()
     
 
@@ -132,7 +132,7 @@ if api_key:
 
 
 if auto_button:
-    input_file = "./paper/datasets/toxicity_sample_data.csv"
+    input_file = "./tests/toxicity_sample_data.csv"
     df_init = pd.read_csv(input_file, header=0)
     
     arg_dict_xai = {
