@@ -1,0 +1,264 @@
+feature,original,summary,reference
+"To create a new label in a human interpretable manner, we need to remove the integers from the original label and then rewrite it. Since the original label is not provided, I'll give you a general approach on how to do this:
+
+1. **Identify the Label**: Start with the label you have, which includes both text and integers.
+
+2. **Remove Integers**: Strip out any numbers from the label. This can be done using a regular expression or a simple loop to filter out digits.
+
+3. **Rewrite the Label**: Once the integers are removed, rewrite the label in a way that makes sense without the numbers. This might involve rephrasing or adding context to make it clear.
+
+For example, if the original label was ""AromaticBoundary3"", you would:
+
+- Remove the integer: ""AromaticBoundary""
+- Rewrite it: ""Aromatic Boundary""
+
+If you provide a specific label, I can give you a more tailored example.","ARTICLE
+Machine learning with physicochemical
+relationships: solubility prediction in organic
+solvents and water
+Samuel Boobier1, David R. J. Hose2, A. John Blacker1& Bao N. Nguyen1✉
+Solubility prediction remains a critical challenge in drug development, synthetic route and
+chemical process design, extraction and crystallisation. Here we report a successful approachto solubility prediction in organic solvents and water using a combination of machine learning(ANN, SVM, RF, ExtraTrees, Bagging and GP) and computational chemistry. Rational inter-pretation of dissolution process into a numerical problem led to a small set of selecteddescriptors and subsequent predictions which are independent of the applied machinelearning method. These models gave signi ﬁcantly more accurate predictions compared to","The article discusses a study on solubility prediction in organic solvents and water, which is crucial for drug development, synthetic route design, and chemical processes. The authors, Samuel Boobier, David R. J. Hose, A. John Blacker, and Bao N. Nguyen, present a method that combines machine learning techniques (such as ANN, SVM, RF, ExtraTrees, Bagging, and GP) with computational chemistry. By converting the dissolution process into a numerical problem, they identified a small set of descriptors that enhance prediction accuracy. The resulting models provide significantly more accurate solubility predictions, independent of the machine learning method used.","REFERENCE:(Samuel Boobier, David R. J. Hose, A. John Blacker, Bao N. Nguyen,2020,Machine learning with physicochemical relationships: solubility prediction in organic solvents and water)"
+"To create a new label in a human interpretable manner, we need to remove the integers from the original label and then rewrite it. Since the original label is not provided, I'll give you a general approach on how to do this:
+
+1. **Identify the Label**: Start with the label you have, which includes both text and integers.
+
+2. **Remove Integers**: Strip out any numbers from the label. This can be done using a regular expression or a simple loop to filter out digits.
+
+3. **Rewrite the Label**: Once the integers are removed, rewrite the label in a way that makes sense without the numbers. This might involve rephrasing or adding context to make it clear.
+
+For example, if the original label was ""AromaticBoundary3"", you would:
+
+- Remove the integer: ""AromaticBoundary""
+- Rewrite it: ""Aromatic Boundary""
+
+If you provide a specific label, I can give you a more tailored example.","values are eliminated. To curate this data set with a unique solubility value for every compound, we design an algorithm to select the most reliable experimental value. The selection is performed by first classifying the com -
+pounds into five distinct groups which are defined based on the statistics of occurrence of a compound in the dataset. The flow chart of the curation algorithm is shown in Fig.  4 and described as follows:
+ 1. For every compound in the dataset, the number of occurrences is determined. If the compound has a unique value or multiple values which are within 0.01 LogS units, the value is simply accepted. This step leads to the curation of 7,746 unique instances, which were assigned to group G1.
+ 2. Next, for compounds with occurrence count >1 with different solubility values (819), we used the closest 
+to the mean algorithm to select the value. In this method, the mean value is first calculated then the closest","The text describes an algorithm designed to curate a dataset by selecting the most reliable solubility value for each compound. The process involves classifying compounds into five groups based on their occurrence statistics. The algorithm's steps are as follows:
+
+1. For each compound, the number of occurrences is determined. If a compound has a unique solubility value or multiple values within 0.01 LogS units, the value is accepted, resulting in 7,746 unique instances assigned to group G1.
+2. For compounds with more than one occurrence and differing solubility values (819 instances), the ""closest to the mean"" algorithm is used. This involves calculating the mean solubility value and selecting the value closest to this mean.","REFERENCE:(Murat Cihan Sorkun, Abhishek Khetan, Süleyman Er,2019,aqSolDB, a curated reference set of aqueous solubility and 2D descriptors for a diverse set of compounds)"
+"To create a new label in a human interpretable manner, we need to remove the integers from the original label and then rewrite it. Since the original label is not provided, I'll give you a general approach on how to do this:
+
+1. **Identify the Label**: Start with the label you have, which includes both text and integers.
+
+2. **Remove Integers**: Strip out any numbers from the label. This can be done using a regular expression or a simple loop to filter out digits.
+
+3. **Rewrite the Label**: Once the integers are removed, rewrite the label in a way that makes sense without the numbers. This might involve rephrasing or adding context to make it clear.
+
+For example, if the original label was ""AromaticBoundary3"", you would:
+
+- Remove the integer: ""AromaticBoundary""
+- Rewrite it: ""Aromatic Boundary""
+
+If you provide a specific label, I can give you a more tailored example.","follow. For statisticalgroup contribution model, the calculation of the legitimacy, one must avoid having a low ratio ofsolubility of new compounds, which contain frag- training data points to number of descriptors, thements not encountered in the model, may yield utilized descriptors should not be highly correlated,unanticipated errors' [23]. and they should pass usual statistical tests, e.g.","The text discusses considerations for using a statistical group contribution model in chemistry. It emphasizes the importance of maintaining a high ratio of training data points to the number of descriptors to ensure the model's legitimacy. Additionally, it advises that the descriptors should not be highly correlated and should pass standard statistical tests to avoid unanticipated errors, particularly when predicting the solubility of new compounds containing fragments not previously encountered in the model.","REFERENCE:(William L. Jorgensen, Erin M. Duffy,2002,Prediction of drug solubility from structure)"
+"To create a new label in a human interpretable manner, we need to remove the integers from the original label and then rewrite it. Since the original label is not provided, I'll give you a general approach on how to do this:
+
+1. **Identify the Label**: Start with the label you have, which includes both text and integers.
+
+2. **Remove Integers**: Strip out any numbers from the label. This can be done using a regular expression or a simple loop to filter out digits.
+
+3. **Rewrite the Label**: Once the integers are removed, rewrite the label in a way that makes sense without the numbers. This might involve rephrasing or adding context to make it clear.
+
+For example, if the original label was ""AromaticBoundary3"", you would:
+
+- Remove the integer: ""AromaticBoundary""
+- Rewrite it: ""Aromatic Boundary""
+
+If you provide a specific label, I can give you a more tailored example.","applying the pre-processing steps.
+Dataset E (1,291 instances). Dataset E was taken from the work of Huuskonen et al.1. In this study, the experi-
+mental aqueous solubility value measured between 20–25 °C were obtained from the AQUASOL database of the 
+University of Arizona and SCR’s PHYSPROP Database. The extended version of this dataset with 1,291 solubility 
+values and SMILES was downloaded from the Cheminformatics (http://cheminformatics.org/). All compounds were successfully recreated after pre-processing steps.
+Dataset F (1,210 instances). Dataset F was taken from the work of Wang et al .
+8. They extracted 1,210 compounds 
+from the Beilstein database and sanitized it. However, the dataset contains compound identifiers in only the 
+SLN format12. We converted SLN to SMILES representation using RDKit SLN parser. During the conversion 93 
+of 1,210 compounds could not be produced. Using Molview ( http://molview.org/ ) web tool, we obtained valid","The text describes the preparation and processing of two datasets, E and F, for a study on aqueous solubility. Dataset E, consisting of 1,291 instances, was sourced from Huuskonen et al. and includes solubility values measured at 20–25 °C from the AQUASOL and PHYSPROP databases. The dataset was extended with SMILES representations and successfully recreated after pre-processing. Dataset F, with 1,210 instances, was derived from Wang et al. and originally contained compound identifiers in SLN format from the Beilstein database. The SLN identifiers were converted to SMILES using the RDKit SLN parser, but 93 compounds could not be converted. Valid representations were obtained using the Molview web tool.","REFERENCE:(Murat Cihan Sorkun, Abhishek Khetan, Süleyman Er,2019,aqSolDB, a curated reference set of aqueous solubility and 2D descriptors for a diverse set of compounds)"
+"To create a new label in a human interpretable manner, we need to remove the integers from the original label and then rewrite it. Since the original label is not provided, I'll give you a general approach on how to do this:
+
+1. **Identify the Label**: Start with the label you have, which includes both text and integers.
+
+2. **Remove Integers**: Strip out any numbers from the label. This can be done using a regular expression or a simple loop to filter out digits.
+
+3. **Rewrite the Label**: Once the integers are removed, rewrite the label in a way that makes sense without the numbers. This might involve rephrasing or adding context to make it clear.
+
+For example, if the original label was ""AromaticBoundary3"", you would:
+
+- Remove the integer: ""AromaticBoundary""
+- Rewrite it: ""Aromatic Boundary""
+
+If you provide a specific label, I can give you a more tailored example.","and so forth. Secondly, our work is exploring data curation methodology for nonlinear deep learning model 
+using graph neural networks, whereas Eriksson’s work
+33 is targeting on linear regression model. last, our work 
+on is focused on data curation methodology itself. Eriksson’s work needs the prepossessing techniques (scaling and centering) and transformations steps to avoid large influence on the model and dominating over the other measurements from unbalanced data composition. However, these problems has been resolved in our work by using scaffold data partition. Our work is the only work focused on inter-dataset redundancy and intra-dataset 
+redundancy, it is a novel technique not yet presented by any previous work.
+To conclude the above discussion, solubility prediction with AI-based methods still face the following three 
+challenges:
+ 1. The volume of training data in previous works, such as the ESOL dataset, is limited. Training and evalua-","The article discusses advancements in data curation methodologies for solubility prediction using AI-based methods. The authors highlight their use of graph neural networks for nonlinear deep learning models, contrasting with Eriksson's focus on linear regression models. Their approach addresses issues of data imbalance and model influence through scaffold data partitioning, eliminating the need for preprocessing techniques like scaling and centering. Additionally, their work uniquely addresses both inter-dataset and intra-dataset redundancy, introducing a novel technique not previously explored. Despite these advancements, challenges remain, particularly the limited volume of training data in existing datasets like ESOL.","REFERENCE:(Jintao Meng, Peng Chen, Mohamed Wahi, Mingjun Yang, Liangzhen Zheng, Yanjie Wei, Shengzhong Feng, Wei Liu,2022,Boosting the predictive performance with aqueous solubility dataset curation)"
+"To provide a new label in a human interpretable manner, I need the original label with the integers and the heteroatoms specified. Could you please provide that information?","suitable forthe prediction of ampholytes, whereas surface area descrip-tors generated from a 3D structure of the molecule bestpredicted bases. Rather uncomplicated computational pro-tocols could be applied to accurately predict the aqueoussolubility of series of homologous compounds and specificsubsets. Finally, we conclude that in order to improve thetheoretical models for drug solubility further, even largertraining sets should be used and descriptors for solid statecharacteristics and the crystal structure should be included.The rate-limiting step in this procedure will most probablybethegenerationofalargeexperimentaldatabaseofhighestpossible quality.","The text discusses methods for predicting the solubility of compounds. It highlights that surface area descriptors from a molecule's 3D structure are effective for predicting bases, while other methods are suitable for ampholytes. Simple computational protocols can accurately predict the aqueous solubility of homologous compounds and specific subsets. To enhance theoretical models for drug solubility, larger training sets and descriptors for solid-state characteristics and crystal structures should be included. The main challenge in this process is generating a high-quality experimental database.","REFERENCE:(Christel A. S. Bergström, Carola M. Wassvik, Ulf Norinder, Kristina Luthman, Per Artursson,2004,Global and Local Computational Models for Aqueous Solubility Prediction of Drug-Like Molecules)"
+"To provide a new label in a human interpretable manner, I need the original label with the integers and the heteroatoms specified. Could you please provide that information?","3 Scientific  Data  |           (2019) 6:143  | https://doi.org/10.1038/s41597-019-0151-1
+www.nature.com/scientificdata www.nature.com/scientificdata/ 1. Identifier generation: We chose the SMILES representation as the standard identifier for compounds for 
+our curated dataset. In external datasets, where SMILES representations were not available, we used the name and the CAS Registry Number of compounds as inputs to retrieve the SMILES strings from the Chemical Identifier Resolver web service of the National Cancer Institute (https://cactus.nci.nih.gov/chemical/structure). Lastly, SLN identifiers available from some datasets were converted to SMILES using 
+RDKit open-source cheminformatics software.
+ 2. Unit Conversion: The chosen unit of solubility in this dataset is LogS, where S is the aqueous solubility in mol/L 
+(or M). Units such as g/L and mg/L were converted to LogS using the molecular mass of the compounds.","The article discusses the methodology for generating identifiers and converting units in a curated chemical dataset. SMILES (Simplified Molecular Input Line Entry System) was selected as the standard identifier for compounds. For external datasets lacking SMILES, compound names and CAS Registry Numbers were used to obtain SMILES strings via the Chemical Identifier Resolver from the National Cancer Institute. Additionally, SLN (Sybyl Line Notation) identifiers were converted to SMILES using RDKit software. For unit conversion, the dataset uses LogS as the unit of solubility, where S represents aqueous solubility in mol/L. Solubility values in g/L and mg/L were converted to LogS using the molecular mass of the compounds.","REFERENCE:(Murat Cihan Sorkun, Abhishek Khetan, Süleyman Er,2019,aqSolDB, a curated reference set of aqueous solubility and 2D descriptors for a diverse set of compounds)"
+"To provide a new label in a human interpretable manner, I need the original label with the integers and the heteroatoms specified. Could you please provide that information?","training data set, their measured and ESOL-predicted solu-
+bilities, and their structures as SMILES.5This material is
+available free of charge via the Internet at http://pubs.acs.org.
+REFERENCES AND NOTES
+(1) Lipinski, C. A.; Lombardo, F.; Dominy, B. W.; Feeney, P. J.
+Experimentalandcomputationalapproachestoestimatesolubilityandpermeability in drug discovery and development settings. AdV. Drug
+DeliVery Re V.1997,23,3-25.
+(2) Clarke, E. D.; Delaney, J. S. Physical and Molecular Properties of
+Agrochemicals: An Analysis of Screen Inputs, Hits, Leads andProducts. Chimia2003,57, 731 -734.
+(3) Kuhne, R.; Ebert, R. U.; Kleint, F.; Schmidt, G.; Schuurmann, G.
+GroupContributionMethodstoEstimateWaterSolubilityofOrganicChemicals. Chemosphere 1995,30, 2061 -2077.
+(4) Klopman, G.; Wang, S.; Balthasar, D. M. Estimation of Aqueous
+Solubility of Organic Compounds by the Group Contribution Ap-proach. Application to the Study of Biodegradation. J. Chem. Inf.
+Comput. Sci. 1992,32, 474 -482.","The text excerpt provides information about a dataset used for training, which includes measured and ESOL-predicted solubilities and the structures of compounds represented as SMILES. It mentions that this material is available online at the American Chemical Society's website. The references cited discuss various methods and approaches for estimating solubility and permeability in drug discovery, analyzing physical and molecular properties of agrochemicals, and using group contribution methods to estimate water solubility of organic chemicals.","REFERENCE:(John S. Delaney,2004,ESOL: Estimating Aqueous Solubility Directly from Molecular Structure)"
+"To provide a new label in a human interpretable manner, I need the original label with the integers and the heteroatoms specified. Could you please provide that information?","drug-like molecules. Journal of Chemical Information and Modeling 53, 1563–1575 (2013).
+ 4. McDonagh, J. L., Nath, N., De Ferrari, L., Van Mourik, T. & Mitchell, J. B. Uniting cheminformatics and chemical theory to predict 
+the intrinsic aqueous solubility of crystalline druglike molecules. Journal of Chemical Information and Modeling 54, 844–856 (2014).
+b ca3,500
+3,000
+2,500
+2,000
+1,500
+1,000
+500
+A B C D E F G H I
+3,000
+2,500
+2,000
+1,500
+1,000
+5007,000
+6,000
+5,000
+4,000
+3,000
+2,000
+1,0008,000
+G1 G2 G3 G4 G51,325
+163249798
+13964 463,5423,656
+2351,182
+1836367,746
+2,879 2,840
+1,0563,207
+(-∞, -4] (-4, -2] (-2, 0] (0, +∞]Number of instances
+Number of instancesNumber of instances
+Fig. 5 Bar charts for analyzing the curated dataset. (a) Distribution of instances according to source dataset. 
+(b) Distribution of instances according to reliability group. (c) Distribution of instances according to aqueous 
+solubility ranges (LogS).","The text appears to be an excerpt from a journal article discussing the analysis of a curated dataset related to the intrinsic aqueous solubility of crystalline drug-like molecules. It references two journal articles from the Journal of Chemical Information and Modeling, one from 2013 and another from 2014, which focus on drug-like molecules and the prediction of their aqueous solubility using cheminformatics and chemical theory. The excerpt includes a description of Figure 5, which presents bar charts analyzing the dataset. The charts illustrate the distribution of instances based on three criteria: the source dataset, reliability group, and aqueous solubility ranges (LogS).","REFERENCE:(Murat Cihan Sorkun, Abhishek Khetan, Süleyman Er,2019,aqSolDB, a curated reference set of aqueous solubility and 2D descriptors for a diverse set of compounds)"
+"To provide a new label in a human interpretable manner, I need the original label with the integers and the heteroatoms specified. Could you please provide that information?","The free energies of solution and hydration provide directinformation from electronic structure theory and statisticalthermodynamics on the interactions of a given molecule, in agiven conformation, within its environment, and on theenergetics of phase transitions.
+As a benchmark, we also present our method ’s predictions of
+the solubility challenge set based solely on cheminformaticsdescriptors (see Table 2). As suitable crystal structures are notavailable for all molecules in the solubility challenge, we couldnot calculate the theoretical energies.
+Tables 2 and 3, and Chart 7, demonstrate that our method
+can make predictions for the solubility challenge dataset withinthe coveted 1 log Sunit RMSE error and, in fact, makes
+predictions that are consistent with some commerciallyavailable methods and deep- learning methods. A recent
+publication
+56reported RMSE scores of 0.95 log Sunits56for
+the commercially available package MLR-SC62and 0.90 log S","The article discusses the use of electronic structure theory and statistical thermodynamics to understand molecular interactions and phase transitions through free energies of solution and hydration. The authors present a method for predicting solubility using cheminformatics descriptors, as suitable crystal structures are unavailable for all molecules in the solubility challenge. Their method achieves predictions within a 1 log Sunit RMSE error, comparable to some commercially available and deep-learning methods. The article references a recent publication reporting RMSE scores of 0.95 log Sunits for the MLR-SC62 package and 0.90 log Sunits for another method.","REFERENCE:(James L. McDonagh, Neetika Nath, Luna De Ferrari, Tanja van Mourik, John B. O. Mitchell,2014,Uniting Cheminformatics and Chemical Theory To Predict the Intrinsic Aqueous Solubility of Crystalline Druglike Molecules)"
+"To create a new label in a human-interpretable manner, we need to remove the integers from the original label and then rewrite it. Let's assume the original label is something like ""C3H2O1"" where ""C"" stands for carbon, ""H"" for hydrogen, and ""O"" for oxygen, and the numbers indicate the count of each atom type. 
+
+After removing the integers, the label becomes ""CHO"". 
+
+Now, let's rewrite this in a human-interpretable manner: ""Carbon with hydrogen and oxygen neighbors.""
+
+If you have a specific label in mind, please provide it, and I can help you rewrite it accordingly.","provided in Supplementary Figs. S1–S5.
+Next, we examined how the predicted solubility values and attention scores change when some atoms (e.g., 
+O and N) of the molecules are replaced with others (e.g., C).
+In Fig.  4a, we changed NH in methyl hydrazine (CH 3(NH)NH 2 ) to CH 2 . In the analysis of Klopman et al.19, 
+the solubility contribution value of CH x is lower than those of OH, O, NH, and NH 2 . Thus, in this case, we can 
+observe the predicted solubility values were diminished than that of methyl hydrazine. Specifically, the target 
+value of methyl hydrazine was 1.34 (logS), and the water solubility derived by MoGAT was 1.339 before the 
+replacement, but after the replacement, it decreased to 0.409. In addition, the attention score of the replaced 
+atom was also decreased. In Fig.  4b, OH in cyclohexanol (C 6H12 O) was replaced with CH 3 , becoming methylcy-
+clohexane (C 7H14 ). The target values of cyclohexanol and methylcyclohexane were − 0.44 and − 3.85, respectively.","The study investigates the impact of atom replacement on predicted solubility values and attention scores in molecules. Specifically, the replacement of NH with CH₂ in methyl hydrazine (CH₃(NH)NH₂) resulted in a decrease in solubility from a target value of 1.34 (logS) to 0.409, as predicted by MoGAT. Similarly, replacing OH with CH₃ in cyclohexanol (C₆H₁₂O) to form methylcyclohexane (C₇H₁₄) led to a decrease in target solubility values from -0.44 to -3.85. These changes also corresponded with a decrease in the attention scores of the replaced atoms, indicating a correlation between atom type and solubility prediction.","REFERENCE:(Sangho Lee, Hyunwoo Park, Chihyeon Choi, Wonjoon Kim, Ki Kang Kim, Young-Kyu Han, Joohoon Kang, Chang-Jong Kang, Youngdoo Son,2023,Multi-order graph attention network for water solubility prediction and interpretation)"
+"To create a new label in a human-interpretable manner, we need to remove the integers from the original label and then rewrite it. Let's assume the original label is something like ""C3H2O1"" where ""C"" stands for carbon, ""H"" for hydrogen, and ""O"" for oxygen, and the numbers indicate the count of each atom type. 
+
+After removing the integers, the label becomes ""CHO"". 
+
+Now, let's rewrite this in a human-interpretable manner: ""Carbon with hydrogen and oxygen neighbors.""
+
+If you have a specific label in mind, please provide it, and I can help you rewrite it accordingly.","AtomicAtom symbol 16 One-hot B, C, N, O, F, Si, P , S, Cl, As, Se, Br, Te, I, At, metal
+Degree 6 One-hot Number of covalent bonds
+Formal charge 1 Integer Electrical charge
+Radical electrons 1 Integer Number of radical electrons
+Hybridization 6 One-hot sp, sp2, sp3, sp3d, sp3d2, other
+Aromaticity 1 Binary Ehether the atom is part of an aromatic system
+Hydrogens 5 One-hot Number of connected hydrogens
+Chirality 1 Binary Whether the atom is chiral center
+Chirality type 2 One-hot R, S
+BondBond type 4 One-hot single, double, triple, aromatic
+Conjugation 1 Binary Whether the bond is conjugated
+Ring 1 Binary Whether the bond is in ring
+Stereo 4 One-hot StereoNone, StereoAny, StereoZ, StereoE
+Figure 2.  Comparison of the proposed method and other baseline models in estimating water solubility. (a ) 
+Scatter plots of predicted and experimental solubility values, where the x-axis and y-axis indicate the predicted","The text appears to describe a set of features used in a computational chemistry model, likely for molecular representation. The features include:
+
+1. **Atomic Features**:
+   - **Atom Symbol**: Encoded using a one-hot vector for elements like B, C, N, O, etc., and metals.
+   - **Degree**: One-hot encoding for the number of covalent bonds.
+   - **Formal Charge**: Integer value representing the electrical charge.
+   - **Radical Electrons**: Integer value for the number of radical electrons.
+   - **Hybridization**: One-hot encoding for hybridization states (sp, sp2, sp3, etc.).
+   - **Aromaticity**: Binary indicator of whether the atom is part of an aromatic system.
+   - **Hydrogens**: One-hot encoding for the number of connected hydrogen atoms.
+   - **Chirality**: Binary indicator of whether the atom is a chiral center.
+   - **Chirality Type**: One-hot encoding for R or S configuration.
+
+2. **Bond Features**:
+   - **Bond Type**: One-hot encoding for bond types (single, double, triple, aromatic).
+   - **Conjugation**: Binary indicator of whether the bond is conjugated.
+   - **Ring**: Binary indicator of whether the bond is part of a ring.
+   - **Stereo**: One-hot encoding for stereochemistry (StereoNone, StereoAny, StereoZ, StereoE).
+
+Additionally, Figure 2 is mentioned, which compares a proposed method with baseline models for estimating water solubility, using scatter plots to show predicted versus experimental solubility values.","REFERENCE:(Sangho Lee, Hyunwoo Park, Chihyeon Choi, Wonjoon Kim, Ki Kang Kim, Young-Kyu Han, Joohoon Kang, Chang-Jong Kang, Youngdoo Son,2023,Multi-order graph attention network for water solubility prediction and interpretation)"
+"To create a new label in a human-interpretable manner, we need to remove the integers from the original label and then rewrite it. Let's assume the original label is something like ""C3H2O1"" where ""C"" stands for carbon, ""H"" for hydrogen, and ""O"" for oxygen, and the numbers indicate the count of each atom type. 
+
+After removing the integers, the label becomes ""CHO"". 
+
+Now, let's rewrite this in a human-interpretable manner: ""Carbon with hydrogen and oxygen neighbors.""
+
+If you have a specific label in mind, please provide it, and I can help you rewrite it accordingly.","crystal lattice of a solid) and other terms describing the hydrophobic
+effect, hydrogen bond formation between proton-acceptor solutes and
+proton-donor solvents, and the H-bond formation between amphiphilic
+solutes and proton acceptor and/or proton-donor solvents as well as
+the auto-association of the solute in solution.
+Although this equation takes into account the free energy changes
+involved in the dissolution process, in our opinion its complexity
+prevents its use for multifunctional molecules. The examples reported
+address simple hydrocarbons or mono-functional molecules and
+much emphasis is placed on organic (associated and non-associated)
+solvents. In many such cases, approximations leading to the cancella-
+tion of some term, can be made but, if an attempt to predict the solu-
+bility of complex drug candidates in water is made, all those terms
+might be present at the same time and thus it would be very dif ﬁcult
+to treat solubility within the framework of this equation.","The text discusses the complexity of an equation used to account for free energy changes in the dissolution process of solutes. It considers factors such as the crystal lattice of solids, the hydrophobic effect, hydrogen bond formation between solutes and solvents, and solute auto-association. While the equation is applicable to simple hydrocarbons or mono-functional molecules, its complexity limits its use for multifunctional molecules, particularly in predicting the solubility of complex drug candidates in water. In such cases, all terms may be relevant simultaneously, making it challenging to apply the equation effectively.","REFERENCE:(Christopher A. Lipinski, Franco Lombardo, Beryl W. Dominy, Paul J. Feeney,1997,Experimental and computational approaches to estimate solubility and permeability in drug discovery and development settings)"
+"To create a new label in a human-interpretable manner, we need to remove the integers from the original label and then rewrite it. Let's assume the original label is something like ""C3H2O1"" where ""C"" stands for carbon, ""H"" for hydrogen, and ""O"" for oxygen, and the numbers indicate the count of each atom type. 
+
+After removing the integers, the label becomes ""CHO"". 
+
+Now, let's rewrite this in a human-interpretable manner: ""Carbon with hydrogen and oxygen neighbors.""
+
+If you have a specific label in mind, please provide it, and I can help you rewrite it accordingly.","and adding optimal physicochemical properties as descriptors and (2) using graph convolutional network (GCN) models to convertmolecules into a graph representation and deal with prediction tasks. Then, two prediction tasks were conducted with each method:(1) the solubility value (regression) and (2) the solubility class (classi ﬁcation). The ﬁngerprint-based method clearly demonstrates
+that high performance is possible by adding simple but signi ﬁcant physicochemical descriptors to molecular ﬁngerprints, while the
+GCN method shows that it is possible to predict various properties of chemical compounds with relatively simpli ﬁed features from
+the graph representation. The developed methodologies provide a comprehensive understanding of constructing a proper model forpredicting solubility and can be employed to ﬁnd suitable solutes and solvents.
+■INTRODUCTION
+Solubility (molecular-level mixability via intermolecular
+interactions) applies to all areas of chemistry, geochemistry,","The text discusses two methodologies for predicting the solubility of chemical compounds: (1) enhancing molecular fingerprints with optimal physicochemical descriptors, and (2) using graph convolutional network (GCN) models to represent molecules as graphs for prediction tasks. Two prediction tasks were performed using each method: predicting solubility values (regression) and solubility classes (classification). The fingerprint-based method demonstrated high performance by incorporating significant physicochemical descriptors, while the GCN method showed that simplified graph representations could effectively predict various chemical properties. These methodologies offer insights into constructing models for solubility prediction and can aid in identifying suitable solutes and solvents.","REFERENCE:(Sumin Lee, Myeonghun Lee, Ki-Won Gyak, Sung Dug Kim, Mi-Jeong Kim, Kyoungmin Min,2022,Novel Solubility Prediction Models: Molecular Fingerprints and Physicochemical Features vs Graph Convolutional Neural Networks)"
+"To create a new label in a human-interpretable manner, we need to remove the integers from the original label and then rewrite it. Let's assume the original label is something like ""C3H2O1"" where ""C"" stands for carbon, ""H"" for hydrogen, and ""O"" for oxygen, and the numbers indicate the count of each atom type. 
+
+After removing the integers, the label becomes ""CHO"". 
+
+Now, let's rewrite this in a human-interpretable manner: ""Carbon with hydrogen and oxygen neighbors.""
+
+If you have a specific label in mind, please provide it, and I can help you rewrite it accordingly.","Remove unnecessary hydrophobic groups reduce
+Find more soluble stereo/region-isomer maintain
+Change degree of unsaturation reduce/increase by 2Add F or Me increase by 18 or 15M.A. Walker / Bioorganic & Medicinal Chemistry Letters 27 (2017) 5100–5108 5101","The text discusses strategies for modifying chemical compounds to alter their properties. It suggests removing unnecessary hydrophobic groups to enhance solubility, maintaining stereo- or regio-isomerism, and adjusting the degree of unsaturation by increasing or decreasing it by two units. Additionally, the text mentions that adding fluorine (F) or a methyl group (Me) can increase the molecular weight by 18 or 15 units, respectively.","REFERENCE:(Michael A. Walker,2017,Improvement in aqueous solubility achieved via small molecular changes)"

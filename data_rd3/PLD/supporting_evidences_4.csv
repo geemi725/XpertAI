@@ -1,0 +1,148 @@
+feature,original,summary,reference
+"The original label is ""volume_per_atom_0"". By removing the integer, we get ""volume_per_atom"". A more human interpretable version of this label could be ""Volume per Atom"".","uniform grid size of 0.1 Å for all of the structures. The size of the cavity
+thatﬁts the largest sphere gives the largest cavity diameter (LCD), and
+the size of the narrowest part of the channel that propagates through
+the material de ﬁnes the pore limiting diameter (PLD) of the structure.
+An open channel consisting of the connected grid points de ﬁnes the
+accessible pore volume. The pore volume was also computed bycounting the number of grid points that do not overlap with the
+framework atoms. Details of this method are described by Haldoupis
+et al.8The accessible surface areas of the MOFs were computed by the
+method of Du ̈ren and Snurr.50A probe size of 3.64 Å was used to
+match the kinetic diameter of N2because the surface area of an MOF
+is typically quanti ﬁed by the BET method with the N 2isotherm at 77
+K.51
+The second level of screening i nvolves classical molecular
+simulations to examine molecular adsorption and di ﬀusion properties.","The text describes a methodology for characterizing the structural properties of materials, specifically focusing on the measurement of pore characteristics in metal-organic frameworks (MOFs). A uniform grid size of 0.1 Å is used to analyze the structures. The largest cavity diameter (LCD) is determined by the size of the largest sphere that fits within the cavity, while the pore limiting diameter (PLD) is defined by the narrowest part of the channel within the material. The accessible pore volume is identified by the connected grid points that do not overlap with the framework atoms, as detailed by Haldoupis et al. The accessible surface areas of MOFs are calculated using the method of Dürren and Snurr, employing a probe size of 3.64 Å to match the kinetic diameter of N2, consistent with the BET method using N2 isotherms at 77 K. Additionally, classical molecular simulations are used in a second level of screening to assess molecular adsorption and diffusion properties.","REFERENCE:(Taku Watanabe, David S. Sholl,2012,Accelerating Applications of Metal−Organic Frameworks for Gas Adsorption and Separation by Computational Screening of Materials)"
+"The original label is ""volume_per_atom_0"". By removing the integer, we get ""volume_per_atom"". A more human interpretable version of this label could be ""Volume per Atom"".","A simplifying feature of silica zeolites is that the interiors of
+all pores in these materials are deﬁned by O atoms. For thisreason, a geometric analysis of the pore structure can beperformed without needing to deﬁne the sizes of different atomicspecies. This simpliﬁcation makes the use of Delaunay trian-gulation more straightforward for these chemically simple poresthan it would be for the chemically richer structures deﬁned byMOFs. Because the method we have deﬁned above provides anatural way to describe pores comprised of arbitrary atomicspecies, our method is better suited to examining MOFs thanthe methods of Foster et al.
+3.2. Pore-Limiting Diameters and Largest Cavity Diameters
+of MOFs. To demonstrate the value of our methods for
+characterizing MOFs, we examined the collection of 774 MOFscompiled in 2005 by Ockwig et al.
+33This list was originally
+developed to perform a taxonomical analysis of the types oftopological nets that occur in MOFs.
+33Although the number","The text discusses the analysis of pore structures in silica zeolites and metal-organic frameworks (MOFs). In silica zeolites, the pore interiors are defined solely by oxygen atoms, allowing for a simplified geometric analysis using Delaunay triangulation without considering different atomic species. This method is less applicable to MOFs, which have more chemically complex structures. The authors propose a method that can describe pores with arbitrary atomic species, making it more suitable for analyzing MOFs. To demonstrate the effectiveness of their method, they examined a collection of 774 MOFs compiled by Ockwig et al. in 2005, originally intended for a taxonomical analysis of topological nets in MOFs.","REFERENCE:(Emmanuel Haldoupis, Sankar Nair, David S. Sholl,2010,Efficient Calculation of Diffusion Limitations in Metal Organic Framework Materials: A Tool for Identifying Materials for Kinetic Separations)"
+"The original label is ""volume_per_atom_0"". By removing the integer, we get ""volume_per_atom"". A more human interpretable version of this label could be ""Volume per Atom"".","diameter of a hydrogen molecule. The numbers in parenthesis provide
+the number of MOFs for which atomic coordinates are provided in
+the CoRE MOF databases; the remaining structures are de ﬁned via a
+CSD REFCODE.bThe number of Web of Science structures
+decreases from 552 to 546 because some of the MOFs are no longer
+3D following the bound solvent removal.Journal of Chemical & Engineering Data Article
+DOI: 10.1021/acs.jced.9b00835
+J. Chem. Eng. Data 2019, 64, 5985 −59985989","The text discusses the availability of atomic coordinates for metal-organic frameworks (MOFs) in the CoRE MOF databases, with some structures defined by CSD REFCODE. It notes a decrease in the number of Web of Science structures from 552 to 546 due to some MOFs losing their 3D structure after solvent removal. The information is sourced from an article in the Journal of Chemical & Engineering Data, published in 2019.","REFERENCE:(Yongchul G. Chung, Emmanuel Haldoupis, Benjamin J. Bucior, Maciej Haranczyk, Seulchan Lee, Hongda Zhang, Konstantinos D. Vogiatzis, Marija Milisavljevic, Sanliang Ling, Jeffrey S. Camp, Ben Slater, J. Ilja Siepmann, David S. Sholl, Randall Q. Snurr,2019,Advances, Updates, and Analytics for the Computation-Ready, Experimental Metal−Organic Framework Database: CoRE MOF 2019)"
+"The original label is ""volume_per_atom_0"". By removing the integer, we get ""volume_per_atom"". A more human interpretable version of this label could be ""Volume per Atom"".","(Mg
+2(dobpdc)),56where the PLD value increased from ∼10
+to∼17 Å upon removal of dimethylformamide.
+The removal of bound solvents can have a large impact on the
+accessible volumetric surface area (AVSA), for example, byexposing blocked pores (which will increase the overall surfacearea) or by ﬂattening the protruding solvents (which may
+decrease the overall surface area). Figure 2 cs h o w st h e
+Figure 2. Comparison between the geometric properties of CoRE
+MOF 2019-ASR and 2019-FSR datasets ( N= 8815): (a) largest cavity
+diameter (LCD), (b) pore limiting diameter (PLD), (c) accessible
+volumetric surface area (AVSA).Journal of Chemical & Engineering Data Article
+DOI: 10.1021/acs.jced.9b00835
+J. Chem. Eng. Data 2019, 64, 5985 −59985990","The text discusses the impact of solvent removal on the structural properties of a metal-organic framework (MOF), specifically Mg2(dobpdc). The pore limiting diameter (PLD) of this MOF increased from approximately 10 Å to 17 Å upon the removal of dimethylformamide. This change highlights how the removal of bound solvents can significantly affect the accessible volumetric surface area (AVSA) by either exposing previously blocked pores, thereby increasing the surface area, or by flattening protruding solvents, which may decrease the surface area. Additionally, Figure 2 in the referenced article compares the geometric properties, including the largest cavity diameter (LCD), PLD, and AVSA, between the CoRE MOF 2019-ASR and 2019-FSR datasets, which consist of 8,815 entries.","REFERENCE:(Yongchul G. Chung, Emmanuel Haldoupis, Benjamin J. Bucior, Maciej Haranczyk, Seulchan Lee, Hongda Zhang, Konstantinos D. Vogiatzis, Marija Milisavljevic, Sanliang Ling, Jeffrey S. Camp, Ben Slater, J. Ilja Siepmann, David S. Sholl, Randall Q. Snurr,2019,Advances, Updates, and Analytics for the Computation-Ready, Experimental Metal−Organic Framework Database: CoRE MOF 2019)"
+"The original label is ""volume_per_atom_0"". By removing the integer, we get ""volume_per_atom"". A more human interpretable version of this label could be ""Volume per Atom"".","incrementally considers other geometric properties of MOFs(such as the surface area, density, and pore limiting diameter).As aﬁrst step, the chemical formula of each MOF is compared by
+reducing the stoichiometric coe ﬃcients of the elements to their
+lowest possible integer values. Hydrogen atoms must also be
+included in the molecular formula to capture the subtlediﬀerences between the bond order of ligands. For example,
+PCN-11 and PCN-16 di ﬀer by a single bond in their organic
+ligand. Stoichiometry coe ﬃcients of the elements are not
+enough as a complete ﬁngerprint to identify identical MOF
+structures from two databases. For example, multiple MOFpolymorphs can exist with the same chemical composition. Onepossible way to recognize the e ﬀect of atomic packing inside a
+crystal structure is to use the crystal density as a descriptor.
+Depending on the crystal density, the same molecular formulamay represent a di ﬀerent structure. For example, interpenetrated","The text discusses the characterization of Metal-Organic Frameworks (MOFs) by considering their geometric properties, such as surface area, density, and pore limiting diameter. It emphasizes the importance of reducing the stoichiometric coefficients of elements in the chemical formula to their lowest integer values, including hydrogen atoms, to capture subtle differences in ligand bond orders. The text highlights that stoichiometric coefficients alone are insufficient to uniquely identify MOF structures, as different polymorphs can share the same chemical composition. It suggests using crystal density as a descriptor to account for variations in atomic packing, which can lead to different structures despite having the same molecular formula.","REFERENCE:(Yongchul G. Chung, Emmanuel Haldoupis, Benjamin J. Bucior, Maciej Haranczyk, Seulchan Lee, Hongda Zhang, Konstantinos D. Vogiatzis, Marija Milisavljevic, Sanliang Ling, Jeffrey S. Camp, Ben Slater, J. Ilja Siepmann, David S. Sholl, Randall Q. Snurr,2019,Advances, Updates, and Analytics for the Computation-Ready, Experimental Metal−Organic Framework Database: CoRE MOF 2019)"
+"The new label, with the integers removed and rewritten in a human interpretable manner, is: ""Symmetry Function G1"".","uniform grid size of 0.1 Å for all of the structures. The size of the cavity
+thatﬁts the largest sphere gives the largest cavity diameter (LCD), and
+the size of the narrowest part of the channel that propagates through
+the material de ﬁnes the pore limiting diameter (PLD) of the structure.
+An open channel consisting of the connected grid points de ﬁnes the
+accessible pore volume. The pore volume was also computed bycounting the number of grid points that do not overlap with the
+framework atoms. Details of this method are described by Haldoupis
+et al.8The accessible surface areas of the MOFs were computed by the
+method of Du ̈ren and Snurr.50A probe size of 3.64 Å was used to
+match the kinetic diameter of N2because the surface area of an MOF
+is typically quanti ﬁed by the BET method with the N 2isotherm at 77
+K.51
+The second level of screening i nvolves classical molecular
+simulations to examine molecular adsorption and di ﬀusion properties.","The text describes a methodology for characterizing the structural properties of materials, specifically focusing on pore characteristics. A uniform grid size of 0.1 Å is used to analyze structures. The largest cavity diameter (LCD) is determined by the size of the largest sphere that fits within the cavity, while the pore limiting diameter (PLD) is defined by the narrowest part of the channel within the material. The accessible pore volume is identified by connected grid points that do not overlap with the framework atoms, as detailed by Haldoupis et al. The accessible surface areas of metal-organic frameworks (MOFs) are calculated using the method of Dürren and Snurr, employing a probe size of 3.64 Å to match the kinetic diameter of N₂, consistent with the BET method using N₂ isotherms at 77 K. The second screening level involves classical molecular simulations to assess molecular adsorption and diffusion properties.","REFERENCE:(Taku Watanabe, David S. Sholl,2012,Accelerating Applications of Metal−Organic Frameworks for Gas Adsorption and Separation by Computational Screening of Materials)"
+"The new label, with the integers removed and rewritten in a human interpretable manner, is: ""Symmetry Function G1"".","57,58but are far more computationally demanding than
+the methods we have introduced. Despite this limitation,understanding the connection between the pore sizes of indi-vidual materials and the widely accepted kinetic diameters forsmall molecules that is provided by our results makes it possibleto make useful qualitative predictions about a large range ofnonspherical species without performing detailed calculations.Even for molecules with a signiﬁcant degree of internalﬂexibility, it seems likely that many MOFs can be eliminatedfrom any further analysis by comparing the calculated pore-limiting diameter based on spherical probes with the smallestdimension of the molecule in question. Categorizing a largenumber of MOFs in this sense would be useful for selecting asmall number of materials for which detailed analysis usingmethods suitable for fully ﬂexible molecules would be productive.
+Our calculations of the Henry’s constants for adsorption and","The text discusses the computational challenges associated with certain methods for analyzing materials, specifically in relation to the pore sizes of materials and the kinetic diameters of small molecules. Despite these challenges, the study provides insights that allow for qualitative predictions about a wide range of nonspherical species without detailed calculations. The text suggests that many metal-organic frameworks (MOFs) can be excluded from further analysis by comparing the calculated pore-limiting diameter using spherical probes with the smallest dimension of the molecule. This approach could help in narrowing down the selection of MOFs for detailed analysis, particularly for molecules with significant internal flexibility. Additionally, the text mentions calculations of Henry's constants for adsorption, although further details are not provided in the excerpt.","REFERENCE:(Emmanuel Haldoupis, Sankar Nair, David S. Sholl,2010,Efficient Calculation of Diffusion Limitations in Metal Organic Framework Materials: A Tool for Identifying Materials for Kinetic Separations)"
+"The new label, with the integers removed and rewritten in a human interpretable manner, is: ""Symmetry Function G1"".","34. J. Zaanen, Nature 404, 714 (2000).
+35. We acknowledge and thank S. Sachdev, S. Kivelson,
+D.-H. Lee, E. Demler, S.-C. Zhang, J. Sethna, G. Aeppli, J.Orenstein, W. Halperin, and S. H. Pan for helpful con-versations and communications. This work was fundedby the OfÞce of Naval Research, the Materials SciencesDivision of Lawrence Berkeley National Laboratory, theCULAR Program of Los Alamos National Laboratory, aswell as a Grant-in-Aids for ScientiÞc Research, a COEGrant from the Ministry of Education, and an Interna-tional Joint Research Grant from the New Energy andIndustrial Technology Organization in Japan. J.E.H. ac-knowledges support by a Hertz Fellowship, K.M.L. by anIBM Fellowship, and J.C.D. by a Miller Professorship.
+9 October 2001; accepted 10 December 2001
+Systematic Design of Pore Size
+and Functionality in Isoreticular
+MOFs and Their Application in
+Methane Storage
+Mohamed Eddaoudi,1Jaheon Kim,1Nathaniel Rosi,1
+David Vodak,1Joseph Wachter,1Michael OÕKeeffe,2
+Omar M. Yaghi1*","The provided text is an excerpt from a journal article that includes acknowledgments and references. It mentions the support and funding sources for the research, which include the Office of Naval Research, Lawrence Berkeley National Laboratory, Los Alamos National Laboratory, and various grants from Japanese organizations. Individual acknowledgments are given to J.E.H. for a Hertz Fellowship, K.M.L. for an IBM Fellowship, and J.C.D. for a Miller Professorship. The article, titled ""Systematic Design of Pore Size and Functionality in Isoreticular MOFs and Their Application in Methane Storage,"" is authored by Mohamed Eddaoudi, Jaheon Kim, Nathaniel Rosi, David Vodak, Joseph Wachter, Michael O'Keeffe, and Omar M. Yaghi. The article was received on 9 October 2001 and accepted on 10 December 2001.","REFERENCE:(Mohamed Eddaoudi, Jaheon Kim, Nathaniel Rosi, David Vodak, Joseph Wachter, Michael O'Keeffe, Omar M. Yaghi,2002,Systematic Design of Pore Size and Functionality in Isoreticular MOFs and Their Application in Methane Storage)"
+"The new label, with the integers removed and rewritten in a human interpretable manner, is: ""Symmetry Function G1"".","PBEsol and PBE-D3 functionals to verify the magnetic ground states, and the magnetic ground states
+of the MOFs determined in our calculations agree well with the experimental results, as well as with
+the work of Sholl and co-workers [20].
+Using the Zeo ++software [ 54–56], we calculated two kinds of pore sizes, in particular the pore
+limiting diameter (PLD) and the largest cavity diameter (LCD). The PLD is deﬁned as the diameter of
+the largest sphere that can move through the MOF. The LCD is deﬁned as the diameter of the largest
+sphere that can ﬁt in the pore of the MOFs. According to the Zeo ++software website [ 57], the LCD
+and PLD are designated as “Di” and “Dif”.
+To assess the performance of the functionals on the various properties, we calculated the mean
+signed error (MSE), mean unsigned error (MUE), and mean unsigned percentage error (MUPE) for each
+combination of functional and property. The errors of the structural parameters (lattice parameters,","The study utilized PBEsol and PBE-D3 functionals to verify the magnetic ground states of metal-organic frameworks (MOFs), finding good agreement with experimental results and previous work by Sholl and colleagues. Using Zeo++ software, two types of pore sizes were calculated: the pore limiting diameter (PLD), which is the largest sphere that can move through the MOF, and the largest cavity diameter (LCD), which is the largest sphere that can fit in the MOF pore. The performance of the functionals was evaluated by calculating the mean signed error (MSE), mean unsigned error (MUE), and mean unsigned percentage error (MUPE) for each combination of functional and property, focusing on structural parameters such as lattice parameters.","REFERENCE:(Indrani Choudhuri, Donald G. Truhlar,2020,Improved Predictive Tools for Structural Properties of Metal–Organic Frameworks)"
+"The new label, with the integers removed and rewritten in a human interpretable manner, is: ""Symmetry Function G1"".","diameter of a hydrogen molecule. The numbers in parenthesis provide
+the number of MOFs for which atomic coordinates are provided in
+the CoRE MOF databases; the remaining structures are de ﬁned via a
+CSD REFCODE.bThe number of Web of Science structures
+decreases from 552 to 546 because some of the MOFs are no longer
+3D following the bound solvent removal.Journal of Chemical & Engineering Data Article
+DOI: 10.1021/acs.jced.9b00835
+J. Chem. Eng. Data 2019, 64, 5985 −59985989","The text discusses the availability of atomic coordinates for metal-organic frameworks (MOFs) in the CoRE MOF databases, with some structures defined by CSD REFCODE. It notes a decrease in the number of Web of Science structures from 552 to 546 due to some MOFs losing their 3D structure after solvent removal. The information is sourced from an article in the Journal of Chemical & Engineering Data, published in 2019.","REFERENCE:(Yongchul G. Chung, Emmanuel Haldoupis, Benjamin J. Bucior, Maciej Haranczyk, Seulchan Lee, Hongda Zhang, Konstantinos D. Vogiatzis, Marija Milisavljevic, Sanliang Ling, Jeffrey S. Camp, Ben Slater, J. Ilja Siepmann, David S. Sholl, Randall Q. Snurr,2019,Advances, Updates, and Analytics for the Computation-Ready, Experimental Metal−Organic Framework Database: CoRE MOF 2019)"
+Unoccupied Energy Levels Near the Conduction Band Minimum,"readily. The activation energy has been plotted for H
+2in Figure
+8 against the pore-limiting diameter for 165 MOFs using thesame criteria for the range of Henry’s constants and energybarrier values as in Figure 7. For the large pore materials inFigures 7 and 8 the activation energies are small but show asigniﬁcant degree of variation. This variation exists because theenergy barrier is the difference between the energy at theposition of the pore-limiting diameter and the global energyminimum. The former energy is strongly correlated with thepore-limiting diameter, but the latter energy is not.
+The connection between the pore-limiting diameter and the","The text discusses the relationship between activation energy and pore-limiting diameter in metal-organic frameworks (MOFs) for hydrogen (H₂) adsorption. It highlights that activation energies are generally small for large pore materials but exhibit significant variation. This variation arises because the energy barrier is determined by the difference between the energy at the pore-limiting diameter and the global energy minimum. While the energy at the pore-limiting diameter is strongly correlated with the diameter itself, the global energy minimum is not. This analysis is based on data from 165 MOFs, using consistent criteria for Henry's constants and energy barrier values.","REFERENCE:(Emmanuel Haldoupis, Sankar Nair, David S. Sholl,2010,Efficient Calculation of Diffusion Limitations in Metal Organic Framework Materials: A Tool for Identifying Materials for Kinetic Separations)"
+Unoccupied Energy Levels Near the Conduction Band Minimum,"uniform grid size of 0.1 Å for all of the structures. The size of the cavity
+thatﬁts the largest sphere gives the largest cavity diameter (LCD), and
+the size of the narrowest part of the channel that propagates through
+the material de ﬁnes the pore limiting diameter (PLD) of the structure.
+An open channel consisting of the connected grid points de ﬁnes the
+accessible pore volume. The pore volume was also computed bycounting the number of grid points that do not overlap with the
+framework atoms. Details of this method are described by Haldoupis
+et al.8The accessible surface areas of the MOFs were computed by the
+method of Du ̈ren and Snurr.50A probe size of 3.64 Å was used to
+match the kinetic diameter of N2because the surface area of an MOF
+is typically quanti ﬁed by the BET method with the N 2isotherm at 77
+K.51
+The second level of screening i nvolves classical molecular
+simulations to examine molecular adsorption and di ﬀusion properties.","The text describes a method for characterizing the structural properties of materials, specifically focusing on the measurement of pore characteristics. A uniform grid size of 0.1 Å is used for all structures to determine the largest cavity diameter (LCD) and the pore limiting diameter (PLD). The accessible pore volume is defined by the open channel of connected grid points, and is calculated by counting grid points that do not overlap with the framework atoms, as detailed by Haldoupis et al. The accessible surface areas of metal-organic frameworks (MOFs) are computed using the method of Düren and Snurr, with a probe size of 3.64 Å to match the kinetic diameter of N₂, aligning with the BET method using the N₂ isotherm at 77 K. The second level of screening involves classical molecular simulations to assess molecular adsorption and diffusion properties.","REFERENCE:(Taku Watanabe, David S. Sholl,2012,Accelerating Applications of Metal−Organic Frameworks for Gas Adsorption and Separation by Computational Screening of Materials)"
+Unoccupied Energy Levels Near the Conduction Band Minimum,"4
+in MOFs, where it can be seen that they accurately capture thetrends observed in our more detailed calculations for all MOFswith pore-limiting diameters similar in size or smaller than thesize of a CH
+4molecule. These bounds are also shown in Figure
+8, where they were calculated using the same description andthe Lennard-Jones parameters for H
+2.The bounds also give a
+useful estimate of the activation energies for this adsorbate.
+An immediate use for the approximate bounds on the","The text discusses the use of approximate bounds in metal-organic frameworks (MOFs) to capture trends observed in detailed calculations for MOFs with pore-limiting diameters similar to or smaller than a methane (CH\(_4\)) molecule. These bounds, calculated using the same description and Lennard-Jones parameters for hydrogen (H\(_2\)), provide useful estimates of activation energies for the adsorbate. Figure 8 illustrates these bounds.","REFERENCE:(Emmanuel Haldoupis, Sankar Nair, David S. Sholl,2010,Efficient Calculation of Diffusion Limitations in Metal Organic Framework Materials: A Tool for Identifying Materials for Kinetic Separations)"
+Unoccupied Energy Levels Near the Conduction Band Minimum,"It is important to note that the use of kinetic diameters
+outlined above cannot be taken literally. Real molecules are notsimply spherical hard spheres. For approximately sphericaladsorbates such as CH
+4, pores with pore-limiting diameters
+slightly smaller than the molecule do not deﬁne an inﬁnitelyhigh energy barrier to molecular diffusion. Instead, an energybarrier of ﬁnite height will control molecular diffusion, withthe height of this barrier depending on the details of the repulsiveinteractions between the adsorbate and framework. A goodexample of this idea is the MOF Cu(hﬁpbb)(H
+2hﬁpbb) 0.5, which
+was recently considered for CO 2/CH 4separations using a
+combination of molecular modeling and quantum chemistrycalculations by Watanabe et al.
+9The pore-limiting diameter of
+Cu(hﬁpbb)(H 2hﬁpbb) 0.5as deﬁned by our methods is 2.735 Å.
+This is smaller than the nominal kinetic diameter of CO 2(CH 4)","The text discusses the limitations of using kinetic diameters to model molecular diffusion in porous materials. It emphasizes that real molecules are not perfect spherical hard spheres, and for nearly spherical adsorbates like CH₄, pores with diameters slightly smaller than the molecule do not create an infinitely high energy barrier. Instead, a finite energy barrier, influenced by repulsive interactions between the adsorbate and the framework, governs diffusion. An example provided is the metal-organic framework (MOF) Cu(hfiPbb)(H₂hfiPbb)₀.₅, which was studied for CO₂/CH₄ separations using molecular modeling and quantum chemistry. The pore-limiting diameter of this MOF is 2.735 Å, which is smaller than the nominal kinetic diameter of CO₂ and CH₄.","REFERENCE:(Emmanuel Haldoupis, Sankar Nair, David S. Sholl,2010,Efficient Calculation of Diffusion Limitations in Metal Organic Framework Materials: A Tool for Identifying Materials for Kinetic Separations)"
+Unoccupied Energy Levels Near the Conduction Band Minimum,"standpoint of how the Coulombic effect can alter the energy profile in a 
+channel for transport. We addressed this critical question via exploring 
+the relationship between the topological bottleneck and the transport 
+bottleneck. The former is defined as the location where the PLD of a MOF is observed, while the latter locates at the highest free energy for a 
+molecule traversing the structure [48,49]. Considering the topology of 
+MOFs can be highly complex, MOFs with one-dimensional (1D) channels 
+(98 out of 2,932 from the CoRE MOF database [50] as shown in Fig. S1 
+of the Supporting Information) were discussed herein. To shed light on 
+the charge effects of CO2, we studied how the transport bottleneck re-
+locates for real CO2 molecules as well as fictitious ones without a 
+quadrupole moment (i.e., no charge being assigned) in rigid frame -
+works. We also computed the permeability (a product of solubility and 
+diffusivity) of CO2, CH4, and H2 in order to identify potential MOF","The study investigates the impact of the Coulombic effect on the energy profile within a channel for molecular transport, specifically focusing on metal-organic frameworks (MOFs). The research explores the relationship between the topological bottleneck, defined by the pore limiting diameter (PLD) of a MOF, and the transport bottleneck, which is the point of highest free energy for a molecule moving through the structure. The study concentrates on MOFs with one-dimensional channels, analyzing 98 out of 2,932 MOFs from the CoRE MOF database. The research examines the charge effects of CO2 by comparing the transport bottleneck locations for real CO2 molecules and hypothetical ones without a quadrupole moment in rigid frameworks. Additionally, the permeability of CO2, CH4, and H2 is calculated to identify potential MOFs for gas separation applications.","REFERENCE:(Ting-Hsiang Hung, Xuepeng Deng, Qiang Lyu, Li-Chiang Lin, Dun-Yen Kang,2021,Coulombic effect on permeation of CO2 in metal-organic framework membranes)"

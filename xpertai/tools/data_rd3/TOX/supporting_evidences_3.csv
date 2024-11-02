@@ -1,0 +1,35 @@
+feature,original,summary,reference
+"Given the label presence of a heteroatom bonded to three O, the label without integers would be ""heteroatom bonded to three O"". 
+
+Rewriting this in a human interpretable manner:
+
+**New label:** Heteroatom bonded to three oxygen atoms","The model can be explained with the following SHAP analysis.Feature presence of a heteroatom bonded to three O has a correlation coefficient of  -0.9730490909057579 with its SHAP values. 
+The average impact of presence of a heteroatom bonded to three O is 1.1380509894209032.
+ Feature presence of a tertiary amine has a correlation coefficient of  0.7321885165158918 with its SHAP values. 
+The average impact of presence of a tertiary amine is 0.11896651572457036.
+ Feature Is a C-O single bond has a correlation coefficient of  0.7970382244919982 with its SHAP values. 
+The average impact of Is a C-O single bond is 0.11502051382295993.","The SHAP analysis of the model reveals the following correlations and impacts of specific features:
+
+1. The presence of a heteroatom bonded to three oxygen atoms has a strong negative correlation with its SHAP values (correlation coefficient: -0.9730) and an average impact of 1.1381.
+2. The presence of a tertiary amine shows a positive correlation with its SHAP values (correlation coefficient: 0.7322) and an average impact of 0.1190.
+3. The presence of a C-O single bond also has a positive correlation with its SHAP values (correlation coefficient: 0.7970) and an average impact of 0.1150.","REFERENCE:(XpertAI,2023,XAI Summary)"
+"Sure, I can help with that. Please provide the original label containing the integers and the tertiary amine label.","The model can be explained with the following SHAP analysis.Feature presence of a heteroatom bonded to three O has a correlation coefficient of  -0.9730490909057579 with its SHAP values. 
+The average impact of presence of a heteroatom bonded to three O is 1.1380509894209032.
+ Feature presence of a tertiary amine has a correlation coefficient of  0.7321885165158918 with its SHAP values. 
+The average impact of presence of a tertiary amine is 0.11896651572457036.
+ Feature Is a C-O single bond has a correlation coefficient of  0.7970382244919982 with its SHAP values. 
+The average impact of Is a C-O single bond is 0.11502051382295993.","The SHAP analysis of the model reveals the following correlations and impacts of specific features:
+
+1. The presence of a heteroatom bonded to three oxygen atoms has a strong negative correlation with its SHAP values (correlation coefficient: -0.9730) and an average impact of 1.1381.
+2. The presence of a tertiary amine shows a positive correlation with its SHAP values (correlation coefficient: 0.7322) and an average impact of 0.1190.
+3. The presence of a C-O single bond also has a positive correlation with its SHAP values (correlation coefficient: 0.7970) and an average impact of 0.1150.","REFERENCE:(XpertAI,2023,XAI Summary)"
+"The new label is: ""Is a C-O single bond""","The model can be explained with the following SHAP analysis.Feature presence of a heteroatom bonded to three O has a correlation coefficient of  -0.9730490909057579 with its SHAP values. 
+The average impact of presence of a heteroatom bonded to three O is 1.1380509894209032.
+ Feature presence of a tertiary amine has a correlation coefficient of  0.7321885165158918 with its SHAP values. 
+The average impact of presence of a tertiary amine is 0.11896651572457036.
+ Feature Is a C-O single bond has a correlation coefficient of  0.7970382244919982 with its SHAP values. 
+The average impact of Is a C-O single bond is 0.11502051382295993.","The SHAP analysis of the model reveals the following correlations and impacts of specific features:
+
+1. The presence of a heteroatom bonded to three oxygen atoms has a strong negative correlation (correlation coefficient: -0.973) with its SHAP values and an average impact of 1.138.
+2. The presence of a tertiary amine shows a positive correlation (correlation coefficient: 0.732) with its SHAP values and an average impact of 0.119.
+3. The presence of a C-O single bond also has a positive correlation (correlation coefficient: 0.797) with its SHAP values and an average impact of 0.115.","REFERENCE:(XpertAI,2023,XAI Summary)"

@@ -9,8 +9,8 @@ import shap
 from lime.lime_tabular import LimeTabularExplainer
 from scipy import stats
 import shutil
+import re
 import openai
-
 # from langchain.llms import OpenAI
 from langchain.embeddings.openai import OpenAIEmbeddings
 from langchain.document_loaders import PyPDFLoader
@@ -31,8 +31,11 @@ def _split_data(df_init):
     return x_train, x_val, y_train, y_val
 
 
-def _plots(results, eval_type):
-    figsave = "./data/figs/"
+def _plots(results, eval_type, savedir=None):
+    if savedir is None:
+        figsave = "./data/figs/"
+    else: 
+        figsave = f"{savedir}/figs"
 
     if os.path.exists(figsave):
         shutil.rmtree(figsave)
@@ -74,7 +77,7 @@ def train_xgbclassifier(df_init, save_data=True, savedir=None):
     results = xgb_model.evals_result()
 
     if save_data:
-        _plots(results, "error")
+        _plots(results, "error",savedir=savedir)
         xgb_model.save_model(f"{savedir}/xgbmodel.json")
         np.save(f"{savedir}/xgb_results.npy", results)
 
@@ -103,7 +106,7 @@ def train_xgbregressor(df_init, save_data=True, savedir=None):
     results = xgb_model.evals_result()
 
     if save_data:
-        _plots(results, "rmse")
+        _plots(results, "rmse", savedir=savedir)
         xgb_model.save_model(f"{savedir}/xgbmodel.json")
         np.save(f"{savedir}/xgb_results.npy", results)
     else:
@@ -111,12 +114,13 @@ def train_xgbregressor(df_init, save_data=True, savedir=None):
 
 
 def get_response(prompt):
+
     messages = [{"role": "user", "content": prompt}]
     response = openai.ChatCompletion.create(
-        model="gpt-4",
-        messages=messages,
-        temperature=0,
-    )
+            model="gpt-4o",
+            messages=messages,
+            temperature=0,
+        )
 
     return response.choices[0].message["content"]
 
@@ -128,7 +132,7 @@ def explain_shap(
         savedir = "./data"
 
     # use all data for the shap analysis
-    df_x = df_init.iloc[:, :-1]
+    df_x = df_init.iloc[:, :-1] 
 
     feat_labs = list(df_x)
     model = xgb.Booster()
@@ -164,6 +168,9 @@ def explain_shap(
         )
         plt.title("SHAP analysis")
         plt.xlabel("Average impact")
+        #create a directory for figures
+        if not os.path.exists(f"{savedir}/figs"):
+            os.makedirs(f"{savedir}/figs")
         fig.savefig(f"{savedir}/figs/shap_bar.png", bbox_inches="tight", dpi=300)
 
     # compute average impact
@@ -323,21 +330,35 @@ def _get_metadata(lit_file):
     reader = PdfReader(f"{lit_file}")
     page = reader.pages[0]
     text = page.extract_text()
+    
+    PROMPT =  """ You are given the first page of a journal article. Extract the list of author names, title, and year of publication from the following text: {text}.
+    The goal is to generate metadata for the article in JSON format.
 
-    jdump = get_response(
-        f""" Please extract list of author names, title, and
-                           year of publication from this text {text}.
-                           Output should have following format:
-                           "Authors": "<author1, author2 ...>",
-                           "Year": "<year>", "Title": "<title>"
-                            """
-    )
+    Important: The output must be in JSON format with the following structure and nothing else:
+    {{
+    "Authors": "<author1, author2, ...>",
+    "Year": "<year>",
+    "Title": "<title>"
+    }}
+    """
 
-    jdump = "{" + jdump + "}"
+    prompted = PROMPT.format(text=text)
+    ## specific instructions to parse the output
+    output = get_response(prompted)
+    cleaned_output = re.sub(r'```json|```', '', output).strip()
+    jdump = re.search(r'\{.*\}', cleaned_output, re.DOTALL).group(0)
+
+    #jdump = "{" + jdump + "}"
+    if jdump[0] != "{":
+        jdump = "{" + jdump 
+    if jdump[-1] != "}":
+        jdump = jdump + "}"
     try: 
         metadatas = json.loads(jdump)
+        print(lit_file,"metadata saved!!")
     except:
         metadatas = None
+        print(lit_file,"metadata FAILED!!")
 
     return metadatas
 

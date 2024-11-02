@@ -1,0 +1,258 @@
+feature,original,summary,reference
+Structural Information Content Index (Neighborhood Symmetry of Zero-Order),"Sensitivity of Energetic Molecules. Bull. Korean Chem. Soc. 2005 ,26,
+399−408.
+(60) Nefati, H.; Cense, J.-M.; Legendre, J.-J. Prediction of the Impact
+Sensitivity by Neural Networks. J. Chem. Inf. Comput. Sci. 1996 ,36,
+804−810.
+(61) Gharagheizi, F. Quantitative Structure Property Relationship for
+Prediction of the Lower Flammability Limit of Pure Compounds. Energy
+Fuels 2008 ,22, 3037−3039.
+(62) Gharagheizi, F. Prediction of upper flammability limit percent of
+pure compounds from their molecular structures. J. Hazard. Mater.
+2009 ,167, 507−510.
+(63) Pan, Y.; Jiang, J.; Wang, R.; Cao, H.; Cui, Y. A novel QSPR model
+for prediction of lower flammability limits of organic compounds based
+on support vector machine. J. Hazard. Mater. 2009 ,168, 962−969.
+(64) Gharagheizi, F. A QSPR model for estimation of lower
+flammability limit temperature of pure compounds based on molecular
+structure. J. Hazard. Mater. 2009 ,169, 217−220.","The provided text lists several references related to the prediction of various properties of energetic and flammable compounds using different computational methods. Key studies include:
+
+1. Sensitivity of energetic molecules (Bull. Korean Chem. Soc. 2005).
+2. Prediction of impact sensitivity using neural networks (J. Chem. Inf. Comput. Sci. 1996).
+3. Quantitative Structure-Property Relationship (QSPR) models for predicting the lower flammability limit (Energy Fuels 2008) and upper flammability limit (J. Hazard. Mater. 2009) of pure compounds.
+4. A novel QSPR model using support vector machines for predicting lower flammability limits of organic compounds (J. Hazard. Mater. 2009).
+5. Estimation of lower flammability limit temperature based on molecular structure (J. Hazard. Mater. 2009).
+
+These studies highlight the use of computational models, such as neural networks and QSPR, to predict the safety-related properties of chemical compounds.","REFERENCE:(Flor A. Quintero, Suhani J. Patel, Felipe Muñoz, M. Sam Mannan,2012,Review of Existing QSAR/QSPR Models Developed for Properties Used in Hazardous Chemicals Classification System)"
+Structural Information Content Index (Neighborhood Symmetry of Zero-Order),"Predictive Methods for Flammability Limits—
+Pure Components
+According to Shimy, lower ﬂammability limits of
+hydrocarbons depend only upon the number of C at-oms in the chain, regardless of the number of H atomspresent. In contrast, the upper ﬂammability of hydro-carbons depends primarily on the number of H atomspresent in the chain. The formulas for the various HCand alcohols are given in Table 2 [23].
+Britton [24] developed a method to calculate the
+lower ﬂammability limit in air under atmospheric con-ditions by using the heat of oxidation as a parameter.The heat of oxidation represents the amount of heatenergy available for breaking each molecular oxygenbond required to initiate chain reactions with oxygen.In other words, it is the heat of combustion per mole ofoxygen consumed, /H9004H
+c/S.
+Even though the expression
+LFL /H1106110
+S
+is a good approximation to calculate the LFL, where S","The text discusses predictive methods for determining the flammability limits of pure hydrocarbon components. Shimy suggests that the lower flammability limits (LFL) of hydrocarbons are influenced solely by the number of carbon atoms in the chain, while the upper flammability limits (UFL) are primarily dependent on the number of hydrogen atoms. Britton developed a method to calculate the LFL in air under atmospheric conditions using the heat of oxidation, which is the heat of combustion per mole of oxygen consumed. This method provides a good approximation for calculating the LFL.","REFERENCE:(M. Vidal, W. J. Rogers, J. C. Holste, M. S. Mannan,2004,A Review of Estimation Methods for Flash Points and Flammability Limits)"
+Structural Information Content Index (Neighborhood Symmetry of Zero-Order),"Satyanarayana,  K., Kakati, M., 1991. Note: correlation  of ﬂash points. Fire Mater. 15 
+(2), 97–100. doi: 10.1002/fam.810150208  . 
+Seaton, W.H., 1991. Group contribution  method for predicting  the lower and the 
+upper ﬂammable  limits of vapors in air. J. Hazard. Mater. 27 (2), 169–185.  
+doi: 10.1016/0304-  3894(91)80028-  M . 
+Sheather,  S. , 2009. A Modern Approach  to Regression  with R. Springer Science & 
+Business  Media . 
+Suzuki, T., 1994. Note: Empirical  relationship  between  lower ﬂammability  limits and 
+standard  enthalpies  of combustion  of organic compounds.  Fire Mater. 18 (5), 
+333–336.  doi: 10.1002/fam.810180509  . 
+Suzuki, T., Ishida, M., 1995. Neural network techniques  applied to predict ﬂamma- 
+bility limits of organic compounds.  Fire Mater. 19 (4), 179–189.  doi: 10.1002/fam.  
+810190404  . 
+Suzuki, T., Ohtaguchi,  K., Koide, K., 1991. A method for estimating  ﬂash points of 
+organic compounds  from molecular  structures.  J. Chem. Eng. Jpn. 24 (2), 258–","The provided text is a list of references from various journal articles and books related to the study of flammability and flash points of organic compounds. The references include:
+
+1. Satyanarayana and Kakati (1991) discuss the correlation of flash points in ""Fire and Materials.""
+2. Seaton (1991) presents a group contribution method for predicting the lower and upper flammable limits of vapors in air in the ""Journal of Hazardous Materials.""
+3. Sheather (2009) authored a book on modern regression techniques using R, published by Springer Science & Business Media.
+4. Suzuki (1994) explores the empirical relationship between lower flammability limits and standard enthalpies of combustion of organic compounds in ""Fire and Materials.""
+5. Suzuki and Ishida (1995) apply neural network techniques to predict the flammability limits of organic compounds in ""Fire and Materials.""
+6. Suzuki, Ohtaguchi, and Koide (1991) propose a method for estimating flash points of organic compounds from molecular structures in the ""Journal of Chemical Engineering of Japan.""
+
+These references collectively contribute to the understanding and prediction of flammability characteristics of organic compounds using various methods, including empirical relationships, group contribution methods, and neural networks.","REFERENCE:(Sunhwa Park, James P. Bailey, Hans J. Pasman, Qingsheng Wang, Mahmoud M. El-Halwagi,2021,Fast, easy-to-use, machine learning-developed models of prediction of flash point, heat of combustion, and lower and upper flammability limits for inherently safer design)"
+Structural Information Content Index (Neighborhood Symmetry of Zero-Order),"quantitative structure -property relationship method. These
+methods are extensively used to estimate various physicochem-ical properties and have successfully been used by the authorfor estimation of some flammability characteristics.
+8-14In this
+class, the chemical structures of molecules are used to develop
+parameters that can then be used to correlate the UFL of purecompounds. Of these methods, we can refer to the models
+*To whom correspondence should be addressed. Fax: þ98-21-
+66957784. E-mail: fghara@ut.ac.ir or fghara@gmail.com.
+†Saman Energy Giti Co., Postal Code: 3331619636, Tehran, Iran.
+(1) Crowl, D. A.; Louvar, J. F. Chemical Process Safety Fundamentals
+with Applications , 2nd ed.; Prentice-Hall: Upper Saddle River, NJ, 2002.
+(2) Lees, F. P. Loss Prevention in the Process Industries , 2nd ed.;
+Butterworth -Heinemann: Oxford, U.K., 1996.
+(3) Sheldon, M. Fire Prev. 1984 ,174, 23.
+(4) Britton, L. G.; Cashdollar, K. L.; Fenlon, W.; Furip, D.; Going, J.;","The text discusses the use of quantitative structure-property relationship (QSPR) methods to estimate various physicochemical properties. These methods have been successfully applied by the author to estimate certain flammability characteristics. Specifically, the chemical structures of molecules are used to develop parameters that correlate with the upper flammability limit (UFL) of pure compounds. The text also includes references to relevant literature and contact information for correspondence.","REFERENCE:(Farhad Gharagheizi,2010,Chemical Structure-Based Model for Estimation of the Upper Flammability Limit of Pure Compounds)"
+Structural Information Content Index (Neighborhood Symmetry of Zero-Order),"for prediction of the upper ﬂammability limits (UFL) of organic compounds from their molecular structures.The structural features of the compounds are numerically represented by various kinds of calculated moleculardescriptors such as topological, charge, and geometric descriptors. The genetic algorithm combined withmultiple linear regression (GA-MLR) is used to select an optimal subset of descriptors that have signiﬁcantcontribution to the overall UFL property from the large pool of calculated descriptors. The best resultedmodel is a four-variable multilinear model with a deﬁned applicability range. The average absolute error androot-mean-square error obtained for the external test set are 1.75 vol % and 2.77, respectively. The proposedmodel can be used to predict the UFL of organic compounds with only four preselected theoretical descriptorswhich can be directly calculated from molecular structure alone.
+1. Introduction
+In chemical industry and engineering, there is a wide","The study focuses on predicting the upper flammability limits (UFL) of organic compounds based on their molecular structures. Various molecular descriptors, including topological, charge, and geometric descriptors, are calculated to numerically represent the structural features of the compounds. A genetic algorithm combined with multiple linear regression (GA-MLR) is employed to select an optimal subset of descriptors that significantly contribute to the UFL property. The resulting model is a four-variable multilinear model with a defined applicability range. For the external test set, the model achieves an average absolute error of 1.75 vol % and a root-mean-square error of 2.77. This model allows for the prediction of UFL using only four theoretical descriptors derived directly from the molecular structure.","REFERENCE:(Yong Pan, Juncheng Jiang, Rui Wang, Hongyin Cao, Yi Cui,2009,Prediction of the Upper Flammability Limits of Organic Compounds from Molecular Structures)"
+"The label ""information content index (neighborhood symmetry of 0-order)"" without the integer ""0"" would be:
+
+""information content index (neighborhood symmetry of -order)""
+
+To make this more human-interpretable, we can rephrase it as:
+
+""Information Content Index (Neighborhood Symmetry of Order)""
+
+This label now conveys the same concept without the specific integer, making it more general and easier to understand.","sented in Table 1 .
+“Jhetv” and “PW5” are of topological descriptors. Topological
+descriptors are based on a graph representation of the molecule.They are numerical quantiﬁers of molecular topology obtainedby the application of algebraic operators to matrices representingmolecular graphs and whose values are independent of vertex num-bering or labeling. They can be sensitive to one or more structuralfeatures of the molecule such as size, shape, symmetry, branchingand cyclicity and can also encode chemical information concern-ing atom type and bond multiplicity. When these two descriptorsincrease the UFLP decreases.
+“SIC0” is of information indices. These molecular descriptors are
+calculated as information content of molecules, based on the cal-culation of equivalence classes from the molecular graph. Amongthem, the indices of neighborhood symmetry take into account alsoneighbor degree and edge multiplicity. Increase in this descriptorincreases the UFLP.","The text discusses three types of molecular descriptors: ""Jhetv,"" ""PW5,"" and ""SIC0."" 
+
+- ""Jhetv"" and ""PW5"" are topological descriptors derived from the graph representation of molecules. These descriptors quantify molecular topology through algebraic operations on matrices representing molecular graphs. They are sensitive to structural features such as size, shape, symmetry, branching, and cyclicity, and can encode chemical information about atom types and bond multiplicity. An increase in these descriptors correlates with a decrease in UFLP (unspecified in the text but likely a property or parameter of interest).
+
+- ""SIC0"" is an information index descriptor calculated based on the information content of molecules, considering equivalence classes from the molecular graph. This descriptor accounts for neighborhood symmetry, neighbor degree, and edge multiplicity. An increase in ""SIC0"" correlates with an increase in UFLP.","REFERENCE:(Farhad Gharagheizi,2009,Prediction of upper flammability limit percent of pure compounds from their molecular structures)"
+"The label ""information content index (neighborhood symmetry of 0-order)"" without the integer ""0"" would be:
+
+""information content index (neighborhood symmetry of -order)""
+
+To make this more human-interpretable, we can rephrase it as:
+
+""Information Content Index (Neighborhood Symmetry of Order)""
+
+This label now conveys the same concept without the specific integer, making it more general and easier to understand.","nonlinear relationships can be modeled without any assump-
+tions of the model.20The theoretical basis of the neural networks
+can be found elsewhere.21
+Three-layer feed-forward neural networks (FFNNs) with the
+sigmoidal transfer function are one of the most widely used
+types of neural networks that have found various applications in
+the estimations of physical properties. The FFNNs are available
+aThe superscript represents the formal oxidation number. The formal oxidation number of a carbon atom equals the sum of the conventional bond
+orders with electronegative atoms. The C--N bond order in pyridine may be considered as 2 when we have one such bond and 1.5 when we have two suchbonds. The C..X bondorder in pyrrole orfuran may be considered as 1.bAnR-C may be defined asa C attached through a single bondwith -CdX,-C#X,
+-C--X.cPyrrole-type structure.dR represents any group linked through carbon. X represents any electronegative atom (O, N, S, P, Se, and halogens). Al","The provided text discusses the use of three-layer feed-forward neural networks (FFNNs) with a sigmoidal transfer function for modeling nonlinear relationships without making assumptions about the model. These FFNNs are widely applied in estimating physical properties. Additionally, the text touches on the formal oxidation number of carbon atoms, explaining that it is determined by the sum of conventional bond orders with electronegative atoms. Specific examples include the bond orders in pyridine, pyrrole, and furan, and the definition of an R-C group as a carbon attached through a single bond to various electronegative atoms such as O, N, S, P, Se, and halogens.","REFERENCE:(Farhad Gharagheizi,2010,Chemical Structure-Based Model for Estimation of the Upper Flammability Limit of Pure Compounds)"
+"The label ""information content index (neighborhood symmetry of 0-order)"" without the integer ""0"" would be:
+
+""information content index (neighborhood symmetry of -order)""
+
+To make this more human-interpretable, we can rephrase it as:
+
+""Information Content Index (Neighborhood Symmetry of Order)""
+
+This label now conveys the same concept without the specific integer, making it more general and easier to understand.","1999 ,18(3), 127 −134.
+(10) Suzuki, T.; Koide, K. Short Communication: Correlation
+between Upper Flammability Limits and Thermochemical Propertiesof Organic Compounds. Fire Mater. 1994 ,18, 393−397.
+(11) Suzuki, T.; Ishida, M. Neural Network Techniques Applied to
+Predict Flammability Limits of Organic Compounds. Fire Mater.
+1995 ,19, 179−189.
+(12) Gharagheizi, F. A Chemical Structure-based Model for
+Estimation of Upper Flammability Limit of Pure Compounds. Energy
+Fuels 2010 ,24, 3867−3871.Industrial & Engineering Chemistry Research Article
+DOI: 10.1021/acs.iecr.8b05938
+Ind. Eng. Chem. Res. 2019, 58, 3531 −35373536","The provided text lists references from various studies related to the flammability limits of organic compounds. These studies include:
+
+1. Suzuki and Koide (1994) explored the correlation between upper flammability limits and thermochemical properties of organic compounds.
+2. Suzuki and Ishida (1995) applied neural network techniques to predict the flammability limits of organic compounds.
+3. Gharagheizi (2010) developed a chemical structure-based model for estimating the upper flammability limit of pure compounds.
+
+The references are from journals such as ""Fire and Materials"" and ""Energy & Fuels,"" and the text also includes a citation from ""Industrial & Engineering Chemistry Research"" (2019).","REFERENCE:(Shuai Yuan, Zeren Jiao, Noor Quddus, Joseph Sang-II Kwon, Chad V. Mashuga,2019,Developing Quantitative Structure−Property Relationship Models To Predict the Upper Flammability Limit Using Machine Learning)"
+"The label ""information content index (neighborhood symmetry of 0-order)"" without the integer ""0"" would be:
+
+""information content index (neighborhood symmetry of -order)""
+
+To make this more human-interpretable, we can rephrase it as:
+
+""Information Content Index (Neighborhood Symmetry of Order)""
+
+This label now conveys the same concept without the specific integer, making it more general and easier to understand.","(37) Golbraikh, A.; Tropsha, A. Beware of q2! J. Mol. Graphics
+Modell. 2002 ,20(4), 269 −276.
+(38) Witten, I. H.; Frank, E.; Hall, M. A.; Pal, C. J. Data Mining:
+Practical Machine Learning Tools and Techniques ; Morgan Kaufmann:
+Burlington, MA, 2016.
+(39) Ruiz-Morales, Y. HOMO −LUMO gap as an index of
+molecular size and structure for polycyclic aromatic hydrocarbons
+(PAHs) and asphaltenes: A theoretical study. I. J. Phys. Chem. A 2002 ,
+106, 11283 −11308.Industrial & Engineering Chemistry Research Article
+DOI: 10.1021/acs.iecr.8b05938
+Ind. Eng. Chem. Res. 2019, 58, 3531 −35373537","The provided text is a list of references from a journal article. The references include:
+
+1. Golbraikh and Tropsha's 2002 paper in the Journal of Molecular Graphics and Modelling, which discusses the caution needed when interpreting the q² statistic.
+2. Witten, Frank, Hall, and Pal's 2016 book on data mining and practical machine learning tools and techniques, published by Morgan Kaufmann.
+3. Ruiz-Morales' 2002 theoretical study in the Journal of Physical Chemistry A, which examines the HOMO-LUMO gap as an index of molecular size and structure for polycyclic aromatic hydrocarbons (PAHs) and asphaltenes.
+
+Additionally, there is a citation for an article in Industrial & Engineering Chemistry Research, published in 2019, with the DOI: 10.1021/acs.iecr.8b05938.","REFERENCE:(Shuai Yuan, Zeren Jiao, Noor Quddus, Joseph Sang-II Kwon, Chad V. Mashuga,2019,Developing Quantitative Structure−Property Relationship Models To Predict the Upper Flammability Limit Using Machine Learning)"
+"The label ""information content index (neighborhood symmetry of 0-order)"" without the integer ""0"" would be:
+
+""information content index (neighborhood symmetry of -order)""
+
+To make this more human-interpretable, we can rephrase it as:
+
+""Information Content Index (Neighborhood Symmetry of Order)""
+
+This label now conveys the same concept without the specific integer, making it more general and easier to understand.","classiﬁcation and labeling (8,94) but, on the other hand, address
+the need to extensively characteriz e the properties of new substances.
+By considering the intrinsic drawbacks of the experimental
+approach (cost, time, availability of the laboratories), QSAR/QSPR approaches appear to be quite attractive as alternative
+tools to predict the properties of interest. Their principles of
+application are indeed virtually unlimited.
+Through this review, it has been shown that a signi ﬁcant
+amount of correlations currently exist that can model thedependence on structure of numerous physicochemical andbiological properties successfully. However, one should recallthat, currently, many of these models are restricted to certainTable 14. QSPR Studies To Predict the Heat of Decomposition and the Thermal Decomposition Temperature ( Td)
+physical
+hazard property measured type and number of compounds model/statistical parametersOECD principles
+compliance ref","The text discusses the need for extensive characterization of new substances and the limitations of experimental approaches due to cost, time, and laboratory availability. It highlights the attractiveness of QSAR/QSPR (Quantitative Structure-Activity Relationship/Quantitative Structure-Property Relationship) approaches as alternative tools for predicting properties of interest. The review indicates that numerous correlations exist that can successfully model the dependence of various physicochemical and biological properties on structure. However, it notes that many of these models are currently restricted to specific applications. Additionally, Table 14 in the text appears to list QSPR studies focused on predicting the heat of decomposition and the thermal decomposition temperature (Td) of compounds, including details on the physical hazard property measured, type and number of compounds, model/statistical parameters, and OECD principles compliance.","REFERENCE:(Flor A. Quintero, Suhani J. Patel, Felipe Muñoz, M. Sam Mannan,2012,Review of Existing QSAR/QSPR Models Developed for Properties Used in Hazardous Chemicals Classification System)"
+New label: dipole moment,"Prediction of the Upper Flammability Limits of Organic Compounds from
+Molecular Structures
+Yong Pan, Juncheng Jiang,* Rui Wang, Hongyin Cao, and Yi Cui
+Jiangsu Key Laboratory of Urban and Industrial Safety, Institute of Safety Engineering, Nanjing Uni Versity of
+Technology, Nanjing 210009, China
+A quantitative structure -property relationship (QSPR) study is performed to develop mathematical models","The article titled ""Prediction of the Upper Flammability Limits of Organic Compounds from Molecular Structures"" by Yong Pan, Juncheng Jiang, Rui Wang, Hongyin Cao, and Yi Cui, from the Jiangsu Key Laboratory of Urban and Industrial Safety at the Institute of Safety Engineering, Nanjing University of Technology, presents a quantitative structure-property relationship (QSPR) study. The study aims to develop mathematical models to predict the upper flammability limits of organic compounds based on their molecular structures.","REFERENCE:(Yong Pan, Juncheng Jiang, Rui Wang, Hongyin Cao, Yi Cui,2009,Prediction of the Upper Flammability Limits of Organic Compounds from Molecular Structures)"
+New label: dipole moment,"atom. In the work of this project, it has been found that the method of Dom- 
+alski and Hearing ndt only yields better results but it also is much easier to 
+apply. It is noted that the gauche interaction, when present, makes an impor- 
+tant contribution to the estimated flammable limit. 
+The data in Tables 3 and 4 are arranged to facilitate an examination of the 
+errors within groups of similar compounds, within homologous series of com- 
+pounds, and with increasing polarity of the compounds. It can be observed that 
+certain groups of compounds seem to have excessively large errors but the er- 
+rors do not seem to vary in any systematic manner with either molecular weight 
+or polarity. In Table 3, the esters of acrylic acid seem to have excessively large 
+errors. In Table 4, ethers seem to have excessively large errors. It can also be 
+observed in Table 4 that the experimentally measured upper flammable limit 
+for diethyl ether appears to be much too high when compared to the values","The study found that the method of Domalski and Hearing not only provides better results but is also easier to apply. The presence of gauche interactions significantly impacts the estimated flammable limits. Data in Tables 3 and 4 were organized to examine errors among similar compounds, homologous series, and varying polarities. Certain groups, such as acrylic acid esters in Table 3 and ethers in Table 4, exhibit large errors, though these errors do not systematically correlate with molecular weight or polarity. Additionally, the experimentally measured upper flammable limit for diethyl ether in Table 4 appears to be excessively high.","REFERENCE:(William H. Seaton,1991,Group contribution method for predicting the lower and the upper flammable limits of vapors in air)"
+New label: dipole moment,"an ester and inorganic fuels. Some samples were measured experimentally and other sample data were
+adopted from the literature. Overall, the proposed model predicted the temperature variation data of theﬂammability limits well when based on the adiabatic assumption. Application of this model is notrestricted to organic fuels, but also inorganic fuels, such as carbon monoxide and hydrogen.
+/C2112016 Elsevier Ltd. All rights reserved.
+1. Introduction
+Explosions blamed on the leakage of ﬂammable gas or vapor
+may result in industrial losses and public catastrophe, such as
+the gas explosions in Kaohsiung, Taiwan, which killed 32 and
+injured 321 people in 2014 [1,2] . Gas and vapor can be ignited
+and burned in the air only between the composition range of the
+upper and lower ﬂammability limits, the UFL and LFL, respectively
+[3,4] . Flammability limits are the properties most frequently used
+in assessing the ﬂammability hazards of gases and vapors.","The study investigates the flammability limits of both organic and inorganic fuels, including esters, carbon monoxide, and hydrogen. Experimental measurements and literature data were used to validate a proposed model, which accurately predicted temperature variations of flammability limits under adiabatic conditions. The model's applicability extends beyond organic fuels to include inorganic ones. The introduction highlights the significance of understanding flammability limits to prevent industrial accidents, referencing the 2014 gas explosions in Kaohsiung, Taiwan, which resulted in significant casualties and injuries.","REFERENCE:(Horng-Jang Liaw, Kuan-Yu Chen,2016,A model for predicting temperature effect on flammability limits)"
+New label: dipole moment,"mol/C01); 70% black / , Kondo et al.; black h/ , this study.
+Fig. 4. Comparison of the predicted UFLs and LFLs of n-butylene with the
+experimental data. h, experimental data from this study; , DIPPR
+(aerAsDt=1 0/C08JK/C04mol/C01); , DIPPR ( aerAsDt=0JK/C04mol/C01);
+, Poling et al. ( aerAsDt=1 0/C08JK/C04mol/C01); , Poling et al.
+(aerAsDt=0JK/C04mol/C01).Fig. 5. Comparison of the predicted ﬂammability limits of an alkane and alkene
+with the experimental data adopted from literature. /, experimental data;
+, DIPPR ( aerAsDt=1 0/C08JK/C04mol/C01); , DIPPR ( aerAsDt=
+0JK/C04mol/C01); , Poling et al. ( aerAsDt=1 0/C08JK/C04mol/C01); ,
+Poling et al. ( aerAsDt=0JK/C04mol/C01); black / , Cato et al.; 70% black /
+, Kondo et al.
+Fig. 6. Comparison of the predicted ﬂammability limits of oxygenated compounds
+with the experimental data adopted from literature. s/, experimental data;
+, DIPPR ( aerAsDt=1 0/C08JK/C04mol/C01); , DIPPR ( aerAsDt=0","The provided text appears to be a series of figure captions from a journal article comparing predicted and experimental flammability limits of various compounds. Specifically:
+
+1. **Figure 4**: Compares the predicted Upper Flammability Limits (UFLs) and Lower Flammability Limits (LFLs) of n-butylene with experimental data from this study and data from DIPPR and Poling et al.
+
+2. **Figure 5**: Compares the predicted flammability limits of an alkane and an alkene with experimental data from literature, including data from DIPPR, Poling et al., Cato et al., and Kondo et al.
+
+3. **Figure 6**: Compares the predicted flammability limits of oxygenated compounds with experimental data from literature, including data from DIPPR.
+
+The comparisons involve different datasets and conditions, indicated by various symbols and annotations in the figures.","REFERENCE:(Horng-Jang Liaw, Kuan-Yu Chen,2016,A model for predicting temperature effect on flammability limits)"
+New label: dipole moment,"136 Fire Technology 
+LOWER FLAMMABILITY LIMITS 
+Lower flammability limits (LL) of hydrocarbons are dependent only 
+upon the number of carbon atoms in the chain regardless of the number of 
+hydrogen atoms present. The LL of all paraffinic hydrocarbons and olefins 
+having the same number of carbon atoms, therefore, are alike. The 
+formulas for the various hydrocarbons and the alcohols are given in Table 1 
+with some examples of calculated values. 
+TABLE 1. Lower Flammability Limit Formulas 
+Calculated exam~ples 
+Compound Formula Compound LL 
+Paraffinic hydrocarbons 6 ethane, C2H6 3.2 
+and olefins LL = ~ -5 0.2 ethylene, C~H4 3.2 
+octane, CsH~s 0.95 
+octylene, CsH~ 0.95 
+6 Isomers LL = ~ -5 0.1 isobutane, C,HI0 1.6 
+Benzene series LL = 8 benzene, C6H~ 1.43 
+nC xylene, C6H4(CH~)2 1.08 
+Alcohols LL = ~ - 0.7 methyl alcohol, CH3OI-I 7.3 
+nC octyl alcohol, C~H17OH 0.3 
+NOTE: nC = Number of carbon atoms 
+TABLE 2. Upper Flammability Limit Formulas 
+Calculated examples","The provided text discusses the lower flammability limits (LL) of hydrocarbons, emphasizing that these limits are determined solely by the number of carbon atoms in the hydrocarbon chain, irrespective of the number of hydrogen atoms. Consequently, paraffinic hydrocarbons and olefins with the same number of carbon atoms share similar LL values. The text includes a table (Table 1) that lists formulas for calculating the LL of various hydrocarbons and alcohols, along with some calculated examples. For instance, ethane (C2H6) and ethylene (C2H4) both have an LL of 3.2, while octane (C8H18) and octylene (C8H16) have an LL of 0.95. The text also briefly mentions the upper flammability limit formulas, which are to be detailed in Table 2.","REFERENCE:(A. A. SHIMY,1970,Calculating Flammability Characteristics of Hydrocarbons and Alcohols)"

@@ -1,0 +1,221 @@
+feature,original,summary,reference
+"To create a new label in a human interpretable manner, we need to identify the heteroatom bonded to three oxygen atoms and remove any integers from the original label. Let's assume the original label is something like ""PO4"" (phosphate), where ""P"" is the heteroatom and ""O"" represents the oxygen atoms. Removing the integer, we get ""PO"". 
+
+Now, rewriting this in a human interpretable manner, the new label would be ""phosphate group"". 
+
+If you have a specific label in mind, please provide it, and I can help generate the new label accordingly.","molecules in terms of enriched substructural patterns, whichwere identified by MoSS (
+Tables S4 and S5). When comparing
+the substructures that were majorly found in toxic molecules
+for environmental endpoints to those found in human-basedendpoints (
+Table S2 ), we observed that the substructures were
+strikingly more enriched in the former for phosphate, phos-
+phorothioate or other, sulphur-, phosphorus- and oxygen atomcombinations. On the other hand, those substructures found in
+toxic classes in human-based endpoints were consistently more
+enriched in ether, ketone, hydroxyl and nitrogen-enriched sub-
+structures. Similarities between the environmental and human-
+based endpoints include the presence of chloride and nitrosogroups. However, within the environmental endpoints, these
+represented more notable contributions to toxicity. Finally, when
+comparing substructures enriched across the different endpointsto well-known, experimentally validated and statistically tested
+toxicophores [","The study analyzed molecular substructures associated with toxicity in different contexts using MoSS to identify enriched patterns. It was found that substructures in toxic molecules for environmental endpoints were significantly enriched with combinations of phosphate, phosphorothioate, sulfur, phosphorus, and oxygen atoms. In contrast, toxic substructures for human-based endpoints were more enriched with ether, ketone, hydroxyl, and nitrogen-containing groups. Both environmental and human-based toxic endpoints shared similarities, such as the presence of chloride and nitroso groups, although these contributed more significantly to toxicity in environmental contexts. The study also compared these enriched substructures to known toxicophores.","REFERENCE:(Alex G. C. de Sá, Yangyang Long, Stephanie Portelli, Douglas E. V. Pires, David B. Ascher,2022,toxCSM: comprehensive prediction of small molecule toxicity profiles)"
+"To create a new label in a human interpretable manner, we need to identify the heteroatom bonded to three oxygen atoms and remove any integers from the original label. Let's assume the original label is something like ""PO4"" (phosphate), where ""P"" is the heteroatom and ""O"" represents the oxygen atoms. Removing the integer, we get ""PO"". 
+
+Now, rewriting this in a human interpretable manner, the new label would be ""phosphate group"". 
+
+If you have a specific label in mind, please provide it, and I can help generate the new label accordingly.","30to predict the same external
+compounds. There are only two external compounds, 2-methyl-1-pentanol and 3-methoxy-1,2-propanediol, that were identi ﬁed
+as having structural alerts of ocular toxicity. The 2-methyl-1-pentanol is toxic, but the 3-methoxy-1,2-propanediol is actuallynontoxic. The remaining compounds were identi ﬁed as having
+“undeﬁned functional groups ”. For this reason, the prediction
+results of external compounds by our models are better thanthe results obtained from the OECD QSAR Toolbox eyeirritation module.
+Interpretation of Predictive QSAR Models. To obtain
+relevant toxicity mechanisms from our modeling results, wechose to analyze Dragon descriptors for their diversity andkNN models for their ease of interpretation (by frequency of
+descriptor occurrence). Several descriptors were found to bemost frequently used in the kNN models that satis ﬁed our","The study aimed to predict the ocular toxicity of external compounds using QSAR models. Two compounds, 2-methyl-1-pentanol and 3-methoxy-1,2-propanediol, were identified with structural alerts for ocular toxicity. While 2-methyl-1-pentanol was confirmed to be toxic, 3-methoxy-1,2-propanediol was found to be non-toxic. Other compounds were categorized as having ""undefined functional groups."" The predictive performance of the models surpassed that of the OECD QSAR Toolbox eye irritation module. To understand the toxicity mechanisms, Dragon descriptors and kNN models were analyzed, with certain descriptors frequently appearing in the kNN models.","REFERENCE:(Renee Solimeo, Jun Zhang, Marlene Kim, Alexander Sedykh, Hao Zhu,2012,Predicting Chemical Ocular Toxicity Using a Combinatorial QSAR Approach)"
+"To create a new label in a human interpretable manner, we need to identify the heteroatom bonded to three oxygen atoms and remove any integers from the original label. Let's assume the original label is something like ""PO4"" (phosphate), where ""P"" is the heteroatom and ""O"" represents the oxygen atoms. Removing the integer, we get ""PO"". 
+
+Now, rewriting this in a human interpretable manner, the new label would be ""phosphate group"". 
+
+If you have a specific label in mind, please provide it, and I can help generate the new label accordingly.","16for absorption or guides
+by van de Waterbeemd et al.17for CNS penetration. The former,
+in particular, has proved immensely useful in lead generationand optimization due to the uncomplicated message given andease with which a chemist can incorporate the required changesinto the next molecule in the series.
+2.Results
+A small number of information-rich, orthogonal molecular
+descriptors were required to generate structure–activity relation-ships (SAR) for the 15 different ADMET assays studied here(Table 1). This subset was obtained by building a principalcomponents analysis
+18–22(PCA) model on ∼30000 diverse GSK
+molecules for which 12 commonly used descriptors had beencomputed (Figure 1 and Table 2).
+Analysis of the PCA model results shows that we can describe
+81% of the variation in the 12 descriptors using just fourorthogonal components. Components one and two cumulativelydescribe ∼60% of the total variation in the data set, with","The text discusses the use of molecular descriptors in generating structure–activity relationships (SAR) for 15 different ADMET assays. A principal components analysis (PCA) model was built using approximately 30,000 diverse GSK molecules, for which 12 commonly used descriptors were computed. The PCA model revealed that 81% of the variation in these descriptors could be described using four orthogonal components. Notably, the first two components accounted for approximately 60% of the total variation in the dataset. The work highlights the utility of these descriptors in lead generation and optimization, particularly for absorption and CNS penetration, as demonstrated by van de Waterbeemd et al.","REFERENCE:(M. Paul Gleeson,2008,Generation of a Set of Simple, Interpretable ADMET Rules of Thumb)"
+"To create a new label in a human interpretable manner, we need to identify the heteroatom bonded to three oxygen atoms and remove any integers from the original label. Let's assume the original label is something like ""PO4"" (phosphate), where ""P"" is the heteroatom and ""O"" represents the oxygen atoms. Removing the integer, we get ""PO"". 
+
+Now, rewriting this in a human interpretable manner, the new label would be ""phosphate group"". 
+
+If you have a specific label in mind, please provide it, and I can help generate the new label accordingly.","dings encoding for the relationships among the chemicals. We used this framework for establishing concordance 
+across in vitro, in vivo, and clinical datasets. Notably, in response to the adoption of the 3 Rs (Replacement, 
+Reduction, and Refinement of animal testing) in global  legislation41,42, we assessed the need for animal data in 
+making clinical toxicity predictions. To provide more comprehensive molecular explanations of toxicity predic -
+tions, we adopted the Contrastive Explanations Method (CEM) explainability  model43 which explains “black-box” 
+DNN predictions by revealing pertinent positive (PP) and pertinent negative (PN) features as chemical structures 
+correlating to a given prediction. Specifically, we explained single-task toxicity predictions in vitro, in vivo, and 
+clinically. The PPs represent the minimum required substructures for classification of a molecule (toxicophores","The study utilized a framework to establish concordance across in vitro, in vivo, and clinical datasets, particularly in the context of the 3 Rs (Replacement, Reduction, and Refinement) in animal testing legislation. The research assessed the necessity of animal data for clinical toxicity predictions. To enhance the molecular understanding of these predictions, the Contrastive Explanations Method (CEM) was employed. This method elucidates ""black-box"" deep neural network predictions by identifying pertinent positive (PP) and pertinent negative (PN) features, which are chemical structures associated with a given prediction. The study specifically explained single-task toxicity predictions across different testing environments, with PPs indicating the essential substructures required for classifying a molecule as toxic.","REFERENCE:(Bhanushee Sharma, Vijil Chenthamarakshan, Amit Dhurandhar, Shiranee Pereira, James A. Hendler, Jonathan S. Dordick, Payel Das,2023,Accurate clinical toxicity prediction using multi‑task deep neural nets and contrastive molecular explanations)"
+"To create a new label in a human interpretable manner, we need to identify the heteroatom bonded to three oxygen atoms and remove any integers from the original label. Let's assume the original label is something like ""PO4"" (phosphate), where ""P"" is the heteroatom and ""O"" represents the oxygen atoms. Removing the integer, we get ""PO"". 
+
+Now, rewriting this in a human interpretable manner, the new label would be ""phosphate group"". 
+
+If you have a specific label in mind, please provide it, and I can help generate the new label accordingly.","P) < 5, (iii) there were fewer than 5 hydrogen bond donors
+(HBD) (OH and NH groups), and (iv) there are less than 10
+hydrogen bond acceptors (HBA) (notably N and O).
+44
+Molecular properties such as log P, topological polar surface
+area (TPSA), HBD and HBA, and MW, and violations of
+Lipinski ’s rule of ﬁve were determined to evaluate the drug-
+likeness and drug score of the studied drugs. The Ghose,
+Pritchett, and Crippen method45was used to calculate the log P
+values. Log Pis related to the lipophilicity of compounds and is
+useful for prediction of the absorption of drugs across the
+intestinal epithelium. In our studied drug complexes, only
+complexes 12 and 20 have MW > 500. The violation of log P
+values is seen in complexes 1 and 14 (a negative value for log P
+indicates higher a ﬃnity for the aqueous phase), while other drug
+complexes show log P(0.39−4.5) < 5, which is the upper limit
+for drug penetration through biomembranes. Thus, all these
+compounds have good bioavailability.","The text discusses the evaluation of drug-likeness and drug score of certain drug complexes based on molecular properties such as log P, topological polar surface area (TPSA), hydrogen bond donors (HBD), hydrogen bond acceptors (HBA), and molecular weight (MW). The analysis includes checking for violations of Lipinski's rule of five. The Ghose, Pritchett, and Crippen method was used to calculate log P values, which relate to the lipophilicity and absorption potential of drugs. Among the studied complexes, only complexes 12 and 20 have a molecular weight greater than 500. Complexes 1 and 14 show a violation in log P values, indicating a higher affinity for the aqueous phase, while other complexes have log P values within the acceptable range (0.39−4.5), suggesting good bioavailability.","REFERENCE:(Ruby Srivastava,2021,Theoretical Studies on the Molecular Properties, Toxicity, and Biological Efficacy of 21 New Chemical Entities)"
+"To create a new label in a human interpretable manner, we need to remove any integers from the original label and then rewrite it. Since the original label is not provided, I'll give you a general example of how this process would work:
+
+Original label: ""Tertiary Amine 123""
+
+1. Remove the integers: ""Tertiary Amine""
+2. Rewrite in a human interpretable manner: ""Contains a tertiary amine""
+
+If you provide the specific label you have, I can help you rewrite it accordingly.","InTable S2 , each toxicity endpoint is further subdivided based
+on the nature of the experimental data available, into categor-ical or continuous target variables, which are associated with
+classification or regression problems, respectively. In total, these
+endpoints consist of 43,236 unique compounds represented asSMILES strings, after filtering valid molecules using the RDkit
+cheminformatics toolkit [
+32].
+Before splitting each toxicity endpoint into training and
+blind test sets, we performed an analysis of the molecular
+(sub)structures of each classification endpoint to verify the
+reliability of using structural clustering information on splitting.Nevertheless, clustering molecules using the Butina clustering
+algorithm [
+33] by Tanimoto similarity [ 34] on Morgan fingerprints
+[35] revealed that even structurally very similar molecules could
+have opposing toxicity effects (see Table S3 and SupplementaryMaterial and Methods), showing that clustering is not always","The text describes the process of categorizing toxicity endpoints into categorical or continuous target variables, corresponding to classification or regression problems, respectively. A total of 43,236 unique compounds, represented as SMILES strings, were filtered using the RDkit cheminformatics toolkit. Prior to dividing each toxicity endpoint into training and test sets, an analysis of molecular (sub)structures was conducted to assess the reliability of using structural clustering information for data splitting. However, clustering molecules using the Butina algorithm based on Tanimoto similarity of Morgan fingerprints indicated that structurally similar molecules could exhibit different toxicity effects, suggesting that clustering is not always reliable for this purpose.","REFERENCE:(Alex G. C. de Sá, Yangyang Long, Stephanie Portelli, Douglas E. V. Pires, David B. Ascher,2022,toxCSM: comprehensive prediction of small molecule toxicity profiles)"
+"To create a new label in a human interpretable manner, we need to remove any integers from the original label and then rewrite it. Since the original label is not provided, I'll give you a general example of how this process would work:
+
+Original label: ""Tertiary Amine 123""
+
+1. Remove the integers: ""Tertiary Amine""
+2. Rewrite in a human interpretable manner: ""Contains a tertiary amine""
+
+If you provide the specific label you have, I can help you rewrite it accordingly.","the purpose of this study. By labeling the metabolites we pretendto analyze whether the reason for the small model performanceimprovement is due to poor quality of the predicted probabilitiesof toxicity of the metabolites. Hence, predicting the toxicity labelof the metabolites would su ﬀer from the same limitation. We
+acknowledge that any manual or automatic metabolite labeling
+approach is a limitation of this study. The only way to overcomethis limitation is the use of a large dataset of metabolites withmeasured toxicities. However, to our best knowledge no suchdataset is in existence in the public domain.
+With the hybrid-approach we aim to obtain the best
+predictions for each compound by predicting the probability ofthe parent compound to be toxic with the baseline model, and
+the probability to be toxic of the individual metabolites with the","The study aims to investigate whether the limited improvement in model performance is due to the poor quality of predicted toxicity probabilities for metabolites. The researchers acknowledge that both manual and automatic metabolite labeling approaches present limitations. Overcoming these limitations would require a large dataset of metabolites with measured toxicities, which is currently unavailable in the public domain. The study employs a hybrid approach to enhance predictions by assessing the toxicity probability of the parent compound using a baseline model and evaluating the toxicity probability of individual metabolites.","REFERENCE:(Marina Garcia de Lomana, Fredrik Svensson, Andrea Volkamer, Miriam Mathea, Johannes Kirchmair,2022,Consideration of predicted small-molecule metabolites in computational toxicology)"
+"To create a new label in a human interpretable manner, we need to remove any integers from the original label and then rewrite it. Since the original label is not provided, I'll give you a general example of how this process would work:
+
+Original label: ""Tertiary Amine 123""
+
+1. Remove the integers: ""Tertiary Amine""
+2. Rewrite in a human interpretable manner: ""Contains a tertiary amine""
+
+If you provide the specific label you have, I can help you rewrite it accordingly.","dings encoding for the relationships among the chemicals. We used this framework for establishing concordance 
+across in vitro, in vivo, and clinical datasets. Notably, in response to the adoption of the 3 Rs (Replacement, 
+Reduction, and Refinement of animal testing) in global  legislation41,42, we assessed the need for animal data in 
+making clinical toxicity predictions. To provide more comprehensive molecular explanations of toxicity predic -
+tions, we adopted the Contrastive Explanations Method (CEM) explainability  model43 which explains “black-box” 
+DNN predictions by revealing pertinent positive (PP) and pertinent negative (PN) features as chemical structures 
+correlating to a given prediction. Specifically, we explained single-task toxicity predictions in vitro, in vivo, and 
+clinically. The PPs represent the minimum required substructures for classification of a molecule (toxicophores","The study utilized a framework to establish concordance across in vitro, in vivo, and clinical datasets, particularly in the context of the 3 Rs (Replacement, Reduction, and Refinement) in animal testing legislation. The research assessed the necessity of animal data for clinical toxicity predictions. To enhance the molecular understanding of these predictions, the Contrastive Explanations Method (CEM) was employed. This method elucidates ""black-box"" deep neural network predictions by identifying pertinent positive (PP) and pertinent negative (PN) features, which are chemical structures associated with a given prediction. The study specifically explained single-task toxicity predictions across different testing environments, with PPs indicating the essential substructures required for classifying a molecule as toxic.","REFERENCE:(Bhanushee Sharma, Vijil Chenthamarakshan, Amit Dhurandhar, Shiranee Pereira, James A. Hendler, Jonathan S. Dordick, Payel Das,2023,Accurate clinical toxicity prediction using multi‑task deep neural nets and contrastive molecular explanations)"
+"To create a new label in a human interpretable manner, we need to remove any integers from the original label and then rewrite it. Since the original label is not provided, I'll give you a general example of how this process would work:
+
+Original label: ""Tertiary Amine 123""
+
+1. Remove the integers: ""Tertiary Amine""
+2. Rewrite in a human interpretable manner: ""Contains a tertiary amine""
+
+If you provide the specific label you have, I can help you rewrite it accordingly.","the data containing the chemical description of the compounds
+(Section2.3.1),(2)creatingchemicaldescriptorsasinputf eatures
+for the models (Section 2.3.2), (3) model selection includin g
+featureselectionifrequiredbythemodelclass(Section2.3 .3),(4)
+evaluatingthequalityofmodelsinordertochoosethebestone s
+(Section2.3.4),and(5)combiningmodelstoensemblepredic tors
+(Section2.3.5).Theindividualstepsofthepipelinearevisua lized
+asboxesin Figure6.
+2.3.1. Data Cleaning and Quality Control
+In the ﬁrst step, DeepTox improves the quality of the training
+data. We had observed that the chemical substances in questi on
+are often mixtures of distinct chemical structures that are
+not connected by covalent bonds. Therefore, we introduced
+FIGURE 6 | DeepTox pipeline for toxicity prediction.
+Frontiers in Environmental Science | www.frontiersin.org 7 February 2016 | Volume 3 | Article 80","The text outlines a pipeline for toxicity prediction using the DeepTox model. The process involves several key steps: (1) data cleaning and quality control to improve the training data, particularly addressing issues with chemical substances that are mixtures of distinct structures not connected by covalent bonds; (2) creating chemical descriptors to serve as input features for the models; (3) selecting appropriate models and performing feature selection if necessary; (4) evaluating model quality to identify the best-performing models; and (5) combining models to form ensemble predictors. These steps are visually represented as boxes in Figure 6 of the referenced article.","REFERENCE:(Andreas Mayr, Günter Klambauer, Thomas Unterthiner, Sepp Hochreiter,2016,DeepTox: Toxicity Prediction using Deep Learning)"
+"To create a new label in a human interpretable manner, we need to remove any integers from the original label and then rewrite it. Since the original label is not provided, I'll give you a general example of how this process would work:
+
+Original label: ""Tertiary Amine 123""
+
+1. Remove the integers: ""Tertiary Amine""
+2. Rewrite in a human interpretable manner: ""Contains a tertiary amine""
+
+If you provide the specific label you have, I can help you rewrite it accordingly.","12
+Vol:.(1234567890) Scientific Reports  |         (2023) 13:4908  | https://doi.org/10.1038/s41598-023-31169-8
+www.nature.com/scientificreports/chemicals in  PubChem66 and 35 million chemicals in  ZINC1267. The trained translation model was then applied 
+to the chemicals present in the in vitro, in vivo, and clinical datasets to obtain their embeddings.
+Datasets: in  vitro, in  vivo, clinical. The single-task and multi-task models predict binary classes, whether a 
+chemical is toxic or not, for each of the in vitro, in vivo, and clinical platforms. Twelve binary classes were defined 
+for the in vitro platform, collected from the Tox21 challenge, a subset of the broader “Toxicology in the 21st 
+Century” initiative that experimentally tests in vitro the ability of a large number of chemicals to disrupt bio-
+logical pathways through high-throughput screening (HTS)  techniques17–19. In particular, twelve in vitro assay","The article discusses the application of a trained translation model to chemical datasets from in vitro, in vivo, and clinical studies to obtain chemical embeddings. The study involves predicting the toxicity of chemicals using single-task and multi-task models, which classify chemicals as toxic or non-toxic across these platforms. Specifically, for the in vitro platform, twelve binary classes were defined based on data from the Tox21 challenge, part of the ""Toxicology in the 21st Century"" initiative. This initiative uses high-throughput screening techniques to experimentally assess the potential of numerous chemicals to disrupt biological pathways.","REFERENCE:(Bhanushee Sharma, Vijil Chenthamarakshan, Amit Dhurandhar, Shiranee Pereira, James A. Hendler, Jonathan S. Dordick, Payel Das,2023,Accurate clinical toxicity prediction using multi‑task deep neural nets and contrastive molecular explanations)"
+New label: Is a carbon-oxygen single bond.,"8
+Vol:.(1234567890) Scientific Reports  |         (2023) 13:4908  | https://doi.org/10.1038/s41598-023-31169-8
+www.nature.com/scientificreports/most common was just a carbon fragment, perhaps due to the abundance of this substructure in the Morgan 
+fingerprints. Substructures with oxygen were also common, either as a carbonyl (Tox21 and RTECS), ketone 
+(Tox21), or as an ether (RTECS). Different portions of aromatic rings were identified multiple times, within an 
+aryl ring (Tox21 and RTECS), or within a benzyl group (Tox21 and RTECS). Finally, N was obtained for both 
+Tox21 and RTECS. Thus, the presence of nucleophilic N, O, and aryl containing substructures was commonly 
+identified as explanations for in vitro and in vivo predictions of toxicity.
+Explanations of “toxic” predictions obtained from the absence of PN substructures from molecules predicted 
+to be toxic, most commonly contained carbon fragments and substructures with N and O for both Tox21 and","The study analyzed the common substructures contributing to toxicity predictions in chemical compounds using Morgan fingerprints. Carbon fragments were the most prevalent, likely due to their abundance in the fingerprints. Oxygen-containing substructures, such as carbonyls, ketones, and ethers, were also frequently observed. Aromatic rings, including aryl and benzyl groups, were identified multiple times. Nitrogen-containing substructures were noted for both Tox21 and RTECS datasets. The presence of nucleophilic nitrogen, oxygen, and aryl substructures was commonly associated with in vitro and in vivo toxicity predictions. Additionally, the absence of phosphorus-nitrogen (PN) substructures in molecules predicted to be toxic often included carbon, nitrogen, and oxygen substructures.","REFERENCE:(Bhanushee Sharma, Vijil Chenthamarakshan, Amit Dhurandhar, Shiranee Pereira, James A. Hendler, Jonathan S. Dordick, Payel Das,2023,Accurate clinical toxicity prediction using multi‑task deep neural nets and contrastive molecular explanations)"
+New label: Is a carbon-oxygen single bond.,"canonical SMILES, encoding for the relationship between chemicals within the datasets.
+With these molecular representations, toxicities in vivo, in vitro, and clinical, were predicted through multi-
+task (MTDNN) (Fig.  1B) and single-task Deep Neural Networks (STDNN) (Fig.  1B). The MTDNN predicts each 
+platform (in vivo, in vitro, clinical) as a different task within one model, with each task consisting of a single or 
+multiple classes (or endpoints). In contrast, the STDNN predicts each platform with a separate model.
+As a proof-of-concept, endpoints from previous benchmarking  efforts45 and data  challenges16 were chosen, 
+and are not exhaustive. For the clinical platform, the endpoint was whether or not a molecule failed clinical phase 
+trials due to toxicity, as obtained from the ClinTox  dataset45. For the in vitro platform, 12 different endpoints from 
+the Tox21  Challenge16 were used, whether or not a molecule is active in disrupting seven neural receptor assays","The text discusses the use of canonical SMILES for encoding chemical relationships in datasets and the prediction of toxicities using deep neural networks. Two types of models are employed: Multi-Task Deep Neural Networks (MTDNN) and Single-Task Deep Neural Networks (STDNN). MTDNN handles predictions for in vivo, in vitro, and clinical platforms as separate tasks within a single model, while STDNN uses separate models for each platform. As a proof-of-concept, endpoints from previous benchmarking efforts and data challenges were selected. For the clinical platform, the endpoint was the failure of a molecule in clinical trials due to toxicity, based on the ClinTox dataset. For the in vitro platform, 12 endpoints from the Tox21 Challenge were used, focusing on the activity of molecules in disrupting seven neural receptor assays.","REFERENCE:(Bhanushee Sharma, Vijil Chenthamarakshan, Amit Dhurandhar, Shiranee Pereira, James A. Hendler, Jonathan S. Dordick, Payel Das,2023,Accurate clinical toxicity prediction using multi‑task deep neural nets and contrastive molecular explanations)"
+New label: Is a carbon-oxygen single bond.,"4.0; U.S. Environmental Protection Agency: Washington, DC, USA, 2018.
+104. Schmidt, U.; Struck, S.; Gruening, B.; Hossbach, J.; Jaeger, I.S.; Parol, R.; Lindequist, U.; Teuscher, E.;
+Preissner, R. SuperToxic: A comprehensive database of toxic compounds. Nucleic Acids Res 2009 ,37,
+D295–D299. [CrossRef] [PubMed]
+105. Attene-Ramos, M.S.; Miller, N.; Huang, R.; Michael, S.; Itkin, M.; Kavlock, R.J.; Austin, C.P .; Shinn, P .;
+Simeonov, A.; Tice, R.R. The Tox21 robotic platform for the assessment of environmental chemicals—From
+vision to reality. Drug Discov. Today 2013 ,18, 716–723. [CrossRef] [PubMed]
+106. Hansch, C. Quantitative approach to biochemical structure-activity relationships. Acc. Chem. Res. 1969 ,2,
+232–239. [CrossRef]
+107. Bradbury, S.P . Predicting modes of toxic action from chemical structure: An overview. SAR QSAR Environ. Res.
+1994 ,2, 89–104. [CrossRef] [PubMed]","The provided text is a list of references from a journal article, focusing on toxicology and chemical assessment. It includes:
+
+1. A 2018 report by the U.S. Environmental Protection Agency.
+2. A 2009 article by Schmidt et al. on ""SuperToxic,"" a database of toxic compounds, published in Nucleic Acids Research.
+3. A 2013 article by Attene-Ramos et al. discussing the Tox21 robotic platform for evaluating environmental chemicals, published in Drug Discovery Today.
+4. A 1969 article by Hansch on quantitative biochemical structure-activity relationships, published in Accounts of Chemical Research.
+5. A 1994 article by Bradbury on predicting toxic action modes from chemical structures, published in SAR QSAR Environmental Research.","REFERENCE:(Yunyi Wu, Guanyu Wang,2018,Machine Learning Based Toxicity Prediction: From Chemical Structural Description to Transcriptome Analysis)"
+New label: Is a carbon-oxygen single bond.,"•  The dose is an issue, or more properly the issue, 
+a concept that can be traced to Paracelsus.
+•  Covalent binding can be an index of toxicity, but 
+exceptions exist even after considerations of dose. Other issues (in addition to covalent binding) are receptor-mediated events (especially signalling), ability to repair DNA and protein damage, cell proliferation and immune responses.
+412 | MAY 2005 | VOLUME 4  www.nature.com/reviews/drugdiscREVIEWS","The text discusses the concept of dose as a critical factor in toxicity, a notion originating from Paracelsus. While covalent binding is often used as an indicator of toxicity, there are exceptions even when dose is considered. Other factors influencing toxicity include receptor-mediated events, DNA and protein repair capabilities, cell proliferation, and immune responses.","REFERENCE:(Daniel C. Liebler, F. Peter Guengerich,2005,ELUCIDATING MECHANISMS OF DRUGINDUCED TOXICITY)"
+New label: Is a carbon-oxygen single bond.,"concept) or even toxic.
+1
+The important role of metabolism in the toxicity of small
+organic molecules highlights the need for the consideration of
+metabolic pathways also in the computational prediction of
+toxicity. However, so far only a few in silico models for toxicity
+prediction have integrated metabolism information. Forexample, Dmitriev et al.
+2built linear models for the prediction
+of rat acute toxicity using self-consistent regression, therebyconsidering parent compounds and measured metabolites.More speci cally, they trained a model on about 3000 parent
+compounds and used it to predict the LD
+50value of 37 test
+parent compounds and their measured metabolites (around
+200 known metabolites). To calculate the nal LD 50value,
+diﬀerent strategies for averaging the LD 50values predicted for","The text discusses the significance of considering metabolic pathways in the computational prediction of the toxicity of small organic molecules. It notes that only a few in silico models have incorporated metabolism information into toxicity predictions. An example provided is the work by Dmitriev et al., who developed linear models using self-consistent regression to predict rat acute toxicity. They trained their model on approximately 3,000 parent compounds and used it to predict the LD50 values of 37 test parent compounds and their measured metabolites, which included around 200 known metabolites. Different strategies were employed to calculate the final LD50 values by averaging the predicted values.","REFERENCE:(Marina Garcia de Lomana, Fredrik Svensson, Andrea Volkamer, Miriam Mathea, Johannes Kirchmair,2022,Consideration of predicted small-molecule metabolites in computational toxicology)"
