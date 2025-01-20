@@ -1,4 +1,4 @@
-streamlit
+streamlit>=1.36.1
 ipython
 python-dotenv
 openai==0.28.1
