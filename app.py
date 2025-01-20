@@ -52,7 +52,7 @@ Currently, GPT-4o model is used to generate natural language explanations."""
 def run_autofill():
     st.session_state.auto_target = "toxicity of small molecules"
     st.session_state.auto_df = "tests/toxicity_sample_data.csv"
-    st.experimental_rerun()
+    st.rerun()
 
 
 auto_target = st.session_state.get("auto_target", None)
