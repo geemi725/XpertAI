@@ -26,10 +26,9 @@ def gen_nle(arg_dict):
     save_dir = "./data"
     global persist_directory
     persist_directory = "./data/chroma/"
-    
+
     for k, val in arg_dict.items():
         globals()[k] = val
-
 
     # begin extracting information
     if XAI_tool == "SHAP":
@@ -74,7 +73,9 @@ def gen_nle(arg_dict):
         fetched = db.max_marginal_relevance_search(initial_question, k=5)
         for document in fetched:
             doc = document.page_content
-            summarize_prompt = PromptTemplate(template=SUMMARIZE_PROMPT, input_variables=["text"])
+            summarize_prompt = PromptTemplate(
+                template=SUMMARIZE_PROMPT, input_variables=["text"]
+            )
             summarize_chain = LLMChain(prompt=summarize_prompt, llm=llm)
             summary = summarize_chain.run({"text": doc})
 
@@ -84,18 +85,31 @@ def gen_nle(arg_dict):
                 title = document.metadata["source"]
                 reference = f"REFERENCE:({authors},{year},{title})"
                 documents += f"{summary} ({reference}) \n\n"
-                rows.append({"feature": feature, "original": doc, "summary": summary, "reference": reference})
+                rows.append(
+                    {
+                        "feature": feature,
+                        "original": doc,
+                        "summary": summary,
+                        "reference": reference,
+                    }
+                )
 
             except BaseException:
                 documents += f"{summary} \n\n"
-                rows.append({"feature": feature, "original": doc, "summary": summary, "reference": "No reference found"})
-    
-    #write to csv
-    #df = pd.DataFrame(rows)
-    #df.to_csv(f"{supporting_csv}", index=False)
-        
-        #docs.append(fetched)
- 
+                rows.append(
+                    {
+                        "feature": feature,
+                        "original": doc,
+                        "summary": summary,
+                        "reference": "No reference found",
+                    }
+                )
+
+    # write to csv
+    # df = pd.DataFrame(rows)
+    # df.to_csv(f"{supporting_csv}", index=False)
+
+    # docs.append(fetched)
 
     prompt = PromptTemplate(
         template=REFINE_PROMPT, input_variables=["documents", "features", "observation"]

@@ -34,7 +34,7 @@ def scrape_arxiv(arg_dict):
         query=key_words, max_results=max_papers, sort_by=arxiv.SortCriterion.Relevance
     )
 
-    for i,result in enumerate(search.results()):
+    for i, result in enumerate(search.results()):
         title = "_".join(result.title.split(" "))
         cleaned = re.sub(r"[^a-zA-Z0-9.]|(?<!\d)\.|\.(?!\d)", "_", title)
         result.download_pdf(dirpath=save_dir, filename=f"{cleaned}.pdf")
@@ -43,5 +43,5 @@ def scrape_arxiv(arg_dict):
         else:
             clean = False
 
-        #if lit files were given before then update vectordb (clean = False )otherwise create new
-        vector_db(lit_file=f"{save_dir}/{cleaned}.pdf", clean=clean , try_meta_data=True)
+        # if lit files were given before then update vectordb (clean = False )otherwise create new
+        vector_db(lit_file=f"{save_dir}/{cleaned}.pdf", clean=clean, try_meta_data=True)
