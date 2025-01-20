@@ -1,8 +1,8 @@
 streamlit
 ipython
 python-dotenv
-#openai==0.28.1
-#langchain==0.0.330
+openai==0.28.1
+langchain==0.0.330
 matplotlib
 scikit-learn
 xgboost
@@ -11,6 +11,6 @@ pandas
 lime
 arxiv
 chromadb
-#pysqlite3-binary 
+pysqlite3-binary 
 tiktoken
 pypdf
