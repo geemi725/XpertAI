@@ -21,14 +21,12 @@ def get_modelsummary(arg_dict):
         }
 
     """
-    #save_dir = "./data"
-    #global persist_directory
-    #persist_directory = None
+    save_dir = "./data"
+    global persist_directory
+    persist_directory = None
     global clean
     clean = True
 
-    
-    # arg_dict = json.loads(json_request)
     for k, val in arg_dict.items():
         globals()[k] = val
 
@@ -59,7 +57,6 @@ def get_modelsummary(arg_dict):
         np.save(f"{save_dir}/top_shap_features.npy", top_shap_fts)
     else:
         shap_summary = ""
-    # np.save(f'{save_dir}/top_shap_features.npy',top_fts)
 
     # Step 3: Run Lime
     if XAI_tool == "LIME" or XAI_tool == "Both":
@@ -74,7 +71,7 @@ def get_modelsummary(arg_dict):
     f = open(f"{save_dir}/XAI_summary.txt", "w+")
     f.write(shap_summary + lime_summary)
     f.close()
-    metadata = {"Authors": "XpertAI", "Year": "2023", "Title": "XAI Summary"}
+    metadata = {"Authors": "XpertAI", "Year": "2024", "Title": "XAI Summary"}
 
     vector_db(
         persist_directory=persist_directory,

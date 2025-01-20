@@ -1,7 +1,7 @@
 from langchain.chat_models import ChatOpenAI
 from langchain.memory import ConversationBufferMemory, ReadOnlySharedMemory
 from langchain import LLMChain, PromptTemplate
-from xpertai.prompts import REFINE_PROMPT, FORMAT_LABLES, SUMMARIZE_PROMPT, SUMMARIZE_PROMPT_WITH_QUESTION
+from xpertai.prompts import REFINE_PROMPT, FORMAT_LABLES, SUMMARIZE_PROMPT
 from .utils import *
 from langchain.embeddings.openai import OpenAIEmbeddings
 import pandas as pd
@@ -23,10 +23,10 @@ def gen_nle(arg_dict):
     "top_k":3}
     """
 
-    #save_dir = "./data"
-    #global persist_directory
-    #persist_directory = "./data/chroma/"
-    # arg_dict = json.loads(json_request)
+    save_dir = "./data"
+    global persist_directory
+    persist_directory = "./data/chroma/"
+    
     for k, val in arg_dict.items():
         globals()[k] = val
 
@@ -91,31 +91,11 @@ def gen_nle(arg_dict):
                 rows.append({"feature": feature, "original": doc, "summary": summary, "reference": "No reference found"})
     
     #write to csv
-    df = pd.DataFrame(rows)
-    #if not supporting_csv:
-    #    supporting_csv = f"{save_dir}/supporting_evidences.csv"
-    df.to_csv(f"{supporting_csv}", index=False)
+    #df = pd.DataFrame(rows)
+    #df.to_csv(f"{supporting_csv}", index=False)
         
         #docs.append(fetched)
-
-    # flatten list of docs
-    """docs = [item for sublist in docs for item in sublist]
-
-    # add citations from metadata
-    documents = ""
-    for i in range(len(docs)):
-        doc = docs[i].page_content
-        summarize_prompt = PromptTemplate(template=SUMMARIZE_PROMPT, input_variables=["text"])
-        summarize_chain = LLMChain(prompt=summarize_prompt, llm=llm)
-        summary = summarize_chain.run({"text": doc})
-        try:
-            authors = docs[i].metadata["authors"]
-            year = docs[i].metadata["year"]
-            title = docs[i].metadata["source"]
-            documents += f"{summary} REFERENCE:({authors},{year},{title}) \n\n"
-
-        except BaseException:
-            documents += f"{summary} \n\n"""
+ 
 
     prompt = PromptTemplate(
         template=REFINE_PROMPT, input_variables=["documents", "features", "observation"]

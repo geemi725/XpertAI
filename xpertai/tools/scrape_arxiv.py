@@ -21,8 +21,7 @@ def scrape_arxiv(arg_dict):
     returns:
         scrapes ArXiv for papers by given key words and download
     """
-
-    # arg_dict = json.loads(json_request)
+    
     for k, val in arg_dict.items():
         globals()[k] = val
 
