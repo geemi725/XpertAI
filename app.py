@@ -6,6 +6,7 @@ import openai
 import os
 import streamlit as st
 import sys
+
 __import__("pysqlite3")
 sys.modules["sqlite3"] = sys.modules.pop("pysqlite3")
 load_dotenv()
@@ -23,10 +24,12 @@ st.markdown(
     unsafe_allow_html=True,
 )
 
+
 def on_api_key_change():
     api_key = ss.get("api_key") or os.getenv("OPENAI_API_KEY")
     os.environ["OPENAI_API_KEY"] = api_key
     openai.api_key = api_key
+
 
 def save_uploadfile(uploadedfile):
     dirpath = os.path.join("data", "lit_dir")
@@ -36,18 +39,21 @@ def save_uploadfile(uploadedfile):
     with open(os.path.join(dirpath, uploadedfile.name), "wb") as f:
         f.write(uploadedfile.getbuffer())
 
+
 st.write(
     "## Xpert AI: Extract human interpretable structure-property relationships from raw data"
 )
 st.write(
     """XpertAI trains a surrogate model to your dataset and extracts impactful features from your dataset using XAI tools.
-Currently, GPT-4 model is used to generate natural language explanations."""
+Currently, GPT-4o model is used to generate natural language explanations."""
 )
+
 
 def run_autofill():
     st.session_state.auto_target = "toxicity of small molecules"
     st.session_state.auto_df = "tests/toxicity_sample_data.csv"
     st.experimental_rerun()
+
 
 auto_target = st.session_state.get("auto_target", None)
 auto_arxiv = st.session_state.get("auto_arxiv", None)
@@ -93,7 +99,8 @@ with st.sidebar:
         "### Provide literature to generate scientific explanations! \nIf you don't provide literature, you will receive an explanation based on XAI tools."
     )
     lit_files = st.file_uploader(
-        "Upload your literature library here (Suggested):", accept_multiple_files=True
+        "Upload your literature here. Files must be in `pdf` format (Suggested):",
+        accept_multiple_files=True,
     )
     arxiv_keywords = st.text_input(
         "If you want to scrape arxiv, provide keywords for arxiv scraping:",
@@ -112,7 +119,7 @@ with st.sidebar:
     st.markdown(
         """**Make sure to add your OpenAPI key**. 
                 You can download the input dataset after the explanation is generated.
-                Literature parsing is not used here."""
+                Literature is not scraped in this case."""
     )
 
     auto_button = st.button("Test Run", on_click=run_autofill)
@@ -174,25 +181,31 @@ if button or auto_button:
 
     with st.spinner("Please wait...:computer: :speech_balloon:"):
         # read literature
+        lit_files_given = False
         if lit_files:
+            lit_files_given = True
             for file in lit_files:
                 save_uploadfile(file)
                 try:
                     vector_db(
                         lit_file=os.path.join("./data/lit_dir", file.name),
                         try_meta_data=True,
+                        clean=True,
                     )
                 except BaseException:
                     st.write("vectordb failed!!")
 
         # scrape arxiv.org
-
-        elif arxiv_keywords:
-            arg_dict_arxiv = {"key_words": arxiv_keywords, "max_papers": max_papers}
+        if arxiv_keywords:
+            arg_dict_arxiv = {
+                "key_words": arxiv_keywords,
+                "max_papers": max_papers,
+                "lit_files": lit_files_given,
+            }
 
             scrape_arxiv(arg_dict_arxiv)
 
-        elif not arxiv_keywords and not lit_files:
+        if not arxiv_keywords and not lit_files:
             st.markdown(
                 f"""### Literature is not provided to make an informed explanation. Based on XAI analysis, the following explanation can be given:
                 \n{explanation}"""

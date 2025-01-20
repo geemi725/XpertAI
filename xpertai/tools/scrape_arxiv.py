@@ -22,23 +22,26 @@ def scrape_arxiv(arg_dict):
         scrapes ArXiv for papers by given key words and download
     """
 
-    # arg_dict = json.loads(json_request)
     for k, val in arg_dict.items():
         globals()[k] = val
 
     save_dir = "./data/lit_dir"
-    if os.path.exists(save_dir):
+    if not lit_files:
         shutil.rmtree(save_dir)
-
-    os.makedirs(save_dir)
+        os.makedirs(save_dir)
 
     search = arxiv.Search(
         query=key_words, max_results=max_papers, sort_by=arxiv.SortCriterion.Relevance
     )
 
-    for result in search.results():
+    for i, result in enumerate(search.results()):
         title = "_".join(result.title.split(" "))
         cleaned = re.sub(r"[^a-zA-Z0-9.]|(?<!\d)\.|\.(?!\d)", "_", title)
         result.download_pdf(dirpath=save_dir, filename=f"{cleaned}.pdf")
-        # update vectordb
-        vector_db(lit_file=f"{save_dir}/{cleaned}.pdf", clean=False, try_meta_data=True)
+        if not lit_files and i == 0:
+            clean = True
+        else:
+            clean = False
+
+        # if lit files were given before then update vectordb (clean = False )otherwise create new
+        vector_db(lit_file=f"{save_dir}/{cleaned}.pdf", clean=clean, try_meta_data=True)

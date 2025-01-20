@@ -3,14 +3,14 @@ ipython
 python-dotenv
 openai==0.28.1
 langchain==0.0.330
+lime
 matplotlib
-scikit-learn
+scikit-learn==1.4.0
 xgboost
 shap
 pandas
-lime
 arxiv
 chromadb==0.4.7
 pysqlite3-binary 
-tiktoken
+tiktoken==0.7.0
 pypdf

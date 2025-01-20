@@ -1,9 +1,10 @@
 from langchain.chat_models import ChatOpenAI
 from langchain.memory import ConversationBufferMemory, ReadOnlySharedMemory
 from langchain import LLMChain, PromptTemplate
-from xpertai.prompts import REFINE_PROMPT, FORMAT_LABLES
+from xpertai.prompts import REFINE_PROMPT, FORMAT_LABLES, SUMMARIZE_PROMPT
 from .utils import *
 from langchain.embeddings.openai import OpenAIEmbeddings
+import pandas as pd
 
 embedding = OpenAIEmbeddings()
 
@@ -25,7 +26,7 @@ def gen_nle(arg_dict):
     save_dir = "./data"
     global persist_directory
     persist_directory = "./data/chroma/"
-    # arg_dict = json.loads(json_request)
+
     for k, val in arg_dict.items():
         globals()[k] = val
 
@@ -47,7 +48,7 @@ def gen_nle(arg_dict):
     # ****************
     # get human interpretable feature labels
     # #initiate retriever, chain
-    llm = ChatOpenAI(temperature=0.0, model_name="gpt-4", request_timeout=1000)
+    llm = ChatOpenAI(temperature=0.0, model_name="gpt-4o", request_timeout=1000)
 
     prompt_fts = PromptTemplate(template=FORMAT_LABLES, input_variables=["label"])
     memory = ConversationBufferMemory(memory_key="chat_history")
@@ -63,28 +64,52 @@ def gen_nle(arg_dict):
     features = ",".join(new_labels)
     db = Chroma(persist_directory=persist_directory, embedding_function=embedding)
     docs = []
+    rows = []
     # first collect docs for each feature
-    for feature in new_labels:
-        initial_question = f"""How does the {feature} impact the {observation}?"""
-        # Get relevant docs
-        fetched = db.max_marginal_relevance_search(initial_question, k=3)
-        docs.append(fetched)
-
-    # flatten list of docs
-    docs = [item for sublist in docs for item in sublist]
-
-    # add citations from metadata
     documents = ""
-    for i in range(len(docs)):
-        doc = docs[i].page_content
-        try:
-            authors = docs[i].metadata["authors"]
-            year = docs[i].metadata["year"]
-            title = docs[i].metadata["source"]
-            documents += f"{doc} REFERENCE:({authors},{year},{title}) \n\n"
+    for feature in new_labels:
+        initial_question = f"""How is {feature} related to {observation}?"""
+        # Get relevant docs
+        fetched = db.max_marginal_relevance_search(initial_question, k=5)
+        for document in fetched:
+            doc = document.page_content
+            summarize_prompt = PromptTemplate(
+                template=SUMMARIZE_PROMPT, input_variables=["text"]
+            )
+            summarize_chain = LLMChain(prompt=summarize_prompt, llm=llm)
+            summary = summarize_chain.run({"text": doc})
 
-        except BaseException:
-            documents += f"{doc} \n\n"
+            try:
+                authors = document.metadata["authors"]
+                year = document.metadata["year"]
+                title = document.metadata["source"]
+                reference = f"REFERENCE:({authors},{year},{title})"
+                documents += f"{summary} ({reference}) \n\n"
+                rows.append(
+                    {
+                        "feature": feature,
+                        "original": doc,
+                        "summary": summary,
+                        "reference": reference,
+                    }
+                )
+
+            except BaseException:
+                documents += f"{summary} \n\n"
+                rows.append(
+                    {
+                        "feature": feature,
+                        "original": doc,
+                        "summary": summary,
+                        "reference": "No reference found",
+                    }
+                )
+
+    # write to csv
+    # df = pd.DataFrame(rows)
+    # df.to_csv(f"{supporting_csv}", index=False)
+
+    # docs.append(fetched)
 
     prompt = PromptTemplate(
         template=REFINE_PROMPT, input_variables=["documents", "features", "observation"]

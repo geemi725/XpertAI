@@ -11,9 +11,12 @@ ipython_config.py
 *.png
 *.txt
 *.pyc
+*.DS_Store
 
 # pyenv
 .python-version
+.env
+.venv
 
 # Installer logs
 pip-log.txt

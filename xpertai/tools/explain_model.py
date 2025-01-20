@@ -27,19 +27,18 @@ def get_modelsummary(arg_dict):
     global clean
     clean = True
 
-    if not os.path.exists(save_dir):
-        os.makedirs(save_dir)
-    # arg_dict = json.loads(json_request)
     for k, val in arg_dict.items():
         globals()[k] = val
 
+    if not os.path.exists(save_dir):
+        os.makedirs(save_dir)
     # Step 1: train model
 
     if model_type == "Classifier":
-        train_xgbclassifier(df_init)
+        train_xgbclassifier(df_init, savedir=save_dir)
 
     elif model_type == "Regressor":
-        train_xgbregressor(df_init)
+        train_xgbregressor(df_init, savedir=save_dir)
 
     model_path = f"{save_dir}/xgbmodel.json"
 
@@ -51,12 +50,15 @@ def get_modelsummary(arg_dict):
             classifier = False
 
         top_shap_fts, shap_summary = explain_shap(
-            df_init=df_init, model_path=model_path, top_k=top_k, classifier=classifier
+            df_init=df_init,
+            model_path=model_path,
+            top_k=top_k,
+            classifier=classifier,
+            savedir=save_dir,
         )
         np.save(f"{save_dir}/top_shap_features.npy", top_shap_fts)
     else:
         shap_summary = ""
-    # np.save(f'{save_dir}/top_shap_features.npy',top_fts)
 
     # Step 3: Run Lime
     if XAI_tool == "LIME" or XAI_tool == "Both":
@@ -71,7 +73,7 @@ def get_modelsummary(arg_dict):
     f = open(f"{save_dir}/XAI_summary.txt", "w+")
     f.write(shap_summary + lime_summary)
     f.close()
-    metadata = {"Authors": "XpertAI", "Year": "2023", "Title": "XAI Summary"}
+    metadata = {"Authors": "XpertAI", "Year": "2024", "Title": "XAI Summary"}
 
     vector_db(
         persist_directory=persist_directory,
